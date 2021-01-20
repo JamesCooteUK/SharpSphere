@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="81dca03a-9b94-44ff-9d03-d11cc4da44af" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="Z:\SharpSphere-real\SharpSphere\VMware-vSphere-SDK-7.0.0-16447947\SDK\vsphere-ws\wsdl\vim25-mini\vimService.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="reflect-types.xsd" MetadataType="Schema" ID="c13ab17d-e274-4540-9ed3-3285c40e80c5" SourceId="1" SourceUrl="file:///Z:/SharpSphere-real/SharpSphere/VMware-vSphere-SDK-7.0.0-16447947/SDK/vsphere-ws/wsdl/vim25-mini/reflect-types.xsd" />
+    <MetadataFile FileName="core-types.xsd" MetadataType="Schema" ID="379f4cb6-b53f-4c40-81b3-0a0cbcb0968e" SourceId="1" SourceUrl="file:///Z:/SharpSphere-real/SharpSphere/VMware-vSphere-SDK-7.0.0-16447947/SDK/vsphere-ws/wsdl/vim25-mini/core-types.xsd" />
+    <MetadataFile FileName="vim-messagetypes.xsd" MetadataType="Schema" ID="c1eff224-cd2d-47b1-a1ae-92709a5d02f4" SourceId="1" SourceUrl="file:///Z:/SharpSphere-real/SharpSphere/VMware-vSphere-SDK-7.0.0-16447947/SDK/vsphere-ws/wsdl/vim25-mini/vim-messagetypes.xsd" />
+    <MetadataFile FileName="query-messagetypes.xsd" MetadataType="Schema" ID="515109ed-6750-44eb-bd84-913330e267b3" SourceId="1" SourceUrl="file:///Z:/SharpSphere-real/SharpSphere/VMware-vSphere-SDK-7.0.0-16447947/SDK/vsphere-ws/wsdl/vim25-mini/query-messagetypes.xsd" />
+    <MetadataFile FileName="vim-types.xsd" MetadataType="Schema" ID="cb041321-aadf-42fe-93f2-f8b68defd3ec" SourceId="1" SourceUrl="file:///Z:/SharpSphere-real/SharpSphere/VMware-vSphere-SDK-7.0.0-16447947/SDK/vsphere-ws/wsdl/vim25-mini/vim-types.xsd" />
+    <MetadataFile FileName="vimService.wsdl" MetadataType="Wsdl" ID="02f50156-e9f8-4cf6-8b8e-0a521595b470" SourceId="1" SourceUrl="file:///Z:/SharpSphere-real/SharpSphere/VMware-vSphere-SDK-7.0.0-16447947/SDK/vsphere-ws/wsdl/vim25-mini/vimService.wsdl" />
+    <MetadataFile FileName="vim.wsdl" MetadataType="Wsdl" ID="ab448b12-2fa7-4442-b60f-d2fd3150c369" SourceId="1" SourceUrl="file:///Z:/SharpSphere-real/SharpSphere/VMware-vSphere-SDK-7.0.0-16447947/SDK/vsphere-ws/wsdl/vim25-mini/vim.wsdl" />
+    <MetadataFile FileName="reflect-messagetypes.xsd" MetadataType="Schema" ID="c265585f-49cd-401d-9f48-87921c9b08b4" SourceId="1" SourceUrl="file:///Z:/SharpSphere-real/SharpSphere/VMware-vSphere-SDK-7.0.0-16447947/SDK/vsphere-ws/wsdl/vim25-mini/reflect-messagetypes.xsd" />
+    <MetadataFile FileName="query-types.xsd" MetadataType="Schema" ID="d18d9409-a68f-4295-bdaf-03f14b006621" SourceId="1" SourceUrl="file:///Z:/SharpSphere-real/SharpSphere/VMware-vSphere-SDK-7.0.0-16447947/SDK/vsphere-ws/wsdl/vim25-mini/query-types.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

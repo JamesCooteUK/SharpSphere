@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:reflect="urn:reflect" xmlns:vim25="urn:vim25" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:reflect" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-types.xsd" namespace="urn:vim25" />
+</xsd:schema>

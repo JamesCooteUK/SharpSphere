@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:vim25="urn:vim25" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:vim25" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="core-types.xsd" />
+  <xsd:include schemaLocation="query-types.xsd" />
+  <xsd:complexType name="CreateFilterRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="spec" type="vim25:PropertyFilterSpec" />
+      <xsd:element name="partialUpdates" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RetrievePropertiesRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element maxOccurs="unbounded" name="specSet" type="vim25:PropertyFilterSpec" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CheckForUpdatesRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element minOccurs="0" name="version" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WaitForUpdatesRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element minOccurs="0" name="version" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CancelWaitForUpdatesRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WaitForUpdatesExRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element minOccurs="0" name="version" type="xsd:string" />
+      <xsd:element minOccurs="0" name="options" type="vim25:WaitOptions" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RetrievePropertiesExRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element maxOccurs="unbounded" name="specSet" type="vim25:PropertyFilterSpec" />
+      <xsd:element name="options" type="vim25:RetrieveOptions" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ContinueRetrievePropertiesExRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="token" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CancelRetrievePropertiesExRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="token" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CreatePropertyCollectorRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DestroyPropertyCollectorRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DestroyPropertyFilterRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

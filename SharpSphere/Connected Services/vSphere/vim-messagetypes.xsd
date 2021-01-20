@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:reflect="urn:reflect" xmlns:vim25="urn:vim25" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:vim25" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="core-types.xsd" />
+  <xsd:import schemaLocation="reflect-types.xsd" namespace="urn:reflect" />
+  <xsd:include schemaLocation="query-types.xsd" />
+  <xsd:include schemaLocation="vim-types.xsd" />
+  <xsd:complexType name="FindByIpRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element minOccurs="0" name="datacenter" type="vim25:ManagedObjectReference" />
+      <xsd:element name="ip" type="xsd:string" />
+      <xsd:element name="vmSearch" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FindByInventoryPathRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="inventoryPath" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FindChildRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="entity" type="vim25:ManagedObjectReference" />
+      <xsd:element name="name" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FindAllByDnsNameRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element minOccurs="0" name="datacenter" type="vim25:ManagedObjectReference" />
+      <xsd:element name="dnsName" type="xsd:string" />
+      <xsd:element name="vmSearch" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FindAllByIpRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element minOccurs="0" name="datacenter" type="vim25:ManagedObjectReference" />
+      <xsd:element name="ip" type="xsd:string" />
+      <xsd:element name="vmSearch" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RetrieveServiceContentRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="LoginRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="userName" type="xsd:string" />
+      <xsd:element name="password" type="xsd:string" />
+      <xsd:element minOccurs="0" name="locale" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DeleteFileInGuestRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+      <xsd:element name="auth" type="vim25:GuestAuthentication" />
+      <xsd:element name="filePath" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MoveFileInGuestRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+      <xsd:element name="auth" type="vim25:GuestAuthentication" />
+      <xsd:element name="srcFilePath" type="xsd:string" />
+      <xsd:element name="dstFilePath" type="xsd:string" />
+      <xsd:element name="overwrite" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListFilesInGuestRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+      <xsd:element name="auth" type="vim25:GuestAuthentication" />
+      <xsd:element name="filePath" type="xsd:string" />
+      <xsd:element minOccurs="0" name="index" type="xsd:int" />
+      <xsd:element minOccurs="0" name="maxResults" type="xsd:int" />
+      <xsd:element minOccurs="0" name="matchPattern" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InitiateFileTransferFromGuestRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+      <xsd:element name="auth" type="vim25:GuestAuthentication" />
+      <xsd:element name="guestFilePath" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InitiateFileTransferToGuestRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+      <xsd:element name="auth" type="vim25:GuestAuthentication" />
+      <xsd:element name="guestFilePath" type="xsd:string" />
+      <xsd:element name="fileAttributes" type="vim25:GuestFileAttributes" />
+      <xsd:element name="fileSize" type="xsd:long" />
+      <xsd:element name="overwrite" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StartProgramInGuestRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+      <xsd:element name="auth" type="vim25:GuestAuthentication" />
+      <xsd:element name="spec" type="vim25:GuestProgramSpec" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListProcessesInGuestRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+      <xsd:element name="auth" type="vim25:GuestAuthentication" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="pids" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

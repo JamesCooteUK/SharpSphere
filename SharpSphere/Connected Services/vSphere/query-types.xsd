@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:vim25="urn:vim25" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:vim25" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="core-types.xsd" />
+  <xsd:complexType name="InvalidCollectorVersion">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:MethodFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidProperty">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:MethodFault">
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PropertyFilterSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="propSet" type="vim25:PropertySpec" />
+          <xsd:element maxOccurs="unbounded" name="objectSet" type="vim25:ObjectSpec" />
+          <xsd:element minOccurs="0" name="reportMissingObjectsInResults" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfPropertyFilterSpec">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="PropertyFilterSpec" type="vim25:PropertyFilterSpec" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PropertySpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" name="all" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="pathSet" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfPropertySpec">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="PropertySpec" type="vim25:PropertySpec" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ObjectSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="obj" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="skip" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="selectSet" type="vim25:SelectionSpec" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfObjectSpec">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ObjectSpec" type="vim25:ObjectSpec" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SelectionSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfSelectionSpec">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="SelectionSpec" type="vim25:SelectionSpec" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TraversalSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SelectionSpec">
+        <xsd:sequence>
+          <xsd:element name="type" type="xsd:string" />
+          <xsd:element name="path" type="xsd:string" />
+          <xsd:element minOccurs="0" name="skip" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="selectSet" type="vim25:SelectionSpec" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ObjectContent">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="obj" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="propSet" type="vim25:DynamicProperty" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="missingSet" type="vim25:MissingProperty" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfObjectContent">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ObjectContent" type="vim25:ObjectContent" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UpdateSet">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="version" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="filterSet" type="vim25:PropertyFilterUpdate" />
+          <xsd:element minOccurs="0" name="truncated" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PropertyFilterUpdate">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="filter" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="objectSet" type="vim25:ObjectUpdate" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="missingSet" type="vim25:MissingObject" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfPropertyFilterUpdate">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="PropertyFilterUpdate" type="vim25:PropertyFilterUpdate" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ObjectUpdate">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="kind" type="vim25:ObjectUpdateKind" />
+          <xsd:element name="obj" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="changeSet" type="vim25:PropertyChange" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="missingSet" type="vim25:MissingProperty" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfObjectUpdate">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ObjectUpdate" type="vim25:ObjectUpdate" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="ObjectUpdateKind">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="modify" />
+      <xsd:enumeration value="enter" />
+      <xsd:enumeration value="leave" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="PropertyChange">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="op" type="vim25:PropertyChangeOp" />
+          <xsd:element minOccurs="0" name="val" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfPropertyChange">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="PropertyChange" type="vim25:PropertyChange" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="PropertyChangeOp">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="add" />
+      <xsd:enumeration value="remove" />
+      <xsd:enumeration value="assign" />
+      <xsd:enumeration value="indirectRemove" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="MissingProperty">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="path" type="xsd:string" />
+          <xsd:element name="fault" type="vim25:LocalizedMethodFault" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfMissingProperty">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="MissingProperty" type="vim25:MissingProperty" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MissingObject">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="obj" type="vim25:ManagedObjectReference" />
+          <xsd:element name="fault" type="vim25:LocalizedMethodFault" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfMissingObject">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="MissingObject" type="vim25:MissingObject" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WaitOptions">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="maxWaitSeconds" type="xsd:int" />
+          <xsd:element minOccurs="0" name="maxObjectUpdates" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RetrieveOptions">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="maxObjects" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RetrieveResult">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="xsd:string" />
+          <xsd:element maxOccurs="unbounded" name="objects" type="vim25:ObjectContent" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

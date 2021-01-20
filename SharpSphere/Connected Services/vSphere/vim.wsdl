@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:vim25="urn:vim25" targetNamespace="urn:vim25" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:reflect="urn:reflect" elementFormDefault="qualified" targetNamespace="urn:vim25">
+      <xsd:include schemaLocation="core-types.xsd" />
+      <xsd:import schemaLocation="reflect-messagetypes.xsd" namespace="urn:reflect" />
+      <xsd:include schemaLocation="query-messagetypes.xsd" />
+      <xsd:include schemaLocation="vim-messagetypes.xsd" />
+      <xsd:element name="versionURI" type="xsd:string" />
+      <xsd:element name="MethodFaultFault" type="vim25:MethodFault" />
+      <xsd:element name="RuntimeFaultFault" type="vim25:RuntimeFault" />
+      <xsd:element name="HostCommunicationFault" type="vim25:HostCommunication" />
+      <xsd:element name="HostNotConnectedFault" type="vim25:HostNotConnected" />
+      <xsd:element name="HostNotReachableFault" type="vim25:HostNotReachable" />
+      <xsd:element name="InvalidArgumentFault" type="vim25:InvalidArgument" />
+      <xsd:element name="InvalidRequestFault" type="vim25:InvalidRequest" />
+      <xsd:element name="InvalidTypeFault" type="vim25:InvalidType" />
+      <xsd:element name="ManagedObjectNotFoundFault" type="vim25:ManagedObjectNotFound" />
+      <xsd:element name="MethodNotFoundFault" type="vim25:MethodNotFound" />
+      <xsd:element name="NotEnoughLicensesFault" type="vim25:NotEnoughLicenses" />
+      <xsd:element name="NotImplementedFault" type="vim25:NotImplemented" />
+      <xsd:element name="NotSupportedFault" type="vim25:NotSupported" />
+      <xsd:element name="RequestCanceledFault" type="vim25:RequestCanceled" />
+      <xsd:element name="SecurityErrorFault" type="vim25:SecurityError" />
+      <xsd:element name="SystemErrorFault" type="vim25:SystemError" />
+      <xsd:element name="UnexpectedFaultFault" type="vim25:UnexpectedFault" />
+      <xsd:element name="InvalidCollectorVersionFault" type="vim25:InvalidCollectorVersion" />
+      <xsd:element name="InvalidPropertyFault" type="vim25:InvalidProperty" />
+      <xsd:element name="RetrieveProperties" type="vim25:RetrievePropertiesRequestType" />
+      <xsd:element name="RetrievePropertiesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="returnval" type="vim25:ObjectContent" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RetrievePropertiesEx" type="vim25:RetrievePropertiesExRequestType" />
+      <xsd:element name="RetrievePropertiesExResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="returnval" type="vim25:RetrieveResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FindByIp" type="vim25:FindByIpRequestType" />
+      <xsd:element name="FindByIpResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="returnval" type="vim25:ManagedObjectReference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FindByInventoryPath" type="vim25:FindByInventoryPathRequestType" />
+      <xsd:element name="FindByInventoryPathResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="returnval" type="vim25:ManagedObjectReference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FindChild" type="vim25:FindChildRequestType" />
+      <xsd:element name="FindChildResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="returnval" type="vim25:ManagedObjectReference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FindAllByDnsName" type="vim25:FindAllByDnsNameRequestType" />
+      <xsd:element name="FindAllByDnsNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="returnval" type="vim25:ManagedObjectReference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FindAllByIp" type="vim25:FindAllByIpRequestType" />
+      <xsd:element name="FindAllByIpResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="returnval" type="vim25:ManagedObjectReference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RetrieveServiceContent" type="vim25:RetrieveServiceContentRequestType" />
+      <xsd:element name="RetrieveServiceContentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="vim25:ServiceContent" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Login" type="vim25:LoginRequestType" />
+      <xsd:element name="LoginResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="vim25:UserSession" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FileFaultFault" type="vim25:FileFault" />
+      <xsd:element name="GuestOperationsFaultFault" type="vim25:GuestOperationsFault" />
+      <xsd:element name="InvalidLocaleFault" type="vim25:InvalidLocale" />
+      <xsd:element name="InvalidLoginFault" type="vim25:InvalidLogin" />
+      <xsd:element name="InvalidStateFault" type="vim25:InvalidState" />
+      <xsd:element name="TaskInProgressFault" type="vim25:TaskInProgress" />
+      <xsd:element name="DeleteFileInGuest" type="vim25:DeleteFileInGuestRequestType" />
+      <xsd:element name="DeleteFileInGuestResponse">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="MoveFileInGuest" type="vim25:MoveFileInGuestRequestType" />
+      <xsd:element name="MoveFileInGuestResponse">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="ListFilesInGuest" type="vim25:ListFilesInGuestRequestType" />
+      <xsd:element name="ListFilesInGuestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="vim25:GuestListFileInfo" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InitiateFileTransferFromGuest" type="vim25:InitiateFileTransferFromGuestRequestType" />
+      <xsd:element name="InitiateFileTransferFromGuestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="vim25:FileTransferInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InitiateFileTransferToGuest" type="vim25:InitiateFileTransferToGuestRequestType" />
+      <xsd:element name="InitiateFileTransferToGuestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="StartProgramInGuest" type="vim25:StartProgramInGuestRequestType" />
+      <xsd:element name="StartProgramInGuestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListProcessesInGuest" type="vim25:ListProcessesInGuestRequestType" />
+      <xsd:element name="ListProcessesInGuestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="returnval" type="vim25:GuestProcessInfo" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="FindByIpRequestMsg">
+    <part name="parameters" element="vim25:FindByIp" />
+  </message>
+  <message name="FindByIpResponseMsg">
+    <part name="parameters" element="vim25:FindByIpResponse" />
+  </message>
+  <message name="FindByInventoryPathRequestMsg">
+    <part name="parameters" element="vim25:FindByInventoryPath" />
+  </message>
+  <message name="FindByInventoryPathResponseMsg">
+    <part name="parameters" element="vim25:FindByInventoryPathResponse" />
+  </message>
+  <message name="FindChildRequestMsg">
+    <part name="parameters" element="vim25:FindChild" />
+  </message>
+  <message name="FindChildResponseMsg">
+    <part name="parameters" element="vim25:FindChildResponse" />
+  </message>
+  <message name="FindAllByDnsNameRequestMsg">
+    <part name="parameters" element="vim25:FindAllByDnsName" />
+  </message>
+  <message name="FindAllByDnsNameResponseMsg">
+    <part name="parameters" element="vim25:FindAllByDnsNameResponse" />
+  </message>
+  <message name="FindAllByIpRequestMsg">
+    <part name="parameters" element="vim25:FindAllByIp" />
+  </message>
+  <message name="FindAllByIpResponseMsg">
+    <part name="parameters" element="vim25:FindAllByIpResponse" />
+  </message>
+  <message name="RetrieveServiceContentRequestMsg">
+    <part name="parameters" element="vim25:RetrieveServiceContent" />
+  </message>
+  <message name="RetrieveServiceContentResponseMsg">
+    <part name="parameters" element="vim25:RetrieveServiceContentResponse" />
+  </message>
+  <message name="LoginRequestMsg">
+    <part name="parameters" element="vim25:Login" />
+  </message>
+  <message name="LoginResponseMsg">
+    <part name="parameters" element="vim25:LoginResponse" />
+  </message>
+  <message name="FileFaultFaultMsg">
+    <part name="fault" element="vim25:FileFaultFault" />
+  </message>
+  <message name="GuestOperationsFaultFaultMsg">
+    <part name="fault" element="vim25:GuestOperationsFaultFault" />
+  </message>
+  <message name="InvalidLocaleFaultMsg">
+    <part name="fault" element="vim25:InvalidLocaleFault" />
+  </message>
+  <message name="InvalidLoginFaultMsg">
+    <part name="fault" element="vim25:InvalidLoginFault" />
+  </message>
+  <message name="InvalidStateFaultMsg">
+    <part name="fault" element="vim25:InvalidStateFault" />
+  </message>
+  <message name="TaskInProgressFaultMsg">
+    <part name="fault" element="vim25:TaskInProgressFault" />
+  </message>
+  <message name="DeleteFileInGuestRequestMsg">
+    <part name="parameters" element="vim25:DeleteFileInGuest" />
+  </message>
+  <message name="DeleteFileInGuestResponseMsg">
+    <part name="parameters" element="vim25:DeleteFileInGuestResponse" />
+  </message>
+  <message name="MoveFileInGuestRequestMsg">
+    <part name="parameters" element="vim25:MoveFileInGuest" />
+  </message>
+  <message name="MoveFileInGuestResponseMsg">
+    <part name="parameters" element="vim25:MoveFileInGuestResponse" />
+  </message>
+  <message name="ListFilesInGuestRequestMsg">
+    <part name="parameters" element="vim25:ListFilesInGuest" />
+  </message>
+  <message name="ListFilesInGuestResponseMsg">
+    <part name="parameters" element="vim25:ListFilesInGuestResponse" />
+  </message>
+  <message name="InitiateFileTransferFromGuestRequestMsg">
+    <part name="parameters" element="vim25:InitiateFileTransferFromGuest" />
+  </message>
+  <message name="InitiateFileTransferFromGuestResponseMsg">
+    <part name="parameters" element="vim25:InitiateFileTransferFromGuestResponse" />
+  </message>
+  <message name="InitiateFileTransferToGuestRequestMsg">
+    <part name="parameters" element="vim25:InitiateFileTransferToGuest" />
+  </message>
+  <message name="InitiateFileTransferToGuestResponseMsg">
+    <part name="parameters" element="vim25:InitiateFileTransferToGuestResponse" />
+  </message>
+  <message name="StartProgramInGuestRequestMsg">
+    <part name="parameters" element="vim25:StartProgramInGuest" />
+  </message>
+  <message name="StartProgramInGuestResponseMsg">
+    <part name="parameters" element="vim25:StartProgramInGuestResponse" />
+  </message>
+  <message name="ListProcessesInGuestRequestMsg">
+    <part name="parameters" element="vim25:ListProcessesInGuest" />
+  </message>
+  <message name="ListProcessesInGuestResponseMsg">
+    <part name="parameters" element="vim25:ListProcessesInGuestResponse" />
+  </message>
+  <message name="RuntimeFaultFaultMsg">
+    <part name="fault" element="vim25:RuntimeFaultFault" />
+  </message>
+  <message name="InvalidPropertyFaultMsg">
+    <part name="fault" element="vim25:InvalidPropertyFault" />
+  </message>
+  <message name="RetrievePropertiesRequestMsg">
+    <part name="parameters" element="vim25:RetrieveProperties" />
+  </message>
+  <message name="RetrievePropertiesResponseMsg">
+    <part name="parameters" element="vim25:RetrievePropertiesResponse" />
+  </message>
+  <message name="RetrievePropertiesExRequestMsg">
+    <part name="parameters" element="vim25:RetrievePropertiesEx" />
+  </message>
+  <message name="RetrievePropertiesExResponseMsg">
+    <part name="parameters" element="vim25:RetrievePropertiesExResponse" />
+  </message>
+  <portType name="VimPortType">
+    <operation name="FindByIp">
+      <input message="vim25:FindByIpRequestMsg" />
+      <output message="vim25:FindByIpResponseMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="FindByInventoryPath">
+      <input message="vim25:FindByInventoryPathRequestMsg" />
+      <output message="vim25:FindByInventoryPathResponseMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="FindChild">
+      <input message="vim25:FindChildRequestMsg" />
+      <output message="vim25:FindChildResponseMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="FindAllByDnsName">
+      <input message="vim25:FindAllByDnsNameRequestMsg" />
+      <output message="vim25:FindAllByDnsNameResponseMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="FindAllByIp">
+      <input message="vim25:FindAllByIpRequestMsg" />
+      <output message="vim25:FindAllByIpResponseMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="RetrieveServiceContent">
+      <input message="vim25:RetrieveServiceContentRequestMsg" />
+      <output message="vim25:RetrieveServiceContentResponseMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="Login">
+      <input message="vim25:LoginRequestMsg" />
+      <output message="vim25:LoginResponseMsg" />
+      <fault name="InvalidLocaleFault" message="vim25:InvalidLocaleFaultMsg" />
+      <fault name="InvalidLoginFault" message="vim25:InvalidLoginFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="DeleteFileInGuest">
+      <input message="vim25:DeleteFileInGuestRequestMsg" />
+      <output message="vim25:DeleteFileInGuestResponseMsg" />
+      <fault name="FileFaultFault" message="vim25:FileFaultFaultMsg" />
+      <fault name="GuestOperationsFaultFault" message="vim25:GuestOperationsFaultFaultMsg" />
+      <fault name="InvalidStateFault" message="vim25:InvalidStateFaultMsg" />
+      <fault name="TaskInProgressFault" message="vim25:TaskInProgressFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="MoveFileInGuest">
+      <input message="vim25:MoveFileInGuestRequestMsg" />
+      <output message="vim25:MoveFileInGuestResponseMsg" />
+      <fault name="FileFaultFault" message="vim25:FileFaultFaultMsg" />
+      <fault name="GuestOperationsFaultFault" message="vim25:GuestOperationsFaultFaultMsg" />
+      <fault name="InvalidStateFault" message="vim25:InvalidStateFaultMsg" />
+      <fault name="TaskInProgressFault" message="vim25:TaskInProgressFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="ListFilesInGuest">
+      <input message="vim25:ListFilesInGuestRequestMsg" />
+      <output message="vim25:ListFilesInGuestResponseMsg" />
+      <fault name="FileFaultFault" message="vim25:FileFaultFaultMsg" />
+      <fault name="GuestOperationsFaultFault" message="vim25:GuestOperationsFaultFaultMsg" />
+      <fault name="InvalidStateFault" message="vim25:InvalidStateFaultMsg" />
+      <fault name="TaskInProgressFault" message="vim25:TaskInProgressFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="InitiateFileTransferFromGuest">
+      <input message="vim25:InitiateFileTransferFromGuestRequestMsg" />
+      <output message="vim25:InitiateFileTransferFromGuestResponseMsg" />
+      <fault name="FileFaultFault" message="vim25:FileFaultFaultMsg" />
+      <fault name="GuestOperationsFaultFault" message="vim25:GuestOperationsFaultFaultMsg" />
+      <fault name="InvalidStateFault" message="vim25:InvalidStateFaultMsg" />
+      <fault name="TaskInProgressFault" message="vim25:TaskInProgressFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="InitiateFileTransferToGuest">
+      <input message="vim25:InitiateFileTransferToGuestRequestMsg" />
+      <output message="vim25:InitiateFileTransferToGuestResponseMsg" />
+      <fault name="FileFaultFault" message="vim25:FileFaultFaultMsg" />
+      <fault name="GuestOperationsFaultFault" message="vim25:GuestOperationsFaultFaultMsg" />
+      <fault name="InvalidStateFault" message="vim25:InvalidStateFaultMsg" />
+      <fault name="TaskInProgressFault" message="vim25:TaskInProgressFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="StartProgramInGuest">
+      <input message="vim25:StartProgramInGuestRequestMsg" />
+      <output message="vim25:StartProgramInGuestResponseMsg" />
+      <fault name="FileFaultFault" message="vim25:FileFaultFaultMsg" />
+      <fault name="GuestOperationsFaultFault" message="vim25:GuestOperationsFaultFaultMsg" />
+      <fault name="InvalidStateFault" message="vim25:InvalidStateFaultMsg" />
+      <fault name="TaskInProgressFault" message="vim25:TaskInProgressFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="ListProcessesInGuest">
+      <input message="vim25:ListProcessesInGuestRequestMsg" />
+      <output message="vim25:ListProcessesInGuestResponseMsg" />
+      <fault name="GuestOperationsFaultFault" message="vim25:GuestOperationsFaultFaultMsg" />
+      <fault name="InvalidStateFault" message="vim25:InvalidStateFaultMsg" />
+      <fault name="TaskInProgressFault" message="vim25:TaskInProgressFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="RetrieveProperties">
+      <input message="vim25:RetrievePropertiesRequestMsg" />
+      <output message="vim25:RetrievePropertiesResponseMsg" />
+      <fault name="InvalidPropertyFault" message="vim25:InvalidPropertyFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="RetrievePropertiesEx">
+      <input message="vim25:RetrievePropertiesExRequestMsg" />
+      <output message="vim25:RetrievePropertiesExResponseMsg" />
+      <fault name="InvalidPropertyFault" message="vim25:InvalidPropertyFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+  </portType>
+  <binding name="VimBinding" type="vim25:VimPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="FindByIp">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="FindByInventoryPath">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="FindChild">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="FindAllByDnsName">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="FindAllByIp">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="RetrieveServiceContent">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="Login">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidLocaleFault">
+        <soap:fault use="literal" name="InvalidLocaleFault" namespace="" />
+      </fault>
+      <fault name="InvalidLoginFault">
+        <soap:fault use="literal" name="InvalidLoginFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="DeleteFileInGuest">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FileFaultFault">
+        <soap:fault use="literal" name="FileFaultFault" namespace="" />
+      </fault>
+      <fault name="GuestOperationsFaultFault">
+        <soap:fault use="literal" name="GuestOperationsFaultFault" namespace="" />
+      </fault>
+      <fault name="InvalidStateFault">
+        <soap:fault use="literal" name="InvalidStateFault" namespace="" />
+      </fault>
+      <fault name="TaskInProgressFault">
+        <soap:fault use="literal" name="TaskInProgressFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MoveFileInGuest">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FileFaultFault">
+        <soap:fault use="literal" name="FileFaultFault" namespace="" />
+      </fault>
+      <fault name="GuestOperationsFaultFault">
+        <soap:fault use="literal" name="GuestOperationsFaultFault" namespace="" />
+      </fault>
+      <fault name="InvalidStateFault">
+        <soap:fault use="literal" name="InvalidStateFault" namespace="" />
+      </fault>
+      <fault name="TaskInProgressFault">
+        <soap:fault use="literal" name="TaskInProgressFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="ListFilesInGuest">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FileFaultFault">
+        <soap:fault use="literal" name="FileFaultFault" namespace="" />
+      </fault>
+      <fault name="GuestOperationsFaultFault">
+        <soap:fault use="literal" name="GuestOperationsFaultFault" namespace="" />
+      </fault>
+      <fault name="InvalidStateFault">
+        <soap:fault use="literal" name="InvalidStateFault" namespace="" />
+      </fault>
+      <fault name="TaskInProgressFault">
+        <soap:fault use="literal" name="TaskInProgressFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="InitiateFileTransferFromGuest">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FileFaultFault">
+        <soap:fault use="literal" name="FileFaultFault" namespace="" />
+      </fault>
+      <fault name="GuestOperationsFaultFault">
+        <soap:fault use="literal" name="GuestOperationsFaultFault" namespace="" />
+      </fault>
+      <fault name="InvalidStateFault">
+        <soap:fault use="literal" name="InvalidStateFault" namespace="" />
+      </fault>
+      <fault name="TaskInProgressFault">
+        <soap:fault use="literal" name="TaskInProgressFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="InitiateFileTransferToGuest">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FileFaultFault">
+        <soap:fault use="literal" name="FileFaultFault" namespace="" />
+      </fault>
+      <fault name="GuestOperationsFaultFault">
+        <soap:fault use="literal" name="GuestOperationsFaultFault" namespace="" />
+      </fault>
+      <fault name="InvalidStateFault">
+        <soap:fault use="literal" name="InvalidStateFault" namespace="" />
+      </fault>
+      <fault name="TaskInProgressFault">
+        <soap:fault use="literal" name="TaskInProgressFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="StartProgramInGuest">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FileFaultFault">
+        <soap:fault use="literal" name="FileFaultFault" namespace="" />
+      </fault>
+      <fault name="GuestOperationsFaultFault">
+        <soap:fault use="literal" name="GuestOperationsFaultFault" namespace="" />
+      </fault>
+      <fault name="InvalidStateFault">
+        <soap:fault use="literal" name="InvalidStateFault" namespace="" />
+      </fault>
+      <fault name="TaskInProgressFault">
+        <soap:fault use="literal" name="TaskInProgressFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="ListProcessesInGuest">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GuestOperationsFaultFault">
+        <soap:fault use="literal" name="GuestOperationsFaultFault" namespace="" />
+      </fault>
+      <fault name="InvalidStateFault">
+        <soap:fault use="literal" name="InvalidStateFault" namespace="" />
+      </fault>
+      <fault name="TaskInProgressFault">
+        <soap:fault use="literal" name="TaskInProgressFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="RetrieveProperties">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidPropertyFault">
+        <soap:fault use="literal" name="InvalidPropertyFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="RetrievePropertiesEx">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidPropertyFault">
+        <soap:fault use="literal" name="InvalidPropertyFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+</definitions>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:vim25="urn:vim25" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:vim25" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="DynamicArray">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="val" type="xsd:anyType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DynamicData">
+    <xsd:sequence />
+  </xsd:complexType>
+  <xsd:complexType name="DynamicProperty">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string" />
+      <xsd:element name="val" type="xsd:anyType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfDynamicProperty">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="DynamicProperty" type="vim25:DynamicProperty" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="KeyAnyValue">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+          <xsd:element name="value" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfKeyAnyValue">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="KeyAnyValue" type="vim25:KeyAnyValue" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="LocalizableMessage">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="arg" type="vim25:KeyAnyValue" />
+          <xsd:element minOccurs="0" name="message" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfLocalizableMessage">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="LocalizableMessage" type="vim25:LocalizableMessage" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="LocalizedMethodFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="fault" type="vim25:MethodFault" />
+          <xsd:element minOccurs="0" name="localizedMessage" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MethodFault">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="faultCause" type="vim25:LocalizedMethodFault" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="faultMessage" type="vim25:LocalizableMessage" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfMethodFault">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="MethodFault" type="vim25:MethodFault" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RuntimeFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:MethodFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostCommunication">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostNotConnected">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:HostCommunication">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostNotReachable">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:HostCommunication">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidArgument">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="invalidProperty" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidRequest">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidType">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="argument" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ManagedObjectNotFound">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence>
+          <xsd:element name="obj" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MethodNotFound">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidRequest">
+        <xsd:sequence>
+          <xsd:element name="receiver" type="vim25:ManagedObjectReference" />
+          <xsd:element name="method" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NotEnoughLicenses">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NotImplemented">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RequestCanceled">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SecurityError">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SystemError">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence>
+          <xsd:element name="reason" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UnexpectedFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RuntimeFault">
+        <xsd:sequence>
+          <xsd:element name="faultName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fault" type="vim25:LocalizedMethodFault" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ManagedObjectReference">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="type" type="xsd:string" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfManagedObjectReference">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ManagedObjectReference" type="vim25:ManagedObjectReference" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfAnyURI">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="anyURI" type="xsd:anyURI" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfBoolean">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="boolean" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfByte">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="byte" type="xsd:byte" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfShort">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="short" type="xsd:short" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfInt">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="int" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfLong">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="long" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfDouble">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="double" type="xsd:double" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfString">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfUri">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="uri" type="xsd:anyURI" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfBase64Binary">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="base64Binary" type="xsd:base64Binary" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArrayOfAnyType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="anyType" type="xsd:anyType" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

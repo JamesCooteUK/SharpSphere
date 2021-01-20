@@ -1,0 +1,112 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5.2": {
+      "ILMerge/3.0.29": {
+        "type": "package",
+        "build": {
+          "build/ILMerge.props": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5.2/win": {
+      "ILMerge/3.0.29": {
+        "type": "package",
+        "build": {
+          "build/ILMerge.props": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5.2/win-x64": {
+      "ILMerge/3.0.29": {
+        "type": "package",
+        "build": {
+          "build/ILMerge.props": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5.2/win-x86": {
+      "ILMerge/3.0.29": {
+        "type": "package",
+        "build": {
+          "build/ILMerge.props": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ILMerge/3.0.29": {
+      "sha512": "+LXIFY4L84Ve3cVgmd8tOEwFCppJynP0gY2cTmyj/8XjFaQPqaiN6jdYOrIJwtzYw3ayf69IY5vor6XXRxoigA==",
+      "type": "package",
+      "path": "ilmerge/3.0.29",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/ILMerge.props",
+        "docs/ilmerge-manual.md",
+        "ilmerge.3.0.29.nupkg.sha512",
+        "ilmerge.nuspec",
+        "tools/net452/ILMerge.exe",
+        "tools/net452/System.Compiler.dll"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.5.2": [
+      "ILMerge >= 3.0.29"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\James\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "Z:\\SharpSphere-real\\SharpSphere\\SharpSphere\\SharpSphere.csproj",
+      "projectName": "SharpSphere",
+      "projectPath": "Z:\\SharpSphere-real\\SharpSphere\\SharpSphere\\SharpSphere.csproj",
+      "packagesPath": "C:\\Users\\James\\.nuget\\packages\\",
+      "outputPath": "Z:\\SharpSphere-real\\SharpSphere\\SharpSphere\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\James\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net452"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net452": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net452": {
+        "dependencies": {
+          "ILMerge": {
+            "target": "Package",
+            "version": "[3.0.29, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

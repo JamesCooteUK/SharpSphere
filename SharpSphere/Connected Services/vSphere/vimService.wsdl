@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:interface="urn:vim25" targetNamespace="urn:vim25Service" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <import namespace="urn:vim25" location="vim.wsdl" />
+  <types />
+  <service name="VimService">
+    <port name="VimPort" binding="interface:VimBinding">
+      <soap:address location="https://localhost/sdk/vimService" />
+    </port>
+  </service>
+</definitions>

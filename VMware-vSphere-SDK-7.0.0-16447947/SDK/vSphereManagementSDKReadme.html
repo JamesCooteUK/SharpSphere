@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>vSphere Management SDK Readme</title>
+<meta content="VMware, Inc. All rights reserved." name="copyright"></meta>
+<link rel="stylesheet" type="text/css" href="vsphere-ws/docresources/template.css"></link>
+<style type="text/css">
+
+h4 {
+	padding: 0;
+	font-size: 12px;
+	font-weight: bold;
+	border-top: 1px solid #dedede;
+	background-color:#E6EDF6;
+}
+
+
+.Parameter {
+	margin: 0 0 7px 0;
+	width: 100%;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.Code
+    {
+	font-size: 11px; font-family: 
+	"Courier New", Courier, monospace; 
+	}
+	
+.Console
+    {
+	font-size: 11px; font-family: 
+	"Courier New", Courier, monospace; 
+	color: #ffffff;
+	font-weight: bold;
+	background: #000000;
+	}
+.Caption {
+	font-size:11px; line-height:12px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #000000; TEXT-DECORATION: none
+}
+.Exp {
+	font-size:11px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #3366AA;
+}
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+
+.TableText {
+	FONT-SIZE: 11px;
+}
+
+.TableHead {
+	FONT-SIZE: 10px; font-weight: bold;
+}
+
+.BoldRedText {
+	FONT-WEIGHT: bold; COLOR: #CC0000; TEXT-DECORATION: none
+}
+.BoldBlue {
+	FONT-WEIGHT: bold; COLOR: #3366AA; TEXT-DECORATION: none
+}
+.Miniscule {font-size: 9px;
+           }
+
+.Nav {font-size: 11px; COLOR: #3366AA;
+           }
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+</style>
+</head>
+<body>
+
+<table cellpadding="0" cellspacing="5" id="main-table">
+<tr><td id="main-body" align="left">
+<!-- ///*** start of content area ***/// -->
+
+<table width="100%" cellpadding="5">
+<tr>
+<td><h1>VMware vSphere Management SDK Readme</h1></td>
+<td align="right">
+<img src="vsphere-ws/docresources/vmware.gif" alt="VMware logo" width="187" height="72" border="0"></img>
+</td>
+</tr>
+</table>
+<hr />
+
+<p>
+The vSphere Management SDK is a bundle that contains a set of VMware vSphere SDKs.
+Each SDK supports the development of management applications that call VMware API functions
+to access vSphere servers. The following table lists the different SDKs and provides links to documentation.
+</p>
+
+<table width="100%" border="1" cellpadding="5">
+<tr><th>SDK</th><th>Contents</th><th>Documentation</th></tr>
+<tr>
+<td width="20%">vSphere Web Services SDK</td>
+<td width="40%">
+<ul>
+<li>WSDL definitions for the vSphere API.</li>
+<li>Language-specific bindings generated from the WSDL.</li>
+<li>Java and .NET samples that use the vSphere API.</li>
+<li>Documentation.</li>
+</ul>
+</td>
+<td width="50%">
+<ul>
+<li><a href="vsphere-ws/docs/SDK-README.html">Readme for the vSphere Web Services SDK</a></li>
+<li><a href="vsphere-ws/docs/ReferenceGuide/index.html">vSphere API Reference</a></li>
+<li><a href="vsphere-ws/java/JAXWS/readme_java.html">Readme for Java samples (JAX-WS)</a></li>
+<!-- <li><a href="vsphere-ws/java/Axis/readme_java.html">Readme for Java samples (Axis)</a></li> -->
+<li><a href="vsphere-ws/dotnet/cs/readme_dotnet.html">Readme for C# .NET samples</a></li>
+<li><a href="vsphere-ws/dotnet/bin/VMware-SDK-Management-SampleTemplate-VSIXInstaller/readme.txt">Readme for C# SDK Management Sample Template VSIX Installer</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>vSphere Storage Monitoring Service SDK</td>
+<td>
+<ul>
+<li>WSDL definitions for the vSphere Storage Monitoring Service API.</li>
+<li>Java bindings generated from the WSDL.</li>
+<li>Java samples that use the vSphere Storage Monitoring Service API.</li>
+<li>Documentation.</li>
+</ul>
+<td>
+<ul>
+<li><a href="sms-sdk/SMS-SDK-README.html">Readme for the vSphere SMS SDK</a></li>
+<li><a href="sms-sdk/docs/ReferenceGuide/index.html">vSphere SMS API Reference</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>vSphere ESX Agent Manager SDK</td>
+<td>
+<ul>
+<li>WSDL definitions for the vSphere ESX Agent Manager API.</li>
+<li>Java source files for a sample solution that uses the ESX Agent Manager API.</li>
+<li>Documentation.</li>
+</ul>
+</td>
+<td>
+<ul>
+<li><a href="eam/README.html">Readme for the vSphere ESX Agent Manager SDK</a></li>
+<li><a href="eam/doc/index.html">vSphere ESX Agent Manager API Reference</a></li>
+</td>
+</tr>
+<tr>
+<td>vCenter Single Sign On SDK</td>
+<td>
+<ul>
+<li>WSDL definitions for the vCenter Single Sign On API.</li>
+<li>Java source files for a sample solution that uses the vCenter Single Sign On API.</li>
+<li>Documentation.</li>
+</ul>
+</td>
+<td>
+<ul>
+<li><a href="ssoclient/SSO-SDK-README.html">Readme for the vCenter Single Sign On SDK</a></li>
+<li><a href="ssoclient/java/JAXWS/readme_java.html">Readme for Java samples</a></li>
+</td>
+</tr>
+
+<tr>
+<td>VMware Storage Policy SDK</td>
+<td>
+<ul>
+<li>WSDL definitions for the VMware Storage Policy API.</li>
+<li>Java source files for a sample solution that uses the VMware Storage Policy API.</li>
+<li>Documentation.</li>
+</ul>
+</td>
+<td>
+<ul>
+<li><a href="spbm/SPBM-SDK-README.html">Readme for the VMware Storage Policy SDK</a></li>
+<li><a href="spbm/docs/ReferenceGuide/index.html">VMware Storage Policy API Reference</a></li>
+<li><a href="spbm/java/JAXWS/readme_java.html">Readme for Java samples</a></li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td>VMware Virtual Storage Lifecycle Management(VSLM) SDK</td>
+<td>
+<ul>
+<li>WSDL definitions for the Virtual Storage Lifecycle Management API.</li>
+<li>Java source files for a sample solution that uses the Virtual Storage Lifecycle Management API.</li>
+<li>Documentation.</li>
+</ul>
+</td>
+<td>
+<ul>
+<li><a href="vslm/VSLM-ReadMe.html">Readme for the Virtual Storage Lifecycle Management SDK</a></li>
+<li><a href="vslm/docs/ReferenceGuide/index.html">VMware Virtual Storage Lifecycle Management API Reference</a></li>
+<li><a href="vslm/java/JAXWS/readme_java.html">Readme for Java samples</a></li>
+</ul>
+</td>
+</tr>
+
+</table>
+<br /><br />
+<hr />
+<table border="0" width="100%">
+<tr>
+<td>
+<p class="Miniscule">Copyright &copy;2011,2019  VMware, Inc.  All rights not expressly granted herein 
+are reserved.</p>
+</td>
+<td align="right"><p class="Miniscule">Last updated: 2 July 2019&nbsp;|&nbsp; VMware vSphere Management SDK</p></td>
+</tr>
+</table>
+
+<!-- ///*** end of content area ***/// -->
+</td></tr></table>
+
+</body>
+</html>
