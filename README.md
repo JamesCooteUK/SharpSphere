@@ -23,7 +23,7 @@ If you compile yourself you'll need to use `ILMerge` to combine SharpSphere.exe 
 ## Useage
 Available modules:
 ```
-SharpHound.exe help
+SharpSphere.exe help
 
 
   list        List all VMs managed by this vCenter
