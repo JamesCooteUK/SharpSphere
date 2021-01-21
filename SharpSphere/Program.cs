@@ -56,37 +56,25 @@ namespace SharpSphere
                 Log("[x] Connected to " + serviceContent.about.fullName);
 
                 //Authenticate to vCenter API
-                //var propertyFilterSpec = GetFileManagerSpec();
-                var propertyFilterSpec = GetSinglePropSpec(serviceContent.guestOperationsManager, "fileManager");
-                UserSession userSession = new UserSession();
-                userSession = vim.Login(serviceContent.sessionManager, username, password, null);
-                var result = vim.RetrievePropertiesEx(serviceContent.propertyCollector, propertyFilterSpec, new RetrieveOptions() { });
+
+                UserSession userSession = vim.Login(serviceContent.sessionManager, username, password, null);
+                if (userSession is null)
+                    Error(new Exception("Failed to authenticate."));
                 Log("[x] Successfully authenticated");
 
                 //Retrieve filemanager
-                guestFileManager = result.objects[0].propSet[0].val as ManagedObjectReference;
+                guestFileManager = GetProperty<ManagedObjectReference>(serviceContent.guestOperationsManager, "fileManager"); 
                 if (guestFileManager is null)
-                    throw new ArgumentNullException(nameof(guestFileManager));
-
-                //Retrieve session manager
-                //propertyFilterSpec = GetSessionManagerSpec();
-                propertyFilterSpec = GetSinglePropSpec(serviceContent.sessionManager, "currentSession");
-                result = vim.RetrievePropertiesEx(serviceContent.propertyCollector, propertyFilterSpec, new RetrieveOptions() { });
-                if (result is null)
-                    throw new Exception("Nope");
+                    Error(new Exception("Failed to retrieve filemanager"));
 
                 //Get the current session and check it's valid
-                var currentSession = result.objects[0].propSet[0].val as UserSession;
-                if (currentSession is null)
-                    throw new ArgumentNullException(nameof(currentSession));
-                if (currentSession.key != userSession.key)
-                    throw new Exception();
+                UserSession currentSession = GetProperty<UserSession>(serviceContent.sessionManager, "currentSession"); 
+                if (currentSession is null || currentSession.key != userSession.key)
+                    Error(new Exception("Failed to retrieve current session"));
 
                 //Retrieve target VM
                 if (ip != null)
-                {
                     vm = vim.FindByIp(serviceContent.searchIndex, null, ip, true);
-                }
                 
             }
             catch (Exception fault) //Generic catch all
@@ -98,11 +86,8 @@ namespace SharpSphere
         {
             try
             {
-                var processManagerSpec = GetSinglePropSpec(serviceContent.guestOperationsManager, "processManager");
-                var result = vim.RetrievePropertiesEx(serviceContent.propertyCollector, processManagerSpec, new RetrieveOptions() { });
-                if (result is null)
-                    throw new Exception("Nope");
-                var processManager = result.objects[0].propSet[0].val as ManagedObjectReference;
+                ManagedObjectReference processManager = GetProperty<ManagedObjectReference>(serviceContent.guestOperationsManager, "processManager");
+
                 var guestProgramSpec = new GuestProgramSpec()
                 {
                     arguments = arguments,
@@ -289,7 +274,7 @@ namespace SharpSphere
         {
             var result = vim.RetrievePropertiesEx(serviceContent.propertyCollector, GetSinglePropSpec(from, propName), new RetrieveOptions() { });
             if (result is null)
-                throw new Exception("RetrievePropertiesEx failed");
+                Error(new Exception("RetrievePropertiesEx failed"));
             return result.objects[0].propSet[0].val as T;
         }
 
@@ -389,7 +374,7 @@ namespace SharpSphere
 
                 if (!Directory.Exists(options.localdir))
                 {
-                    throw new Exception("Cannot read local dir " + options.localdir);
+                    Error(new Exception("Cannot read local dir " + options.localdir));
 
                 }
 

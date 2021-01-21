@@ -8,3 +8,13 @@ Z:\SharpSphere-real\SharpSphere\SharpSphere\obj\Debug\SharpSphere.csproj.CoreCom
 Z:\SharpSphere-real\SharpSphere\SharpSphere\obj\Debug\SharpSphere.csproj.CopyComplete
 Z:\SharpSphere-real\SharpSphere\SharpSphere\obj\Debug\SharpSphere.exe
 Z:\SharpSphere-real\SharpSphere\SharpSphere\obj\Debug\SharpSphere.pdb
+Z:\Tools\sharpsphere\SharpSphere\bin\Debug\SharpSphere.exe.config
+Z:\Tools\sharpsphere\SharpSphere\bin\Debug\SharpSphere.exe
+Z:\Tools\sharpsphere\SharpSphere\bin\Debug\SharpSphere.pdb
+Z:\Tools\sharpsphere\SharpSphere\bin\Debug\CommandLine.dll
+Z:\Tools\sharpsphere\SharpSphere\bin\Debug\CommandLine.xml
+Z:\Tools\sharpsphere\SharpSphere\obj\Debug\SharpSphere.csprojAssemblyReference.cache
+Z:\Tools\sharpsphere\SharpSphere\obj\Debug\SharpSphere.csproj.CoreCompileInputs.cache
+Z:\Tools\sharpsphere\SharpSphere\obj\Debug\SharpSphere.csproj.CopyComplete
+Z:\Tools\sharpsphere\SharpSphere\obj\Debug\SharpSphere.exe
+Z:\Tools\sharpsphere\SharpSphere\obj\Debug\SharpSphere.pdb

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>c2 --url https://192.168.1.14/sdk --username administrator%40vsphere.local --password Password1! --ip 192.168.1.200 --guestusername James --guestpassword Password1! --localdir C:\Users\Public\ --guestdir C:\Users\Public\ --inputid 7yie --outputid 8cna</StartArguments>
+    <StartArguments>
+    </StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <StartArguments>download --url https://192.168.1.14/sdk --username administrator%40vsphere.local --password Password1%2a --ip 192.168.1.200 --guestusername James --guestpassword Password1! --source "C:\Users\James\Desktop\whoami.txt" --destination "C:\Users\James\Desktop\whoami.txt"</StartArguments>
@@ -20,6 +21,7 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <StartArguments>list --url https://192.168.1.14/sdk --username administrator%40vsphere.local --password Password1!</StartArguments>
+    <StartArguments>
+    </StartArguments>
   </PropertyGroup>
 </Project>

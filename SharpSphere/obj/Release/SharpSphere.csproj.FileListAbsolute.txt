@@ -3,8 +3,8 @@ Z:\SharpSphere-real\SharpSphere\SharpSphere\bin\Release\SharpSphere.exe
 Z:\SharpSphere-real\SharpSphere\SharpSphere\bin\Release\SharpSphere.pdb
 Z:\SharpSphere-real\SharpSphere\SharpSphere\bin\Release\CommandLine.dll
 Z:\SharpSphere-real\SharpSphere\SharpSphere\bin\Release\CommandLine.xml
+Z:\SharpSphere-real\SharpSphere\SharpSphere\obj\Release\SharpSphere.csprojAssemblyReference.cache
 Z:\SharpSphere-real\SharpSphere\SharpSphere\obj\Release\SharpSphere.csproj.CoreCompileInputs.cache
 Z:\SharpSphere-real\SharpSphere\SharpSphere\obj\Release\SharpSphere.csproj.CopyComplete
 Z:\SharpSphere-real\SharpSphere\SharpSphere\obj\Release\SharpSphere.exe
 Z:\SharpSphere-real\SharpSphere\SharpSphere\obj\Release\SharpSphere.pdb
-Z:\SharpSphere-real\SharpSphere\SharpSphere\obj\Release\SharpSphere.csprojAssemblyReference.cache

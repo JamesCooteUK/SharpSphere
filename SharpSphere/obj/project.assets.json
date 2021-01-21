@@ -63,11 +63,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\SharpSphere-real\\SharpSphere\\SharpSphere\\SharpSphere.csproj",
+      "projectUniqueName": "Z:\\Tools\\sharpsphere\\SharpSphere\\SharpSphere.csproj",
       "projectName": "SharpSphere",
-      "projectPath": "Z:\\SharpSphere-real\\SharpSphere\\SharpSphere\\SharpSphere.csproj",
+      "projectPath": "Z:\\Tools\\sharpsphere\\SharpSphere\\SharpSphere.csproj",
       "packagesPath": "C:\\Users\\James\\.nuget\\packages\\",
-      "outputPath": "Z:\\SharpSphere-real\\SharpSphere\\SharpSphere\\obj\\",
+      "outputPath": "Z:\\Tools\\sharpsphere\\SharpSphere\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

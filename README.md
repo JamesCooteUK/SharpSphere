@@ -1,6 +1,6 @@
 # SharpSphere - Attacking vSphere Infrastructure
 
-Credit [@jkcoote](https://twitter.com/jkcoote) & Grzegorz Rychlik
+Credit [@jkcoote](https://twitter.com/jkcoote) & [@grzryc](https://github.com/grzryc)
 
 Full walk-through and examples available [here](https://jamescoote.co.uk/introducing-sharpsphere/).
 
