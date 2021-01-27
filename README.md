@@ -11,7 +11,7 @@ SharpSphere gives red teamers the ability to easily interact with the guest oper
 - **Code Execution** - Allows arbitrary commands to be executed in the guest OS and returns the result
 - **File Upload** - Allows arbitrary files to be uploaded to the guest OS
 - **File Download** - Allows arbitrary files to be downloaded from the guest OS
-- **List VMs** - Tests supplied credentials inside the guest OS
+- **List VMs** - Lists the VMs managed by vCenter that have VMware Tools running
 
 SharpSphere supports execution through Cobalt Strike's *execute-assembly*.
 
