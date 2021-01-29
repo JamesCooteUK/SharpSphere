@@ -1,0 +1,9 @@
+.vs
+*.user
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+.DS_Store
+Packages/
+*.csproj.user
