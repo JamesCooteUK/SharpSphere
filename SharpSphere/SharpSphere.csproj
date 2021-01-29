@@ -192,6 +192,7 @@
     </None>
     <None Include="Connected Services\vSphere\vim.wsdl" />
     <None Include="Connected Services\vSphere\vimService.wsdl" />
+    <None Include="ILMerge.props" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -217,7 +218,10 @@
     <Error Condition="!Exists('..\packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILMerge.3.0.41\build\ILMerge.props'))" />
   </Target>
   <ItemGroup>
-    <PackageReference Include="ILMerge" Version="3.0.29" />
+    <PackageReference Include="ILMerge" Version="3.0.41" />
+    <PackageReference Include="MSBuild.ILMerge.Task">
+      <Version>1.1.3</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\vSphere\" />
@@ -233,6 +237,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ILMergeOrder.txt" />
   </ItemGroup>
   <Target Name="ILMerge">
     <!-- the ILMergePath property points to the location of ILMerge.exe console application -->
