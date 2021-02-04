@@ -20,7 +20,7 @@ Compiled versions can be found [here](https://github.com/JamesCooteUK/SharpSpher
 
 If you compile yourself you'll need to use `ILMerge` to combine SharpSphere.exe and CommandLine.dll in the `Releases` folder.
 
-## Useage
+## Usage
 Available modules:
 ```
 SharpSphere.exe help
