@@ -6,6 +6,11 @@ from lxml import etree
 
 allowedOps = {'RetrieveServiceContent', 'Login', 'RetrievePropertiesEx', 'InitiateFileTransferToGuest', 'ListProcessesInGuest', 'InitiateFileTransferFromGuest', 'FindByIp', 'ListFilesInGuest', 'StartProgramInGuest', 'MoveFileInGuest', 'DeleteFileInGuest', 'FindByInventoryPath', 'FindChild', 'RetrieveProperties', 'FindAllByDnsName', 'FindAllByIp', }
 
+# rule of thumb: add a `Type` only if you use `GetProperty<Type>`
+defaultKeepTypes =  { 'GuestInfo', 'VirtualMachineConfigInfo'}
+
+minipath = 'vim25-mini'
+
 defaultAllowedElements = {"versionURI", "MethodFaultFault", "RuntimeFaultFault", \
     "HostCommunicationFault", "HostNotConnectedFault", "HostNotReachableFault", \
     "InvalidArgumentFault", "InvalidRequestFault", "InvalidTypeFault", \
@@ -13,10 +18,6 @@ defaultAllowedElements = {"versionURI", "MethodFaultFault", "RuntimeFaultFault",
     "NotImplementedFault", "NotSupportedFault", "RequestCanceledFault", "SecurityErrorFault", \
     "SystemErrorFault", "UnexpectedFaultFault", "InvalidCollectorVersionFault", \
     "InvalidPropertyFault"}
-
-defaultKeepTypes = { 'NamePasswordAuthentication', 'ExecuteOptions', 'GuestProgramSpec', 'GuestWindowsFileAttributes', 'GuestWindowsProgramSpec', 'Datacenter', 'VirtualMachine', 'Folder', 'GuestInfo', 'VirtualMachineConfigInfo', 'Network'}
-
-minipath = 'vim25-mini'
 
 def filterByAttrVal(element, attrName, xpath, allowed):
     for op in element.findall(xpath, element.nsmap):
@@ -37,15 +38,50 @@ def getBaseTypenames(complexType):
     return { b.attrib['base'].lstrip('vim25:') for b in bases }
 
 def getMemberTypenames(complexType):
-    bases = complexType.findall('./complexContent/extension/sequence/element', complexType.nsmap)
-    return { b.attrib['type'].lstrip('vim25:') for b in bases }
+    members = complexType.findall('.//element', complexType.nsmap)
+    return { b.attrib['type'].lstrip('vim25:') for b in members }
 
 def getComplexType(bschema, name):
     return bschema.find("complexType[@name='{}']".format(name), bschema.nsmap)
 
+def getDerivedTypenames(bschema, basename):
+    derived = bschema.findall("./complexType/complexContent/extension[@base='vim25:{}']".format(basename), bschema.nsmap)
+    return [ d.getparent().getparent().attrib['name'] for d in derived]
+
+def getDerived(bschema, name):
+    alreadySeen = set()
+    def _addDerived(bschema, name):
+        if name in alreadySeen:
+            return
+        alreadySeen.add(name)
+        derived = getDerivedTypenames(bschema, name)
+        for d in derived:
+            _addDerived(bschema, d)
+    _addDerived(bschema, name)
+    return alreadySeen
+
+def getMembersAndDerived(bschema, name):
+    alreadySeen = set()
+    def _addMembersAndDerived(bschema, name):
+        if name in alreadySeen:
+            return
+        alreadySeen.add(name)
+        xtype = getComplexType(bschema, name)
+        if xtype is None:
+            return
+        refTypes = getDerived(bschema, name)
+        refTypes.update(getMemberTypenames(xtype))
+        for rt in refTypes:
+            _addMembersAndDerived(bschema, rt)
+
+    _addMembersAndDerived(bschema, name)
+    return alreadySeen
+
 def getBaseAndMembers(bschema, name):
     alreadySeen = set()
     def _addBaseAndMembers(bschema, name):
+        if name in alreadySeen:
+            return
         alreadySeen.add(name)
         xtype = getComplexType(bschema, name)
         if xtype is None:
@@ -53,10 +89,17 @@ def getBaseAndMembers(bschema, name):
         refTypes = getBaseTypenames(xtype)
         refTypes.update(getMemberTypenames(xtype))
         for bt in refTypes:
-            if bt not in alreadySeen:
-                _addBaseAndMembers(bschema, bt)
+            _addBaseAndMembers(bschema, bt)
     _addBaseAndMembers(bschema, name)
     return alreadySeen
+
+def getReferenced(bschema, name):
+    membersAndDeried = getMembersAndDerived(bschema, name)
+    baseAndMembers = set()
+    for md in membersAndDeried:
+        baseAndMembers.update(getBaseAndMembers(bschema, md))
+    baseAndMembers.update(membersAndDeried)
+    return baseAndMembers
 
 def write(etre, name):
     etre.write(name, pretty_print=True, encoding='UTF-8', xml_declaration=True)
@@ -106,8 +149,11 @@ def main():
 
     referencedTypes = set()
     for name in allowedVimTypes:
-        referencedTypes |= getBaseAndMembers(vimTypesSchema, name)
-        referencedTypes |= getBaseAndMembers(messageTypesSchema, name)
+        referencedTypes |= getReferenced(messageTypesSchema, name)
+
+    allowedVimTypes.update(referencedTypes)
+    for name in allowedVimTypes:
+        referencedTypes |= getReferenced(vimTypesSchema, name)
 
     ## rewrite vim-types.xsd
     filterByAttrVal(vimTypesSchema, 'name', 'complexType', referencedTypes)
