@@ -54,6 +54,50 @@
       <xsd:element minOccurs="0" name="locale" type="xsd:string" />
     </xsd:sequence>
   </xsd:complexType>
+  <xsd:complexType name="LoginBySSPIRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="base64Token" type="xsd:string" />
+      <xsd:element minOccurs="0" name="locale" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AcquireGenericServiceTicketRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="spec" type="vim25:SessionManagerServiceRequestSpec" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CreateSnapshotRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="description" type="xsd:string" />
+      <xsd:element name="memory" type="xsd:boolean" />
+      <xsd:element name="quiesce" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SearchDatastoreRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="datastorePath" type="xsd:string" />
+      <xsd:element minOccurs="0" name="searchSpec" type="vim25:HostDatastoreBrowserSearchSpec" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RemoveSnapshotRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="removeChildren" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="consolidate" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AcquireCredentialsInGuestRequestType">
+    <xsd:sequence>
+      <xsd:element name="_this" type="vim25:ManagedObjectReference" />
+      <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+      <xsd:element name="requestedAuth" type="vim25:GuestAuthentication" />
+      <xsd:element minOccurs="0" name="sessionID" type="xsd:long" />
+    </xsd:sequence>
+  </xsd:complexType>
   <xsd:complexType name="DeleteFileInGuestRequestType">
     <xsd:sequence>
       <xsd:element name="_this" type="vim25:ManagedObjectReference" />

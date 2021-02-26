@@ -25,12 +25,83 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="DatastoreInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="url" type="xsd:string" />
+          <xsd:element name="freeSpace" type="xsd:long" />
+          <xsd:element name="maxFileSize" type="xsd:long" />
+          <xsd:element minOccurs="0" name="maxVirtualDiskCapacity" type="xsd:long" />
+          <xsd:element minOccurs="0" name="maxMemoryFileSize" type="xsd:long" />
+          <xsd:element minOccurs="0" name="timestamp" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="containerId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="aliasOf" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DatastoreHostMount">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="key" type="vim25:ManagedObjectReference" />
+          <xsd:element name="mountInfo" type="vim25:HostMountInfo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="Description">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
         <xsd:sequence>
           <xsd:element name="label" type="xsd:string" />
           <xsd:element name="summary" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EVCMode">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:ElementDescription">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="guaranteedCPUFeatures" type="vim25:HostCpuIdInfo" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="featureCapability" type="vim25:HostFeatureCapability" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="featureMask" type="vim25:HostFeatureMask" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="featureRequirement" type="vim25:VirtualMachineFeatureRequirement" />
+          <xsd:element name="vendor" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="track" type="xsd:string" />
+          <xsd:element name="vendorTier" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ElementDescription">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:Description">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ExtendedDescription">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:Description">
+        <xsd:sequence>
+          <xsd:element name="messageCatalogKeyPrefix" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="messageArg" type="vim25:KeyAnyValue" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ExtendedElementDescription">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:ElementDescription">
+        <xsd:sequence>
+          <xsd:element name="messageCatalogKeyPrefix" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="messageArg" type="vim25:KeyAnyValue" />
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -64,6 +135,23 @@
       <xsd:enumeration value="custom" />
     </xsd:restriction>
   </xsd:simpleType>
+  <xsd:simpleType name="ManagedEntityStatus">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="gray" />
+      <xsd:enumeration value="green" />
+      <xsd:enumeration value="yellow" />
+      <xsd:enumeration value="red" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="MethodDescription">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:Description">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="ResourceAllocationInfo">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
@@ -135,6 +223,43 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="SessionManagerGenericServiceTicket">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="hostName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sslThumbprint" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SessionManagerServiceRequestSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SessionManagerVmomiServiceRequestSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SessionManagerServiceRequestSpec">
+        <xsd:sequence>
+          <xsd:element name="method" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SessionManagerHttpServiceRequestSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SessionManagerServiceRequestSpec">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="method" type="xsd:string" />
+          <xsd:element name="url" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="SharesInfo">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
@@ -153,6 +278,110 @@
       <xsd:enumeration value="custom" />
     </xsd:restriction>
   </xsd:simpleType>
+  <xsd:complexType name="StorageIOAllocationInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="limit" type="xsd:long" />
+          <xsd:element minOccurs="0" name="shares" type="vim25:SharesInfo" />
+          <xsd:element minOccurs="0" name="reservation" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TaskInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+          <xsd:element name="task" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="description" type="vim25:LocalizableMessage" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element name="descriptionId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="entity" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="entityName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="locked" type="vim25:ManagedObjectReference" />
+          <xsd:element name="state" type="vim25:TaskInfoState" />
+          <xsd:element name="cancelled" type="xsd:boolean" />
+          <xsd:element name="cancelable" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="error" type="vim25:LocalizedMethodFault" />
+          <xsd:element minOccurs="0" name="result" type="xsd:anyType" />
+          <xsd:element minOccurs="0" name="progress" type="xsd:int" />
+          <xsd:element name="reason" type="vim25:TaskReason" />
+          <xsd:element name="queueTime" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="startTime" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="completeTime" type="xsd:dateTime" />
+          <xsd:element name="eventChainId" type="xsd:int" />
+          <xsd:element minOccurs="0" name="changeTag" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parentTaskKey" type="xsd:string" />
+          <xsd:element minOccurs="0" name="rootTaskKey" type="xsd:string" />
+          <xsd:element minOccurs="0" name="activationId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="TaskInfoState">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="queued" />
+      <xsd:enumeration value="running" />
+      <xsd:enumeration value="success" />
+      <xsd:enumeration value="error" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="TaskReason">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TaskReasonSystem">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:TaskReason">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TaskReasonUser">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:TaskReason">
+        <xsd:sequence>
+          <xsd:element name="userName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TaskReasonAlarm">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:TaskReason">
+        <xsd:sequence>
+          <xsd:element name="alarmName" type="xsd:string" />
+          <xsd:element name="alarm" type="vim25:ManagedObjectReference" />
+          <xsd:element name="entityName" type="xsd:string" />
+          <xsd:element name="entity" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TaskReasonSchedule">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:TaskReason">
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="scheduledTask" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TypeDescription">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:Description">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="UserSession">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
@@ -168,6 +397,151 @@
           <xsd:element minOccurs="0" name="ipAddress" type="xsd:string" />
           <xsd:element minOccurs="0" name="userAgent" type="xsd:string" />
           <xsd:element minOccurs="0" name="callCount" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VASAStorageArray">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="uuid" type="xsd:string" />
+          <xsd:element name="vendorId" type="xsd:string" />
+          <xsd:element name="modelId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VimVasaProvider">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+          <xsd:element name="url" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="selfSignedCertificate" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VimVasaProviderStatePerArray">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="priority" type="xsd:int" />
+          <xsd:element name="arrayId" type="xsd:string" />
+          <xsd:element name="active" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VimVasaProviderInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="provider" type="vim25:VimVasaProvider" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="arrayState" type="vim25:VimVasaProviderStatePerArray" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="VirtualMachinePowerState">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="poweredOff" />
+      <xsd:enumeration value="poweredOn" />
+      <xsd:enumeration value="suspended" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="VirtualMachineConnectionState">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="connected" />
+      <xsd:enumeration value="disconnected" />
+      <xsd:enumeration value="orphaned" />
+      <xsd:enumeration value="inaccessible" />
+      <xsd:enumeration value="invalid" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="VirtualMachineFaultToleranceState">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="notConfigured" />
+      <xsd:enumeration value="disabled" />
+      <xsd:enumeration value="enabled" />
+      <xsd:enumeration value="needSecondary" />
+      <xsd:enumeration value="starting" />
+      <xsd:enumeration value="running" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="VirtualMachineRecordReplayState">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="recording" />
+      <xsd:enumeration value="replaying" />
+      <xsd:enumeration value="inactive" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ClusterAffinityRuleSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:ClusterRuleInfo">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="vm" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ClusterAntiAffinityRuleSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:ClusterRuleInfo">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="vm" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ClusterDependencyRuleInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:ClusterRuleInfo">
+        <xsd:sequence>
+          <xsd:element name="vmGroup" type="xsd:string" />
+          <xsd:element name="dependsOnVmGroup" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ClusterRuleInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="key" type="xsd:int" />
+          <xsd:element minOccurs="0" name="status" type="vim25:ManagedEntityStatus" />
+          <xsd:element minOccurs="0" name="enabled" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="mandatory" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="userCreated" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="inCompliance" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ruleUuid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ClusterVmHostRuleInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:ClusterRuleInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="vmGroupName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="affineHostGroupName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="antiAffineHostGroupName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DistributedVirtualSwitchPortConnection">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="switchUuid" type="xsd:string" />
+          <xsd:element minOccurs="0" name="portgroupKey" type="xsd:string" />
+          <xsd:element minOccurs="0" name="portKey" type="xsd:string" />
+          <xsd:element minOccurs="0" name="connectionCookie" type="xsd:int" />
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -201,6 +575,367 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="ApplicationQuiesceFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SnapshotFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotAccessFile">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotAccessNetwork">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CannotAccessVmDevice">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="network" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotAccessVmComponent">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotAccessVmConfig">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CannotAccessVmComponent">
+        <xsd:sequence>
+          <xsd:element name="reason" type="vim25:LocalizedMethodFault" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotAccessVmDevice">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CannotAccessVmComponent">
+        <xsd:sequence>
+          <xsd:element name="device" type="xsd:string" />
+          <xsd:element name="backing" type="xsd:string" />
+          <xsd:element name="connected" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotAccessVmDisk">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CannotAccessVmDevice">
+        <xsd:sequence>
+          <xsd:element name="fault" type="vim25:LocalizedMethodFault" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotCreateFile">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotDeleteFile">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotDisableSnapshot">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotPowerOffVmInCluster">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence>
+          <xsd:element name="operation" type="xsd:string" />
+          <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+          <xsd:element name="vmName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CannotUseNetwork">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="device" type="xsd:string" />
+          <xsd:element name="backing" type="xsd:string" />
+          <xsd:element name="connected" type="xsd:boolean" />
+          <xsd:element name="reason" type="xsd:string" />
+          <xsd:element minOccurs="0" name="network" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CpuCompatibilityUnknown">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CpuIncompatible">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CpuHotPlugNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CpuIncompatible">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="level" type="xsd:int" />
+          <xsd:element name="registerName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="registerBits" type="xsd:string" />
+          <xsd:element minOccurs="0" name="desiredBits" type="xsd:string" />
+          <xsd:element minOccurs="0" name="host" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CpuIncompatible1ECX">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CpuIncompatible">
+        <xsd:sequence>
+          <xsd:element name="sse3" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="pclmulqdq" type="xsd:boolean" />
+          <xsd:element name="ssse3" type="xsd:boolean" />
+          <xsd:element name="sse41" type="xsd:boolean" />
+          <xsd:element name="sse42" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="aes" type="xsd:boolean" />
+          <xsd:element name="other" type="xsd:boolean" />
+          <xsd:element name="otherOnly" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CpuIncompatible81EDX">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CpuIncompatible">
+        <xsd:sequence>
+          <xsd:element name="nx" type="xsd:boolean" />
+          <xsd:element name="ffxsr" type="xsd:boolean" />
+          <xsd:element name="rdtscp" type="xsd:boolean" />
+          <xsd:element name="lm" type="xsd:boolean" />
+          <xsd:element name="other" type="xsd:boolean" />
+          <xsd:element name="otherOnly" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CustomizationFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VimFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DVPortNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceBackingNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DatastoreNotWritableOnHost">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDatastore">
+        <xsd:sequence>
+          <xsd:element name="host" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DeltaDiskFormatNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="datastore" type="vim25:ManagedObjectReference" />
+          <xsd:element name="deltaDiskFormat" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DestinationSwitchFull">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CannotAccessNetwork">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DeviceBackingNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence>
+          <xsd:element name="backing" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DeviceControllerNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence>
+          <xsd:element name="controller" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DeviceHotPlugNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDeviceSpec">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DeviceNotFound">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDeviceSpec">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DeviceNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="device" type="xsd:string" />
+          <xsd:element minOccurs="0" name="reason" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DeviceUnsupportedForVmPlatform">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDeviceSpec">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DeviceUnsupportedForVmVersion">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDeviceSpec">
+        <xsd:sequence>
+          <xsd:element name="currentVersion" type="xsd:string" />
+          <xsd:element name="expectedVersion" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DigestNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DirectoryNotEmpty">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DisallowedDiskModeChange">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDeviceSpec">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DiskNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="disk" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DrsVmotionIncompatibleFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="host" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EightHostLimitViolated">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EncryptionKeyRequired">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="requiredKey" type="vim25:CryptoKeyId" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FaultToleranceCannotEditMem">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="vmName" type="xsd:string" />
+          <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FaultToleranceCpuIncompatible">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CpuIncompatible">
+        <xsd:sequence>
+          <xsd:element name="model" type="xsd:boolean" />
+          <xsd:element name="family" type="xsd:boolean" />
+          <xsd:element name="stepping" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FeatureRequirementsNotMet">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="featureRequirement" type="vim25:VirtualMachineFeatureRequirement" />
+          <xsd:element minOccurs="0" name="vm" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="host" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileAlreadyExists">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileBackedPortNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="FileFault">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:VimFault">
@@ -210,10 +945,312 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="FileLocked">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileNameTooLong">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileNotFound">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileNotWritable">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileTooLarge">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence>
+          <xsd:element name="datastore" type="xsd:string" />
+          <xsd:element name="fileSize" type="xsd:long" />
+          <xsd:element minOccurs="0" name="maxFileSize" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FilesystemQuiesceFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SnapshotFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GenericVmConfigFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="reason" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestAuthenticationChallenge">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence>
+          <xsd:element name="serverChallenge" type="vim25:GuestAuthentication" />
+          <xsd:element name="sessionID" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestComponentsOutOfDate">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestMultipleMappings">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="GuestOperationsFault">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:VimFault">
         <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestOperationsUnavailable">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestPermissionDenied">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestProcessNotFound">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence>
+          <xsd:element name="pid" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestRegistryFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence>
+          <xsd:element name="windowsSystemErrorCode" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestRegistryKeyAlreadyExists">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestRegistryKeyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestRegistryKeyFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestRegistryFault">
+        <xsd:sequence>
+          <xsd:element name="keyName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestRegistryKeyHasSubkeys">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestRegistryKeyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestRegistryKeyInvalid">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestRegistryKeyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestRegistryKeyParentVolatile">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestRegistryKeyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestRegistryValueFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestRegistryFault">
+        <xsd:sequence>
+          <xsd:element name="keyName" type="xsd:string" />
+          <xsd:element name="valueName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestRegistryValueNotFound">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestRegistryValueFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="IDEDiskNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DiskNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InaccessibleDatastore">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDatastore">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="detail" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InaccessibleFTMetadataDatastore">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InaccessibleDatastore">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="IncorrectFileType">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidClientCertificate">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidLogin">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDeviceSpec">
+        <xsd:sequence>
+          <xsd:element name="controllerKey" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidDatastore">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VimFault">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="datastore" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidDatastorePath">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDatastore">
+        <xsd:sequence>
+          <xsd:element name="datastorePath" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidDatastoreState">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="datastoreName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidDeviceBacking">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDeviceSpec">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidDeviceOperation">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDeviceSpec">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="badOp" type="vim25:VirtualDeviceConfigSpecOperation" />
+          <xsd:element minOccurs="0" name="badFileOp" type="vim25:VirtualDeviceConfigSpecFileOperation" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidDeviceSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidVmConfig">
+        <xsd:sequence>
+          <xsd:element name="deviceIndex" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidDiskFormat">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidFormat">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidFormat">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidGuestLogin">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidHostConnectionState">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidHostState">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidHostState">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="host" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -231,9 +1268,556 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="InvalidName">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VimFault">
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="entity" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidNetworkInType">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VAppPropertyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidPowerState">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="requestedState" type="vim25:VirtualMachinePowerState" />
+          <xsd:element name="existingState" type="vim25:VirtualMachinePowerState" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidPropertyType">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VAppPropertyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidPropertyValue">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VAppPropertyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidSnapshotFormat">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidFormat">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="InvalidState">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:VimFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidVmConfig">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="property" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="InvalidVmState">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence>
+          <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LargeRDMNotSupportedOnDatastore">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="device" type="xsd:string" />
+          <xsd:element name="datastore" type="vim25:ManagedObjectReference" />
+          <xsd:element name="datastoreName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LegacyNetworkInterfaceInUse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CannotAccessNetwork">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MemoryFileFormatNotSupportedByDatastore">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:UnsupportedDatastore">
+        <xsd:sequence>
+          <xsd:element name="datastoreName" type="xsd:string" />
+          <xsd:element name="type" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MemoryHotPlugNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MemorySizeNotRecommended">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="memorySizeMB" type="xsd:int" />
+          <xsd:element name="minMemorySizeMB" type="xsd:int" />
+          <xsd:element name="maxMemorySizeMB" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MemorySizeNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="memorySizeMB" type="xsd:int" />
+          <xsd:element name="minMemorySizeMB" type="xsd:int" />
+          <xsd:element name="maxMemorySizeMB" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MemorySizeNotSupportedByDatastore">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="datastore" type="vim25:ManagedObjectReference" />
+          <xsd:element name="memorySizeMB" type="xsd:int" />
+          <xsd:element name="maxMemorySizeMB" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MemorySnapshotOnIndependentDisk">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SnapshotFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MissingController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidDeviceSpec">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MissingIpPool">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VAppPropertyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MissingLinuxCustResources">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CustomizationFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MissingNetworkIpConfig">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VAppPropertyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MissingWindowsCustResources">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CustomizationFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MksConnectionLimitReached">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence>
+          <xsd:element name="connectionLimit" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiWriterNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultipleSnapshotsNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SnapshotFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NetworkCopyFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NoActiveHostInCluster">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence>
+          <xsd:element name="computeResource" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NoAvailableIp">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VAppPropertyFault">
+        <xsd:sequence>
+          <xsd:element name="network" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NoCompatibleHardAffinityHost">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="vmName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NoCompatibleSoftAffinityHost">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="vmName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NoDiskSpace">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence>
+          <xsd:element name="datastore" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NoVcManagedIpConfigured">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VAppPropertyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NonPersistentDisksNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NotADirectory">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NotAFile">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NotEnoughCpus">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="numCpuDest" type="xsd:int" />
+          <xsd:element name="numCpuVm" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NotEnoughLogicalCpus">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:NotEnoughCpus">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="host" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NotUserConfigurableProperty">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VAppPropertyFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NumVirtualCoresPerSocketNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="maxSupportedCoresPerSocketDest" type="xsd:int" />
+          <xsd:element name="numCoresPerSocketVm" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NumVirtualCpusIncompatible">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="reason" type="xsd:string" />
+          <xsd:element name="numCpu" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NumVirtualCpusNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="maxSupportedVcpusDest" type="xsd:int" />
+          <xsd:element name="numCpuVm" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OperationDisabledByGuest">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OperationNotSupportedByGuest">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OvfConsumerPowerOnFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence>
+          <xsd:element name="extensionKey" type="xsd:string" />
+          <xsd:element name="extensionName" type="xsd:string" />
+          <xsd:element name="description" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OvfConsumerValidationFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="extensionKey" type="xsd:string" />
+          <xsd:element name="extensionName" type="xsd:string" />
+          <xsd:element name="message" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PasswordExpired">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidLogin">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PhysCompatRDMNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:RDMNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="QuarantineModeFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="vmName" type="xsd:string" />
+          <xsd:element name="faultType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="QuestionPending">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence>
+          <xsd:element name="text" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RDMNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RDMNotSupportedOnDatastore">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="device" type="xsd:string" />
+          <xsd:element name="datastore" type="vim25:ManagedObjectReference" />
+          <xsd:element name="datastoreName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RDMPointsToInaccessibleDisk">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CannotAccessVmDisk">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RawDiskNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RemoteDeviceNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RuleViolation">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="host" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="rule" type="vim25:ClusterRuleInfo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SSPIChallenge">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VimFault">
+        <xsd:sequence>
+          <xsd:element name="base64Token" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SharedBusControllerNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SnapshotDisabled">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SnapshotFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SnapshotFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VimFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SnapshotIncompatibleDeviceInVm">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SnapshotFault">
+        <xsd:sequence>
+          <xsd:element name="fault" type="vim25:LocalizedMethodFault" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SnapshotLocked">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SnapshotFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SnapshotNoChange">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SnapshotFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SoftRuleVioCorrectionDisallowed">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="vmName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SoftRuleVioCorrectionImpact">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="vmName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="StorageVmotionIncompatible">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="datastore" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SwapDatastoreNotWritableOnHost">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DatastoreNotWritableOnHost">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SwapPlacementOverrideNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidVmConfig">
         <xsd:sequence />
       </xsd:extension>
     </xsd:complexContent>
@@ -247,9 +1831,282 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="TooManyConcurrentNativeClones">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TooManyDevices">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidVmConfig">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TooManyGuestLogons">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestOperationsFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TooManyNativeCloneLevels">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TooManyNativeClonesOnFile">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TooManySnapshotLevels">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:SnapshotFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ToolsUpgradeCancelled">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmToolsUpgradeFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UnSupportedDatastoreForVFlash">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:UnsupportedDatastore">
+        <xsd:sequence>
+          <xsd:element name="datastoreName" type="xsd:string" />
+          <xsd:element name="type" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UnconfiguredPropertyValue">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidPropertyValue">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UnsupportedDatastore">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="datastore" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UnsupportedGuest">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidVmConfig">
+        <xsd:sequence>
+          <xsd:element name="unsupportedGuestOS" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UnsupportedVmxLocation">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UnusedVirtualDiskBlocksNotScrubbed">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceBackingNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VAppNotRunning">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VAppPropertyFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:string" />
+          <xsd:element name="category" type="xsd:string" />
+          <xsd:element name="label" type="xsd:string" />
+          <xsd:element name="type" type="xsd:string" />
+          <xsd:element name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VAppTaskInProgress">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:TaskInProgress">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VFlashCacheHotConfigNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VFlashModuleNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="vmName" type="xsd:string" />
+          <xsd:element name="moduleName" type="xsd:string" />
+          <xsd:element name="reason" type="xsd:string" />
+          <xsd:element name="hostName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VMINotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VMOnConflictDVPort">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CannotAccessNetwork">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VMOnVirtualIntranet">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:CannotAccessNetwork">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="VimFault">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:MethodFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskBlocksNotFullyProvisioned">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceBackingNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskModeNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence>
+          <xsd:element name="mode" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualEthernetCardNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DeviceNotSupported">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualHardwareCompatibilityIssue">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualHardwareVersionNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
+        <xsd:sequence>
+          <xsd:element name="hostName" type="xsd:string" />
+          <xsd:element name="host" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmConfigFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VimFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmConfigIncompatibleForFaultTolerance">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="fault" type="vim25:LocalizedMethodFault" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmConfigIncompatibleForRecordReplay">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="fault" type="vim25:LocalizedMethodFault" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmHostAffinityRuleViolation">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFault">
+        <xsd:sequence>
+          <xsd:element name="vmName" type="xsd:string" />
+          <xsd:element name="hostName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmPowerOnDisabled">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidState">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmToolsUpgradeFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VimFault">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmWwnConflict">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:InvalidVmConfig">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="vm" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="host" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="wwn" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="WakeOnLanNotSupported">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualHardwareCompatibilityIssue">
         <xsd:sequence />
       </xsd:extension>
     </xsd:complexContent>
@@ -264,6 +2121,494 @@
           <xsd:element minOccurs="0" name="ebx" type="xsd:string" />
           <xsd:element minOccurs="0" name="ecx" type="xsd:string" />
           <xsd:element minOccurs="0" name="edx" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="path" type="xsd:string" />
+          <xsd:element minOccurs="0" name="friendlyName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fileSize" type="xsd:long" />
+          <xsd:element minOccurs="0" name="modification" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="owner" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileQueryFlags">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="fileType" type="xsd:boolean" />
+          <xsd:element name="fileSize" type="xsd:boolean" />
+          <xsd:element name="modification" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="fileOwner" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileQuery">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmConfigFileQuery">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileQuery">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="filter" type="vim25:VmConfigFileQueryFilter" />
+          <xsd:element minOccurs="0" name="details" type="vim25:VmConfigFileQueryFlags" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmConfigFileQueryFilter">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="matchConfigVersion" type="xsd:int" />
+          <xsd:element minOccurs="0" name="encrypted" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmConfigFileQueryFlags">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="configVersion" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="encryption" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TemplateConfigFileQuery">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFileQuery">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmDiskFileQuery">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileQuery">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="filter" type="vim25:VmDiskFileQueryFilter" />
+          <xsd:element minOccurs="0" name="details" type="vim25:VmDiskFileQueryFlags" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmDiskFileQueryFilter">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="diskType" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="matchHardwareVersion" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="controllerType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="thin" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="encrypted" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmDiskFileQueryFlags">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="diskType" type="xsd:boolean" />
+          <xsd:element name="capacityKb" type="xsd:boolean" />
+          <xsd:element name="hardwareVersion" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="controllerType" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="diskExtents" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="thin" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="encryption" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FolderFileQuery">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileQuery">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmSnapshotFileQuery">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileQuery">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="IsoImageFileQuery">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileQuery">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FloppyImageFileQuery">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileQuery">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmNvramFileQuery">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileQuery">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmLogFileQuery">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileQuery">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmConfigFileInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="configVersion" type="xsd:int" />
+          <xsd:element minOccurs="0" name="encryption" type="vim25:VmConfigFileEncryptionInfo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmConfigFileEncryptionInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="keyId" type="vim25:CryptoKeyId" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TemplateConfigFileInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigFileInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmDiskFileInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="diskType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="capacityKb" type="xsd:long" />
+          <xsd:element minOccurs="0" name="hardwareVersion" type="xsd:int" />
+          <xsd:element minOccurs="0" name="controllerType" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="diskExtents" type="xsd:string" />
+          <xsd:element minOccurs="0" name="thin" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="encryption" type="vim25:VmDiskFileEncryptionInfo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmDiskFileEncryptionInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="keyId" type="vim25:CryptoKeyId" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FolderFileInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmSnapshotFileInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="IsoImageFileInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FloppyImageFileInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmNvramFileInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmLogFileInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FileInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostDatastoreBrowserSearchSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="query" type="vim25:FileQuery" />
+          <xsd:element minOccurs="0" name="details" type="vim25:FileQueryFlags" />
+          <xsd:element minOccurs="0" name="searchCaseInsensitive" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="matchPattern" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sortFoldersFirst" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostDatastoreBrowserSearchResults">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="datastore" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="folderPath" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="file" type="vim25:FileInfo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmfsDatastoreInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DatastoreInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="maxPhysicalRDMFileSize" type="xsd:long" />
+          <xsd:element minOccurs="0" name="maxVirtualRDMFileSize" type="xsd:long" />
+          <xsd:element minOccurs="0" name="vmfs" type="vim25:HostVmfsVolume" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NasDatastoreInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DatastoreInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="nas" type="vim25:HostNasVolume" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LocalDatastoreInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DatastoreInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="path" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VvolDatastoreInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DatastoreInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="vvolDS" type="vim25:HostVvolVolume" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PMemDatastoreInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DatastoreInfo">
+        <xsd:sequence>
+          <xsd:element name="pmem" type="vim25:HostPMemVolume" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostFeatureCapability">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+          <xsd:element name="featureName" type="xsd:string" />
+          <xsd:element name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostFeatureMask">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+          <xsd:element name="featureName" type="xsd:string" />
+          <xsd:element name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostFileSystemVolume">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="type" type="xsd:string" />
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="capacity" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostForceMountedInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="persist" type="xsd:boolean" />
+          <xsd:element name="mounted" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostInternetScsiHbaParamValue">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:OptionValue">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="isInherited" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostMountInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="path" type="xsd:string" />
+          <xsd:element name="accessMode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="mounted" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="accessible" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="inaccessibleReason" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostNasVolume">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:HostFileSystemVolume">
+        <xsd:sequence>
+          <xsd:element name="remoteHost" type="xsd:string" />
+          <xsd:element name="remotePath" type="xsd:string" />
+          <xsd:element minOccurs="0" name="userName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="remoteHostNames" type="xsd:string" />
+          <xsd:element minOccurs="0" name="securityType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="protocolEndpoint" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostPMemVolume">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:HostFileSystemVolume">
+        <xsd:sequence>
+          <xsd:element name="uuid" type="xsd:string" />
+          <xsd:element name="version" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostProtocolEndpoint">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="peType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+          <xsd:element name="uuid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="hostKey" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="storageArray" type="xsd:string" />
+          <xsd:element minOccurs="0" name="nfsServer" type="xsd:string" />
+          <xsd:element minOccurs="0" name="nfsDir" type="xsd:string" />
+          <xsd:element minOccurs="0" name="nfsServerScope" type="xsd:string" />
+          <xsd:element minOccurs="0" name="nfsServerMajor" type="xsd:string" />
+          <xsd:element minOccurs="0" name="nfsServerAuthType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="nfsServerUser" type="xsd:string" />
+          <xsd:element minOccurs="0" name="deviceId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostScsiDiskPartition">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="diskName" type="xsd:string" />
+          <xsd:element name="partition" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostVmfsVolume">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:HostFileSystemVolume">
+        <xsd:sequence>
+          <xsd:element name="blockSizeMb" type="xsd:int" />
+          <xsd:element minOccurs="0" name="blockSize" type="xsd:int" />
+          <xsd:element minOccurs="0" name="unmapGranularity" type="xsd:int" />
+          <xsd:element minOccurs="0" name="unmapPriority" type="xsd:string" />
+          <xsd:element minOccurs="0" name="unmapBandwidthSpec" type="vim25:VmfsUnmapBandwidthSpec" />
+          <xsd:element name="maxBlocks" type="xsd:int" />
+          <xsd:element name="majorVersion" type="xsd:int" />
+          <xsd:element name="version" type="xsd:string" />
+          <xsd:element name="uuid" type="xsd:string" />
+          <xsd:element maxOccurs="unbounded" name="extent" type="vim25:HostScsiDiskPartition" />
+          <xsd:element name="vmfsUpgradable" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="forceMountedInfo" type="vim25:HostForceMountedInfo" />
+          <xsd:element minOccurs="0" name="ssd" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="local" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="scsiDiskType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VmfsUnmapBandwidthSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="policy" type="xsd:string" />
+          <xsd:element name="fixedValue" type="xsd:long" />
+          <xsd:element name="dynamicMin" type="xsd:long" />
+          <xsd:element name="dynamicMax" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HostVvolVolume">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:HostFileSystemVolume">
+        <xsd:sequence>
+          <xsd:element name="scId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="hostPE" type="vim25:VVolHostPE" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="vasaProviderInfo" type="vim25:VimVasaProviderInfo" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="storageArray" type="vim25:VASAStorageArray" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VVolHostPE">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="key" type="vim25:ManagedObjectReference" />
+          <xsd:element maxOccurs="unbounded" name="protocolEndpoint" type="vim25:HostProtocolEndpoint" />
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -364,12 +2709,148 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="WinNetBIOSConfigInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:NetBIOSConfigInfo">
+        <xsd:sequence>
+          <xsd:element name="primaryWINS" type="xsd:string" />
+          <xsd:element minOccurs="0" name="secondaryWINS" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="BoolOption">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:OptionType">
+        <xsd:sequence>
+          <xsd:element name="supported" type="xsd:boolean" />
+          <xsd:element name="defaultValue" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ChoiceOption">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:OptionType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="choiceInfo" type="vim25:ElementDescription" />
+          <xsd:element minOccurs="0" name="defaultIndex" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FloatOption">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:OptionType">
+        <xsd:sequence>
+          <xsd:element name="min" type="xsd:float" />
+          <xsd:element name="max" type="xsd:float" />
+          <xsd:element name="defaultValue" type="xsd:float" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="IntOption">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:OptionType">
+        <xsd:sequence>
+          <xsd:element name="min" type="xsd:int" />
+          <xsd:element name="max" type="xsd:int" />
+          <xsd:element name="defaultValue" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LongOption">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:OptionType">
+        <xsd:sequence>
+          <xsd:element name="min" type="xsd:long" />
+          <xsd:element name="max" type="xsd:long" />
+          <xsd:element name="defaultValue" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OptionDef">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:ElementDescription">
+        <xsd:sequence>
+          <xsd:element name="optionType" type="vim25:OptionType" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OptionType">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="valueIsReadonly" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="OptionValue">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
         <xsd:sequence>
           <xsd:element name="key" type="xsd:string" />
           <xsd:element minOccurs="0" name="value" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="StringOption">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:OptionType">
+        <xsd:sequence>
+          <xsd:element name="defaultValue" type="xsd:string" />
+          <xsd:element minOccurs="0" name="validCharacters" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ScheduledTaskDetail">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:TypeDescription">
+        <xsd:sequence>
+          <xsd:element name="frequency" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskAntiAffinityRuleSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:ClusterRuleInfo">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="diskId" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskRuleSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:ClusterRuleInfo">
+        <xsd:sequence>
+          <xsd:element name="diskRuleType" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="diskId" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VAppEntityConfigInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="key" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="tag" type="xsd:string" />
+          <xsd:element minOccurs="0" name="startOrder" type="xsd:int" />
+          <xsd:element minOccurs="0" name="startDelay" type="xsd:int" />
+          <xsd:element minOccurs="0" name="waitingForGuest" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="startAction" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopDelay" type="xsd:int" />
+          <xsd:element minOccurs="0" name="stopAction" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destroyWithParent" type="xsd:boolean" />
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -437,6 +2918,18 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="VAppConfigInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VmConfigInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="entityConfig" type="vim25:VAppEntityConfigInfo" />
+          <xsd:element name="annotation" type="xsd:string" />
+          <xsd:element minOccurs="0" name="instanceUuid" type="xsd:string" />
+          <xsd:element minOccurs="0" name="managedBy" type="vim25:ManagedByInfo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="VmConfigInfo">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
@@ -480,6 +2973,38 @@
   <xsd:complexType name="VirtualMachineBootOptionsBootableDevice">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineBootOptionsBootableDiskDevice">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualMachineBootOptionsBootableDevice">
+        <xsd:sequence>
+          <xsd:element name="deviceKey" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineBootOptionsBootableEthernetDevice">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualMachineBootOptionsBootableDevice">
+        <xsd:sequence>
+          <xsd:element name="deviceKey" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineBootOptionsBootableFloppyDevice">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualMachineBootOptionsBootableDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineBootOptionsBootableCdromDevice">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualMachineBootOptionsBootableDevice">
         <xsd:sequence />
       </xsd:extension>
     </xsd:complexContent>
@@ -617,6 +3142,38 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="VirtualMachineDeviceRuntimeInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="runtimeState" type="vim25:VirtualMachineDeviceRuntimeInfoDeviceRuntimeState" />
+          <xsd:element name="key" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineDeviceRuntimeInfoDeviceRuntimeState">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeState">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualMachineDeviceRuntimeInfoDeviceRuntimeState">
+        <xsd:sequence>
+          <xsd:element name="vmDirectPathGen2Active" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="vmDirectPathGen2InactiveReasonVm" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="vmDirectPathGen2InactiveReasonOther" type="xsd:string" />
+          <xsd:element minOccurs="0" name="vmDirectPathGen2InactiveReasonExtended" type="xsd:string" />
+          <xsd:element minOccurs="0" name="reservationStatus" type="xsd:string" />
+          <xsd:element minOccurs="0" name="attachmentStatus" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="featureRequirement" type="vim25:VirtualMachineFeatureRequirement" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="FaultToleranceConfigInfo">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
@@ -625,6 +3182,35 @@
           <xsd:element maxOccurs="unbounded" name="instanceUuids" type="xsd:string" />
           <xsd:element maxOccurs="unbounded" name="configPaths" type="xsd:string" />
           <xsd:element minOccurs="0" name="orphaned" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FaultTolerancePrimaryConfigInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FaultToleranceConfigInfo">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="secondaries" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FaultToleranceSecondaryConfigInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:FaultToleranceConfigInfo">
+        <xsd:sequence>
+          <xsd:element name="primaryVM" type="vim25:ManagedObjectReference" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineFeatureRequirement">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+          <xsd:element name="featureName" type="xsd:string" />
+          <xsd:element name="value" type="xsd:string" />
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -808,6 +3394,17 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="VirtualMachineMessage">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="argument" type="xsd:anyType" />
+          <xsd:element minOccurs="0" name="text" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="VirtualMachineNetworkShaperInfo">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
@@ -816,6 +3413,18 @@
           <xsd:element minOccurs="0" name="peakBps" type="xsd:long" />
           <xsd:element minOccurs="0" name="averageBps" type="xsd:long" />
           <xsd:element minOccurs="0" name="burstSize" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineQuestionInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:string" />
+          <xsd:element name="text" type="xsd:string" />
+          <xsd:element name="choice" type="vim25:ChoiceOption" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="message" type="vim25:VirtualMachineMessage" />
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -852,6 +3461,53 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="VirtualMachineRuntimeInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="device" type="vim25:VirtualMachineDeviceRuntimeInfo" />
+          <xsd:element minOccurs="0" name="host" type="vim25:ManagedObjectReference" />
+          <xsd:element name="connectionState" type="vim25:VirtualMachineConnectionState" />
+          <xsd:element name="powerState" type="vim25:VirtualMachinePowerState" />
+          <xsd:element minOccurs="0" name="faultToleranceState" type="vim25:VirtualMachineFaultToleranceState" />
+          <xsd:element minOccurs="0" name="dasVmProtection" type="vim25:VirtualMachineRuntimeInfoDasProtectionState" />
+          <xsd:element name="toolsInstallerMounted" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="suspendTime" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="bootTime" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="suspendInterval" type="xsd:long" />
+          <xsd:element minOccurs="0" name="question" type="vim25:VirtualMachineQuestionInfo" />
+          <xsd:element minOccurs="0" name="memoryOverhead" type="xsd:long" />
+          <xsd:element minOccurs="0" name="maxCpuUsage" type="xsd:int" />
+          <xsd:element minOccurs="0" name="maxMemoryUsage" type="xsd:int" />
+          <xsd:element name="numMksConnections" type="xsd:int" />
+          <xsd:element minOccurs="0" name="recordReplayState" type="vim25:VirtualMachineRecordReplayState" />
+          <xsd:element minOccurs="0" name="cleanPowerOff" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="needSecondaryReason" type="xsd:string" />
+          <xsd:element minOccurs="0" name="onlineStandby" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="minRequiredEVCModeKey" type="xsd:string" />
+          <xsd:element minOccurs="0" name="consolidationNeeded" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="offlineFeatureRequirement" type="vim25:VirtualMachineFeatureRequirement" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="featureRequirement" type="vim25:VirtualMachineFeatureRequirement" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="featureMask" type="vim25:HostFeatureMask" />
+          <xsd:element minOccurs="0" name="vFlashCacheAllocation" type="xsd:long" />
+          <xsd:element minOccurs="0" name="paused" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="snapshotInBackground" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="quiescedForkParent" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="instantCloneFrozen" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="cryptoState" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineRuntimeInfoDasProtectionState">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="dasProtected" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="ScheduledHardwareUpgradeInfo">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
@@ -871,6 +3527,35 @@
           <xsd:element name="epcSize" type="xsd:long" />
           <xsd:element minOccurs="0" name="flcMode" type="xsd:string" />
           <xsd:element minOccurs="0" name="lePubKeyHash" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineSnapshotInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="currentSnapshot" type="vim25:ManagedObjectReference" />
+          <xsd:element maxOccurs="unbounded" name="rootSnapshotList" type="vim25:VirtualMachineSnapshotTree" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineSnapshotTree">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="snapshot" type="vim25:ManagedObjectReference" />
+          <xsd:element name="vm" type="vim25:ManagedObjectReference" />
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="description" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" type="xsd:int" />
+          <xsd:element name="createTime" type="xsd:dateTime" />
+          <xsd:element name="state" type="vim25:VirtualMachinePowerState" />
+          <xsd:element name="quiesced" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="backupManifest" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="childSnapshotList" type="vim25:VirtualMachineSnapshotTree" />
+          <xsd:element minOccurs="0" name="replaySupported" type="xsd:boolean" />
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -928,6 +3613,83 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="ParaVirtualSCSIController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualSCSIController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualAHCIController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualSATAController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualBusLogicController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualSCSIController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualCdrom">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualCdromIsoBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualCdromPassthroughBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="exclusive" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualCdromRemotePassthroughBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceRemoteDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="exclusive" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualCdromAtapiBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualCdromRemoteAtapiBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceRemoteDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence>
+          <xsd:element name="busNumber" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="device" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="VirtualDevice">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
@@ -947,6 +3709,57 @@
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
         <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDeviceFileBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="fileName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="datastore" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="backingObjectId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDeviceDeviceBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="deviceName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="useAutoDetect" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDeviceRemoteDeviceBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="deviceName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="useAutoDetect" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDevicePipeBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="pipeName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDeviceURIBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="serviceURI" type="xsd:string" />
+          <xsd:element name="direction" type="xsd:string" />
+          <xsd:element minOccurs="0" name="proxyURI" type="xsd:string" />
+        </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -970,6 +3783,814 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="VirtualDevicePciBusSlotInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBusSlotInfo">
+        <xsd:sequence>
+          <xsd:element name="pciSlotNumber" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="VirtualDeviceConfigSpecOperation">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="add" />
+      <xsd:enumeration value="remove" />
+      <xsd:enumeration value="edit" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="VirtualDeviceConfigSpecFileOperation">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="create" />
+      <xsd:enumeration value="destroy" />
+      <xsd:enumeration value="replace" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="VirtualDisk">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence>
+          <xsd:element name="capacityInKB" type="xsd:long" />
+          <xsd:element minOccurs="0" name="capacityInBytes" type="xsd:long" />
+          <xsd:element minOccurs="0" name="shares" type="vim25:SharesInfo" />
+          <xsd:element minOccurs="0" name="storageIOAllocation" type="vim25:StorageIOAllocationInfo" />
+          <xsd:element minOccurs="0" name="diskObjectId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="vFlashCacheConfigInfo" type="vim25:VirtualDiskVFlashCacheConfigInfo" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="iofilter" type="xsd:string" />
+          <xsd:element minOccurs="0" name="vDiskId" type="vim25:ID" />
+          <xsd:element minOccurs="0" name="nativeUnmanagedLinkedClone" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskSparseVer1BackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="diskMode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="split" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="writeThrough" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="spaceUsedInKB" type="xsd:long" />
+          <xsd:element minOccurs="0" name="contentId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parent" type="vim25:VirtualDiskSparseVer1BackingInfo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskSparseVer2BackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="diskMode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="split" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="writeThrough" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="spaceUsedInKB" type="xsd:long" />
+          <xsd:element minOccurs="0" name="uuid" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contentId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="changeId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parent" type="vim25:VirtualDiskSparseVer2BackingInfo" />
+          <xsd:element minOccurs="0" name="keyId" type="vim25:CryptoKeyId" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskFlatVer1BackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="diskMode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="split" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="writeThrough" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="contentId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parent" type="vim25:VirtualDiskFlatVer1BackingInfo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskFlatVer2BackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="diskMode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="split" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="writeThrough" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="thinProvisioned" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="eagerlyScrub" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="uuid" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contentId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="changeId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parent" type="vim25:VirtualDiskFlatVer2BackingInfo" />
+          <xsd:element minOccurs="0" name="deltaDiskFormat" type="xsd:string" />
+          <xsd:element minOccurs="0" name="digestEnabled" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="deltaGrainSize" type="xsd:int" />
+          <xsd:element minOccurs="0" name="deltaDiskFormatVariant" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sharing" type="xsd:string" />
+          <xsd:element minOccurs="0" name="keyId" type="vim25:CryptoKeyId" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskSeSparseBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="diskMode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="writeThrough" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="uuid" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contentId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="changeId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parent" type="vim25:VirtualDiskSeSparseBackingInfo" />
+          <xsd:element minOccurs="0" name="deltaDiskFormat" type="xsd:string" />
+          <xsd:element minOccurs="0" name="digestEnabled" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="grainSize" type="xsd:int" />
+          <xsd:element minOccurs="0" name="keyId" type="vim25:CryptoKeyId" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskRawDiskVer2BackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="descriptorFileName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="uuid" type="xsd:string" />
+          <xsd:element minOccurs="0" name="changeId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="sharing" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskPartitionedRawDiskVer2BackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDiskRawDiskVer2BackingInfo">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="partition" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskRawDiskMappingVer1BackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="lunUuid" type="xsd:string" />
+          <xsd:element minOccurs="0" name="deviceName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="compatibilityMode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="diskMode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="uuid" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contentId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="changeId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parent" type="vim25:VirtualDiskRawDiskMappingVer1BackingInfo" />
+          <xsd:element minOccurs="0" name="deltaDiskFormat" type="xsd:string" />
+          <xsd:element minOccurs="0" name="deltaGrainSize" type="xsd:int" />
+          <xsd:element minOccurs="0" name="sharing" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskLocalPMemBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="diskMode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="uuid" type="xsd:string" />
+          <xsd:element minOccurs="0" name="volumeUUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contentId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualDiskVFlashCacheConfigInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="vFlashModule" type="xsd:string" />
+          <xsd:element minOccurs="0" name="reservationInMB" type="xsd:long" />
+          <xsd:element minOccurs="0" name="cacheConsistencyType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="cacheMode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="blockSizeInKB" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualE1000">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualEthernetCard">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualE1000e">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualEthernetCard">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualEnsoniq1371">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualSoundCard">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualEthernetCard">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="addressType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="macAddress" type="xsd:string" />
+          <xsd:element minOccurs="0" name="wakeOnLanEnabled" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="resourceAllocation" type="vim25:VirtualEthernetCardResourceAllocation" />
+          <xsd:element minOccurs="0" name="externalId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="uptCompatibilityEnabled" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualEthernetCardNetworkBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="network" type="vim25:ManagedObjectReference" />
+          <xsd:element minOccurs="0" name="inPassthroughMode" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualEthernetCardLegacyNetworkBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualEthernetCardDistributedVirtualPortBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="port" type="vim25:DistributedVirtualSwitchPortConnection" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualEthernetCardOpaqueNetworkBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="opaqueNetworkId" type="xsd:string" />
+          <xsd:element name="opaqueNetworkType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualEthernetCardResourceAllocation">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reservation" type="xsd:long" />
+          <xsd:element name="share" type="vim25:SharesInfo" />
+          <xsd:element minOccurs="0" name="limit" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualFloppy">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualFloppyImageBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualFloppyDeviceBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualFloppyRemoteDeviceBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceRemoteDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualHdAudioCard">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualSoundCard">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualIDEController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualKeyboard">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualLsiLogicController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualSCSIController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualLsiLogicSASController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualSCSIController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualNVDIMM">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence>
+          <xsd:element name="capacityInMB" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualNVDIMMBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parent" type="vim25:VirtualNVDIMMBackingInfo" />
+          <xsd:element minOccurs="0" name="changeId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualNVDIMMController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualNVMEController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPCIController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPCIPassthrough">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPCIPassthroughDeviceBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:string" />
+          <xsd:element name="deviceId" type="xsd:string" />
+          <xsd:element name="systemId" type="xsd:string" />
+          <xsd:element name="vendorId" type="xsd:short" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPCIPassthroughAllowedDevice">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="vendorId" type="xsd:int" />
+          <xsd:element name="deviceId" type="xsd:int" />
+          <xsd:element minOccurs="0" name="subVendorId" type="xsd:int" />
+          <xsd:element minOccurs="0" name="subDeviceId" type="xsd:int" />
+          <xsd:element minOccurs="0" name="revisionId" type="xsd:short" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPCIPassthroughDynamicBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="allowedDevice" type="vim25:VirtualPCIPassthroughAllowedDevice" />
+          <xsd:element minOccurs="0" name="customLabel" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assignedId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPCIPassthroughPluginBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPCIPassthroughVmiopBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualPCIPassthroughPluginBackingInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="vgpu" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPCNet32">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualEthernetCard">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPS2Controller">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualParallelPort">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualParallelPortFileBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualParallelPortDeviceBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPointingDevice">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPointingDeviceDeviceBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="hostPointingDevice" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPrecisionClock">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualPrecisionClockSystemClockBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="protocol" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSATAController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSCSIController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualController">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="hotAddRemove" type="xsd:boolean" />
+          <xsd:element name="sharedBus" type="vim25:VirtualSCSISharing" />
+          <xsd:element minOccurs="0" name="scsiCtlrUnitNumber" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="VirtualSCSISharing">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="noSharing" />
+      <xsd:enumeration value="virtualSharing" />
+      <xsd:enumeration value="physicalSharing" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="VirtualSCSIPassthrough">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSCSIPassthroughDeviceBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSIOController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualController">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSerialPort">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence>
+          <xsd:element name="yieldOnPoll" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSerialPortFileBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceFileBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSerialPortDeviceBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSerialPortPipeBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevicePipeBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="endpoint" type="xsd:string" />
+          <xsd:element minOccurs="0" name="noRxLoss" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSerialPortURIBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceURIBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSerialPortThinPrintBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSoundBlaster16">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualSoundCard">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSoundCard">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSoundCardDeviceBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSriovEthernetCard">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualEthernetCard">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="allowGuestOSMtuChange" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="sriovBacking" type="vim25:VirtualSriovEthernetCardSriovBackingInfo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualSriovEthernetCardSriovBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="physicalFunctionBacking" type="vim25:VirtualPCIPassthroughDeviceBackingInfo" />
+          <xsd:element minOccurs="0" name="virtualFunctionBacking" type="vim25:VirtualPCIPassthroughDeviceBackingInfo" />
+          <xsd:element minOccurs="0" name="virtualFunctionIndex" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualTPM">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="endorsementKeyCertificateSigningRequest" type="xsd:base64Binary" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="endorsementKeyCertificate" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualUSB">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence>
+          <xsd:element name="connected" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="vendor" type="xsd:int" />
+          <xsd:element minOccurs="0" name="product" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="family" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="speed" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualUSBUSBBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualUSBRemoteHostBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="hostname" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualUSBRemoteClientBackingInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDeviceRemoteDeviceBackingInfo">
+        <xsd:sequence>
+          <xsd:element name="hostname" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualUSBController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualController">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="autoConnectDevices" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ehciEnabled" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualUSBControllerPciBusSlotInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevicePciBusSlotInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ehciPciSlotNumber" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualUSBXHCIController">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualController">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="autoConnectDevices" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineVMCIDevice">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="allowUnrestrictedCommunication" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="filterEnable" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="filterInfo" type="vim25:VirtualMachineVMCIDeviceFilterInfo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineVMCIDeviceFilterSpec">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="rank" type="xsd:long" />
+          <xsd:element name="action" type="xsd:string" />
+          <xsd:element name="protocol" type="xsd:string" />
+          <xsd:element name="direction" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lowerDstPortBoundary" type="xsd:long" />
+          <xsd:element minOccurs="0" name="upperDstPortBoundary" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineVMCIDeviceFilterInfo">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="filters" type="vim25:VirtualMachineVMCIDeviceFilterSpec" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineVMIROM">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualMachineVideoCard">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="videoRamSizeInKB" type="xsd:long" />
+          <xsd:element minOccurs="0" name="numDisplays" type="xsd:int" />
+          <xsd:element minOccurs="0" name="useAutoDetect" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="enable3DSupport" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="use3dRenderer" type="xsd:string" />
+          <xsd:element minOccurs="0" name="graphicsMemorySizeInKB" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualVmxnet">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualEthernetCard">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualVmxnet2">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualVmxnet">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualVmxnet3">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualVmxnet">
+        <xsd:sequence />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualVmxnet3Vrdma">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualVmxnet3">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="deviceProtocol" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirtualWDT">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VirtualDevice">
+        <xsd:sequence>
+          <xsd:element name="runOnBoot" type="xsd:boolean" />
+          <xsd:element name="running" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="GuestFileAttributes">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
@@ -977,6 +4598,17 @@
           <xsd:element minOccurs="0" name="modificationTime" type="xsd:dateTime" />
           <xsd:element minOccurs="0" name="accessTime" type="xsd:dateTime" />
           <xsd:element minOccurs="0" name="symlinkTarget" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GuestPosixFileAttributes">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestFileAttributes">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ownerId" type="xsd:int" />
+          <xsd:element minOccurs="0" name="groupId" type="xsd:int" />
+          <xsd:element minOccurs="0" name="permissions" type="xsd:long" />
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -1076,6 +4708,43 @@
           <xsd:element name="startTime" type="xsd:dateTime" />
           <xsd:element minOccurs="0" name="endTime" type="xsd:dateTime" />
           <xsd:element minOccurs="0" name="exitCode" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SAMLTokenAuthentication">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestAuthentication">
+        <xsd:sequence>
+          <xsd:element name="token" type="xsd:string" />
+          <xsd:element minOccurs="0" name="username" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SSPIAuthentication">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestAuthentication">
+        <xsd:sequence>
+          <xsd:element name="sspiToken" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TicketedSessionAuthentication">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:GuestAuthentication">
+        <xsd:sequence>
+          <xsd:element name="ticket" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ID">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:string" />
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>

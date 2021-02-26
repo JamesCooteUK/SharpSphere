@@ -109,6 +109,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -127,6 +129,11 @@
     <Compile Include="Options.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -154,6 +161,9 @@
     <None Include="Connected Services\vSphere\SharpSphere.vSphere.FindAllByIpResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\vSphere\SharpSphere.vSphere.GuestAuthentication.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\vSphere\SharpSphere.vSphere.GuestListFileInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -179,6 +189,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\vSphere\SharpSphere.vSphere.ServiceContent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\vSphere\SharpSphere.vSphere.SessionManagerGenericServiceTicket.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\vSphere\SharpSphere.vSphere.UserSession.datasource">
@@ -222,24 +235,28 @@
     <PackageReference Include="MSBuild.ILMerge.Task">
       <Version>1.1.3</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\vSphere\" />
+    <PackageReference Include="NSspi">
+      <Version>0.3.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\vSphere\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\vSphere\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\vSphere\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="ILMergeOrder.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ILMergeOrder.txt" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\vSphere\" />
   </ItemGroup>
   <Target Name="ILMerge">
     <!-- the ILMergePath property points to the location of ILMerge.exe console application -->
