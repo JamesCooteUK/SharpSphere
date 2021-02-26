@@ -98,12 +98,67 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="LoginBySSPI" type="vim25:LoginBySSPIRequestType" />
+      <xsd:element name="LoginBySSPIResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="vim25:UserSession" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AcquireGenericServiceTicket" type="vim25:AcquireGenericServiceTicketRequestType" />
+      <xsd:element name="AcquireGenericServiceTicketResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="vim25:SessionManagerGenericServiceTicket" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateSnapshot_Task" type="vim25:CreateSnapshotRequestType" />
+      <xsd:element name="CreateSnapshot_TaskResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="vim25:ManagedObjectReference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="FileFaultFault" type="vim25:FileFault" />
       <xsd:element name="GuestOperationsFaultFault" type="vim25:GuestOperationsFault" />
+      <xsd:element name="InvalidDatastoreFault" type="vim25:InvalidDatastore" />
       <xsd:element name="InvalidLocaleFault" type="vim25:InvalidLocale" />
       <xsd:element name="InvalidLoginFault" type="vim25:InvalidLogin" />
+      <xsd:element name="InvalidNameFault" type="vim25:InvalidName" />
       <xsd:element name="InvalidStateFault" type="vim25:InvalidState" />
+      <xsd:element name="MissingLinuxCustResourcesFault" type="vim25:MissingLinuxCustResources" />
+      <xsd:element name="MissingWindowsCustResourcesFault" type="vim25:MissingWindowsCustResources" />
+      <xsd:element name="SSPIChallengeFault" type="vim25:SSPIChallenge" />
+      <xsd:element name="SnapshotFaultFault" type="vim25:SnapshotFault" />
       <xsd:element name="TaskInProgressFault" type="vim25:TaskInProgress" />
+      <xsd:element name="VmConfigFaultFault" type="vim25:VmConfigFault" />
+      <xsd:element name="SearchDatastore_Task" type="vim25:SearchDatastoreRequestType" />
+      <xsd:element name="SearchDatastore_TaskResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="vim25:ManagedObjectReference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RemoveSnapshot_Task" type="vim25:RemoveSnapshotRequestType" />
+      <xsd:element name="RemoveSnapshot_TaskResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="vim25:ManagedObjectReference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AcquireCredentialsInGuest" type="vim25:AcquireCredentialsInGuestRequestType" />
+      <xsd:element name="AcquireCredentialsInGuestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="vim25:GuestAuthentication" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="DeleteFileInGuest" type="vim25:DeleteFileInGuestRequestType" />
       <xsd:element name="DeleteFileInGuestResponse">
         <xsd:complexType />
@@ -196,11 +251,32 @@
   <message name="LoginResponseMsg">
     <part name="parameters" element="vim25:LoginResponse" />
   </message>
+  <message name="LoginBySSPIRequestMsg">
+    <part name="parameters" element="vim25:LoginBySSPI" />
+  </message>
+  <message name="LoginBySSPIResponseMsg">
+    <part name="parameters" element="vim25:LoginBySSPIResponse" />
+  </message>
+  <message name="AcquireGenericServiceTicketRequestMsg">
+    <part name="parameters" element="vim25:AcquireGenericServiceTicket" />
+  </message>
+  <message name="AcquireGenericServiceTicketResponseMsg">
+    <part name="parameters" element="vim25:AcquireGenericServiceTicketResponse" />
+  </message>
+  <message name="CreateSnapshot_TaskRequestMsg">
+    <part name="parameters" element="vim25:CreateSnapshot_Task" />
+  </message>
+  <message name="CreateSnapshot_TaskResponseMsg">
+    <part name="parameters" element="vim25:CreateSnapshot_TaskResponse" />
+  </message>
   <message name="FileFaultFaultMsg">
     <part name="fault" element="vim25:FileFaultFault" />
   </message>
   <message name="GuestOperationsFaultFaultMsg">
     <part name="fault" element="vim25:GuestOperationsFaultFault" />
+  </message>
+  <message name="InvalidDatastoreFaultMsg">
+    <part name="fault" element="vim25:InvalidDatastoreFault" />
   </message>
   <message name="InvalidLocaleFaultMsg">
     <part name="fault" element="vim25:InvalidLocaleFault" />
@@ -208,11 +284,41 @@
   <message name="InvalidLoginFaultMsg">
     <part name="fault" element="vim25:InvalidLoginFault" />
   </message>
+  <message name="InvalidNameFaultMsg">
+    <part name="fault" element="vim25:InvalidNameFault" />
+  </message>
   <message name="InvalidStateFaultMsg">
     <part name="fault" element="vim25:InvalidStateFault" />
   </message>
+  <message name="SSPIChallengeFaultMsg">
+    <part name="fault" element="vim25:SSPIChallengeFault" />
+  </message>
+  <message name="SnapshotFaultFaultMsg">
+    <part name="fault" element="vim25:SnapshotFaultFault" />
+  </message>
   <message name="TaskInProgressFaultMsg">
     <part name="fault" element="vim25:TaskInProgressFault" />
+  </message>
+  <message name="VmConfigFaultFaultMsg">
+    <part name="fault" element="vim25:VmConfigFaultFault" />
+  </message>
+  <message name="SearchDatastore_TaskRequestMsg">
+    <part name="parameters" element="vim25:SearchDatastore_Task" />
+  </message>
+  <message name="SearchDatastore_TaskResponseMsg">
+    <part name="parameters" element="vim25:SearchDatastore_TaskResponse" />
+  </message>
+  <message name="RemoveSnapshot_TaskRequestMsg">
+    <part name="parameters" element="vim25:RemoveSnapshot_Task" />
+  </message>
+  <message name="RemoveSnapshot_TaskResponseMsg">
+    <part name="parameters" element="vim25:RemoveSnapshot_TaskResponse" />
+  </message>
+  <message name="AcquireCredentialsInGuestRequestMsg">
+    <part name="parameters" element="vim25:AcquireCredentialsInGuest" />
+  </message>
+  <message name="AcquireCredentialsInGuestResponseMsg">
+    <part name="parameters" element="vim25:AcquireCredentialsInGuestResponse" />
   </message>
   <message name="DeleteFileInGuestRequestMsg">
     <part name="parameters" element="vim25:DeleteFileInGuest" />
@@ -310,6 +416,51 @@
       <output message="vim25:LoginResponseMsg" />
       <fault name="InvalidLocaleFault" message="vim25:InvalidLocaleFaultMsg" />
       <fault name="InvalidLoginFault" message="vim25:InvalidLoginFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="LoginBySSPI">
+      <input message="vim25:LoginBySSPIRequestMsg" />
+      <output message="vim25:LoginBySSPIResponseMsg" />
+      <fault name="InvalidLocaleFault" message="vim25:InvalidLocaleFaultMsg" />
+      <fault name="InvalidLoginFault" message="vim25:InvalidLoginFaultMsg" />
+      <fault name="SSPIChallengeFault" message="vim25:SSPIChallengeFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="AcquireGenericServiceTicket">
+      <input message="vim25:AcquireGenericServiceTicketRequestMsg" />
+      <output message="vim25:AcquireGenericServiceTicketResponseMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="CreateSnapshot_Task">
+      <input message="vim25:CreateSnapshot_TaskRequestMsg" />
+      <output message="vim25:CreateSnapshot_TaskResponseMsg" />
+      <fault name="FileFaultFault" message="vim25:FileFaultFaultMsg" />
+      <fault name="InvalidNameFault" message="vim25:InvalidNameFaultMsg" />
+      <fault name="InvalidStateFault" message="vim25:InvalidStateFaultMsg" />
+      <fault name="SnapshotFaultFault" message="vim25:SnapshotFaultFaultMsg" />
+      <fault name="TaskInProgressFault" message="vim25:TaskInProgressFaultMsg" />
+      <fault name="VmConfigFaultFault" message="vim25:VmConfigFaultFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="SearchDatastore_Task">
+      <input message="vim25:SearchDatastore_TaskRequestMsg" />
+      <output message="vim25:SearchDatastore_TaskResponseMsg" />
+      <fault name="FileFaultFault" message="vim25:FileFaultFaultMsg" />
+      <fault name="InvalidDatastoreFault" message="vim25:InvalidDatastoreFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="RemoveSnapshot_Task">
+      <input message="vim25:RemoveSnapshot_TaskRequestMsg" />
+      <output message="vim25:RemoveSnapshot_TaskResponseMsg" />
+      <fault name="TaskInProgressFault" message="vim25:TaskInProgressFaultMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="AcquireCredentialsInGuest">
+      <input message="vim25:AcquireCredentialsInGuestRequestMsg" />
+      <output message="vim25:AcquireCredentialsInGuestResponseMsg" />
+      <fault name="GuestOperationsFaultFault" message="vim25:GuestOperationsFaultFaultMsg" />
+      <fault name="InvalidStateFault" message="vim25:InvalidStateFaultMsg" />
+      <fault name="TaskInProgressFault" message="vim25:TaskInProgressFaultMsg" />
       <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
     </operation>
     <operation name="DeleteFileInGuest">
@@ -474,6 +625,123 @@
       </fault>
       <fault name="InvalidLoginFault">
         <soap:fault use="literal" name="InvalidLoginFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="LoginBySSPI">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidLocaleFault">
+        <soap:fault use="literal" name="InvalidLocaleFault" namespace="" />
+      </fault>
+      <fault name="InvalidLoginFault">
+        <soap:fault use="literal" name="InvalidLoginFault" namespace="" />
+      </fault>
+      <fault name="SSPIChallengeFault">
+        <soap:fault use="literal" name="SSPIChallengeFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="AcquireGenericServiceTicket">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="CreateSnapshot_Task">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FileFaultFault">
+        <soap:fault use="literal" name="FileFaultFault" namespace="" />
+      </fault>
+      <fault name="InvalidNameFault">
+        <soap:fault use="literal" name="InvalidNameFault" namespace="" />
+      </fault>
+      <fault name="InvalidStateFault">
+        <soap:fault use="literal" name="InvalidStateFault" namespace="" />
+      </fault>
+      <fault name="SnapshotFaultFault">
+        <soap:fault use="literal" name="SnapshotFaultFault" namespace="" />
+      </fault>
+      <fault name="TaskInProgressFault">
+        <soap:fault use="literal" name="TaskInProgressFault" namespace="" />
+      </fault>
+      <fault name="VmConfigFaultFault">
+        <soap:fault use="literal" name="VmConfigFaultFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="SearchDatastore_Task">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FileFaultFault">
+        <soap:fault use="literal" name="FileFaultFault" namespace="" />
+      </fault>
+      <fault name="InvalidDatastoreFault">
+        <soap:fault use="literal" name="InvalidDatastoreFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="RemoveSnapshot_Task">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="TaskInProgressFault">
+        <soap:fault use="literal" name="TaskInProgressFault" namespace="" />
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="AcquireCredentialsInGuest">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="GuestOperationsFaultFault">
+        <soap:fault use="literal" name="GuestOperationsFaultFault" namespace="" />
+      </fault>
+      <fault name="InvalidStateFault">
+        <soap:fault use="literal" name="InvalidStateFault" namespace="" />
+      </fault>
+      <fault name="TaskInProgressFault">
+        <soap:fault use="literal" name="TaskInProgressFault" namespace="" />
       </fault>
       <fault name="RuntimeFault">
         <soap:fault use="literal" name="RuntimeFault" namespace="" />

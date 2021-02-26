@@ -36,13 +36,6 @@ namespace SharpSphere.vSphere {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VimFault))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskInProgress))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidState))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidLogin))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidLocale))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestOperationsFault))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileFault))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidProperty))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidCollectorVersion))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RuntimeFault))]
@@ -61,6 +54,192 @@ namespace SharpSphere.vSphere {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostCommunication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostNotReachable))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostNotConnected))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VimFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmToolsUpgradeFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ToolsUpgradeCancelled))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmHostAffinityRuleViolation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigIncompatibleForRecordReplay))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigIncompatibleForFaultTolerance))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHardwareCompatibilityIssue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WakeOnLanNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHardwareVersionNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StorageVmotionIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCpusNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCoresPerSocketNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughCpus))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughLogicalCpus))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotSupportedByDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotRecommended))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeatureRequirementsNotMet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DrsVmotionIncompatibleFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IDEDiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskModeNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMINotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedBusControllerNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RemoteDeviceNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RawDiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhysCompatRDMNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonPersistentDisksNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MultiWriterNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileBackedPortNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DigestNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceControllerNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceBackingNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskBlocksNotFullyProvisioned))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnusedVirtualDiskBlocksNotScrubbed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DVPortNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceCpuIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible81EDX))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible1ECX))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuCompatibilityUnknown))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VFlashModuleNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VFlashCacheHotConfigNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppPropertyFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotUserConfigurableProperty))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoVcManagedIpConfigured))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoAvailableIp))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingNetworkIpConfig))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingIpPool))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPropertyValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnconfiguredPropertyValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPropertyType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidNetworkInType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppNotRunning))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedVmxLocation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnSupportedDatastoreForVFlash))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemoryFileFormatNotSupportedByDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SoftRuleVioCorrectionImpact))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SoftRuleVioCorrectionDisallowed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RuleViolation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMNotSupportedOnDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuarantineModeFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OvfConsumerValidationFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCpusIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoCompatibleSoftAffinityHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoCompatibleHardAffinityHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemoryHotPlugNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LargeRDMNotSupportedOnDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidVmConfig))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmWwnConflict))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedGuest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyDevices))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SwapPlacementOverrideNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceOperation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceBacking))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisallowedDiskModeChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceUnsupportedForVmVersion))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceUnsupportedForVmPlatform))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceHotPlugNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidFormat))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidSnapshotFormat))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDiskFormat))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GenericVmConfigFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceCannotEditMem))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EightHostLimitViolated))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeltaDiskFormatNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuHotPlugNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotUseNetwork))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotDisableSnapshot))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmComponent))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMPointsToInaccessibleDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessNetwork))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnVirtualIntranet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnConflictDVPort))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LegacyNetworkInterfaceInUse))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DestinationSwitchFull))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmConfig))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskInProgress))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppTaskInProgress))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManySnapshotLevels))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotNoChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotLocked))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotIncompatibleDeviceInVm))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotDisabled))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MultipleSnapshotsNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySnapshotOnIndependentDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FilesystemQuiesceFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationQuiesceFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SSPIChallenge))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmPowerOnDisabled))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuestionPending))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OvfConsumerPowerOnFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoActiveHostInCluster))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MksConnectionLimitReached))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidVmState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPowerState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidHostState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidHostConnectionState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDatastoreState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EncryptionKeyRequired))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotPowerOffVmInCluster))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidName))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidLogin))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PasswordExpired))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidClientCertificate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidLocale))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDatastorePath))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InaccessibleDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InaccessibleFTMetadataDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DatastoreNotWritableOnHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SwapDatastoreNotWritableOnHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestOperationsFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyGuestLogons))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperationNotSupportedByGuest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperationDisabledByGuest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidGuestLogin))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryValueFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryValueNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyParentVolatile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyInvalid))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyHasSubkeys))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyAlreadyExists))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestProcessNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestPermissionDenied))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestOperationsUnavailable))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestMultipleMappings))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestComponentsOutOfDate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestAuthenticationChallenge))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyNativeClonesOnFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyNativeCloneLevels))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyConcurrentNativeClones))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotAFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotADirectory))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoDiskSpace))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkCopyFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IncorrectFileType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileTooLarge))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileNotWritable))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileNameTooLong))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileLocked))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileAlreadyExists))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DirectoryNotEmpty))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotDeleteFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotCreateFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomizationFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingWindowsCustResources))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingLinuxCustResources))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -144,10 +323,18 @@ namespace SharpSphere.vSphere {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveResult))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UpdateSet))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestProcessInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileTransferInformation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestListFileInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineSnapshotTree))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineSnapshotInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineRuntimeInfoDasProtectionState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineRuntimeInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineQuestionInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineMessage))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestInfoNamespaceGenerationInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestScreenInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestInfoVirtualDiskMapping))]
@@ -155,6 +342,9 @@ namespace SharpSphere.vSphere {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestStackInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestNicInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineDeviceRuntimeInfoDeviceRuntimeState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineDeviceRuntimeInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineGuestMonitoringModeInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineContentLibraryItemInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineSgxInfo))]
@@ -165,13 +355,115 @@ namespace SharpSphere.vSphere {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReplicationInfoDiskSettings))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReplicationConfigSpec))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceConfigInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceSecondaryConfigInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultTolerancePrimaryConfigInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineConfigInfoDatastoreUrlPair))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineNetworkShaperInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineVcpuConfig))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineVMCIDeviceFilterSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineVMCIDeviceFilterInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardResourceAllocation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ID))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskVFlashCacheConfigInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceBusSlotInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDevicePciBusSlotInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBControllerPciBusSlotInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceConnectInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughAllowedDevice))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSriovEthernetCardSriovBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortThinPrintBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPrecisionClockSystemClockBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughPluginBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughVmiopBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardOpaqueNetworkBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardDistributedVirtualPortBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceURIBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortURIBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDevicePipeBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortPipeBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceRemoteDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBRemoteClientBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppyRemoteDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromRemoteAtapiBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromRemotePassthroughBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBRemoteHostBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBUSBBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSoundCardDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSCSIPassthroughDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPointingDeviceDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualParallelPortDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughDynamicBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppyDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardLegacyNetworkBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardNetworkBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskRawDiskVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskPartitionedRawDiskVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromAtapiBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromPassthroughBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceFileBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortFileBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualParallelPortFileBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVDIMMBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppyImageBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskLocalPMemBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskRawDiskMappingVer1BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskSeSparseBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskFlatVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskFlatVer1BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskSparseVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskSparseVer1BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromIsoBackingInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualWDT))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineVideoCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineVMIROM))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineVMCIDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSB))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualTPM))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSoundCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSoundBlaster16))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHdAudioCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEnsoniq1371))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPort))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSCSIPassthrough))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPrecisionClock))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPointingDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualParallelPort))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthrough))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVDIMM))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualKeyboard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppy))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet3))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet3Vrdma))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet2))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSriovEthernetCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCNet32))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualE1000e))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualE1000))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBXHCIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSIOController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSCSIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualLsiLogicSASController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualLsiLogicController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualBusLogicController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ParaVirtualSCSIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSATAController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualAHCIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPS2Controller))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVMEController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVDIMMController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualIDEController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdrom))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHardware))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineDefaultPowerOpInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineConsolePreferences))]
@@ -181,15 +473,23 @@ namespace SharpSphere.vSphere {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineFileInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineConfigInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineBootOptionsBootableDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineBootOptionsBootableCdromDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineBootOptionsBootableFloppyDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineBootOptionsBootableEthernetDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineBootOptionsBootableDiskDevice))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineBootOptions))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineAffinityInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppConfigInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppPropertyInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppProductInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppOvfSectionInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppIPAssignmentInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppEntityConfigInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(OptionValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostInternetScsiHbaParamValue))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetBIOSConfigInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WinNetBIOSConfigInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetIpRouteConfigInfoGateway))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetIpRouteConfigInfoIpRoute))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetIpRouteConfigInfo))]
@@ -198,20 +498,51 @@ namespace SharpSphere.vSphere {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetDnsConfigInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetDhcpConfigInfoDhcpOptions))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetDhcpConfigInfo))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostCpuIdInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostDatastoreBrowserSearchResults))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileEncryptionInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileEncryptionInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmLogFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmNvramFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloppyImageFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IsoImageFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmSnapshotFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FolderFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateConfigFileInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManagedByInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeyProviderId))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CryptoKeyId))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DistributedVirtualSwitchPortConnection))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClusterRuleInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskRuleSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskAntiAffinityRuleSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClusterVmHostRuleInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClusterDependencyRuleInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClusterAntiAffinityRuleSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClusterAffinityRuleSpec))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserSession))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskReason))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskReasonSchedule))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskReasonAlarm))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskReasonUser))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskReasonSystem))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StorageIOAllocationInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerGenericServiceTicket))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ServiceContent))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharesInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ResourceAllocationInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(LatencySensitivity))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeyValue))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Description))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AboutInfo))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveResult))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UpdateSet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OptionType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LongOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IntOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloatOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ChoiceOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BoolOption))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingObject))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertyChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ObjectUpdate))]
@@ -231,9 +562,68 @@ namespace SharpSphere.vSphere {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestWindowsProgramSpec))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestFileAttributes))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestWindowsFileAttributes))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestPosixFileAttributes))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TicketedSessionAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SSPIAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SAMLTokenAuthentication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NamePasswordAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileQueryFlags))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileQueryFlags))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileQueryFilter))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileQueryFlags))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileQueryFilter))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmLogFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmNvramFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloppyImageFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IsoImageFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmSnapshotFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FolderFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateConfigFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostDatastoreBrowserSearchSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerServiceRequestSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerHttpServiceRequestSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerVmomiServiceRequestSpec))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeyAnyValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineFeatureRequirement))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostFeatureMask))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostFeatureCapability))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostCpuIdInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Description))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TypeDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ScheduledTaskDetail))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MethodDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtendedDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ElementDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OptionDef))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtendedElementDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EVCMode))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostMountInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DatastoreHostMount))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VASAStorageArray))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VimVasaProviderStatePerArray))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VimVasaProvider))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VimVasaProviderInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostProtocolEndpoint))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VVolHostPE))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostForceMountedInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostScsiDiskPartition))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmfsUnmapBandwidthSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostFileSystemVolume))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostVvolVolume))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostVmfsVolume))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostPMemVolume))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostNasVolume))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DatastoreInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PMemDatastoreInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VvolDatastoreInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocalDatastoreInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NasDatastoreInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmfsDatastoreInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AboutInfo))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1356,6 +1746,9 @@ namespace SharpSphere.vSphere {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TicketedSessionAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SSPIAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SAMLTokenAuthentication))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NamePasswordAuthentication))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
@@ -1375,6 +1768,89 @@ namespace SharpSphere.vSphere {
             set {
                 this.interactiveSessionField = value;
                 this.RaisePropertyChanged("interactiveSession");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TicketedSessionAuthentication : GuestAuthentication {
+        
+        private string ticketField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ticket {
+            get {
+                return this.ticketField;
+            }
+            set {
+                this.ticketField = value;
+                this.RaisePropertyChanged("ticket");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SSPIAuthentication : GuestAuthentication {
+        
+        private string sspiTokenField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string sspiToken {
+            get {
+                return this.sspiTokenField;
+            }
+            set {
+                this.sspiTokenField = value;
+                this.RaisePropertyChanged("sspiToken");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SAMLTokenAuthentication : GuestAuthentication {
+        
+        private string tokenField;
+        
+        private string usernameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string token {
+            get {
+                return this.tokenField;
+            }
+            set {
+                this.tokenField = value;
+                this.RaisePropertyChanged("token");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                this.usernameField = value;
+                this.RaisePropertyChanged("username");
             }
         }
     }
@@ -1697,6 +2173,7 @@ namespace SharpSphere.vSphere {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestWindowsFileAttributes))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestPosixFileAttributes))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1864,6 +2341,99 @@ namespace SharpSphere.vSphere {
             set {
                 this.createTimeFieldSpecified = value;
                 this.RaisePropertyChanged("createTimeSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestPosixFileAttributes : GuestFileAttributes {
+        
+        private int ownerIdField;
+        
+        private bool ownerIdFieldSpecified;
+        
+        private int groupIdField;
+        
+        private bool groupIdFieldSpecified;
+        
+        private long permissionsField;
+        
+        private bool permissionsFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ownerId {
+            get {
+                return this.ownerIdField;
+            }
+            set {
+                this.ownerIdField = value;
+                this.RaisePropertyChanged("ownerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ownerIdSpecified {
+            get {
+                return this.ownerIdFieldSpecified;
+            }
+            set {
+                this.ownerIdFieldSpecified = value;
+                this.RaisePropertyChanged("ownerIdSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int groupId {
+            get {
+                return this.groupIdField;
+            }
+            set {
+                this.groupIdField = value;
+                this.RaisePropertyChanged("groupId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool groupIdSpecified {
+            get {
+                return this.groupIdFieldSpecified;
+            }
+            set {
+                this.groupIdFieldSpecified = value;
+                this.RaisePropertyChanged("groupIdSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public long permissions {
+            get {
+                return this.permissionsField;
+            }
+            set {
+                this.permissionsField = value;
+                this.RaisePropertyChanged("permissions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool permissionsSpecified {
+            get {
+                return this.permissionsFieldSpecified;
+            }
+            set {
+                this.permissionsFieldSpecified = value;
+                this.RaisePropertyChanged("permissionsSpecified");
             }
         }
     }
@@ -2249,6 +2819,1207 @@ namespace SharpSphere.vSphere {
             set {
                 this.filePathField = value;
                 this.RaisePropertyChanged("filePath");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class AcquireCredentialsInGuestRequestType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private ManagedObjectReference _thisField;
+        
+        private ManagedObjectReference vmField;
+        
+        private GuestAuthentication requestedAuthField;
+        
+        private long sessionIDField;
+        
+        private bool sessionIDFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference _this {
+            get {
+                return this._thisField;
+            }
+            set {
+                this._thisField = value;
+                this.RaisePropertyChanged("_this");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference vm {
+            get {
+                return this.vmField;
+            }
+            set {
+                this.vmField = value;
+                this.RaisePropertyChanged("vm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public GuestAuthentication requestedAuth {
+            get {
+                return this.requestedAuthField;
+            }
+            set {
+                this.requestedAuthField = value;
+                this.RaisePropertyChanged("requestedAuth");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public long sessionID {
+            get {
+                return this.sessionIDField;
+            }
+            set {
+                this.sessionIDField = value;
+                this.RaisePropertyChanged("sessionID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool sessionIDSpecified {
+            get {
+                return this.sessionIDFieldSpecified;
+            }
+            set {
+                this.sessionIDFieldSpecified = value;
+                this.RaisePropertyChanged("sessionIDSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class RemoveSnapshotRequestType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private ManagedObjectReference _thisField;
+        
+        private bool removeChildrenField;
+        
+        private bool consolidateField;
+        
+        private bool consolidateFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference _this {
+            get {
+                return this._thisField;
+            }
+            set {
+                this._thisField = value;
+                this.RaisePropertyChanged("_this");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool removeChildren {
+            get {
+                return this.removeChildrenField;
+            }
+            set {
+                this.removeChildrenField = value;
+                this.RaisePropertyChanged("removeChildren");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool consolidate {
+            get {
+                return this.consolidateField;
+            }
+            set {
+                this.consolidateField = value;
+                this.RaisePropertyChanged("consolidate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool consolidateSpecified {
+            get {
+                return this.consolidateFieldSpecified;
+            }
+            set {
+                this.consolidateFieldSpecified = value;
+                this.RaisePropertyChanged("consolidateSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SearchDatastoreRequestType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private ManagedObjectReference _thisField;
+        
+        private string datastorePathField;
+        
+        private HostDatastoreBrowserSearchSpec searchSpecField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference _this {
+            get {
+                return this._thisField;
+            }
+            set {
+                this._thisField = value;
+                this.RaisePropertyChanged("_this");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string datastorePath {
+            get {
+                return this.datastorePathField;
+            }
+            set {
+                this.datastorePathField = value;
+                this.RaisePropertyChanged("datastorePath");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public HostDatastoreBrowserSearchSpec searchSpec {
+            get {
+                return this.searchSpecField;
+            }
+            set {
+                this.searchSpecField = value;
+                this.RaisePropertyChanged("searchSpec");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostDatastoreBrowserSearchSpec : DynamicData {
+        
+        private FileQuery[] queryField;
+        
+        private FileQueryFlags detailsField;
+        
+        private bool searchCaseInsensitiveField;
+        
+        private bool searchCaseInsensitiveFieldSpecified;
+        
+        private string[] matchPatternField;
+        
+        private bool sortFoldersFirstField;
+        
+        private bool sortFoldersFirstFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("query", Order=0)]
+        public FileQuery[] query {
+            get {
+                return this.queryField;
+            }
+            set {
+                this.queryField = value;
+                this.RaisePropertyChanged("query");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public FileQueryFlags details {
+            get {
+                return this.detailsField;
+            }
+            set {
+                this.detailsField = value;
+                this.RaisePropertyChanged("details");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool searchCaseInsensitive {
+            get {
+                return this.searchCaseInsensitiveField;
+            }
+            set {
+                this.searchCaseInsensitiveField = value;
+                this.RaisePropertyChanged("searchCaseInsensitive");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool searchCaseInsensitiveSpecified {
+            get {
+                return this.searchCaseInsensitiveFieldSpecified;
+            }
+            set {
+                this.searchCaseInsensitiveFieldSpecified = value;
+                this.RaisePropertyChanged("searchCaseInsensitiveSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("matchPattern", Order=3)]
+        public string[] matchPattern {
+            get {
+                return this.matchPatternField;
+            }
+            set {
+                this.matchPatternField = value;
+                this.RaisePropertyChanged("matchPattern");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool sortFoldersFirst {
+            get {
+                return this.sortFoldersFirstField;
+            }
+            set {
+                this.sortFoldersFirstField = value;
+                this.RaisePropertyChanged("sortFoldersFirst");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool sortFoldersFirstSpecified {
+            get {
+                return this.sortFoldersFirstFieldSpecified;
+            }
+            set {
+                this.sortFoldersFirstFieldSpecified = value;
+                this.RaisePropertyChanged("sortFoldersFirstSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmLogFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmNvramFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloppyImageFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IsoImageFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmSnapshotFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FolderFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateConfigFileQuery))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileQuery : DynamicData {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmLogFileQuery : FileQuery {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmNvramFileQuery : FileQuery {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FloppyImageFileQuery : FileQuery {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class IsoImageFileQuery : FileQuery {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmSnapshotFileQuery : FileQuery {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FolderFileQuery : FileQuery {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmDiskFileQuery : FileQuery {
+        
+        private VmDiskFileQueryFilter filterField;
+        
+        private VmDiskFileQueryFlags detailsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VmDiskFileQueryFilter filter {
+            get {
+                return this.filterField;
+            }
+            set {
+                this.filterField = value;
+                this.RaisePropertyChanged("filter");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VmDiskFileQueryFlags details {
+            get {
+                return this.detailsField;
+            }
+            set {
+                this.detailsField = value;
+                this.RaisePropertyChanged("details");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmDiskFileQueryFilter : DynamicData {
+        
+        private string[] diskTypeField;
+        
+        private int[] matchHardwareVersionField;
+        
+        private string[] controllerTypeField;
+        
+        private bool thinField;
+        
+        private bool thinFieldSpecified;
+        
+        private bool encryptedField;
+        
+        private bool encryptedFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("diskType", Order=0)]
+        public string[] diskType {
+            get {
+                return this.diskTypeField;
+            }
+            set {
+                this.diskTypeField = value;
+                this.RaisePropertyChanged("diskType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("matchHardwareVersion", Order=1)]
+        public int[] matchHardwareVersion {
+            get {
+                return this.matchHardwareVersionField;
+            }
+            set {
+                this.matchHardwareVersionField = value;
+                this.RaisePropertyChanged("matchHardwareVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("controllerType", Order=2)]
+        public string[] controllerType {
+            get {
+                return this.controllerTypeField;
+            }
+            set {
+                this.controllerTypeField = value;
+                this.RaisePropertyChanged("controllerType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool thin {
+            get {
+                return this.thinField;
+            }
+            set {
+                this.thinField = value;
+                this.RaisePropertyChanged("thin");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool thinSpecified {
+            get {
+                return this.thinFieldSpecified;
+            }
+            set {
+                this.thinFieldSpecified = value;
+                this.RaisePropertyChanged("thinSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool encrypted {
+            get {
+                return this.encryptedField;
+            }
+            set {
+                this.encryptedField = value;
+                this.RaisePropertyChanged("encrypted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool encryptedSpecified {
+            get {
+                return this.encryptedFieldSpecified;
+            }
+            set {
+                this.encryptedFieldSpecified = value;
+                this.RaisePropertyChanged("encryptedSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmDiskFileQueryFlags : DynamicData {
+        
+        private bool diskTypeField;
+        
+        private bool capacityKbField;
+        
+        private bool hardwareVersionField;
+        
+        private bool controllerTypeField;
+        
+        private bool controllerTypeFieldSpecified;
+        
+        private bool diskExtentsField;
+        
+        private bool diskExtentsFieldSpecified;
+        
+        private bool thinField;
+        
+        private bool thinFieldSpecified;
+        
+        private bool encryptionField;
+        
+        private bool encryptionFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool diskType {
+            get {
+                return this.diskTypeField;
+            }
+            set {
+                this.diskTypeField = value;
+                this.RaisePropertyChanged("diskType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool capacityKb {
+            get {
+                return this.capacityKbField;
+            }
+            set {
+                this.capacityKbField = value;
+                this.RaisePropertyChanged("capacityKb");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool hardwareVersion {
+            get {
+                return this.hardwareVersionField;
+            }
+            set {
+                this.hardwareVersionField = value;
+                this.RaisePropertyChanged("hardwareVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool controllerType {
+            get {
+                return this.controllerTypeField;
+            }
+            set {
+                this.controllerTypeField = value;
+                this.RaisePropertyChanged("controllerType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool controllerTypeSpecified {
+            get {
+                return this.controllerTypeFieldSpecified;
+            }
+            set {
+                this.controllerTypeFieldSpecified = value;
+                this.RaisePropertyChanged("controllerTypeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool diskExtents {
+            get {
+                return this.diskExtentsField;
+            }
+            set {
+                this.diskExtentsField = value;
+                this.RaisePropertyChanged("diskExtents");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool diskExtentsSpecified {
+            get {
+                return this.diskExtentsFieldSpecified;
+            }
+            set {
+                this.diskExtentsFieldSpecified = value;
+                this.RaisePropertyChanged("diskExtentsSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public bool thin {
+            get {
+                return this.thinField;
+            }
+            set {
+                this.thinField = value;
+                this.RaisePropertyChanged("thin");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool thinSpecified {
+            get {
+                return this.thinFieldSpecified;
+            }
+            set {
+                this.thinFieldSpecified = value;
+                this.RaisePropertyChanged("thinSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public bool encryption {
+            get {
+                return this.encryptionField;
+            }
+            set {
+                this.encryptionField = value;
+                this.RaisePropertyChanged("encryption");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool encryptionSpecified {
+            get {
+                return this.encryptionFieldSpecified;
+            }
+            set {
+                this.encryptionFieldSpecified = value;
+                this.RaisePropertyChanged("encryptionSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateConfigFileQuery))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmConfigFileQuery : FileQuery {
+        
+        private VmConfigFileQueryFilter filterField;
+        
+        private VmConfigFileQueryFlags detailsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VmConfigFileQueryFilter filter {
+            get {
+                return this.filterField;
+            }
+            set {
+                this.filterField = value;
+                this.RaisePropertyChanged("filter");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VmConfigFileQueryFlags details {
+            get {
+                return this.detailsField;
+            }
+            set {
+                this.detailsField = value;
+                this.RaisePropertyChanged("details");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmConfigFileQueryFilter : DynamicData {
+        
+        private int[] matchConfigVersionField;
+        
+        private bool encryptedField;
+        
+        private bool encryptedFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("matchConfigVersion", Order=0)]
+        public int[] matchConfigVersion {
+            get {
+                return this.matchConfigVersionField;
+            }
+            set {
+                this.matchConfigVersionField = value;
+                this.RaisePropertyChanged("matchConfigVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool encrypted {
+            get {
+                return this.encryptedField;
+            }
+            set {
+                this.encryptedField = value;
+                this.RaisePropertyChanged("encrypted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool encryptedSpecified {
+            get {
+                return this.encryptedFieldSpecified;
+            }
+            set {
+                this.encryptedFieldSpecified = value;
+                this.RaisePropertyChanged("encryptedSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmConfigFileQueryFlags : DynamicData {
+        
+        private bool configVersionField;
+        
+        private bool encryptionField;
+        
+        private bool encryptionFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool configVersion {
+            get {
+                return this.configVersionField;
+            }
+            set {
+                this.configVersionField = value;
+                this.RaisePropertyChanged("configVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool encryption {
+            get {
+                return this.encryptionField;
+            }
+            set {
+                this.encryptionField = value;
+                this.RaisePropertyChanged("encryption");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool encryptionSpecified {
+            get {
+                return this.encryptionFieldSpecified;
+            }
+            set {
+                this.encryptionFieldSpecified = value;
+                this.RaisePropertyChanged("encryptionSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TemplateConfigFileQuery : VmConfigFileQuery {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileQueryFlags : DynamicData {
+        
+        private bool fileTypeField;
+        
+        private bool fileSizeField;
+        
+        private bool modificationField;
+        
+        private bool fileOwnerField;
+        
+        private bool fileOwnerFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool fileType {
+            get {
+                return this.fileTypeField;
+            }
+            set {
+                this.fileTypeField = value;
+                this.RaisePropertyChanged("fileType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool fileSize {
+            get {
+                return this.fileSizeField;
+            }
+            set {
+                this.fileSizeField = value;
+                this.RaisePropertyChanged("fileSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool modification {
+            get {
+                return this.modificationField;
+            }
+            set {
+                this.modificationField = value;
+                this.RaisePropertyChanged("modification");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool fileOwner {
+            get {
+                return this.fileOwnerField;
+            }
+            set {
+                this.fileOwnerField = value;
+                this.RaisePropertyChanged("fileOwner");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool fileOwnerSpecified {
+            get {
+                return this.fileOwnerFieldSpecified;
+            }
+            set {
+                this.fileOwnerFieldSpecified = value;
+                this.RaisePropertyChanged("fileOwnerSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CreateSnapshotRequestType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private ManagedObjectReference _thisField;
+        
+        private string nameField;
+        
+        private string descriptionField;
+        
+        private bool memoryField;
+        
+        private bool quiesceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference _this {
+            get {
+                return this._thisField;
+            }
+            set {
+                this._thisField = value;
+                this.RaisePropertyChanged("_this");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool memory {
+            get {
+                return this.memoryField;
+            }
+            set {
+                this.memoryField = value;
+                this.RaisePropertyChanged("memory");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool quiesce {
+            get {
+                return this.quiesceField;
+            }
+            set {
+                this.quiesceField = value;
+                this.RaisePropertyChanged("quiesce");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class AcquireGenericServiceTicketRequestType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private ManagedObjectReference _thisField;
+        
+        private SessionManagerServiceRequestSpec specField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference _this {
+            get {
+                return this._thisField;
+            }
+            set {
+                this._thisField = value;
+                this.RaisePropertyChanged("_this");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public SessionManagerServiceRequestSpec spec {
+            get {
+                return this.specField;
+            }
+            set {
+                this.specField = value;
+                this.RaisePropertyChanged("spec");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerHttpServiceRequestSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerVmomiServiceRequestSpec))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SessionManagerServiceRequestSpec : DynamicData {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SessionManagerHttpServiceRequestSpec : SessionManagerServiceRequestSpec {
+        
+        private string methodField;
+        
+        private string urlField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string method {
+            get {
+                return this.methodField;
+            }
+            set {
+                this.methodField = value;
+                this.RaisePropertyChanged("method");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string url {
+            get {
+                return this.urlField;
+            }
+            set {
+                this.urlField = value;
+                this.RaisePropertyChanged("url");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SessionManagerVmomiServiceRequestSpec : SessionManagerServiceRequestSpec {
+        
+        private string methodField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string method {
+            get {
+                return this.methodField;
+            }
+            set {
+                this.methodField = value;
+                this.RaisePropertyChanged("method");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class LoginBySSPIRequestType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private ManagedObjectReference _thisField;
+        
+        private string base64TokenField;
+        
+        private string localeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference _this {
+            get {
+                return this._thisField;
+            }
+            set {
+                this._thisField = value;
+                this.RaisePropertyChanged("_this");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string base64Token {
+            get {
+                return this.base64TokenField;
+            }
+            set {
+                this.base64TokenField = value;
+                this.RaisePropertyChanged("base64Token");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string locale {
+            get {
+                return this.localeField;
+            }
+            set {
+                this.localeField = value;
+                this.RaisePropertyChanged("locale");
             }
         }
         
@@ -3117,6 +4888,108 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class RetrieveResult : DynamicData {
+        
+        private string tokenField;
+        
+        private ObjectContent[] objectsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string token {
+            get {
+                return this.tokenField;
+            }
+            set {
+                this.tokenField = value;
+                this.RaisePropertyChanged("token");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("objects", Order=1)]
+        public ObjectContent[] objects {
+            get {
+                return this.objectsField;
+            }
+            set {
+                this.objectsField = value;
+                this.RaisePropertyChanged("objects");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class UpdateSet : DynamicData {
+        
+        private string versionField;
+        
+        private PropertyFilterUpdate[] filterSetField;
+        
+        private bool truncatedField;
+        
+        private bool truncatedFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string version {
+            get {
+                return this.versionField;
+            }
+            set {
+                this.versionField = value;
+                this.RaisePropertyChanged("version");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("filterSet", Order=1)]
+        public PropertyFilterUpdate[] filterSet {
+            get {
+                return this.filterSetField;
+            }
+            set {
+                this.filterSetField = value;
+                this.RaisePropertyChanged("filterSet");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool truncated {
+            get {
+                return this.truncatedField;
+            }
+            set {
+                this.truncatedField = value;
+                this.RaisePropertyChanged("truncated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool truncatedSpecified {
+            get {
+                return this.truncatedFieldSpecified;
+            }
+            set {
+                this.truncatedFieldSpecified = value;
+                this.RaisePropertyChanged("truncatedSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
     public partial class GuestProcessInfo : DynamicData {
         
         private string nameField;
@@ -3397,6 +5270,2171 @@ namespace SharpSphere.vSphere {
                 this.RaisePropertyChanged("attributes");
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineSnapshotTree : DynamicData {
+        
+        private ManagedObjectReference snapshotField;
+        
+        private ManagedObjectReference vmField;
+        
+        private string nameField;
+        
+        private string descriptionField;
+        
+        private int idField;
+        
+        private bool idFieldSpecified;
+        
+        private System.DateTime createTimeField;
+        
+        private VirtualMachinePowerState stateField;
+        
+        private bool quiescedField;
+        
+        private string backupManifestField;
+        
+        private VirtualMachineSnapshotTree[] childSnapshotListField;
+        
+        private bool replaySupportedField;
+        
+        private bool replaySupportedFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference snapshot {
+            get {
+                return this.snapshotField;
+            }
+            set {
+                this.snapshotField = value;
+                this.RaisePropertyChanged("snapshot");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference vm {
+            get {
+                return this.vmField;
+            }
+            set {
+                this.vmField = value;
+                this.RaisePropertyChanged("vm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool idSpecified {
+            get {
+                return this.idFieldSpecified;
+            }
+            set {
+                this.idFieldSpecified = value;
+                this.RaisePropertyChanged("idSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public System.DateTime createTime {
+            get {
+                return this.createTimeField;
+            }
+            set {
+                this.createTimeField = value;
+                this.RaisePropertyChanged("createTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public VirtualMachinePowerState state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public bool quiesced {
+            get {
+                return this.quiescedField;
+            }
+            set {
+                this.quiescedField = value;
+                this.RaisePropertyChanged("quiesced");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string backupManifest {
+            get {
+                return this.backupManifestField;
+            }
+            set {
+                this.backupManifestField = value;
+                this.RaisePropertyChanged("backupManifest");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("childSnapshotList", Order=9)]
+        public VirtualMachineSnapshotTree[] childSnapshotList {
+            get {
+                return this.childSnapshotListField;
+            }
+            set {
+                this.childSnapshotListField = value;
+                this.RaisePropertyChanged("childSnapshotList");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public bool replaySupported {
+            get {
+                return this.replaySupportedField;
+            }
+            set {
+                this.replaySupportedField = value;
+                this.RaisePropertyChanged("replaySupported");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool replaySupportedSpecified {
+            get {
+                return this.replaySupportedFieldSpecified;
+            }
+            set {
+                this.replaySupportedFieldSpecified = value;
+                this.RaisePropertyChanged("replaySupportedSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public enum VirtualMachinePowerState {
+        
+        /// <remarks/>
+        poweredOff,
+        
+        /// <remarks/>
+        poweredOn,
+        
+        /// <remarks/>
+        suspended,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineSnapshotInfo : DynamicData {
+        
+        private ManagedObjectReference currentSnapshotField;
+        
+        private VirtualMachineSnapshotTree[] rootSnapshotListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference currentSnapshot {
+            get {
+                return this.currentSnapshotField;
+            }
+            set {
+                this.currentSnapshotField = value;
+                this.RaisePropertyChanged("currentSnapshot");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("rootSnapshotList", Order=1)]
+        public VirtualMachineSnapshotTree[] rootSnapshotList {
+            get {
+                return this.rootSnapshotListField;
+            }
+            set {
+                this.rootSnapshotListField = value;
+                this.RaisePropertyChanged("rootSnapshotList");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineRuntimeInfoDasProtectionState : DynamicData {
+        
+        private bool dasProtectedField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool dasProtected {
+            get {
+                return this.dasProtectedField;
+            }
+            set {
+                this.dasProtectedField = value;
+                this.RaisePropertyChanged("dasProtected");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineRuntimeInfo : DynamicData {
+        
+        private VirtualMachineDeviceRuntimeInfo[] deviceField;
+        
+        private ManagedObjectReference hostField;
+        
+        private VirtualMachineConnectionState connectionStateField;
+        
+        private VirtualMachinePowerState powerStateField;
+        
+        private VirtualMachineFaultToleranceState faultToleranceStateField;
+        
+        private bool faultToleranceStateFieldSpecified;
+        
+        private VirtualMachineRuntimeInfoDasProtectionState dasVmProtectionField;
+        
+        private bool toolsInstallerMountedField;
+        
+        private System.DateTime suspendTimeField;
+        
+        private bool suspendTimeFieldSpecified;
+        
+        private System.DateTime bootTimeField;
+        
+        private bool bootTimeFieldSpecified;
+        
+        private long suspendIntervalField;
+        
+        private bool suspendIntervalFieldSpecified;
+        
+        private VirtualMachineQuestionInfo questionField;
+        
+        private long memoryOverheadField;
+        
+        private bool memoryOverheadFieldSpecified;
+        
+        private int maxCpuUsageField;
+        
+        private bool maxCpuUsageFieldSpecified;
+        
+        private int maxMemoryUsageField;
+        
+        private bool maxMemoryUsageFieldSpecified;
+        
+        private int numMksConnectionsField;
+        
+        private VirtualMachineRecordReplayState recordReplayStateField;
+        
+        private bool recordReplayStateFieldSpecified;
+        
+        private bool cleanPowerOffField;
+        
+        private bool cleanPowerOffFieldSpecified;
+        
+        private string needSecondaryReasonField;
+        
+        private bool onlineStandbyField;
+        
+        private bool onlineStandbyFieldSpecified;
+        
+        private string minRequiredEVCModeKeyField;
+        
+        private bool consolidationNeededField;
+        
+        private bool consolidationNeededFieldSpecified;
+        
+        private VirtualMachineFeatureRequirement[] offlineFeatureRequirementField;
+        
+        private VirtualMachineFeatureRequirement[] featureRequirementField;
+        
+        private HostFeatureMask[] featureMaskField;
+        
+        private long vFlashCacheAllocationField;
+        
+        private bool vFlashCacheAllocationFieldSpecified;
+        
+        private bool pausedField;
+        
+        private bool pausedFieldSpecified;
+        
+        private bool snapshotInBackgroundField;
+        
+        private bool snapshotInBackgroundFieldSpecified;
+        
+        private bool quiescedForkParentField;
+        
+        private bool quiescedForkParentFieldSpecified;
+        
+        private bool instantCloneFrozenField;
+        
+        private bool instantCloneFrozenFieldSpecified;
+        
+        private string cryptoStateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("device", Order=0)]
+        public VirtualMachineDeviceRuntimeInfo[] device {
+            get {
+                return this.deviceField;
+            }
+            set {
+                this.deviceField = value;
+                this.RaisePropertyChanged("device");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference host {
+            get {
+                return this.hostField;
+            }
+            set {
+                this.hostField = value;
+                this.RaisePropertyChanged("host");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public VirtualMachineConnectionState connectionState {
+            get {
+                return this.connectionStateField;
+            }
+            set {
+                this.connectionStateField = value;
+                this.RaisePropertyChanged("connectionState");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public VirtualMachinePowerState powerState {
+            get {
+                return this.powerStateField;
+            }
+            set {
+                this.powerStateField = value;
+                this.RaisePropertyChanged("powerState");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public VirtualMachineFaultToleranceState faultToleranceState {
+            get {
+                return this.faultToleranceStateField;
+            }
+            set {
+                this.faultToleranceStateField = value;
+                this.RaisePropertyChanged("faultToleranceState");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool faultToleranceStateSpecified {
+            get {
+                return this.faultToleranceStateFieldSpecified;
+            }
+            set {
+                this.faultToleranceStateFieldSpecified = value;
+                this.RaisePropertyChanged("faultToleranceStateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public VirtualMachineRuntimeInfoDasProtectionState dasVmProtection {
+            get {
+                return this.dasVmProtectionField;
+            }
+            set {
+                this.dasVmProtectionField = value;
+                this.RaisePropertyChanged("dasVmProtection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public bool toolsInstallerMounted {
+            get {
+                return this.toolsInstallerMountedField;
+            }
+            set {
+                this.toolsInstallerMountedField = value;
+                this.RaisePropertyChanged("toolsInstallerMounted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public System.DateTime suspendTime {
+            get {
+                return this.suspendTimeField;
+            }
+            set {
+                this.suspendTimeField = value;
+                this.RaisePropertyChanged("suspendTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool suspendTimeSpecified {
+            get {
+                return this.suspendTimeFieldSpecified;
+            }
+            set {
+                this.suspendTimeFieldSpecified = value;
+                this.RaisePropertyChanged("suspendTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public System.DateTime bootTime {
+            get {
+                return this.bootTimeField;
+            }
+            set {
+                this.bootTimeField = value;
+                this.RaisePropertyChanged("bootTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool bootTimeSpecified {
+            get {
+                return this.bootTimeFieldSpecified;
+            }
+            set {
+                this.bootTimeFieldSpecified = value;
+                this.RaisePropertyChanged("bootTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public long suspendInterval {
+            get {
+                return this.suspendIntervalField;
+            }
+            set {
+                this.suspendIntervalField = value;
+                this.RaisePropertyChanged("suspendInterval");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool suspendIntervalSpecified {
+            get {
+                return this.suspendIntervalFieldSpecified;
+            }
+            set {
+                this.suspendIntervalFieldSpecified = value;
+                this.RaisePropertyChanged("suspendIntervalSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public VirtualMachineQuestionInfo question {
+            get {
+                return this.questionField;
+            }
+            set {
+                this.questionField = value;
+                this.RaisePropertyChanged("question");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public long memoryOverhead {
+            get {
+                return this.memoryOverheadField;
+            }
+            set {
+                this.memoryOverheadField = value;
+                this.RaisePropertyChanged("memoryOverhead");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool memoryOverheadSpecified {
+            get {
+                return this.memoryOverheadFieldSpecified;
+            }
+            set {
+                this.memoryOverheadFieldSpecified = value;
+                this.RaisePropertyChanged("memoryOverheadSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public int maxCpuUsage {
+            get {
+                return this.maxCpuUsageField;
+            }
+            set {
+                this.maxCpuUsageField = value;
+                this.RaisePropertyChanged("maxCpuUsage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool maxCpuUsageSpecified {
+            get {
+                return this.maxCpuUsageFieldSpecified;
+            }
+            set {
+                this.maxCpuUsageFieldSpecified = value;
+                this.RaisePropertyChanged("maxCpuUsageSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public int maxMemoryUsage {
+            get {
+                return this.maxMemoryUsageField;
+            }
+            set {
+                this.maxMemoryUsageField = value;
+                this.RaisePropertyChanged("maxMemoryUsage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool maxMemoryUsageSpecified {
+            get {
+                return this.maxMemoryUsageFieldSpecified;
+            }
+            set {
+                this.maxMemoryUsageFieldSpecified = value;
+                this.RaisePropertyChanged("maxMemoryUsageSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public int numMksConnections {
+            get {
+                return this.numMksConnectionsField;
+            }
+            set {
+                this.numMksConnectionsField = value;
+                this.RaisePropertyChanged("numMksConnections");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public VirtualMachineRecordReplayState recordReplayState {
+            get {
+                return this.recordReplayStateField;
+            }
+            set {
+                this.recordReplayStateField = value;
+                this.RaisePropertyChanged("recordReplayState");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool recordReplayStateSpecified {
+            get {
+                return this.recordReplayStateFieldSpecified;
+            }
+            set {
+                this.recordReplayStateFieldSpecified = value;
+                this.RaisePropertyChanged("recordReplayStateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public bool cleanPowerOff {
+            get {
+                return this.cleanPowerOffField;
+            }
+            set {
+                this.cleanPowerOffField = value;
+                this.RaisePropertyChanged("cleanPowerOff");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool cleanPowerOffSpecified {
+            get {
+                return this.cleanPowerOffFieldSpecified;
+            }
+            set {
+                this.cleanPowerOffFieldSpecified = value;
+                this.RaisePropertyChanged("cleanPowerOffSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string needSecondaryReason {
+            get {
+                return this.needSecondaryReasonField;
+            }
+            set {
+                this.needSecondaryReasonField = value;
+                this.RaisePropertyChanged("needSecondaryReason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public bool onlineStandby {
+            get {
+                return this.onlineStandbyField;
+            }
+            set {
+                this.onlineStandbyField = value;
+                this.RaisePropertyChanged("onlineStandby");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool onlineStandbySpecified {
+            get {
+                return this.onlineStandbyFieldSpecified;
+            }
+            set {
+                this.onlineStandbyFieldSpecified = value;
+                this.RaisePropertyChanged("onlineStandbySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string minRequiredEVCModeKey {
+            get {
+                return this.minRequiredEVCModeKeyField;
+            }
+            set {
+                this.minRequiredEVCModeKeyField = value;
+                this.RaisePropertyChanged("minRequiredEVCModeKey");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public bool consolidationNeeded {
+            get {
+                return this.consolidationNeededField;
+            }
+            set {
+                this.consolidationNeededField = value;
+                this.RaisePropertyChanged("consolidationNeeded");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool consolidationNeededSpecified {
+            get {
+                return this.consolidationNeededFieldSpecified;
+            }
+            set {
+                this.consolidationNeededFieldSpecified = value;
+                this.RaisePropertyChanged("consolidationNeededSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("offlineFeatureRequirement", Order=21)]
+        public VirtualMachineFeatureRequirement[] offlineFeatureRequirement {
+            get {
+                return this.offlineFeatureRequirementField;
+            }
+            set {
+                this.offlineFeatureRequirementField = value;
+                this.RaisePropertyChanged("offlineFeatureRequirement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("featureRequirement", Order=22)]
+        public VirtualMachineFeatureRequirement[] featureRequirement {
+            get {
+                return this.featureRequirementField;
+            }
+            set {
+                this.featureRequirementField = value;
+                this.RaisePropertyChanged("featureRequirement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("featureMask", Order=23)]
+        public HostFeatureMask[] featureMask {
+            get {
+                return this.featureMaskField;
+            }
+            set {
+                this.featureMaskField = value;
+                this.RaisePropertyChanged("featureMask");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public long vFlashCacheAllocation {
+            get {
+                return this.vFlashCacheAllocationField;
+            }
+            set {
+                this.vFlashCacheAllocationField = value;
+                this.RaisePropertyChanged("vFlashCacheAllocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool vFlashCacheAllocationSpecified {
+            get {
+                return this.vFlashCacheAllocationFieldSpecified;
+            }
+            set {
+                this.vFlashCacheAllocationFieldSpecified = value;
+                this.RaisePropertyChanged("vFlashCacheAllocationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        public bool paused {
+            get {
+                return this.pausedField;
+            }
+            set {
+                this.pausedField = value;
+                this.RaisePropertyChanged("paused");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool pausedSpecified {
+            get {
+                return this.pausedFieldSpecified;
+            }
+            set {
+                this.pausedFieldSpecified = value;
+                this.RaisePropertyChanged("pausedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        public bool snapshotInBackground {
+            get {
+                return this.snapshotInBackgroundField;
+            }
+            set {
+                this.snapshotInBackgroundField = value;
+                this.RaisePropertyChanged("snapshotInBackground");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool snapshotInBackgroundSpecified {
+            get {
+                return this.snapshotInBackgroundFieldSpecified;
+            }
+            set {
+                this.snapshotInBackgroundFieldSpecified = value;
+                this.RaisePropertyChanged("snapshotInBackgroundSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        public bool quiescedForkParent {
+            get {
+                return this.quiescedForkParentField;
+            }
+            set {
+                this.quiescedForkParentField = value;
+                this.RaisePropertyChanged("quiescedForkParent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool quiescedForkParentSpecified {
+            get {
+                return this.quiescedForkParentFieldSpecified;
+            }
+            set {
+                this.quiescedForkParentFieldSpecified = value;
+                this.RaisePropertyChanged("quiescedForkParentSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        public bool instantCloneFrozen {
+            get {
+                return this.instantCloneFrozenField;
+            }
+            set {
+                this.instantCloneFrozenField = value;
+                this.RaisePropertyChanged("instantCloneFrozen");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool instantCloneFrozenSpecified {
+            get {
+                return this.instantCloneFrozenFieldSpecified;
+            }
+            set {
+                this.instantCloneFrozenFieldSpecified = value;
+                this.RaisePropertyChanged("instantCloneFrozenSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        public string cryptoState {
+            get {
+                return this.cryptoStateField;
+            }
+            set {
+                this.cryptoStateField = value;
+                this.RaisePropertyChanged("cryptoState");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineDeviceRuntimeInfo : DynamicData {
+        
+        private VirtualMachineDeviceRuntimeInfoDeviceRuntimeState runtimeStateField;
+        
+        private int keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VirtualMachineDeviceRuntimeInfoDeviceRuntimeState runtimeState {
+            get {
+                return this.runtimeStateField;
+            }
+            set {
+                this.runtimeStateField = value;
+                this.RaisePropertyChanged("runtimeState");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeState))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineDeviceRuntimeInfoDeviceRuntimeState : DynamicData {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeState : VirtualMachineDeviceRuntimeInfoDeviceRuntimeState {
+        
+        private bool vmDirectPathGen2ActiveField;
+        
+        private string[] vmDirectPathGen2InactiveReasonVmField;
+        
+        private string[] vmDirectPathGen2InactiveReasonOtherField;
+        
+        private string vmDirectPathGen2InactiveReasonExtendedField;
+        
+        private string reservationStatusField;
+        
+        private string attachmentStatusField;
+        
+        private VirtualMachineFeatureRequirement[] featureRequirementField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool vmDirectPathGen2Active {
+            get {
+                return this.vmDirectPathGen2ActiveField;
+            }
+            set {
+                this.vmDirectPathGen2ActiveField = value;
+                this.RaisePropertyChanged("vmDirectPathGen2Active");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("vmDirectPathGen2InactiveReasonVm", Order=1)]
+        public string[] vmDirectPathGen2InactiveReasonVm {
+            get {
+                return this.vmDirectPathGen2InactiveReasonVmField;
+            }
+            set {
+                this.vmDirectPathGen2InactiveReasonVmField = value;
+                this.RaisePropertyChanged("vmDirectPathGen2InactiveReasonVm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("vmDirectPathGen2InactiveReasonOther", Order=2)]
+        public string[] vmDirectPathGen2InactiveReasonOther {
+            get {
+                return this.vmDirectPathGen2InactiveReasonOtherField;
+            }
+            set {
+                this.vmDirectPathGen2InactiveReasonOtherField = value;
+                this.RaisePropertyChanged("vmDirectPathGen2InactiveReasonOther");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string vmDirectPathGen2InactiveReasonExtended {
+            get {
+                return this.vmDirectPathGen2InactiveReasonExtendedField;
+            }
+            set {
+                this.vmDirectPathGen2InactiveReasonExtendedField = value;
+                this.RaisePropertyChanged("vmDirectPathGen2InactiveReasonExtended");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string reservationStatus {
+            get {
+                return this.reservationStatusField;
+            }
+            set {
+                this.reservationStatusField = value;
+                this.RaisePropertyChanged("reservationStatus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string attachmentStatus {
+            get {
+                return this.attachmentStatusField;
+            }
+            set {
+                this.attachmentStatusField = value;
+                this.RaisePropertyChanged("attachmentStatus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("featureRequirement", Order=6)]
+        public VirtualMachineFeatureRequirement[] featureRequirement {
+            get {
+                return this.featureRequirementField;
+            }
+            set {
+                this.featureRequirementField = value;
+                this.RaisePropertyChanged("featureRequirement");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineFeatureRequirement : DynamicData {
+        
+        private string keyField;
+        
+        private string featureNameField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string featureName {
+            get {
+                return this.featureNameField;
+            }
+            set {
+                this.featureNameField = value;
+                this.RaisePropertyChanged("featureName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public enum VirtualMachineConnectionState {
+        
+        /// <remarks/>
+        connected,
+        
+        /// <remarks/>
+        disconnected,
+        
+        /// <remarks/>
+        orphaned,
+        
+        /// <remarks/>
+        inaccessible,
+        
+        /// <remarks/>
+        invalid,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public enum VirtualMachineFaultToleranceState {
+        
+        /// <remarks/>
+        notConfigured,
+        
+        /// <remarks/>
+        disabled,
+        
+        /// <remarks/>
+        enabled,
+        
+        /// <remarks/>
+        needSecondary,
+        
+        /// <remarks/>
+        starting,
+        
+        /// <remarks/>
+        running,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineQuestionInfo : DynamicData {
+        
+        private string idField;
+        
+        private string textField;
+        
+        private ChoiceOption choiceField;
+        
+        private VirtualMachineMessage[] messageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+                this.RaisePropertyChanged("text");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public ChoiceOption choice {
+            get {
+                return this.choiceField;
+            }
+            set {
+                this.choiceField = value;
+                this.RaisePropertyChanged("choice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("message", Order=3)]
+        public VirtualMachineMessage[] message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+                this.RaisePropertyChanged("message");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ChoiceOption : OptionType {
+        
+        private ElementDescription[] choiceInfoField;
+        
+        private int defaultIndexField;
+        
+        private bool defaultIndexFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("choiceInfo", Order=0)]
+        public ElementDescription[] choiceInfo {
+            get {
+                return this.choiceInfoField;
+            }
+            set {
+                this.choiceInfoField = value;
+                this.RaisePropertyChanged("choiceInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int defaultIndex {
+            get {
+                return this.defaultIndexField;
+            }
+            set {
+                this.defaultIndexField = value;
+                this.RaisePropertyChanged("defaultIndex");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool defaultIndexSpecified {
+            get {
+                return this.defaultIndexFieldSpecified;
+            }
+            set {
+                this.defaultIndexFieldSpecified = value;
+                this.RaisePropertyChanged("defaultIndexSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OptionDef))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtendedElementDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EVCMode))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ElementDescription : Description {
+        
+        private string keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TypeDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ScheduledTaskDetail))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MethodDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtendedDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ElementDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OptionDef))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExtendedElementDescription))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EVCMode))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class Description : DynamicData {
+        
+        private string labelField;
+        
+        private string summaryField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string label {
+            get {
+                return this.labelField;
+            }
+            set {
+                this.labelField = value;
+                this.RaisePropertyChanged("label");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string summary {
+            get {
+                return this.summaryField;
+            }
+            set {
+                this.summaryField = value;
+                this.RaisePropertyChanged("summary");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ScheduledTaskDetail))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TypeDescription : Description {
+        
+        private string keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ScheduledTaskDetail : TypeDescription {
+        
+        private string frequencyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string frequency {
+            get {
+                return this.frequencyField;
+            }
+            set {
+                this.frequencyField = value;
+                this.RaisePropertyChanged("frequency");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MethodDescription : Description {
+        
+        private string keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ExtendedDescription : Description {
+        
+        private string messageCatalogKeyPrefixField;
+        
+        private KeyAnyValue[] messageArgField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string messageCatalogKeyPrefix {
+            get {
+                return this.messageCatalogKeyPrefixField;
+            }
+            set {
+                this.messageCatalogKeyPrefixField = value;
+                this.RaisePropertyChanged("messageCatalogKeyPrefix");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("messageArg", Order=1)]
+        public KeyAnyValue[] messageArg {
+            get {
+                return this.messageArgField;
+            }
+            set {
+                this.messageArgField = value;
+                this.RaisePropertyChanged("messageArg");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class OptionDef : ElementDescription {
+        
+        private OptionType optionTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public OptionType optionType {
+            get {
+                return this.optionTypeField;
+            }
+            set {
+                this.optionTypeField = value;
+                this.RaisePropertyChanged("optionType");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StringOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LongOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IntOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloatOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ChoiceOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BoolOption))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class OptionType : DynamicData {
+        
+        private bool valueIsReadonlyField;
+        
+        private bool valueIsReadonlyFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool valueIsReadonly {
+            get {
+                return this.valueIsReadonlyField;
+            }
+            set {
+                this.valueIsReadonlyField = value;
+                this.RaisePropertyChanged("valueIsReadonly");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool valueIsReadonlySpecified {
+            get {
+                return this.valueIsReadonlyFieldSpecified;
+            }
+            set {
+                this.valueIsReadonlyFieldSpecified = value;
+                this.RaisePropertyChanged("valueIsReadonlySpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class StringOption : OptionType {
+        
+        private string defaultValueField;
+        
+        private string validCharactersField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string defaultValue {
+            get {
+                return this.defaultValueField;
+            }
+            set {
+                this.defaultValueField = value;
+                this.RaisePropertyChanged("defaultValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string validCharacters {
+            get {
+                return this.validCharactersField;
+            }
+            set {
+                this.validCharactersField = value;
+                this.RaisePropertyChanged("validCharacters");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class LongOption : OptionType {
+        
+        private long minField;
+        
+        private long maxField;
+        
+        private long defaultValueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long min {
+            get {
+                return this.minField;
+            }
+            set {
+                this.minField = value;
+                this.RaisePropertyChanged("min");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public long max {
+            get {
+                return this.maxField;
+            }
+            set {
+                this.maxField = value;
+                this.RaisePropertyChanged("max");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public long defaultValue {
+            get {
+                return this.defaultValueField;
+            }
+            set {
+                this.defaultValueField = value;
+                this.RaisePropertyChanged("defaultValue");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class IntOption : OptionType {
+        
+        private int minField;
+        
+        private int maxField;
+        
+        private int defaultValueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int min {
+            get {
+                return this.minField;
+            }
+            set {
+                this.minField = value;
+                this.RaisePropertyChanged("min");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int max {
+            get {
+                return this.maxField;
+            }
+            set {
+                this.maxField = value;
+                this.RaisePropertyChanged("max");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int defaultValue {
+            get {
+                return this.defaultValueField;
+            }
+            set {
+                this.defaultValueField = value;
+                this.RaisePropertyChanged("defaultValue");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FloatOption : OptionType {
+        
+        private float minField;
+        
+        private float maxField;
+        
+        private float defaultValueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float min {
+            get {
+                return this.minField;
+            }
+            set {
+                this.minField = value;
+                this.RaisePropertyChanged("min");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float max {
+            get {
+                return this.maxField;
+            }
+            set {
+                this.maxField = value;
+                this.RaisePropertyChanged("max");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public float defaultValue {
+            get {
+                return this.defaultValueField;
+            }
+            set {
+                this.defaultValueField = value;
+                this.RaisePropertyChanged("defaultValue");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class BoolOption : OptionType {
+        
+        private bool supportedField;
+        
+        private bool defaultValueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool supported {
+            get {
+                return this.supportedField;
+            }
+            set {
+                this.supportedField = value;
+                this.RaisePropertyChanged("supported");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool defaultValue {
+            get {
+                return this.defaultValueField;
+            }
+            set {
+                this.defaultValueField = value;
+                this.RaisePropertyChanged("defaultValue");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ExtendedElementDescription : ElementDescription {
+        
+        private string messageCatalogKeyPrefixField;
+        
+        private KeyAnyValue[] messageArgField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string messageCatalogKeyPrefix {
+            get {
+                return this.messageCatalogKeyPrefixField;
+            }
+            set {
+                this.messageCatalogKeyPrefixField = value;
+                this.RaisePropertyChanged("messageCatalogKeyPrefix");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("messageArg", Order=1)]
+        public KeyAnyValue[] messageArg {
+            get {
+                return this.messageArgField;
+            }
+            set {
+                this.messageArgField = value;
+                this.RaisePropertyChanged("messageArg");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class EVCMode : ElementDescription {
+        
+        private HostCpuIdInfo[] guaranteedCPUFeaturesField;
+        
+        private HostFeatureCapability[] featureCapabilityField;
+        
+        private HostFeatureMask[] featureMaskField;
+        
+        private VirtualMachineFeatureRequirement[] featureRequirementField;
+        
+        private string vendorField;
+        
+        private string[] trackField;
+        
+        private int vendorTierField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("guaranteedCPUFeatures", Order=0)]
+        public HostCpuIdInfo[] guaranteedCPUFeatures {
+            get {
+                return this.guaranteedCPUFeaturesField;
+            }
+            set {
+                this.guaranteedCPUFeaturesField = value;
+                this.RaisePropertyChanged("guaranteedCPUFeatures");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("featureCapability", Order=1)]
+        public HostFeatureCapability[] featureCapability {
+            get {
+                return this.featureCapabilityField;
+            }
+            set {
+                this.featureCapabilityField = value;
+                this.RaisePropertyChanged("featureCapability");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("featureMask", Order=2)]
+        public HostFeatureMask[] featureMask {
+            get {
+                return this.featureMaskField;
+            }
+            set {
+                this.featureMaskField = value;
+                this.RaisePropertyChanged("featureMask");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("featureRequirement", Order=3)]
+        public VirtualMachineFeatureRequirement[] featureRequirement {
+            get {
+                return this.featureRequirementField;
+            }
+            set {
+                this.featureRequirementField = value;
+                this.RaisePropertyChanged("featureRequirement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string vendor {
+            get {
+                return this.vendorField;
+            }
+            set {
+                this.vendorField = value;
+                this.RaisePropertyChanged("vendor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("track", Order=5)]
+        public string[] track {
+            get {
+                return this.trackField;
+            }
+            set {
+                this.trackField = value;
+                this.RaisePropertyChanged("track");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int vendorTier {
+            get {
+                return this.vendorTierField;
+            }
+            set {
+                this.vendorTierField = value;
+                this.RaisePropertyChanged("vendorTier");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostCpuIdInfo : DynamicData {
+        
+        private int levelField;
+        
+        private string vendorField;
+        
+        private string eaxField;
+        
+        private string ebxField;
+        
+        private string ecxField;
+        
+        private string edxField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int level {
+            get {
+                return this.levelField;
+            }
+            set {
+                this.levelField = value;
+                this.RaisePropertyChanged("level");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string vendor {
+            get {
+                return this.vendorField;
+            }
+            set {
+                this.vendorField = value;
+                this.RaisePropertyChanged("vendor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string eax {
+            get {
+                return this.eaxField;
+            }
+            set {
+                this.eaxField = value;
+                this.RaisePropertyChanged("eax");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string ebx {
+            get {
+                return this.ebxField;
+            }
+            set {
+                this.ebxField = value;
+                this.RaisePropertyChanged("ebx");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string ecx {
+            get {
+                return this.ecxField;
+            }
+            set {
+                this.ecxField = value;
+                this.RaisePropertyChanged("ecx");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string edx {
+            get {
+                return this.edxField;
+            }
+            set {
+                this.edxField = value;
+                this.RaisePropertyChanged("edx");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostFeatureCapability : DynamicData {
+        
+        private string keyField;
+        
+        private string featureNameField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string featureName {
+            get {
+                return this.featureNameField;
+            }
+            set {
+                this.featureNameField = value;
+                this.RaisePropertyChanged("featureName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostFeatureMask : DynamicData {
+        
+        private string keyField;
+        
+        private string featureNameField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string featureName {
+            get {
+                return this.featureNameField;
+            }
+            set {
+                this.featureNameField = value;
+                this.RaisePropertyChanged("featureName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineMessage : DynamicData {
+        
+        private string idField;
+        
+        private object[] argumentField;
+        
+        private string textField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("argument", Order=1)]
+        public object[] argument {
+            get {
+                return this.argumentField;
+            }
+            set {
+                this.argumentField = value;
+                this.RaisePropertyChanged("argument");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+                this.RaisePropertyChanged("text");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public enum VirtualMachineRecordReplayState {
+        
+        /// <remarks/>
+        recording,
+        
+        /// <remarks/>
+        replaying,
+        
+        /// <remarks/>
+        inactive,
     }
     
     /// <remarks/>
@@ -4249,6 +8287,7 @@ namespace SharpSphere.vSphere {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WinNetBIOSConfigInfo))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4267,6 +8306,43 @@ namespace SharpSphere.vSphere {
             set {
                 this.modeField = value;
                 this.RaisePropertyChanged("mode");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class WinNetBIOSConfigInfo : NetBIOSConfigInfo {
+        
+        private string primaryWINSField;
+        
+        private string secondaryWINSField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string primaryWINS {
+            get {
+                return this.primaryWINSField;
+            }
+            set {
+                this.primaryWINSField = value;
+                this.RaisePropertyChanged("primaryWINS");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string secondaryWINS {
+            get {
+                return this.secondaryWINSField;
+            }
+            set {
+                this.secondaryWINSField = value;
+                this.RaisePropertyChanged("secondaryWINS");
             }
         }
     }
@@ -5361,6 +9437,8 @@ namespace SharpSphere.vSphere {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceSecondaryConfigInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultTolerancePrimaryConfigInfo))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5435,6 +9513,52 @@ namespace SharpSphere.vSphere {
             set {
                 this.orphanedFieldSpecified = value;
                 this.RaisePropertyChanged("orphanedSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FaultToleranceSecondaryConfigInfo : FaultToleranceConfigInfo {
+        
+        private ManagedObjectReference primaryVMField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference primaryVM {
+            get {
+                return this.primaryVMField;
+            }
+            set {
+                this.primaryVMField = value;
+                this.RaisePropertyChanged("primaryVM");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FaultTolerancePrimaryConfigInfo : FaultToleranceConfigInfo {
+        
+        private ManagedObjectReference[] secondariesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("secondaries", Order=0)]
+        public ManagedObjectReference[] secondaries {
+            get {
+                return this.secondariesField;
+            }
+            set {
+                this.secondariesField = value;
+                this.RaisePropertyChanged("secondaries");
             }
         }
     }
@@ -5699,7 +9823,479 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineVMCIDeviceFilterSpec : DynamicData {
+        
+        private long rankField;
+        
+        private string actionField;
+        
+        private string protocolField;
+        
+        private string directionField;
+        
+        private long lowerDstPortBoundaryField;
+        
+        private bool lowerDstPortBoundaryFieldSpecified;
+        
+        private long upperDstPortBoundaryField;
+        
+        private bool upperDstPortBoundaryFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long rank {
+            get {
+                return this.rankField;
+            }
+            set {
+                this.rankField = value;
+                this.RaisePropertyChanged("rank");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string action {
+            get {
+                return this.actionField;
+            }
+            set {
+                this.actionField = value;
+                this.RaisePropertyChanged("action");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string protocol {
+            get {
+                return this.protocolField;
+            }
+            set {
+                this.protocolField = value;
+                this.RaisePropertyChanged("protocol");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string direction {
+            get {
+                return this.directionField;
+            }
+            set {
+                this.directionField = value;
+                this.RaisePropertyChanged("direction");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public long lowerDstPortBoundary {
+            get {
+                return this.lowerDstPortBoundaryField;
+            }
+            set {
+                this.lowerDstPortBoundaryField = value;
+                this.RaisePropertyChanged("lowerDstPortBoundary");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool lowerDstPortBoundarySpecified {
+            get {
+                return this.lowerDstPortBoundaryFieldSpecified;
+            }
+            set {
+                this.lowerDstPortBoundaryFieldSpecified = value;
+                this.RaisePropertyChanged("lowerDstPortBoundarySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public long upperDstPortBoundary {
+            get {
+                return this.upperDstPortBoundaryField;
+            }
+            set {
+                this.upperDstPortBoundaryField = value;
+                this.RaisePropertyChanged("upperDstPortBoundary");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool upperDstPortBoundarySpecified {
+            get {
+                return this.upperDstPortBoundaryFieldSpecified;
+            }
+            set {
+                this.upperDstPortBoundaryFieldSpecified = value;
+                this.RaisePropertyChanged("upperDstPortBoundarySpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineVMCIDeviceFilterInfo : DynamicData {
+        
+        private VirtualMachineVMCIDeviceFilterSpec[] filtersField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("filters", Order=0)]
+        public VirtualMachineVMCIDeviceFilterSpec[] filters {
+            get {
+                return this.filtersField;
+            }
+            set {
+                this.filtersField = value;
+                this.RaisePropertyChanged("filters");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualEthernetCardResourceAllocation : DynamicData {
+        
+        private long reservationField;
+        
+        private bool reservationFieldSpecified;
+        
+        private SharesInfo shareField;
+        
+        private long limitField;
+        
+        private bool limitFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long reservation {
+            get {
+                return this.reservationField;
+            }
+            set {
+                this.reservationField = value;
+                this.RaisePropertyChanged("reservation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reservationSpecified {
+            get {
+                return this.reservationFieldSpecified;
+            }
+            set {
+                this.reservationFieldSpecified = value;
+                this.RaisePropertyChanged("reservationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public SharesInfo share {
+            get {
+                return this.shareField;
+            }
+            set {
+                this.shareField = value;
+                this.RaisePropertyChanged("share");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public long limit {
+            get {
+                return this.limitField;
+            }
+            set {
+                this.limitField = value;
+                this.RaisePropertyChanged("limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool limitSpecified {
+            get {
+                return this.limitFieldSpecified;
+            }
+            set {
+                this.limitFieldSpecified = value;
+                this.RaisePropertyChanged("limitSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SharesInfo : DynamicData {
+        
+        private int sharesField;
+        
+        private SharesLevel levelField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int shares {
+            get {
+                return this.sharesField;
+            }
+            set {
+                this.sharesField = value;
+                this.RaisePropertyChanged("shares");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public SharesLevel level {
+            get {
+                return this.levelField;
+            }
+            set {
+                this.levelField = value;
+                this.RaisePropertyChanged("level");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public enum SharesLevel {
+        
+        /// <remarks/>
+        low,
+        
+        /// <remarks/>
+        normal,
+        
+        /// <remarks/>
+        high,
+        
+        /// <remarks/>
+        custom,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ID : DynamicData {
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskVFlashCacheConfigInfo : DynamicData {
+        
+        private string vFlashModuleField;
+        
+        private long reservationInMBField;
+        
+        private bool reservationInMBFieldSpecified;
+        
+        private string cacheConsistencyTypeField;
+        
+        private string cacheModeField;
+        
+        private long blockSizeInKBField;
+        
+        private bool blockSizeInKBFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vFlashModule {
+            get {
+                return this.vFlashModuleField;
+            }
+            set {
+                this.vFlashModuleField = value;
+                this.RaisePropertyChanged("vFlashModule");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public long reservationInMB {
+            get {
+                return this.reservationInMBField;
+            }
+            set {
+                this.reservationInMBField = value;
+                this.RaisePropertyChanged("reservationInMB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reservationInMBSpecified {
+            get {
+                return this.reservationInMBFieldSpecified;
+            }
+            set {
+                this.reservationInMBFieldSpecified = value;
+                this.RaisePropertyChanged("reservationInMBSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string cacheConsistencyType {
+            get {
+                return this.cacheConsistencyTypeField;
+            }
+            set {
+                this.cacheConsistencyTypeField = value;
+                this.RaisePropertyChanged("cacheConsistencyType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string cacheMode {
+            get {
+                return this.cacheModeField;
+            }
+            set {
+                this.cacheModeField = value;
+                this.RaisePropertyChanged("cacheMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public long blockSizeInKB {
+            get {
+                return this.blockSizeInKBField;
+            }
+            set {
+                this.blockSizeInKBField = value;
+                this.RaisePropertyChanged("blockSizeInKB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool blockSizeInKBSpecified {
+            get {
+                return this.blockSizeInKBFieldSpecified;
+            }
+            set {
+                this.blockSizeInKBFieldSpecified = value;
+                this.RaisePropertyChanged("blockSizeInKBSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDevicePciBusSlotInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBControllerPciBusSlotInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
     public partial class VirtualDeviceBusSlotInfo : DynamicData {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBControllerPciBusSlotInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDevicePciBusSlotInfo : VirtualDeviceBusSlotInfo {
+        
+        private int pciSlotNumberField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int pciSlotNumber {
+            get {
+                return this.pciSlotNumberField;
+            }
+            set {
+                this.pciSlotNumberField = value;
+                this.RaisePropertyChanged("pciSlotNumber");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualUSBControllerPciBusSlotInfo : VirtualDevicePciBusSlotInfo {
+        
+        private int ehciPciSlotNumberField;
+        
+        private bool ehciPciSlotNumberFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ehciPciSlotNumber {
+            get {
+                return this.ehciPciSlotNumberField;
+            }
+            set {
+                this.ehciPciSlotNumberField = value;
+                this.RaisePropertyChanged("ehciPciSlotNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ehciPciSlotNumberSpecified {
+            get {
+                return this.ehciPciSlotNumberFieldSpecified;
+            }
+            set {
+                this.ehciPciSlotNumberFieldSpecified = value;
+                this.RaisePropertyChanged("ehciPciSlotNumberSpecified");
+            }
+        }
     }
     
     /// <remarks/>
@@ -5787,10 +10383,2562 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPCIPassthroughAllowedDevice : DynamicData {
+        
+        private int vendorIdField;
+        
+        private int deviceIdField;
+        
+        private int subVendorIdField;
+        
+        private bool subVendorIdFieldSpecified;
+        
+        private int subDeviceIdField;
+        
+        private bool subDeviceIdFieldSpecified;
+        
+        private short revisionIdField;
+        
+        private bool revisionIdFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int vendorId {
+            get {
+                return this.vendorIdField;
+            }
+            set {
+                this.vendorIdField = value;
+                this.RaisePropertyChanged("vendorId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int deviceId {
+            get {
+                return this.deviceIdField;
+            }
+            set {
+                this.deviceIdField = value;
+                this.RaisePropertyChanged("deviceId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int subVendorId {
+            get {
+                return this.subVendorIdField;
+            }
+            set {
+                this.subVendorIdField = value;
+                this.RaisePropertyChanged("subVendorId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool subVendorIdSpecified {
+            get {
+                return this.subVendorIdFieldSpecified;
+            }
+            set {
+                this.subVendorIdFieldSpecified = value;
+                this.RaisePropertyChanged("subVendorIdSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int subDeviceId {
+            get {
+                return this.subDeviceIdField;
+            }
+            set {
+                this.subDeviceIdField = value;
+                this.RaisePropertyChanged("subDeviceId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool subDeviceIdSpecified {
+            get {
+                return this.subDeviceIdFieldSpecified;
+            }
+            set {
+                this.subDeviceIdFieldSpecified = value;
+                this.RaisePropertyChanged("subDeviceIdSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public short revisionId {
+            get {
+                return this.revisionIdField;
+            }
+            set {
+                this.revisionIdField = value;
+                this.RaisePropertyChanged("revisionId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool revisionIdSpecified {
+            get {
+                return this.revisionIdFieldSpecified;
+            }
+            set {
+                this.revisionIdFieldSpecified = value;
+                this.RaisePropertyChanged("revisionIdSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSriovEthernetCardSriovBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortThinPrintBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPrecisionClockSystemClockBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughPluginBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughVmiopBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardOpaqueNetworkBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardDistributedVirtualPortBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceURIBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortURIBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDevicePipeBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortPipeBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceRemoteDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBRemoteClientBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppyRemoteDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromRemoteAtapiBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromRemotePassthroughBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBRemoteHostBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBUSBBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSoundCardDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSCSIPassthroughDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPointingDeviceDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualParallelPortDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughDynamicBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppyDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardLegacyNetworkBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardNetworkBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskRawDiskVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskPartitionedRawDiskVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromAtapiBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromPassthroughBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDeviceFileBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortFileBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualParallelPortFileBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVDIMMBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppyImageBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskLocalPMemBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskRawDiskMappingVer1BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskSeSparseBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskFlatVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskFlatVer1BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskSparseVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskSparseVer1BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromIsoBackingInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
     public partial class VirtualDeviceBackingInfo : DynamicData {
     }
     
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSriovEthernetCardSriovBackingInfo : VirtualDeviceBackingInfo {
+        
+        private VirtualPCIPassthroughDeviceBackingInfo physicalFunctionBackingField;
+        
+        private VirtualPCIPassthroughDeviceBackingInfo virtualFunctionBackingField;
+        
+        private int virtualFunctionIndexField;
+        
+        private bool virtualFunctionIndexFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VirtualPCIPassthroughDeviceBackingInfo physicalFunctionBacking {
+            get {
+                return this.physicalFunctionBackingField;
+            }
+            set {
+                this.physicalFunctionBackingField = value;
+                this.RaisePropertyChanged("physicalFunctionBacking");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VirtualPCIPassthroughDeviceBackingInfo virtualFunctionBacking {
+            get {
+                return this.virtualFunctionBackingField;
+            }
+            set {
+                this.virtualFunctionBackingField = value;
+                this.RaisePropertyChanged("virtualFunctionBacking");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int virtualFunctionIndex {
+            get {
+                return this.virtualFunctionIndexField;
+            }
+            set {
+                this.virtualFunctionIndexField = value;
+                this.RaisePropertyChanged("virtualFunctionIndex");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool virtualFunctionIndexSpecified {
+            get {
+                return this.virtualFunctionIndexFieldSpecified;
+            }
+            set {
+                this.virtualFunctionIndexFieldSpecified = value;
+                this.RaisePropertyChanged("virtualFunctionIndexSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPCIPassthroughDeviceBackingInfo : VirtualDeviceDeviceBackingInfo {
+        
+        private string idField;
+        
+        private string deviceIdField;
+        
+        private string systemIdField;
+        
+        private short vendorIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string deviceId {
+            get {
+                return this.deviceIdField;
+            }
+            set {
+                this.deviceIdField = value;
+                this.RaisePropertyChanged("deviceId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string systemId {
+            get {
+                return this.systemIdField;
+            }
+            set {
+                this.systemIdField = value;
+                this.RaisePropertyChanged("systemId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public short vendorId {
+            get {
+                return this.vendorIdField;
+            }
+            set {
+                this.vendorIdField = value;
+                this.RaisePropertyChanged("vendorId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBRemoteHostBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBUSBBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSoundCardDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSCSIPassthroughDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPointingDeviceDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualParallelPortDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughDynamicBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppyDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardLegacyNetworkBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardNetworkBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskRawDiskVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskPartitionedRawDiskVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromAtapiBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromPassthroughBackingInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDeviceDeviceBackingInfo : VirtualDeviceBackingInfo {
+        
+        private string deviceNameField;
+        
+        private bool useAutoDetectField;
+        
+        private bool useAutoDetectFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string deviceName {
+            get {
+                return this.deviceNameField;
+            }
+            set {
+                this.deviceNameField = value;
+                this.RaisePropertyChanged("deviceName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool useAutoDetect {
+            get {
+                return this.useAutoDetectField;
+            }
+            set {
+                this.useAutoDetectField = value;
+                this.RaisePropertyChanged("useAutoDetect");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool useAutoDetectSpecified {
+            get {
+                return this.useAutoDetectFieldSpecified;
+            }
+            set {
+                this.useAutoDetectFieldSpecified = value;
+                this.RaisePropertyChanged("useAutoDetectSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualUSBRemoteHostBackingInfo : VirtualDeviceDeviceBackingInfo {
+        
+        private string hostnameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string hostname {
+            get {
+                return this.hostnameField;
+            }
+            set {
+                this.hostnameField = value;
+                this.RaisePropertyChanged("hostname");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualUSBUSBBackingInfo : VirtualDeviceDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSoundCardDeviceBackingInfo : VirtualDeviceDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSerialPortDeviceBackingInfo : VirtualDeviceDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSCSIPassthroughDeviceBackingInfo : VirtualDeviceDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPointingDeviceDeviceBackingInfo : VirtualDeviceDeviceBackingInfo {
+        
+        private string hostPointingDeviceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string hostPointingDevice {
+            get {
+                return this.hostPointingDeviceField;
+            }
+            set {
+                this.hostPointingDeviceField = value;
+                this.RaisePropertyChanged("hostPointingDevice");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualParallelPortDeviceBackingInfo : VirtualDeviceDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPCIPassthroughDynamicBackingInfo : VirtualDeviceDeviceBackingInfo {
+        
+        private VirtualPCIPassthroughAllowedDevice[] allowedDeviceField;
+        
+        private string customLabelField;
+        
+        private string assignedIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("allowedDevice", Order=0)]
+        public VirtualPCIPassthroughAllowedDevice[] allowedDevice {
+            get {
+                return this.allowedDeviceField;
+            }
+            set {
+                this.allowedDeviceField = value;
+                this.RaisePropertyChanged("allowedDevice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string customLabel {
+            get {
+                return this.customLabelField;
+            }
+            set {
+                this.customLabelField = value;
+                this.RaisePropertyChanged("customLabel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string assignedId {
+            get {
+                return this.assignedIdField;
+            }
+            set {
+                this.assignedIdField = value;
+                this.RaisePropertyChanged("assignedId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualFloppyDeviceBackingInfo : VirtualDeviceDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualEthernetCardLegacyNetworkBackingInfo : VirtualDeviceDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualEthernetCardNetworkBackingInfo : VirtualDeviceDeviceBackingInfo {
+        
+        private ManagedObjectReference networkField;
+        
+        private bool inPassthroughModeField;
+        
+        private bool inPassthroughModeFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference network {
+            get {
+                return this.networkField;
+            }
+            set {
+                this.networkField = value;
+                this.RaisePropertyChanged("network");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool inPassthroughMode {
+            get {
+                return this.inPassthroughModeField;
+            }
+            set {
+                this.inPassthroughModeField = value;
+                this.RaisePropertyChanged("inPassthroughMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool inPassthroughModeSpecified {
+            get {
+                return this.inPassthroughModeFieldSpecified;
+            }
+            set {
+                this.inPassthroughModeFieldSpecified = value;
+                this.RaisePropertyChanged("inPassthroughModeSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskPartitionedRawDiskVer2BackingInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskRawDiskVer2BackingInfo : VirtualDeviceDeviceBackingInfo {
+        
+        private string descriptorFileNameField;
+        
+        private string uuidField;
+        
+        private string changeIdField;
+        
+        private string sharingField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string descriptorFileName {
+            get {
+                return this.descriptorFileNameField;
+            }
+            set {
+                this.descriptorFileNameField = value;
+                this.RaisePropertyChanged("descriptorFileName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string uuid {
+            get {
+                return this.uuidField;
+            }
+            set {
+                this.uuidField = value;
+                this.RaisePropertyChanged("uuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string changeId {
+            get {
+                return this.changeIdField;
+            }
+            set {
+                this.changeIdField = value;
+                this.RaisePropertyChanged("changeId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string sharing {
+            get {
+                return this.sharingField;
+            }
+            set {
+                this.sharingField = value;
+                this.RaisePropertyChanged("sharing");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskPartitionedRawDiskVer2BackingInfo : VirtualDiskRawDiskVer2BackingInfo {
+        
+        private int[] partitionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("partition", Order=0)]
+        public int[] partition {
+            get {
+                return this.partitionField;
+            }
+            set {
+                this.partitionField = value;
+                this.RaisePropertyChanged("partition");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualCdromAtapiBackingInfo : VirtualDeviceDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualCdromPassthroughBackingInfo : VirtualDeviceDeviceBackingInfo {
+        
+        private bool exclusiveField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool exclusive {
+            get {
+                return this.exclusiveField;
+            }
+            set {
+                this.exclusiveField = value;
+                this.RaisePropertyChanged("exclusive");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSerialPortThinPrintBackingInfo : VirtualDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPrecisionClockSystemClockBackingInfo : VirtualDeviceBackingInfo {
+        
+        private string protocolField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string protocol {
+            get {
+                return this.protocolField;
+            }
+            set {
+                this.protocolField = value;
+                this.RaisePropertyChanged("protocol");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthroughVmiopBackingInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPCIPassthroughPluginBackingInfo : VirtualDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPCIPassthroughVmiopBackingInfo : VirtualPCIPassthroughPluginBackingInfo {
+        
+        private string vgpuField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vgpu {
+            get {
+                return this.vgpuField;
+            }
+            set {
+                this.vgpuField = value;
+                this.RaisePropertyChanged("vgpu");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualEthernetCardOpaqueNetworkBackingInfo : VirtualDeviceBackingInfo {
+        
+        private string opaqueNetworkIdField;
+        
+        private string opaqueNetworkTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string opaqueNetworkId {
+            get {
+                return this.opaqueNetworkIdField;
+            }
+            set {
+                this.opaqueNetworkIdField = value;
+                this.RaisePropertyChanged("opaqueNetworkId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string opaqueNetworkType {
+            get {
+                return this.opaqueNetworkTypeField;
+            }
+            set {
+                this.opaqueNetworkTypeField = value;
+                this.RaisePropertyChanged("opaqueNetworkType");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualEthernetCardDistributedVirtualPortBackingInfo : VirtualDeviceBackingInfo {
+        
+        private DistributedVirtualSwitchPortConnection portField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public DistributedVirtualSwitchPortConnection port {
+            get {
+                return this.portField;
+            }
+            set {
+                this.portField = value;
+                this.RaisePropertyChanged("port");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DistributedVirtualSwitchPortConnection : DynamicData {
+        
+        private string switchUuidField;
+        
+        private string portgroupKeyField;
+        
+        private string portKeyField;
+        
+        private int connectionCookieField;
+        
+        private bool connectionCookieFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string switchUuid {
+            get {
+                return this.switchUuidField;
+            }
+            set {
+                this.switchUuidField = value;
+                this.RaisePropertyChanged("switchUuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string portgroupKey {
+            get {
+                return this.portgroupKeyField;
+            }
+            set {
+                this.portgroupKeyField = value;
+                this.RaisePropertyChanged("portgroupKey");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string portKey {
+            get {
+                return this.portKeyField;
+            }
+            set {
+                this.portKeyField = value;
+                this.RaisePropertyChanged("portKey");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int connectionCookie {
+            get {
+                return this.connectionCookieField;
+            }
+            set {
+                this.connectionCookieField = value;
+                this.RaisePropertyChanged("connectionCookie");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool connectionCookieSpecified {
+            get {
+                return this.connectionCookieFieldSpecified;
+            }
+            set {
+                this.connectionCookieFieldSpecified = value;
+                this.RaisePropertyChanged("connectionCookieSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortURIBackingInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDeviceURIBackingInfo : VirtualDeviceBackingInfo {
+        
+        private string serviceURIField;
+        
+        private string directionField;
+        
+        private string proxyURIField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string serviceURI {
+            get {
+                return this.serviceURIField;
+            }
+            set {
+                this.serviceURIField = value;
+                this.RaisePropertyChanged("serviceURI");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string direction {
+            get {
+                return this.directionField;
+            }
+            set {
+                this.directionField = value;
+                this.RaisePropertyChanged("direction");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string proxyURI {
+            get {
+                return this.proxyURIField;
+            }
+            set {
+                this.proxyURIField = value;
+                this.RaisePropertyChanged("proxyURI");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSerialPortURIBackingInfo : VirtualDeviceURIBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortPipeBackingInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDevicePipeBackingInfo : VirtualDeviceBackingInfo {
+        
+        private string pipeNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string pipeName {
+            get {
+                return this.pipeNameField;
+            }
+            set {
+                this.pipeNameField = value;
+                this.RaisePropertyChanged("pipeName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSerialPortPipeBackingInfo : VirtualDevicePipeBackingInfo {
+        
+        private string endpointField;
+        
+        private bool noRxLossField;
+        
+        private bool noRxLossFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string endpoint {
+            get {
+                return this.endpointField;
+            }
+            set {
+                this.endpointField = value;
+                this.RaisePropertyChanged("endpoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool noRxLoss {
+            get {
+                return this.noRxLossField;
+            }
+            set {
+                this.noRxLossField = value;
+                this.RaisePropertyChanged("noRxLoss");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool noRxLossSpecified {
+            get {
+                return this.noRxLossFieldSpecified;
+            }
+            set {
+                this.noRxLossFieldSpecified = value;
+                this.RaisePropertyChanged("noRxLossSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBRemoteClientBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppyRemoteDeviceBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromRemoteAtapiBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromRemotePassthroughBackingInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDeviceRemoteDeviceBackingInfo : VirtualDeviceBackingInfo {
+        
+        private string deviceNameField;
+        
+        private bool useAutoDetectField;
+        
+        private bool useAutoDetectFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string deviceName {
+            get {
+                return this.deviceNameField;
+            }
+            set {
+                this.deviceNameField = value;
+                this.RaisePropertyChanged("deviceName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool useAutoDetect {
+            get {
+                return this.useAutoDetectField;
+            }
+            set {
+                this.useAutoDetectField = value;
+                this.RaisePropertyChanged("useAutoDetect");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool useAutoDetectSpecified {
+            get {
+                return this.useAutoDetectFieldSpecified;
+            }
+            set {
+                this.useAutoDetectFieldSpecified = value;
+                this.RaisePropertyChanged("useAutoDetectSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualUSBRemoteClientBackingInfo : VirtualDeviceRemoteDeviceBackingInfo {
+        
+        private string hostnameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string hostname {
+            get {
+                return this.hostnameField;
+            }
+            set {
+                this.hostnameField = value;
+                this.RaisePropertyChanged("hostname");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualFloppyRemoteDeviceBackingInfo : VirtualDeviceRemoteDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualCdromRemoteAtapiBackingInfo : VirtualDeviceRemoteDeviceBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualCdromRemotePassthroughBackingInfo : VirtualDeviceRemoteDeviceBackingInfo {
+        
+        private bool exclusiveField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool exclusive {
+            get {
+                return this.exclusiveField;
+            }
+            set {
+                this.exclusiveField = value;
+                this.RaisePropertyChanged("exclusive");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPortFileBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualParallelPortFileBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVDIMMBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppyImageBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskLocalPMemBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskRawDiskMappingVer1BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskSeSparseBackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskFlatVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskFlatVer1BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskSparseVer2BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskSparseVer1BackingInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdromIsoBackingInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDeviceFileBackingInfo : VirtualDeviceBackingInfo {
+        
+        private string fileNameField;
+        
+        private ManagedObjectReference datastoreField;
+        
+        private string backingObjectIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string fileName {
+            get {
+                return this.fileNameField;
+            }
+            set {
+                this.fileNameField = value;
+                this.RaisePropertyChanged("fileName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string backingObjectId {
+            get {
+                return this.backingObjectIdField;
+            }
+            set {
+                this.backingObjectIdField = value;
+                this.RaisePropertyChanged("backingObjectId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSerialPortFileBackingInfo : VirtualDeviceFileBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualParallelPortFileBackingInfo : VirtualDeviceFileBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualNVDIMMBackingInfo : VirtualDeviceFileBackingInfo {
+        
+        private VirtualNVDIMMBackingInfo parentField;
+        
+        private string changeIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VirtualNVDIMMBackingInfo parent {
+            get {
+                return this.parentField;
+            }
+            set {
+                this.parentField = value;
+                this.RaisePropertyChanged("parent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string changeId {
+            get {
+                return this.changeIdField;
+            }
+            set {
+                this.changeIdField = value;
+                this.RaisePropertyChanged("changeId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualFloppyImageBackingInfo : VirtualDeviceFileBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskLocalPMemBackingInfo : VirtualDeviceFileBackingInfo {
+        
+        private string diskModeField;
+        
+        private string uuidField;
+        
+        private string volumeUUIDField;
+        
+        private string contentIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string diskMode {
+            get {
+                return this.diskModeField;
+            }
+            set {
+                this.diskModeField = value;
+                this.RaisePropertyChanged("diskMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string uuid {
+            get {
+                return this.uuidField;
+            }
+            set {
+                this.uuidField = value;
+                this.RaisePropertyChanged("uuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string volumeUUID {
+            get {
+                return this.volumeUUIDField;
+            }
+            set {
+                this.volumeUUIDField = value;
+                this.RaisePropertyChanged("volumeUUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string contentId {
+            get {
+                return this.contentIdField;
+            }
+            set {
+                this.contentIdField = value;
+                this.RaisePropertyChanged("contentId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskRawDiskMappingVer1BackingInfo : VirtualDeviceFileBackingInfo {
+        
+        private string lunUuidField;
+        
+        private string deviceNameField;
+        
+        private string compatibilityModeField;
+        
+        private string diskModeField;
+        
+        private string uuidField;
+        
+        private string contentIdField;
+        
+        private string changeIdField;
+        
+        private VirtualDiskRawDiskMappingVer1BackingInfo parentField;
+        
+        private string deltaDiskFormatField;
+        
+        private int deltaGrainSizeField;
+        
+        private bool deltaGrainSizeFieldSpecified;
+        
+        private string sharingField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string lunUuid {
+            get {
+                return this.lunUuidField;
+            }
+            set {
+                this.lunUuidField = value;
+                this.RaisePropertyChanged("lunUuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string deviceName {
+            get {
+                return this.deviceNameField;
+            }
+            set {
+                this.deviceNameField = value;
+                this.RaisePropertyChanged("deviceName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string compatibilityMode {
+            get {
+                return this.compatibilityModeField;
+            }
+            set {
+                this.compatibilityModeField = value;
+                this.RaisePropertyChanged("compatibilityMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string diskMode {
+            get {
+                return this.diskModeField;
+            }
+            set {
+                this.diskModeField = value;
+                this.RaisePropertyChanged("diskMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string uuid {
+            get {
+                return this.uuidField;
+            }
+            set {
+                this.uuidField = value;
+                this.RaisePropertyChanged("uuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string contentId {
+            get {
+                return this.contentIdField;
+            }
+            set {
+                this.contentIdField = value;
+                this.RaisePropertyChanged("contentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string changeId {
+            get {
+                return this.changeIdField;
+            }
+            set {
+                this.changeIdField = value;
+                this.RaisePropertyChanged("changeId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public VirtualDiskRawDiskMappingVer1BackingInfo parent {
+            get {
+                return this.parentField;
+            }
+            set {
+                this.parentField = value;
+                this.RaisePropertyChanged("parent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string deltaDiskFormat {
+            get {
+                return this.deltaDiskFormatField;
+            }
+            set {
+                this.deltaDiskFormatField = value;
+                this.RaisePropertyChanged("deltaDiskFormat");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public int deltaGrainSize {
+            get {
+                return this.deltaGrainSizeField;
+            }
+            set {
+                this.deltaGrainSizeField = value;
+                this.RaisePropertyChanged("deltaGrainSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool deltaGrainSizeSpecified {
+            get {
+                return this.deltaGrainSizeFieldSpecified;
+            }
+            set {
+                this.deltaGrainSizeFieldSpecified = value;
+                this.RaisePropertyChanged("deltaGrainSizeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string sharing {
+            get {
+                return this.sharingField;
+            }
+            set {
+                this.sharingField = value;
+                this.RaisePropertyChanged("sharing");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskSeSparseBackingInfo : VirtualDeviceFileBackingInfo {
+        
+        private string diskModeField;
+        
+        private bool writeThroughField;
+        
+        private bool writeThroughFieldSpecified;
+        
+        private string uuidField;
+        
+        private string contentIdField;
+        
+        private string changeIdField;
+        
+        private VirtualDiskSeSparseBackingInfo parentField;
+        
+        private string deltaDiskFormatField;
+        
+        private bool digestEnabledField;
+        
+        private bool digestEnabledFieldSpecified;
+        
+        private int grainSizeField;
+        
+        private bool grainSizeFieldSpecified;
+        
+        private CryptoKeyId keyIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string diskMode {
+            get {
+                return this.diskModeField;
+            }
+            set {
+                this.diskModeField = value;
+                this.RaisePropertyChanged("diskMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool writeThrough {
+            get {
+                return this.writeThroughField;
+            }
+            set {
+                this.writeThroughField = value;
+                this.RaisePropertyChanged("writeThrough");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool writeThroughSpecified {
+            get {
+                return this.writeThroughFieldSpecified;
+            }
+            set {
+                this.writeThroughFieldSpecified = value;
+                this.RaisePropertyChanged("writeThroughSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string uuid {
+            get {
+                return this.uuidField;
+            }
+            set {
+                this.uuidField = value;
+                this.RaisePropertyChanged("uuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string contentId {
+            get {
+                return this.contentIdField;
+            }
+            set {
+                this.contentIdField = value;
+                this.RaisePropertyChanged("contentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string changeId {
+            get {
+                return this.changeIdField;
+            }
+            set {
+                this.changeIdField = value;
+                this.RaisePropertyChanged("changeId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public VirtualDiskSeSparseBackingInfo parent {
+            get {
+                return this.parentField;
+            }
+            set {
+                this.parentField = value;
+                this.RaisePropertyChanged("parent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string deltaDiskFormat {
+            get {
+                return this.deltaDiskFormatField;
+            }
+            set {
+                this.deltaDiskFormatField = value;
+                this.RaisePropertyChanged("deltaDiskFormat");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public bool digestEnabled {
+            get {
+                return this.digestEnabledField;
+            }
+            set {
+                this.digestEnabledField = value;
+                this.RaisePropertyChanged("digestEnabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool digestEnabledSpecified {
+            get {
+                return this.digestEnabledFieldSpecified;
+            }
+            set {
+                this.digestEnabledFieldSpecified = value;
+                this.RaisePropertyChanged("digestEnabledSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public int grainSize {
+            get {
+                return this.grainSizeField;
+            }
+            set {
+                this.grainSizeField = value;
+                this.RaisePropertyChanged("grainSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool grainSizeSpecified {
+            get {
+                return this.grainSizeFieldSpecified;
+            }
+            set {
+                this.grainSizeFieldSpecified = value;
+                this.RaisePropertyChanged("grainSizeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public CryptoKeyId keyId {
+            get {
+                return this.keyIdField;
+            }
+            set {
+                this.keyIdField = value;
+                this.RaisePropertyChanged("keyId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CryptoKeyId : DynamicData {
+        
+        private string keyIdField;
+        
+        private KeyProviderId providerIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string keyId {
+            get {
+                return this.keyIdField;
+            }
+            set {
+                this.keyIdField = value;
+                this.RaisePropertyChanged("keyId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public KeyProviderId providerId {
+            get {
+                return this.providerIdField;
+            }
+            set {
+                this.providerIdField = value;
+                this.RaisePropertyChanged("providerId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class KeyProviderId : DynamicData {
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskFlatVer2BackingInfo : VirtualDeviceFileBackingInfo {
+        
+        private string diskModeField;
+        
+        private bool splitField;
+        
+        private bool splitFieldSpecified;
+        
+        private bool writeThroughField;
+        
+        private bool writeThroughFieldSpecified;
+        
+        private bool thinProvisionedField;
+        
+        private bool thinProvisionedFieldSpecified;
+        
+        private bool eagerlyScrubField;
+        
+        private bool eagerlyScrubFieldSpecified;
+        
+        private string uuidField;
+        
+        private string contentIdField;
+        
+        private string changeIdField;
+        
+        private VirtualDiskFlatVer2BackingInfo parentField;
+        
+        private string deltaDiskFormatField;
+        
+        private bool digestEnabledField;
+        
+        private bool digestEnabledFieldSpecified;
+        
+        private int deltaGrainSizeField;
+        
+        private bool deltaGrainSizeFieldSpecified;
+        
+        private string deltaDiskFormatVariantField;
+        
+        private string sharingField;
+        
+        private CryptoKeyId keyIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string diskMode {
+            get {
+                return this.diskModeField;
+            }
+            set {
+                this.diskModeField = value;
+                this.RaisePropertyChanged("diskMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool split {
+            get {
+                return this.splitField;
+            }
+            set {
+                this.splitField = value;
+                this.RaisePropertyChanged("split");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool splitSpecified {
+            get {
+                return this.splitFieldSpecified;
+            }
+            set {
+                this.splitFieldSpecified = value;
+                this.RaisePropertyChanged("splitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool writeThrough {
+            get {
+                return this.writeThroughField;
+            }
+            set {
+                this.writeThroughField = value;
+                this.RaisePropertyChanged("writeThrough");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool writeThroughSpecified {
+            get {
+                return this.writeThroughFieldSpecified;
+            }
+            set {
+                this.writeThroughFieldSpecified = value;
+                this.RaisePropertyChanged("writeThroughSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool thinProvisioned {
+            get {
+                return this.thinProvisionedField;
+            }
+            set {
+                this.thinProvisionedField = value;
+                this.RaisePropertyChanged("thinProvisioned");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool thinProvisionedSpecified {
+            get {
+                return this.thinProvisionedFieldSpecified;
+            }
+            set {
+                this.thinProvisionedFieldSpecified = value;
+                this.RaisePropertyChanged("thinProvisionedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool eagerlyScrub {
+            get {
+                return this.eagerlyScrubField;
+            }
+            set {
+                this.eagerlyScrubField = value;
+                this.RaisePropertyChanged("eagerlyScrub");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool eagerlyScrubSpecified {
+            get {
+                return this.eagerlyScrubFieldSpecified;
+            }
+            set {
+                this.eagerlyScrubFieldSpecified = value;
+                this.RaisePropertyChanged("eagerlyScrubSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string uuid {
+            get {
+                return this.uuidField;
+            }
+            set {
+                this.uuidField = value;
+                this.RaisePropertyChanged("uuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string contentId {
+            get {
+                return this.contentIdField;
+            }
+            set {
+                this.contentIdField = value;
+                this.RaisePropertyChanged("contentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string changeId {
+            get {
+                return this.changeIdField;
+            }
+            set {
+                this.changeIdField = value;
+                this.RaisePropertyChanged("changeId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public VirtualDiskFlatVer2BackingInfo parent {
+            get {
+                return this.parentField;
+            }
+            set {
+                this.parentField = value;
+                this.RaisePropertyChanged("parent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string deltaDiskFormat {
+            get {
+                return this.deltaDiskFormatField;
+            }
+            set {
+                this.deltaDiskFormatField = value;
+                this.RaisePropertyChanged("deltaDiskFormat");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public bool digestEnabled {
+            get {
+                return this.digestEnabledField;
+            }
+            set {
+                this.digestEnabledField = value;
+                this.RaisePropertyChanged("digestEnabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool digestEnabledSpecified {
+            get {
+                return this.digestEnabledFieldSpecified;
+            }
+            set {
+                this.digestEnabledFieldSpecified = value;
+                this.RaisePropertyChanged("digestEnabledSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public int deltaGrainSize {
+            get {
+                return this.deltaGrainSizeField;
+            }
+            set {
+                this.deltaGrainSizeField = value;
+                this.RaisePropertyChanged("deltaGrainSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool deltaGrainSizeSpecified {
+            get {
+                return this.deltaGrainSizeFieldSpecified;
+            }
+            set {
+                this.deltaGrainSizeFieldSpecified = value;
+                this.RaisePropertyChanged("deltaGrainSizeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string deltaDiskFormatVariant {
+            get {
+                return this.deltaDiskFormatVariantField;
+            }
+            set {
+                this.deltaDiskFormatVariantField = value;
+                this.RaisePropertyChanged("deltaDiskFormatVariant");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string sharing {
+            get {
+                return this.sharingField;
+            }
+            set {
+                this.sharingField = value;
+                this.RaisePropertyChanged("sharing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public CryptoKeyId keyId {
+            get {
+                return this.keyIdField;
+            }
+            set {
+                this.keyIdField = value;
+                this.RaisePropertyChanged("keyId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskFlatVer1BackingInfo : VirtualDeviceFileBackingInfo {
+        
+        private string diskModeField;
+        
+        private bool splitField;
+        
+        private bool splitFieldSpecified;
+        
+        private bool writeThroughField;
+        
+        private bool writeThroughFieldSpecified;
+        
+        private string contentIdField;
+        
+        private VirtualDiskFlatVer1BackingInfo parentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string diskMode {
+            get {
+                return this.diskModeField;
+            }
+            set {
+                this.diskModeField = value;
+                this.RaisePropertyChanged("diskMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool split {
+            get {
+                return this.splitField;
+            }
+            set {
+                this.splitField = value;
+                this.RaisePropertyChanged("split");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool splitSpecified {
+            get {
+                return this.splitFieldSpecified;
+            }
+            set {
+                this.splitFieldSpecified = value;
+                this.RaisePropertyChanged("splitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool writeThrough {
+            get {
+                return this.writeThroughField;
+            }
+            set {
+                this.writeThroughField = value;
+                this.RaisePropertyChanged("writeThrough");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool writeThroughSpecified {
+            get {
+                return this.writeThroughFieldSpecified;
+            }
+            set {
+                this.writeThroughFieldSpecified = value;
+                this.RaisePropertyChanged("writeThroughSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string contentId {
+            get {
+                return this.contentIdField;
+            }
+            set {
+                this.contentIdField = value;
+                this.RaisePropertyChanged("contentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public VirtualDiskFlatVer1BackingInfo parent {
+            get {
+                return this.parentField;
+            }
+            set {
+                this.parentField = value;
+                this.RaisePropertyChanged("parent");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskSparseVer2BackingInfo : VirtualDeviceFileBackingInfo {
+        
+        private string diskModeField;
+        
+        private bool splitField;
+        
+        private bool splitFieldSpecified;
+        
+        private bool writeThroughField;
+        
+        private bool writeThroughFieldSpecified;
+        
+        private long spaceUsedInKBField;
+        
+        private bool spaceUsedInKBFieldSpecified;
+        
+        private string uuidField;
+        
+        private string contentIdField;
+        
+        private string changeIdField;
+        
+        private VirtualDiskSparseVer2BackingInfo parentField;
+        
+        private CryptoKeyId keyIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string diskMode {
+            get {
+                return this.diskModeField;
+            }
+            set {
+                this.diskModeField = value;
+                this.RaisePropertyChanged("diskMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool split {
+            get {
+                return this.splitField;
+            }
+            set {
+                this.splitField = value;
+                this.RaisePropertyChanged("split");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool splitSpecified {
+            get {
+                return this.splitFieldSpecified;
+            }
+            set {
+                this.splitFieldSpecified = value;
+                this.RaisePropertyChanged("splitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool writeThrough {
+            get {
+                return this.writeThroughField;
+            }
+            set {
+                this.writeThroughField = value;
+                this.RaisePropertyChanged("writeThrough");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool writeThroughSpecified {
+            get {
+                return this.writeThroughFieldSpecified;
+            }
+            set {
+                this.writeThroughFieldSpecified = value;
+                this.RaisePropertyChanged("writeThroughSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public long spaceUsedInKB {
+            get {
+                return this.spaceUsedInKBField;
+            }
+            set {
+                this.spaceUsedInKBField = value;
+                this.RaisePropertyChanged("spaceUsedInKB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool spaceUsedInKBSpecified {
+            get {
+                return this.spaceUsedInKBFieldSpecified;
+            }
+            set {
+                this.spaceUsedInKBFieldSpecified = value;
+                this.RaisePropertyChanged("spaceUsedInKBSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string uuid {
+            get {
+                return this.uuidField;
+            }
+            set {
+                this.uuidField = value;
+                this.RaisePropertyChanged("uuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string contentId {
+            get {
+                return this.contentIdField;
+            }
+            set {
+                this.contentIdField = value;
+                this.RaisePropertyChanged("contentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string changeId {
+            get {
+                return this.changeIdField;
+            }
+            set {
+                this.changeIdField = value;
+                this.RaisePropertyChanged("changeId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public VirtualDiskSparseVer2BackingInfo parent {
+            get {
+                return this.parentField;
+            }
+            set {
+                this.parentField = value;
+                this.RaisePropertyChanged("parent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public CryptoKeyId keyId {
+            get {
+                return this.keyIdField;
+            }
+            set {
+                this.keyIdField = value;
+                this.RaisePropertyChanged("keyId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskSparseVer1BackingInfo : VirtualDeviceFileBackingInfo {
+        
+        private string diskModeField;
+        
+        private bool splitField;
+        
+        private bool splitFieldSpecified;
+        
+        private bool writeThroughField;
+        
+        private bool writeThroughFieldSpecified;
+        
+        private long spaceUsedInKBField;
+        
+        private bool spaceUsedInKBFieldSpecified;
+        
+        private string contentIdField;
+        
+        private VirtualDiskSparseVer1BackingInfo parentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string diskMode {
+            get {
+                return this.diskModeField;
+            }
+            set {
+                this.diskModeField = value;
+                this.RaisePropertyChanged("diskMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool split {
+            get {
+                return this.splitField;
+            }
+            set {
+                this.splitField = value;
+                this.RaisePropertyChanged("split");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool splitSpecified {
+            get {
+                return this.splitFieldSpecified;
+            }
+            set {
+                this.splitFieldSpecified = value;
+                this.RaisePropertyChanged("splitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool writeThrough {
+            get {
+                return this.writeThroughField;
+            }
+            set {
+                this.writeThroughField = value;
+                this.RaisePropertyChanged("writeThrough");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool writeThroughSpecified {
+            get {
+                return this.writeThroughFieldSpecified;
+            }
+            set {
+                this.writeThroughFieldSpecified = value;
+                this.RaisePropertyChanged("writeThroughSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public long spaceUsedInKB {
+            get {
+                return this.spaceUsedInKBField;
+            }
+            set {
+                this.spaceUsedInKBField = value;
+                this.RaisePropertyChanged("spaceUsedInKB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool spaceUsedInKBSpecified {
+            get {
+                return this.spaceUsedInKBFieldSpecified;
+            }
+            set {
+                this.spaceUsedInKBFieldSpecified = value;
+                this.RaisePropertyChanged("spaceUsedInKBSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string contentId {
+            get {
+                return this.contentIdField;
+            }
+            set {
+                this.contentIdField = value;
+                this.RaisePropertyChanged("contentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public VirtualDiskSparseVer1BackingInfo parent {
+            get {
+                return this.parentField;
+            }
+            set {
+                this.parentField = value;
+                this.RaisePropertyChanged("parent");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualCdromIsoBackingInfo : VirtualDeviceFileBackingInfo {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualWDT))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineVideoCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineVMIROM))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineVMCIDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSB))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualTPM))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSoundCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSoundBlaster16))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHdAudioCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEnsoniq1371))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSerialPort))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSCSIPassthrough))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPrecisionClock))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPointingDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualParallelPort))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIPassthrough))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVDIMM))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualKeyboard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualFloppy))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet3))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet3Vrdma))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet2))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSriovEthernetCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCNet32))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualE1000e))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualE1000))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBXHCIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSIOController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSCSIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualLsiLogicSASController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualLsiLogicController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualBusLogicController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ParaVirtualSCSIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSATAController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualAHCIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPS2Controller))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVMEController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVDIMMController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualIDEController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualCdrom))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5931,35 +13079,1480 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class Description : DynamicData {
+    public partial class VirtualWDT : VirtualDevice {
         
-        private string labelField;
+        private bool runOnBootField;
         
-        private string summaryField;
+        private bool runningField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string label {
+        public bool runOnBoot {
             get {
-                return this.labelField;
+                return this.runOnBootField;
             }
             set {
-                this.labelField = value;
-                this.RaisePropertyChanged("label");
+                this.runOnBootField = value;
+                this.RaisePropertyChanged("runOnBoot");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string summary {
+        public bool running {
             get {
-                return this.summaryField;
+                return this.runningField;
             }
             set {
-                this.summaryField = value;
-                this.RaisePropertyChanged("summary");
+                this.runningField = value;
+                this.RaisePropertyChanged("running");
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineVideoCard : VirtualDevice {
+        
+        private long videoRamSizeInKBField;
+        
+        private bool videoRamSizeInKBFieldSpecified;
+        
+        private int numDisplaysField;
+        
+        private bool numDisplaysFieldSpecified;
+        
+        private bool useAutoDetectField;
+        
+        private bool useAutoDetectFieldSpecified;
+        
+        private bool enable3DSupportField;
+        
+        private bool enable3DSupportFieldSpecified;
+        
+        private string use3dRendererField;
+        
+        private long graphicsMemorySizeInKBField;
+        
+        private bool graphicsMemorySizeInKBFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long videoRamSizeInKB {
+            get {
+                return this.videoRamSizeInKBField;
+            }
+            set {
+                this.videoRamSizeInKBField = value;
+                this.RaisePropertyChanged("videoRamSizeInKB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool videoRamSizeInKBSpecified {
+            get {
+                return this.videoRamSizeInKBFieldSpecified;
+            }
+            set {
+                this.videoRamSizeInKBFieldSpecified = value;
+                this.RaisePropertyChanged("videoRamSizeInKBSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int numDisplays {
+            get {
+                return this.numDisplaysField;
+            }
+            set {
+                this.numDisplaysField = value;
+                this.RaisePropertyChanged("numDisplays");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool numDisplaysSpecified {
+            get {
+                return this.numDisplaysFieldSpecified;
+            }
+            set {
+                this.numDisplaysFieldSpecified = value;
+                this.RaisePropertyChanged("numDisplaysSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool useAutoDetect {
+            get {
+                return this.useAutoDetectField;
+            }
+            set {
+                this.useAutoDetectField = value;
+                this.RaisePropertyChanged("useAutoDetect");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool useAutoDetectSpecified {
+            get {
+                return this.useAutoDetectFieldSpecified;
+            }
+            set {
+                this.useAutoDetectFieldSpecified = value;
+                this.RaisePropertyChanged("useAutoDetectSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool enable3DSupport {
+            get {
+                return this.enable3DSupportField;
+            }
+            set {
+                this.enable3DSupportField = value;
+                this.RaisePropertyChanged("enable3DSupport");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool enable3DSupportSpecified {
+            get {
+                return this.enable3DSupportFieldSpecified;
+            }
+            set {
+                this.enable3DSupportFieldSpecified = value;
+                this.RaisePropertyChanged("enable3DSupportSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string use3dRenderer {
+            get {
+                return this.use3dRendererField;
+            }
+            set {
+                this.use3dRendererField = value;
+                this.RaisePropertyChanged("use3dRenderer");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public long graphicsMemorySizeInKB {
+            get {
+                return this.graphicsMemorySizeInKBField;
+            }
+            set {
+                this.graphicsMemorySizeInKBField = value;
+                this.RaisePropertyChanged("graphicsMemorySizeInKB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool graphicsMemorySizeInKBSpecified {
+            get {
+                return this.graphicsMemorySizeInKBFieldSpecified;
+            }
+            set {
+                this.graphicsMemorySizeInKBFieldSpecified = value;
+                this.RaisePropertyChanged("graphicsMemorySizeInKBSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineVMIROM : VirtualDevice {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineVMCIDevice : VirtualDevice {
+        
+        private long idField;
+        
+        private bool idFieldSpecified;
+        
+        private bool allowUnrestrictedCommunicationField;
+        
+        private bool allowUnrestrictedCommunicationFieldSpecified;
+        
+        private bool filterEnableField;
+        
+        private bool filterEnableFieldSpecified;
+        
+        private VirtualMachineVMCIDeviceFilterInfo filterInfoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool idSpecified {
+            get {
+                return this.idFieldSpecified;
+            }
+            set {
+                this.idFieldSpecified = value;
+                this.RaisePropertyChanged("idSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool allowUnrestrictedCommunication {
+            get {
+                return this.allowUnrestrictedCommunicationField;
+            }
+            set {
+                this.allowUnrestrictedCommunicationField = value;
+                this.RaisePropertyChanged("allowUnrestrictedCommunication");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool allowUnrestrictedCommunicationSpecified {
+            get {
+                return this.allowUnrestrictedCommunicationFieldSpecified;
+            }
+            set {
+                this.allowUnrestrictedCommunicationFieldSpecified = value;
+                this.RaisePropertyChanged("allowUnrestrictedCommunicationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool filterEnable {
+            get {
+                return this.filterEnableField;
+            }
+            set {
+                this.filterEnableField = value;
+                this.RaisePropertyChanged("filterEnable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool filterEnableSpecified {
+            get {
+                return this.filterEnableFieldSpecified;
+            }
+            set {
+                this.filterEnableFieldSpecified = value;
+                this.RaisePropertyChanged("filterEnableSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public VirtualMachineVMCIDeviceFilterInfo filterInfo {
+            get {
+                return this.filterInfoField;
+            }
+            set {
+                this.filterInfoField = value;
+                this.RaisePropertyChanged("filterInfo");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualUSB : VirtualDevice {
+        
+        private bool connectedField;
+        
+        private int vendorField;
+        
+        private bool vendorFieldSpecified;
+        
+        private int productField;
+        
+        private bool productFieldSpecified;
+        
+        private string[] familyField;
+        
+        private string[] speedField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool connected {
+            get {
+                return this.connectedField;
+            }
+            set {
+                this.connectedField = value;
+                this.RaisePropertyChanged("connected");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int vendor {
+            get {
+                return this.vendorField;
+            }
+            set {
+                this.vendorField = value;
+                this.RaisePropertyChanged("vendor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool vendorSpecified {
+            get {
+                return this.vendorFieldSpecified;
+            }
+            set {
+                this.vendorFieldSpecified = value;
+                this.RaisePropertyChanged("vendorSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int product {
+            get {
+                return this.productField;
+            }
+            set {
+                this.productField = value;
+                this.RaisePropertyChanged("product");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool productSpecified {
+            get {
+                return this.productFieldSpecified;
+            }
+            set {
+                this.productFieldSpecified = value;
+                this.RaisePropertyChanged("productSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("family", Order=3)]
+        public string[] family {
+            get {
+                return this.familyField;
+            }
+            set {
+                this.familyField = value;
+                this.RaisePropertyChanged("family");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("speed", Order=4)]
+        public string[] speed {
+            get {
+                return this.speedField;
+            }
+            set {
+                this.speedField = value;
+                this.RaisePropertyChanged("speed");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualTPM : VirtualDevice {
+        
+        private byte[][] endorsementKeyCertificateSigningRequestField;
+        
+        private byte[][] endorsementKeyCertificateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("endorsementKeyCertificateSigningRequest", DataType="base64Binary", Order=0)]
+        public byte[][] endorsementKeyCertificateSigningRequest {
+            get {
+                return this.endorsementKeyCertificateSigningRequestField;
+            }
+            set {
+                this.endorsementKeyCertificateSigningRequestField = value;
+                this.RaisePropertyChanged("endorsementKeyCertificateSigningRequest");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("endorsementKeyCertificate", DataType="base64Binary", Order=1)]
+        public byte[][] endorsementKeyCertificate {
+            get {
+                return this.endorsementKeyCertificateField;
+            }
+            set {
+                this.endorsementKeyCertificateField = value;
+                this.RaisePropertyChanged("endorsementKeyCertificate");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSoundBlaster16))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHdAudioCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEnsoniq1371))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSoundCard : VirtualDevice {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSoundBlaster16 : VirtualSoundCard {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualHdAudioCard : VirtualSoundCard {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualEnsoniq1371 : VirtualSoundCard {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSerialPort : VirtualDevice {
+        
+        private bool yieldOnPollField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool yieldOnPoll {
+            get {
+                return this.yieldOnPollField;
+            }
+            set {
+                this.yieldOnPollField = value;
+                this.RaisePropertyChanged("yieldOnPoll");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSCSIPassthrough : VirtualDevice {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPrecisionClock : VirtualDevice {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPointingDevice : VirtualDevice {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualParallelPort : VirtualDevice {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPCIPassthrough : VirtualDevice {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualNVDIMM : VirtualDevice {
+        
+        private long capacityInMBField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long capacityInMB {
+            get {
+                return this.capacityInMBField;
+            }
+            set {
+                this.capacityInMBField = value;
+                this.RaisePropertyChanged("capacityInMB");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualKeyboard : VirtualDevice {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualFloppy : VirtualDevice {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet3))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet3Vrdma))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet2))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSriovEthernetCard))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCNet32))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualE1000e))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualE1000))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualEthernetCard : VirtualDevice {
+        
+        private string addressTypeField;
+        
+        private string macAddressField;
+        
+        private bool wakeOnLanEnabledField;
+        
+        private bool wakeOnLanEnabledFieldSpecified;
+        
+        private VirtualEthernetCardResourceAllocation resourceAllocationField;
+        
+        private string externalIdField;
+        
+        private bool uptCompatibilityEnabledField;
+        
+        private bool uptCompatibilityEnabledFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string addressType {
+            get {
+                return this.addressTypeField;
+            }
+            set {
+                this.addressTypeField = value;
+                this.RaisePropertyChanged("addressType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string macAddress {
+            get {
+                return this.macAddressField;
+            }
+            set {
+                this.macAddressField = value;
+                this.RaisePropertyChanged("macAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool wakeOnLanEnabled {
+            get {
+                return this.wakeOnLanEnabledField;
+            }
+            set {
+                this.wakeOnLanEnabledField = value;
+                this.RaisePropertyChanged("wakeOnLanEnabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool wakeOnLanEnabledSpecified {
+            get {
+                return this.wakeOnLanEnabledFieldSpecified;
+            }
+            set {
+                this.wakeOnLanEnabledFieldSpecified = value;
+                this.RaisePropertyChanged("wakeOnLanEnabledSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public VirtualEthernetCardResourceAllocation resourceAllocation {
+            get {
+                return this.resourceAllocationField;
+            }
+            set {
+                this.resourceAllocationField = value;
+                this.RaisePropertyChanged("resourceAllocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string externalId {
+            get {
+                return this.externalIdField;
+            }
+            set {
+                this.externalIdField = value;
+                this.RaisePropertyChanged("externalId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public bool uptCompatibilityEnabled {
+            get {
+                return this.uptCompatibilityEnabledField;
+            }
+            set {
+                this.uptCompatibilityEnabledField = value;
+                this.RaisePropertyChanged("uptCompatibilityEnabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool uptCompatibilityEnabledSpecified {
+            get {
+                return this.uptCompatibilityEnabledFieldSpecified;
+            }
+            set {
+                this.uptCompatibilityEnabledFieldSpecified = value;
+                this.RaisePropertyChanged("uptCompatibilityEnabledSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet3))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet3Vrdma))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet2))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualVmxnet : VirtualEthernetCard {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualVmxnet3Vrdma))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualVmxnet3 : VirtualVmxnet {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualVmxnet3Vrdma : VirtualVmxnet3 {
+        
+        private string deviceProtocolField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string deviceProtocol {
+            get {
+                return this.deviceProtocolField;
+            }
+            set {
+                this.deviceProtocolField = value;
+                this.RaisePropertyChanged("deviceProtocol");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualVmxnet2 : VirtualVmxnet {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSriovEthernetCard : VirtualEthernetCard {
+        
+        private bool allowGuestOSMtuChangeField;
+        
+        private bool allowGuestOSMtuChangeFieldSpecified;
+        
+        private VirtualSriovEthernetCardSriovBackingInfo sriovBackingField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool allowGuestOSMtuChange {
+            get {
+                return this.allowGuestOSMtuChangeField;
+            }
+            set {
+                this.allowGuestOSMtuChangeField = value;
+                this.RaisePropertyChanged("allowGuestOSMtuChange");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool allowGuestOSMtuChangeSpecified {
+            get {
+                return this.allowGuestOSMtuChangeFieldSpecified;
+            }
+            set {
+                this.allowGuestOSMtuChangeFieldSpecified = value;
+                this.RaisePropertyChanged("allowGuestOSMtuChangeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VirtualSriovEthernetCardSriovBackingInfo sriovBacking {
+            get {
+                return this.sriovBackingField;
+            }
+            set {
+                this.sriovBackingField = value;
+                this.RaisePropertyChanged("sriovBacking");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPCNet32 : VirtualEthernetCard {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualE1000e : VirtualEthernetCard {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualE1000 : VirtualEthernetCard {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDisk : VirtualDevice {
+        
+        private long capacityInKBField;
+        
+        private long capacityInBytesField;
+        
+        private bool capacityInBytesFieldSpecified;
+        
+        private SharesInfo sharesField;
+        
+        private StorageIOAllocationInfo storageIOAllocationField;
+        
+        private string diskObjectIdField;
+        
+        private VirtualDiskVFlashCacheConfigInfo vFlashCacheConfigInfoField;
+        
+        private string[] iofilterField;
+        
+        private ID vDiskIdField;
+        
+        private bool nativeUnmanagedLinkedCloneField;
+        
+        private bool nativeUnmanagedLinkedCloneFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long capacityInKB {
+            get {
+                return this.capacityInKBField;
+            }
+            set {
+                this.capacityInKBField = value;
+                this.RaisePropertyChanged("capacityInKB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public long capacityInBytes {
+            get {
+                return this.capacityInBytesField;
+            }
+            set {
+                this.capacityInBytesField = value;
+                this.RaisePropertyChanged("capacityInBytes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool capacityInBytesSpecified {
+            get {
+                return this.capacityInBytesFieldSpecified;
+            }
+            set {
+                this.capacityInBytesFieldSpecified = value;
+                this.RaisePropertyChanged("capacityInBytesSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public SharesInfo shares {
+            get {
+                return this.sharesField;
+            }
+            set {
+                this.sharesField = value;
+                this.RaisePropertyChanged("shares");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public StorageIOAllocationInfo storageIOAllocation {
+            get {
+                return this.storageIOAllocationField;
+            }
+            set {
+                this.storageIOAllocationField = value;
+                this.RaisePropertyChanged("storageIOAllocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string diskObjectId {
+            get {
+                return this.diskObjectIdField;
+            }
+            set {
+                this.diskObjectIdField = value;
+                this.RaisePropertyChanged("diskObjectId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public VirtualDiskVFlashCacheConfigInfo vFlashCacheConfigInfo {
+            get {
+                return this.vFlashCacheConfigInfoField;
+            }
+            set {
+                this.vFlashCacheConfigInfoField = value;
+                this.RaisePropertyChanged("vFlashCacheConfigInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("iofilter", Order=6)]
+        public string[] iofilter {
+            get {
+                return this.iofilterField;
+            }
+            set {
+                this.iofilterField = value;
+                this.RaisePropertyChanged("iofilter");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public ID vDiskId {
+            get {
+                return this.vDiskIdField;
+            }
+            set {
+                this.vDiskIdField = value;
+                this.RaisePropertyChanged("vDiskId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public bool nativeUnmanagedLinkedClone {
+            get {
+                return this.nativeUnmanagedLinkedCloneField;
+            }
+            set {
+                this.nativeUnmanagedLinkedCloneField = value;
+                this.RaisePropertyChanged("nativeUnmanagedLinkedClone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool nativeUnmanagedLinkedCloneSpecified {
+            get {
+                return this.nativeUnmanagedLinkedCloneFieldSpecified;
+            }
+            set {
+                this.nativeUnmanagedLinkedCloneFieldSpecified = value;
+                this.RaisePropertyChanged("nativeUnmanagedLinkedCloneSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class StorageIOAllocationInfo : DynamicData {
+        
+        private long limitField;
+        
+        private bool limitFieldSpecified;
+        
+        private SharesInfo sharesField;
+        
+        private int reservationField;
+        
+        private bool reservationFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long limit {
+            get {
+                return this.limitField;
+            }
+            set {
+                this.limitField = value;
+                this.RaisePropertyChanged("limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool limitSpecified {
+            get {
+                return this.limitFieldSpecified;
+            }
+            set {
+                this.limitFieldSpecified = value;
+                this.RaisePropertyChanged("limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public SharesInfo shares {
+            get {
+                return this.sharesField;
+            }
+            set {
+                this.sharesField = value;
+                this.RaisePropertyChanged("shares");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int reservation {
+            get {
+                return this.reservationField;
+            }
+            set {
+                this.reservationField = value;
+                this.RaisePropertyChanged("reservation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reservationSpecified {
+            get {
+                return this.reservationFieldSpecified;
+            }
+            set {
+                this.reservationFieldSpecified = value;
+                this.RaisePropertyChanged("reservationSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBXHCIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualUSBController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSIOController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSCSIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualLsiLogicSASController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualLsiLogicController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualBusLogicController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ParaVirtualSCSIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualSATAController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualAHCIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPS2Controller))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualPCIController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVMEController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualNVDIMMController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualIDEController))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualController : VirtualDevice {
+        
+        private int busNumberField;
+        
+        private int[] deviceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int busNumber {
+            get {
+                return this.busNumberField;
+            }
+            set {
+                this.busNumberField = value;
+                this.RaisePropertyChanged("busNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("device", Order=1)]
+        public int[] device {
+            get {
+                return this.deviceField;
+            }
+            set {
+                this.deviceField = value;
+                this.RaisePropertyChanged("device");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualUSBXHCIController : VirtualController {
+        
+        private bool autoConnectDevicesField;
+        
+        private bool autoConnectDevicesFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool autoConnectDevices {
+            get {
+                return this.autoConnectDevicesField;
+            }
+            set {
+                this.autoConnectDevicesField = value;
+                this.RaisePropertyChanged("autoConnectDevices");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool autoConnectDevicesSpecified {
+            get {
+                return this.autoConnectDevicesFieldSpecified;
+            }
+            set {
+                this.autoConnectDevicesFieldSpecified = value;
+                this.RaisePropertyChanged("autoConnectDevicesSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualUSBController : VirtualController {
+        
+        private bool autoConnectDevicesField;
+        
+        private bool autoConnectDevicesFieldSpecified;
+        
+        private bool ehciEnabledField;
+        
+        private bool ehciEnabledFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool autoConnectDevices {
+            get {
+                return this.autoConnectDevicesField;
+            }
+            set {
+                this.autoConnectDevicesField = value;
+                this.RaisePropertyChanged("autoConnectDevices");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool autoConnectDevicesSpecified {
+            get {
+                return this.autoConnectDevicesFieldSpecified;
+            }
+            set {
+                this.autoConnectDevicesFieldSpecified = value;
+                this.RaisePropertyChanged("autoConnectDevicesSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool ehciEnabled {
+            get {
+                return this.ehciEnabledField;
+            }
+            set {
+                this.ehciEnabledField = value;
+                this.RaisePropertyChanged("ehciEnabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ehciEnabledSpecified {
+            get {
+                return this.ehciEnabledFieldSpecified;
+            }
+            set {
+                this.ehciEnabledFieldSpecified = value;
+                this.RaisePropertyChanged("ehciEnabledSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSIOController : VirtualController {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualLsiLogicSASController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualLsiLogicController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualBusLogicController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ParaVirtualSCSIController))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSCSIController : VirtualController {
+        
+        private bool hotAddRemoveField;
+        
+        private bool hotAddRemoveFieldSpecified;
+        
+        private VirtualSCSISharing sharedBusField;
+        
+        private int scsiCtlrUnitNumberField;
+        
+        private bool scsiCtlrUnitNumberFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool hotAddRemove {
+            get {
+                return this.hotAddRemoveField;
+            }
+            set {
+                this.hotAddRemoveField = value;
+                this.RaisePropertyChanged("hotAddRemove");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool hotAddRemoveSpecified {
+            get {
+                return this.hotAddRemoveFieldSpecified;
+            }
+            set {
+                this.hotAddRemoveFieldSpecified = value;
+                this.RaisePropertyChanged("hotAddRemoveSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VirtualSCSISharing sharedBus {
+            get {
+                return this.sharedBusField;
+            }
+            set {
+                this.sharedBusField = value;
+                this.RaisePropertyChanged("sharedBus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int scsiCtlrUnitNumber {
+            get {
+                return this.scsiCtlrUnitNumberField;
+            }
+            set {
+                this.scsiCtlrUnitNumberField = value;
+                this.RaisePropertyChanged("scsiCtlrUnitNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool scsiCtlrUnitNumberSpecified {
+            get {
+                return this.scsiCtlrUnitNumberFieldSpecified;
+            }
+            set {
+                this.scsiCtlrUnitNumberFieldSpecified = value;
+                this.RaisePropertyChanged("scsiCtlrUnitNumberSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public enum VirtualSCSISharing {
+        
+        /// <remarks/>
+        noSharing,
+        
+        /// <remarks/>
+        virtualSharing,
+        
+        /// <remarks/>
+        physicalSharing,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualLsiLogicSASController : VirtualSCSIController {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualLsiLogicController : VirtualSCSIController {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualBusLogicController : VirtualSCSIController {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ParaVirtualSCSIController : VirtualSCSIController {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualAHCIController))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualSATAController : VirtualController {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualAHCIController : VirtualSATAController {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPS2Controller : VirtualController {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualPCIController : VirtualController {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualNVMEController : VirtualController {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualNVDIMMController : VirtualController {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualIDEController : VirtualController {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualCdrom : VirtualDevice {
     }
     
     /// <remarks/>
@@ -7006,66 +15599,6 @@ namespace SharpSphere.vSphere {
             set {
                 this.lastInstallInfoField = value;
                 this.RaisePropertyChanged("lastInstallInfo");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class CryptoKeyId : DynamicData {
-        
-        private string keyIdField;
-        
-        private KeyProviderId providerIdField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string keyId {
-            get {
-                return this.keyIdField;
-            }
-            set {
-                this.keyIdField = value;
-                this.RaisePropertyChanged("keyId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public KeyProviderId providerId {
-            get {
-                return this.providerIdField;
-            }
-            set {
-                this.providerIdField = value;
-                this.RaisePropertyChanged("providerId");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class KeyProviderId : DynamicData {
-        
-        private string idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
             }
         }
     }
@@ -8531,62 +17064,6 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class SharesInfo : DynamicData {
-        
-        private int sharesField;
-        
-        private SharesLevel levelField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int shares {
-            get {
-                return this.sharesField;
-            }
-            set {
-                this.sharesField = value;
-                this.RaisePropertyChanged("shares");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public SharesLevel level {
-            get {
-                return this.levelField;
-            }
-            set {
-                this.levelField = value;
-                this.RaisePropertyChanged("level");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public enum SharesLevel {
-        
-        /// <remarks/>
-        low,
-        
-        /// <remarks/>
-        normal,
-        
-        /// <remarks/>
-        high,
-        
-        /// <remarks/>
-        custom,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
     public partial class VirtualMachineAffinityInfo : DynamicData {
         
         private int[] affinitySetField;
@@ -8605,6 +17082,7 @@ namespace SharpSphere.vSphere {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostInternetScsiHbaParamValue))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8647,89 +17125,33 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class HostCpuIdInfo : DynamicData {
+    public partial class HostInternetScsiHbaParamValue : OptionValue {
         
-        private int levelField;
+        private bool isInheritedField;
         
-        private string vendorField;
-        
-        private string eaxField;
-        
-        private string ebxField;
-        
-        private string ecxField;
-        
-        private string edxField;
+        private bool isInheritedFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int level {
+        public bool isInherited {
             get {
-                return this.levelField;
+                return this.isInheritedField;
             }
             set {
-                this.levelField = value;
-                this.RaisePropertyChanged("level");
+                this.isInheritedField = value;
+                this.RaisePropertyChanged("isInherited");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string vendor {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool isInheritedSpecified {
             get {
-                return this.vendorField;
+                return this.isInheritedFieldSpecified;
             }
             set {
-                this.vendorField = value;
-                this.RaisePropertyChanged("vendor");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string eax {
-            get {
-                return this.eaxField;
-            }
-            set {
-                this.eaxField = value;
-                this.RaisePropertyChanged("eax");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string ebx {
-            get {
-                return this.ebxField;
-            }
-            set {
-                this.ebxField = value;
-                this.RaisePropertyChanged("ebx");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string ecx {
-            get {
-                return this.ecxField;
-            }
-            set {
-                this.ecxField = value;
-                this.RaisePropertyChanged("ecx");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string edx {
-            get {
-                return this.edxField;
-            }
-            set {
-                this.edxField = value;
-                this.RaisePropertyChanged("edx");
+                this.isInheritedFieldSpecified = value;
+                this.RaisePropertyChanged("isInheritedSpecified");
             }
         }
     }
@@ -8912,6 +17334,10 @@ namespace SharpSphere.vSphere {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineBootOptionsBootableCdromDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineBootOptionsBootableFloppyDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineBootOptionsBootableEthernetDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineBootOptionsBootableDiskDevice))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8921,6 +17347,71 @@ namespace SharpSphere.vSphere {
     }
     
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineBootOptionsBootableCdromDevice : VirtualMachineBootOptionsBootableDevice {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineBootOptionsBootableFloppyDevice : VirtualMachineBootOptionsBootableDevice {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineBootOptionsBootableEthernetDevice : VirtualMachineBootOptionsBootableDevice {
+        
+        private int deviceKeyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int deviceKey {
+            get {
+                return this.deviceKeyField;
+            }
+            set {
+                this.deviceKeyField = value;
+                this.RaisePropertyChanged("deviceKey");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualMachineBootOptionsBootableDiskDevice : VirtualMachineBootOptionsBootableDevice {
+        
+        private int deviceKeyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int deviceKey {
+            get {
+                return this.deviceKeyField;
+            }
+            set {
+                this.deviceKeyField = value;
+                this.RaisePropertyChanged("deviceKey");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppConfigInfo))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9559,6 +18050,276 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VAppConfigInfo : VmConfigInfo {
+        
+        private VAppEntityConfigInfo[] entityConfigField;
+        
+        private string annotationField;
+        
+        private string instanceUuidField;
+        
+        private ManagedByInfo managedByField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("entityConfig", Order=0)]
+        public VAppEntityConfigInfo[] entityConfig {
+            get {
+                return this.entityConfigField;
+            }
+            set {
+                this.entityConfigField = value;
+                this.RaisePropertyChanged("entityConfig");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string annotation {
+            get {
+                return this.annotationField;
+            }
+            set {
+                this.annotationField = value;
+                this.RaisePropertyChanged("annotation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string instanceUuid {
+            get {
+                return this.instanceUuidField;
+            }
+            set {
+                this.instanceUuidField = value;
+                this.RaisePropertyChanged("instanceUuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public ManagedByInfo managedBy {
+            get {
+                return this.managedByField;
+            }
+            set {
+                this.managedByField = value;
+                this.RaisePropertyChanged("managedBy");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VAppEntityConfigInfo : DynamicData {
+        
+        private ManagedObjectReference keyField;
+        
+        private string tagField;
+        
+        private int startOrderField;
+        
+        private bool startOrderFieldSpecified;
+        
+        private int startDelayField;
+        
+        private bool startDelayFieldSpecified;
+        
+        private bool waitingForGuestField;
+        
+        private bool waitingForGuestFieldSpecified;
+        
+        private string startActionField;
+        
+        private int stopDelayField;
+        
+        private bool stopDelayFieldSpecified;
+        
+        private string stopActionField;
+        
+        private bool destroyWithParentField;
+        
+        private bool destroyWithParentFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string tag {
+            get {
+                return this.tagField;
+            }
+            set {
+                this.tagField = value;
+                this.RaisePropertyChanged("tag");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int startOrder {
+            get {
+                return this.startOrderField;
+            }
+            set {
+                this.startOrderField = value;
+                this.RaisePropertyChanged("startOrder");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool startOrderSpecified {
+            get {
+                return this.startOrderFieldSpecified;
+            }
+            set {
+                this.startOrderFieldSpecified = value;
+                this.RaisePropertyChanged("startOrderSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int startDelay {
+            get {
+                return this.startDelayField;
+            }
+            set {
+                this.startDelayField = value;
+                this.RaisePropertyChanged("startDelay");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool startDelaySpecified {
+            get {
+                return this.startDelayFieldSpecified;
+            }
+            set {
+                this.startDelayFieldSpecified = value;
+                this.RaisePropertyChanged("startDelaySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool waitingForGuest {
+            get {
+                return this.waitingForGuestField;
+            }
+            set {
+                this.waitingForGuestField = value;
+                this.RaisePropertyChanged("waitingForGuest");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool waitingForGuestSpecified {
+            get {
+                return this.waitingForGuestFieldSpecified;
+            }
+            set {
+                this.waitingForGuestFieldSpecified = value;
+                this.RaisePropertyChanged("waitingForGuestSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string startAction {
+            get {
+                return this.startActionField;
+            }
+            set {
+                this.startActionField = value;
+                this.RaisePropertyChanged("startAction");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int stopDelay {
+            get {
+                return this.stopDelayField;
+            }
+            set {
+                this.stopDelayField = value;
+                this.RaisePropertyChanged("stopDelay");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stopDelaySpecified {
+            get {
+                return this.stopDelayFieldSpecified;
+            }
+            set {
+                this.stopDelayFieldSpecified = value;
+                this.RaisePropertyChanged("stopDelaySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string stopAction {
+            get {
+                return this.stopActionField;
+            }
+            set {
+                this.stopActionField = value;
+                this.RaisePropertyChanged("stopAction");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public bool destroyWithParent {
+            get {
+                return this.destroyWithParentField;
+            }
+            set {
+                this.destroyWithParentField = value;
+                this.RaisePropertyChanged("destroyWithParent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool destroyWithParentSpecified {
+            get {
+                return this.destroyWithParentFieldSpecified;
+            }
+            set {
+                this.destroyWithParentFieldSpecified = value;
+                this.RaisePropertyChanged("destroyWithParentSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
     public partial class ManagedByInfo : DynamicData {
         
         private string extensionKeyField;
@@ -9586,6 +18347,907 @@ namespace SharpSphere.vSphere {
             set {
                 this.typeField = value;
                 this.RaisePropertyChanged("type");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostDatastoreBrowserSearchResults : DynamicData {
+        
+        private ManagedObjectReference datastoreField;
+        
+        private string folderPathField;
+        
+        private FileInfo[] fileField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string folderPath {
+            get {
+                return this.folderPathField;
+            }
+            set {
+                this.folderPathField = value;
+                this.RaisePropertyChanged("folderPath");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("file", Order=2)]
+        public FileInfo[] file {
+            get {
+                return this.fileField;
+            }
+            set {
+                this.fileField = value;
+                this.RaisePropertyChanged("file");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmLogFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmNvramFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloppyImageFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IsoImageFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmSnapshotFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FolderFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateConfigFileInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileInfo : DynamicData {
+        
+        private string pathField;
+        
+        private string friendlyNameField;
+        
+        private long fileSizeField;
+        
+        private bool fileSizeFieldSpecified;
+        
+        private System.DateTime modificationField;
+        
+        private bool modificationFieldSpecified;
+        
+        private string ownerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string path {
+            get {
+                return this.pathField;
+            }
+            set {
+                this.pathField = value;
+                this.RaisePropertyChanged("path");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string friendlyName {
+            get {
+                return this.friendlyNameField;
+            }
+            set {
+                this.friendlyNameField = value;
+                this.RaisePropertyChanged("friendlyName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public long fileSize {
+            get {
+                return this.fileSizeField;
+            }
+            set {
+                this.fileSizeField = value;
+                this.RaisePropertyChanged("fileSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool fileSizeSpecified {
+            get {
+                return this.fileSizeFieldSpecified;
+            }
+            set {
+                this.fileSizeFieldSpecified = value;
+                this.RaisePropertyChanged("fileSizeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public System.DateTime modification {
+            get {
+                return this.modificationField;
+            }
+            set {
+                this.modificationField = value;
+                this.RaisePropertyChanged("modification");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool modificationSpecified {
+            get {
+                return this.modificationFieldSpecified;
+            }
+            set {
+                this.modificationFieldSpecified = value;
+                this.RaisePropertyChanged("modificationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string owner {
+            get {
+                return this.ownerField;
+            }
+            set {
+                this.ownerField = value;
+                this.RaisePropertyChanged("owner");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmLogFileInfo : FileInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmNvramFileInfo : FileInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FloppyImageFileInfo : FileInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class IsoImageFileInfo : FileInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmSnapshotFileInfo : FileInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FolderFileInfo : FileInfo {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmDiskFileInfo : FileInfo {
+        
+        private string diskTypeField;
+        
+        private long capacityKbField;
+        
+        private bool capacityKbFieldSpecified;
+        
+        private int hardwareVersionField;
+        
+        private bool hardwareVersionFieldSpecified;
+        
+        private string controllerTypeField;
+        
+        private string[] diskExtentsField;
+        
+        private bool thinField;
+        
+        private bool thinFieldSpecified;
+        
+        private VmDiskFileEncryptionInfo encryptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string diskType {
+            get {
+                return this.diskTypeField;
+            }
+            set {
+                this.diskTypeField = value;
+                this.RaisePropertyChanged("diskType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public long capacityKb {
+            get {
+                return this.capacityKbField;
+            }
+            set {
+                this.capacityKbField = value;
+                this.RaisePropertyChanged("capacityKb");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool capacityKbSpecified {
+            get {
+                return this.capacityKbFieldSpecified;
+            }
+            set {
+                this.capacityKbFieldSpecified = value;
+                this.RaisePropertyChanged("capacityKbSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int hardwareVersion {
+            get {
+                return this.hardwareVersionField;
+            }
+            set {
+                this.hardwareVersionField = value;
+                this.RaisePropertyChanged("hardwareVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool hardwareVersionSpecified {
+            get {
+                return this.hardwareVersionFieldSpecified;
+            }
+            set {
+                this.hardwareVersionFieldSpecified = value;
+                this.RaisePropertyChanged("hardwareVersionSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string controllerType {
+            get {
+                return this.controllerTypeField;
+            }
+            set {
+                this.controllerTypeField = value;
+                this.RaisePropertyChanged("controllerType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("diskExtents", Order=4)]
+        public string[] diskExtents {
+            get {
+                return this.diskExtentsField;
+            }
+            set {
+                this.diskExtentsField = value;
+                this.RaisePropertyChanged("diskExtents");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public bool thin {
+            get {
+                return this.thinField;
+            }
+            set {
+                this.thinField = value;
+                this.RaisePropertyChanged("thin");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool thinSpecified {
+            get {
+                return this.thinFieldSpecified;
+            }
+            set {
+                this.thinFieldSpecified = value;
+                this.RaisePropertyChanged("thinSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public VmDiskFileEncryptionInfo encryption {
+            get {
+                return this.encryptionField;
+            }
+            set {
+                this.encryptionField = value;
+                this.RaisePropertyChanged("encryption");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmDiskFileEncryptionInfo : DynamicData {
+        
+        private CryptoKeyId keyIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public CryptoKeyId keyId {
+            get {
+                return this.keyIdField;
+            }
+            set {
+                this.keyIdField = value;
+                this.RaisePropertyChanged("keyId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateConfigFileInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmConfigFileInfo : FileInfo {
+        
+        private int configVersionField;
+        
+        private bool configVersionFieldSpecified;
+        
+        private VmConfigFileEncryptionInfo encryptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int configVersion {
+            get {
+                return this.configVersionField;
+            }
+            set {
+                this.configVersionField = value;
+                this.RaisePropertyChanged("configVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool configVersionSpecified {
+            get {
+                return this.configVersionFieldSpecified;
+            }
+            set {
+                this.configVersionFieldSpecified = value;
+                this.RaisePropertyChanged("configVersionSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VmConfigFileEncryptionInfo encryption {
+            get {
+                return this.encryptionField;
+            }
+            set {
+                this.encryptionField = value;
+                this.RaisePropertyChanged("encryption");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmConfigFileEncryptionInfo : DynamicData {
+        
+        private CryptoKeyId keyIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public CryptoKeyId keyId {
+            get {
+                return this.keyIdField;
+            }
+            set {
+                this.keyIdField = value;
+                this.RaisePropertyChanged("keyId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TemplateConfigFileInfo : VmConfigFileInfo {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskRuleSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskAntiAffinityRuleSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClusterVmHostRuleInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClusterDependencyRuleInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClusterAntiAffinityRuleSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClusterAffinityRuleSpec))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ClusterRuleInfo : DynamicData {
+        
+        private int keyField;
+        
+        private bool keyFieldSpecified;
+        
+        private ManagedEntityStatus statusField;
+        
+        private bool statusFieldSpecified;
+        
+        private bool enabledField;
+        
+        private bool enabledFieldSpecified;
+        
+        private string nameField;
+        
+        private bool mandatoryField;
+        
+        private bool mandatoryFieldSpecified;
+        
+        private bool userCreatedField;
+        
+        private bool userCreatedFieldSpecified;
+        
+        private bool inComplianceField;
+        
+        private bool inComplianceFieldSpecified;
+        
+        private string ruleUuidField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool keySpecified {
+            get {
+                return this.keyFieldSpecified;
+            }
+            set {
+                this.keyFieldSpecified = value;
+                this.RaisePropertyChanged("keySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedEntityStatus status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool statusSpecified {
+            get {
+                return this.statusFieldSpecified;
+            }
+            set {
+                this.statusFieldSpecified = value;
+                this.RaisePropertyChanged("statusSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool enabled {
+            get {
+                return this.enabledField;
+            }
+            set {
+                this.enabledField = value;
+                this.RaisePropertyChanged("enabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool enabledSpecified {
+            get {
+                return this.enabledFieldSpecified;
+            }
+            set {
+                this.enabledFieldSpecified = value;
+                this.RaisePropertyChanged("enabledSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool mandatory {
+            get {
+                return this.mandatoryField;
+            }
+            set {
+                this.mandatoryField = value;
+                this.RaisePropertyChanged("mandatory");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool mandatorySpecified {
+            get {
+                return this.mandatoryFieldSpecified;
+            }
+            set {
+                this.mandatoryFieldSpecified = value;
+                this.RaisePropertyChanged("mandatorySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public bool userCreated {
+            get {
+                return this.userCreatedField;
+            }
+            set {
+                this.userCreatedField = value;
+                this.RaisePropertyChanged("userCreated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool userCreatedSpecified {
+            get {
+                return this.userCreatedFieldSpecified;
+            }
+            set {
+                this.userCreatedFieldSpecified = value;
+                this.RaisePropertyChanged("userCreatedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public bool inCompliance {
+            get {
+                return this.inComplianceField;
+            }
+            set {
+                this.inComplianceField = value;
+                this.RaisePropertyChanged("inCompliance");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool inComplianceSpecified {
+            get {
+                return this.inComplianceFieldSpecified;
+            }
+            set {
+                this.inComplianceFieldSpecified = value;
+                this.RaisePropertyChanged("inComplianceSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string ruleUuid {
+            get {
+                return this.ruleUuidField;
+            }
+            set {
+                this.ruleUuidField = value;
+                this.RaisePropertyChanged("ruleUuid");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public enum ManagedEntityStatus {
+        
+        /// <remarks/>
+        gray,
+        
+        /// <remarks/>
+        green,
+        
+        /// <remarks/>
+        yellow,
+        
+        /// <remarks/>
+        red,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskRuleSpec : ClusterRuleInfo {
+        
+        private string diskRuleTypeField;
+        
+        private int[] diskIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string diskRuleType {
+            get {
+                return this.diskRuleTypeField;
+            }
+            set {
+                this.diskRuleTypeField = value;
+                this.RaisePropertyChanged("diskRuleType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("diskId", Order=1)]
+        public int[] diskId {
+            get {
+                return this.diskIdField;
+            }
+            set {
+                this.diskIdField = value;
+                this.RaisePropertyChanged("diskId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskAntiAffinityRuleSpec : ClusterRuleInfo {
+        
+        private int[] diskIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("diskId", Order=0)]
+        public int[] diskId {
+            get {
+                return this.diskIdField;
+            }
+            set {
+                this.diskIdField = value;
+                this.RaisePropertyChanged("diskId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ClusterVmHostRuleInfo : ClusterRuleInfo {
+        
+        private string vmGroupNameField;
+        
+        private string affineHostGroupNameField;
+        
+        private string antiAffineHostGroupNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vmGroupName {
+            get {
+                return this.vmGroupNameField;
+            }
+            set {
+                this.vmGroupNameField = value;
+                this.RaisePropertyChanged("vmGroupName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string affineHostGroupName {
+            get {
+                return this.affineHostGroupNameField;
+            }
+            set {
+                this.affineHostGroupNameField = value;
+                this.RaisePropertyChanged("affineHostGroupName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string antiAffineHostGroupName {
+            get {
+                return this.antiAffineHostGroupNameField;
+            }
+            set {
+                this.antiAffineHostGroupNameField = value;
+                this.RaisePropertyChanged("antiAffineHostGroupName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ClusterDependencyRuleInfo : ClusterRuleInfo {
+        
+        private string vmGroupField;
+        
+        private string dependsOnVmGroupField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vmGroup {
+            get {
+                return this.vmGroupField;
+            }
+            set {
+                this.vmGroupField = value;
+                this.RaisePropertyChanged("vmGroup");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string dependsOnVmGroup {
+            get {
+                return this.dependsOnVmGroupField;
+            }
+            set {
+                this.dependsOnVmGroupField = value;
+                this.RaisePropertyChanged("dependsOnVmGroup");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ClusterAntiAffinityRuleSpec : ClusterRuleInfo {
+        
+        private ManagedObjectReference[] vmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("vm", Order=0)]
+        public ManagedObjectReference[] vm {
+            get {
+                return this.vmField;
+            }
+            set {
+                this.vmField = value;
+                this.RaisePropertyChanged("vm");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ClusterAffinityRuleSpec : ClusterRuleInfo {
+        
+        private ManagedObjectReference[] vmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("vm", Order=0)]
+        public ManagedObjectReference[] vm {
+            get {
+                return this.vmField;
+            }
+            set {
+                this.vmField = value;
+                this.RaisePropertyChanged("vm");
             }
         }
     }
@@ -9777,6 +19439,596 @@ namespace SharpSphere.vSphere {
             set {
                 this.callCountFieldSpecified = value;
                 this.RaisePropertyChanged("callCountSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskReasonSchedule))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskReasonAlarm))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskReasonUser))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskReasonSystem))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TaskReason : DynamicData {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TaskReasonSchedule : TaskReason {
+        
+        private string nameField;
+        
+        private ManagedObjectReference scheduledTaskField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference scheduledTask {
+            get {
+                return this.scheduledTaskField;
+            }
+            set {
+                this.scheduledTaskField = value;
+                this.RaisePropertyChanged("scheduledTask");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TaskReasonAlarm : TaskReason {
+        
+        private string alarmNameField;
+        
+        private ManagedObjectReference alarmField;
+        
+        private string entityNameField;
+        
+        private ManagedObjectReference entityField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string alarmName {
+            get {
+                return this.alarmNameField;
+            }
+            set {
+                this.alarmNameField = value;
+                this.RaisePropertyChanged("alarmName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference alarm {
+            get {
+                return this.alarmField;
+            }
+            set {
+                this.alarmField = value;
+                this.RaisePropertyChanged("alarm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string entityName {
+            get {
+                return this.entityNameField;
+            }
+            set {
+                this.entityNameField = value;
+                this.RaisePropertyChanged("entityName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public ManagedObjectReference entity {
+            get {
+                return this.entityField;
+            }
+            set {
+                this.entityField = value;
+                this.RaisePropertyChanged("entity");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TaskReasonUser : TaskReason {
+        
+        private string userNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string userName {
+            get {
+                return this.userNameField;
+            }
+            set {
+                this.userNameField = value;
+                this.RaisePropertyChanged("userName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TaskReasonSystem : TaskReason {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TaskInfo : DynamicData {
+        
+        private string keyField;
+        
+        private ManagedObjectReference taskField;
+        
+        private LocalizableMessage descriptionField;
+        
+        private string nameField;
+        
+        private string descriptionIdField;
+        
+        private ManagedObjectReference entityField;
+        
+        private string entityNameField;
+        
+        private ManagedObjectReference[] lockedField;
+        
+        private TaskInfoState stateField;
+        
+        private bool cancelledField;
+        
+        private bool cancelableField;
+        
+        private LocalizedMethodFault errorField;
+        
+        private object resultField;
+        
+        private int progressField;
+        
+        private bool progressFieldSpecified;
+        
+        private TaskReason reasonField;
+        
+        private System.DateTime queueTimeField;
+        
+        private System.DateTime startTimeField;
+        
+        private bool startTimeFieldSpecified;
+        
+        private System.DateTime completeTimeField;
+        
+        private bool completeTimeFieldSpecified;
+        
+        private int eventChainIdField;
+        
+        private string changeTagField;
+        
+        private string parentTaskKeyField;
+        
+        private string rootTaskKeyField;
+        
+        private string activationIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference task {
+            get {
+                return this.taskField;
+            }
+            set {
+                this.taskField = value;
+                this.RaisePropertyChanged("task");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public LocalizableMessage description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string descriptionId {
+            get {
+                return this.descriptionIdField;
+            }
+            set {
+                this.descriptionIdField = value;
+                this.RaisePropertyChanged("descriptionId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public ManagedObjectReference entity {
+            get {
+                return this.entityField;
+            }
+            set {
+                this.entityField = value;
+                this.RaisePropertyChanged("entity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string entityName {
+            get {
+                return this.entityNameField;
+            }
+            set {
+                this.entityNameField = value;
+                this.RaisePropertyChanged("entityName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("locked", Order=7)]
+        public ManagedObjectReference[] locked {
+            get {
+                return this.lockedField;
+            }
+            set {
+                this.lockedField = value;
+                this.RaisePropertyChanged("locked");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public TaskInfoState state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public bool cancelled {
+            get {
+                return this.cancelledField;
+            }
+            set {
+                this.cancelledField = value;
+                this.RaisePropertyChanged("cancelled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public bool cancelable {
+            get {
+                return this.cancelableField;
+            }
+            set {
+                this.cancelableField = value;
+                this.RaisePropertyChanged("cancelable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public LocalizedMethodFault error {
+            get {
+                return this.errorField;
+            }
+            set {
+                this.errorField = value;
+                this.RaisePropertyChanged("error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public object result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public int progress {
+            get {
+                return this.progressField;
+            }
+            set {
+                this.progressField = value;
+                this.RaisePropertyChanged("progress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool progressSpecified {
+            get {
+                return this.progressFieldSpecified;
+            }
+            set {
+                this.progressFieldSpecified = value;
+                this.RaisePropertyChanged("progressSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public TaskReason reason {
+            get {
+                return this.reasonField;
+            }
+            set {
+                this.reasonField = value;
+                this.RaisePropertyChanged("reason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public System.DateTime queueTime {
+            get {
+                return this.queueTimeField;
+            }
+            set {
+                this.queueTimeField = value;
+                this.RaisePropertyChanged("queueTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public System.DateTime startTime {
+            get {
+                return this.startTimeField;
+            }
+            set {
+                this.startTimeField = value;
+                this.RaisePropertyChanged("startTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool startTimeSpecified {
+            get {
+                return this.startTimeFieldSpecified;
+            }
+            set {
+                this.startTimeFieldSpecified = value;
+                this.RaisePropertyChanged("startTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public System.DateTime completeTime {
+            get {
+                return this.completeTimeField;
+            }
+            set {
+                this.completeTimeField = value;
+                this.RaisePropertyChanged("completeTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool completeTimeSpecified {
+            get {
+                return this.completeTimeFieldSpecified;
+            }
+            set {
+                this.completeTimeFieldSpecified = value;
+                this.RaisePropertyChanged("completeTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public int eventChainId {
+            get {
+                return this.eventChainIdField;
+            }
+            set {
+                this.eventChainIdField = value;
+                this.RaisePropertyChanged("eventChainId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string changeTag {
+            get {
+                return this.changeTagField;
+            }
+            set {
+                this.changeTagField = value;
+                this.RaisePropertyChanged("changeTag");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public string parentTaskKey {
+            get {
+                return this.parentTaskKeyField;
+            }
+            set {
+                this.parentTaskKeyField = value;
+                this.RaisePropertyChanged("parentTaskKey");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public string rootTaskKey {
+            get {
+                return this.rootTaskKeyField;
+            }
+            set {
+                this.rootTaskKeyField = value;
+                this.RaisePropertyChanged("rootTaskKey");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        public string activationId {
+            get {
+                return this.activationIdField;
+            }
+            set {
+                this.activationIdField = value;
+                this.RaisePropertyChanged("activationId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public enum TaskInfoState {
+        
+        /// <remarks/>
+        queued,
+        
+        /// <remarks/>
+        running,
+        
+        /// <remarks/>
+        success,
+        
+        /// <remarks/>
+        error,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SessionManagerGenericServiceTicket : DynamicData {
+        
+        private string idField;
+        
+        private string hostNameField;
+        
+        private string sslThumbprintField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string hostName {
+            get {
+                return this.hostNameField;
+            }
+            set {
+                this.hostNameField = value;
+                this.RaisePropertyChanged("hostName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string sslThumbprint {
+            get {
+                return this.sslThumbprintField;
+            }
+            set {
+                this.sslThumbprintField = value;
+                this.RaisePropertyChanged("sslThumbprint");
             }
         }
     }
@@ -10701,33 +20953,103 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class RetrieveResult : DynamicData {
+    public partial class HostMountInfo : DynamicData {
         
-        private string tokenField;
+        private string pathField;
         
-        private ObjectContent[] objectsField;
+        private string accessModeField;
+        
+        private bool mountedField;
+        
+        private bool mountedFieldSpecified;
+        
+        private bool accessibleField;
+        
+        private bool accessibleFieldSpecified;
+        
+        private string inaccessibleReasonField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string token {
+        public string path {
             get {
-                return this.tokenField;
+                return this.pathField;
             }
             set {
-                this.tokenField = value;
-                this.RaisePropertyChanged("token");
+                this.pathField = value;
+                this.RaisePropertyChanged("path");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("objects", Order=1)]
-        public ObjectContent[] objects {
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string accessMode {
             get {
-                return this.objectsField;
+                return this.accessModeField;
             }
             set {
-                this.objectsField = value;
-                this.RaisePropertyChanged("objects");
+                this.accessModeField = value;
+                this.RaisePropertyChanged("accessMode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool mounted {
+            get {
+                return this.mountedField;
+            }
+            set {
+                this.mountedField = value;
+                this.RaisePropertyChanged("mounted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool mountedSpecified {
+            get {
+                return this.mountedFieldSpecified;
+            }
+            set {
+                this.mountedFieldSpecified = value;
+                this.RaisePropertyChanged("mountedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool accessible {
+            get {
+                return this.accessibleField;
+            }
+            set {
+                this.accessibleField = value;
+                this.RaisePropertyChanged("accessible");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool accessibleSpecified {
+            get {
+                return this.accessibleFieldSpecified;
+            }
+            set {
+                this.accessibleFieldSpecified = value;
+                this.RaisePropertyChanged("accessibleSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string inaccessibleReason {
+            get {
+                return this.inaccessibleReasonField;
+            }
+            set {
+                this.inaccessibleReasonField = value;
+                this.RaisePropertyChanged("inaccessibleReason");
             }
         }
     }
@@ -10738,18 +21060,884 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class UpdateSet : DynamicData {
+    public partial class DatastoreHostMount : DynamicData {
         
-        private string versionField;
+        private ManagedObjectReference keyField;
         
-        private PropertyFilterUpdate[] filterSetField;
-        
-        private bool truncatedField;
-        
-        private bool truncatedFieldSpecified;
+        private HostMountInfo mountInfoField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public HostMountInfo mountInfo {
+            get {
+                return this.mountInfoField;
+            }
+            set {
+                this.mountInfoField = value;
+                this.RaisePropertyChanged("mountInfo");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VASAStorageArray : DynamicData {
+        
+        private string nameField;
+        
+        private string uuidField;
+        
+        private string vendorIdField;
+        
+        private string modelIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string uuid {
+            get {
+                return this.uuidField;
+            }
+            set {
+                this.uuidField = value;
+                this.RaisePropertyChanged("uuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string vendorId {
+            get {
+                return this.vendorIdField;
+            }
+            set {
+                this.vendorIdField = value;
+                this.RaisePropertyChanged("vendorId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string modelId {
+            get {
+                return this.modelIdField;
+            }
+            set {
+                this.modelIdField = value;
+                this.RaisePropertyChanged("modelId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VimVasaProviderStatePerArray : DynamicData {
+        
+        private int priorityField;
+        
+        private string arrayIdField;
+        
+        private bool activeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int priority {
+            get {
+                return this.priorityField;
+            }
+            set {
+                this.priorityField = value;
+                this.RaisePropertyChanged("priority");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string arrayId {
+            get {
+                return this.arrayIdField;
+            }
+            set {
+                this.arrayIdField = value;
+                this.RaisePropertyChanged("arrayId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+                this.RaisePropertyChanged("active");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VimVasaProvider : DynamicData {
+        
+        private string uidField;
+        
+        private string urlField;
+        
+        private string nameField;
+        
+        private string selfSignedCertificateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string uid {
+            get {
+                return this.uidField;
+            }
+            set {
+                this.uidField = value;
+                this.RaisePropertyChanged("uid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string url {
+            get {
+                return this.urlField;
+            }
+            set {
+                this.urlField = value;
+                this.RaisePropertyChanged("url");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string selfSignedCertificate {
+            get {
+                return this.selfSignedCertificateField;
+            }
+            set {
+                this.selfSignedCertificateField = value;
+                this.RaisePropertyChanged("selfSignedCertificate");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VimVasaProviderInfo : DynamicData {
+        
+        private VimVasaProvider providerField;
+        
+        private VimVasaProviderStatePerArray[] arrayStateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VimVasaProvider provider {
+            get {
+                return this.providerField;
+            }
+            set {
+                this.providerField = value;
+                this.RaisePropertyChanged("provider");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("arrayState", Order=1)]
+        public VimVasaProviderStatePerArray[] arrayState {
+            get {
+                return this.arrayStateField;
+            }
+            set {
+                this.arrayStateField = value;
+                this.RaisePropertyChanged("arrayState");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostProtocolEndpoint : DynamicData {
+        
+        private string peTypeField;
+        
+        private string typeField;
+        
+        private string uuidField;
+        
+        private ManagedObjectReference[] hostKeyField;
+        
+        private string storageArrayField;
+        
+        private string nfsServerField;
+        
+        private string nfsDirField;
+        
+        private string nfsServerScopeField;
+        
+        private string nfsServerMajorField;
+        
+        private string nfsServerAuthTypeField;
+        
+        private string nfsServerUserField;
+        
+        private string deviceIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string peType {
+            get {
+                return this.peTypeField;
+            }
+            set {
+                this.peTypeField = value;
+                this.RaisePropertyChanged("peType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string uuid {
+            get {
+                return this.uuidField;
+            }
+            set {
+                this.uuidField = value;
+                this.RaisePropertyChanged("uuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("hostKey", Order=3)]
+        public ManagedObjectReference[] hostKey {
+            get {
+                return this.hostKeyField;
+            }
+            set {
+                this.hostKeyField = value;
+                this.RaisePropertyChanged("hostKey");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string storageArray {
+            get {
+                return this.storageArrayField;
+            }
+            set {
+                this.storageArrayField = value;
+                this.RaisePropertyChanged("storageArray");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string nfsServer {
+            get {
+                return this.nfsServerField;
+            }
+            set {
+                this.nfsServerField = value;
+                this.RaisePropertyChanged("nfsServer");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string nfsDir {
+            get {
+                return this.nfsDirField;
+            }
+            set {
+                this.nfsDirField = value;
+                this.RaisePropertyChanged("nfsDir");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string nfsServerScope {
+            get {
+                return this.nfsServerScopeField;
+            }
+            set {
+                this.nfsServerScopeField = value;
+                this.RaisePropertyChanged("nfsServerScope");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string nfsServerMajor {
+            get {
+                return this.nfsServerMajorField;
+            }
+            set {
+                this.nfsServerMajorField = value;
+                this.RaisePropertyChanged("nfsServerMajor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string nfsServerAuthType {
+            get {
+                return this.nfsServerAuthTypeField;
+            }
+            set {
+                this.nfsServerAuthTypeField = value;
+                this.RaisePropertyChanged("nfsServerAuthType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string nfsServerUser {
+            get {
+                return this.nfsServerUserField;
+            }
+            set {
+                this.nfsServerUserField = value;
+                this.RaisePropertyChanged("nfsServerUser");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string deviceId {
+            get {
+                return this.deviceIdField;
+            }
+            set {
+                this.deviceIdField = value;
+                this.RaisePropertyChanged("deviceId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VVolHostPE : DynamicData {
+        
+        private ManagedObjectReference keyField;
+        
+        private HostProtocolEndpoint[] protocolEndpointField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("protocolEndpoint", Order=1)]
+        public HostProtocolEndpoint[] protocolEndpoint {
+            get {
+                return this.protocolEndpointField;
+            }
+            set {
+                this.protocolEndpointField = value;
+                this.RaisePropertyChanged("protocolEndpoint");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostForceMountedInfo : DynamicData {
+        
+        private bool persistField;
+        
+        private bool mountedField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool persist {
+            get {
+                return this.persistField;
+            }
+            set {
+                this.persistField = value;
+                this.RaisePropertyChanged("persist");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool mounted {
+            get {
+                return this.mountedField;
+            }
+            set {
+                this.mountedField = value;
+                this.RaisePropertyChanged("mounted");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostScsiDiskPartition : DynamicData {
+        
+        private string diskNameField;
+        
+        private int partitionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string diskName {
+            get {
+                return this.diskNameField;
+            }
+            set {
+                this.diskNameField = value;
+                this.RaisePropertyChanged("diskName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int partition {
+            get {
+                return this.partitionField;
+            }
+            set {
+                this.partitionField = value;
+                this.RaisePropertyChanged("partition");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmfsUnmapBandwidthSpec : DynamicData {
+        
+        private string policyField;
+        
+        private long fixedValueField;
+        
+        private long dynamicMinField;
+        
+        private long dynamicMaxField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string policy {
+            get {
+                return this.policyField;
+            }
+            set {
+                this.policyField = value;
+                this.RaisePropertyChanged("policy");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public long fixedValue {
+            get {
+                return this.fixedValueField;
+            }
+            set {
+                this.fixedValueField = value;
+                this.RaisePropertyChanged("fixedValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public long dynamicMin {
+            get {
+                return this.dynamicMinField;
+            }
+            set {
+                this.dynamicMinField = value;
+                this.RaisePropertyChanged("dynamicMin");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public long dynamicMax {
+            get {
+                return this.dynamicMaxField;
+            }
+            set {
+                this.dynamicMaxField = value;
+                this.RaisePropertyChanged("dynamicMax");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostVvolVolume))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostVmfsVolume))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostPMemVolume))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostNasVolume))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostFileSystemVolume : DynamicData {
+        
+        private string typeField;
+        
+        private string nameField;
+        
+        private long capacityField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public long capacity {
+            get {
+                return this.capacityField;
+            }
+            set {
+                this.capacityField = value;
+                this.RaisePropertyChanged("capacity");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostVvolVolume : HostFileSystemVolume {
+        
+        private string scIdField;
+        
+        private VVolHostPE[] hostPEField;
+        
+        private VimVasaProviderInfo[] vasaProviderInfoField;
+        
+        private VASAStorageArray[] storageArrayField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string scId {
+            get {
+                return this.scIdField;
+            }
+            set {
+                this.scIdField = value;
+                this.RaisePropertyChanged("scId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("hostPE", Order=1)]
+        public VVolHostPE[] hostPE {
+            get {
+                return this.hostPEField;
+            }
+            set {
+                this.hostPEField = value;
+                this.RaisePropertyChanged("hostPE");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("vasaProviderInfo", Order=2)]
+        public VimVasaProviderInfo[] vasaProviderInfo {
+            get {
+                return this.vasaProviderInfoField;
+            }
+            set {
+                this.vasaProviderInfoField = value;
+                this.RaisePropertyChanged("vasaProviderInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("storageArray", Order=3)]
+        public VASAStorageArray[] storageArray {
+            get {
+                return this.storageArrayField;
+            }
+            set {
+                this.storageArrayField = value;
+                this.RaisePropertyChanged("storageArray");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class HostVmfsVolume : HostFileSystemVolume {
+        
+        private int blockSizeMbField;
+        
+        private int blockSizeField;
+        
+        private bool blockSizeFieldSpecified;
+        
+        private int unmapGranularityField;
+        
+        private bool unmapGranularityFieldSpecified;
+        
+        private string unmapPriorityField;
+        
+        private VmfsUnmapBandwidthSpec unmapBandwidthSpecField;
+        
+        private int maxBlocksField;
+        
+        private int majorVersionField;
+        
+        private string versionField;
+        
+        private string uuidField;
+        
+        private HostScsiDiskPartition[] extentField;
+        
+        private bool vmfsUpgradableField;
+        
+        private HostForceMountedInfo forceMountedInfoField;
+        
+        private bool ssdField;
+        
+        private bool ssdFieldSpecified;
+        
+        private bool localField;
+        
+        private bool localFieldSpecified;
+        
+        private string scsiDiskTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int blockSizeMb {
+            get {
+                return this.blockSizeMbField;
+            }
+            set {
+                this.blockSizeMbField = value;
+                this.RaisePropertyChanged("blockSizeMb");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int blockSize {
+            get {
+                return this.blockSizeField;
+            }
+            set {
+                this.blockSizeField = value;
+                this.RaisePropertyChanged("blockSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool blockSizeSpecified {
+            get {
+                return this.blockSizeFieldSpecified;
+            }
+            set {
+                this.blockSizeFieldSpecified = value;
+                this.RaisePropertyChanged("blockSizeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int unmapGranularity {
+            get {
+                return this.unmapGranularityField;
+            }
+            set {
+                this.unmapGranularityField = value;
+                this.RaisePropertyChanged("unmapGranularity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool unmapGranularitySpecified {
+            get {
+                return this.unmapGranularityFieldSpecified;
+            }
+            set {
+                this.unmapGranularityFieldSpecified = value;
+                this.RaisePropertyChanged("unmapGranularitySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string unmapPriority {
+            get {
+                return this.unmapPriorityField;
+            }
+            set {
+                this.unmapPriorityField = value;
+                this.RaisePropertyChanged("unmapPriority");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public VmfsUnmapBandwidthSpec unmapBandwidthSpec {
+            get {
+                return this.unmapBandwidthSpecField;
+            }
+            set {
+                this.unmapBandwidthSpecField = value;
+                this.RaisePropertyChanged("unmapBandwidthSpec");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public int maxBlocks {
+            get {
+                return this.maxBlocksField;
+            }
+            set {
+                this.maxBlocksField = value;
+                this.RaisePropertyChanged("maxBlocks");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public int majorVersion {
+            get {
+                return this.majorVersionField;
+            }
+            set {
+                this.majorVersionField = value;
+                this.RaisePropertyChanged("majorVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string version {
             get {
                 return this.versionField;
@@ -10761,76 +21949,147 @@ namespace SharpSphere.vSphere {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("filterSet", Order=1)]
-        public PropertyFilterUpdate[] filterSet {
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string uuid {
             get {
-                return this.filterSetField;
+                return this.uuidField;
             }
             set {
-                this.filterSetField = value;
-                this.RaisePropertyChanged("filterSet");
+                this.uuidField = value;
+                this.RaisePropertyChanged("uuid");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public bool truncated {
+        [System.Xml.Serialization.XmlElementAttribute("extent", Order=9)]
+        public HostScsiDiskPartition[] extent {
             get {
-                return this.truncatedField;
+                return this.extentField;
             }
             set {
-                this.truncatedField = value;
-                this.RaisePropertyChanged("truncated");
+                this.extentField = value;
+                this.RaisePropertyChanged("extent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public bool vmfsUpgradable {
+            get {
+                return this.vmfsUpgradableField;
+            }
+            set {
+                this.vmfsUpgradableField = value;
+                this.RaisePropertyChanged("vmfsUpgradable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public HostForceMountedInfo forceMountedInfo {
+            get {
+                return this.forceMountedInfoField;
+            }
+            set {
+                this.forceMountedInfoField = value;
+                this.RaisePropertyChanged("forceMountedInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public bool ssd {
+            get {
+                return this.ssdField;
+            }
+            set {
+                this.ssdField = value;
+                this.RaisePropertyChanged("ssd");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool truncatedSpecified {
+        public bool ssdSpecified {
             get {
-                return this.truncatedFieldSpecified;
+                return this.ssdFieldSpecified;
             }
             set {
-                this.truncatedFieldSpecified = value;
-                this.RaisePropertyChanged("truncatedSpecified");
+                this.ssdFieldSpecified = value;
+                this.RaisePropertyChanged("ssdSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public bool local {
+            get {
+                return this.localField;
+            }
+            set {
+                this.localField = value;
+                this.RaisePropertyChanged("local");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool localSpecified {
+            get {
+                return this.localFieldSpecified;
+            }
+            set {
+                this.localFieldSpecified = value;
+                this.RaisePropertyChanged("localSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string scsiDiskType {
+            get {
+                return this.scsiDiskTypeField;
+            }
+            set {
+                this.scsiDiskTypeField = value;
+                this.RaisePropertyChanged("scsiDiskType");
             }
         }
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskInProgress))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidState))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidLogin))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidLocale))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestOperationsFault))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileFault))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class VimFault : MethodFault {
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class TaskInProgress : VimFault {
+    public partial class HostPMemVolume : HostFileSystemVolume {
         
-        private ManagedObjectReference taskField;
+        private string uuidField;
+        
+        private string versionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public ManagedObjectReference task {
+        public string uuid {
             get {
-                return this.taskField;
+                return this.uuidField;
             }
             set {
-                this.taskField = value;
-                this.RaisePropertyChanged("task");
+                this.uuidField = value;
+                this.RaisePropertyChanged("uuid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string version {
+            get {
+                return this.versionField;
+            }
+            set {
+                this.versionField = value;
+                this.RaisePropertyChanged("version");
             }
         }
     }
@@ -10841,55 +22100,456 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class InvalidState : VimFault {
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class InvalidLogin : VimFault {
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class InvalidLocale : VimFault {
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class GuestOperationsFault : VimFault {
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class FileFault : VimFault {
+    public partial class HostNasVolume : HostFileSystemVolume {
         
-        private string fileField;
+        private string remoteHostField;
+        
+        private string remotePathField;
+        
+        private string userNameField;
+        
+        private string[] remoteHostNamesField;
+        
+        private string securityTypeField;
+        
+        private bool protocolEndpointField;
+        
+        private bool protocolEndpointFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string file {
+        public string remoteHost {
             get {
-                return this.fileField;
+                return this.remoteHostField;
             }
             set {
-                this.fileField = value;
-                this.RaisePropertyChanged("file");
+                this.remoteHostField = value;
+                this.RaisePropertyChanged("remoteHost");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string remotePath {
+            get {
+                return this.remotePathField;
+            }
+            set {
+                this.remotePathField = value;
+                this.RaisePropertyChanged("remotePath");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string userName {
+            get {
+                return this.userNameField;
+            }
+            set {
+                this.userNameField = value;
+                this.RaisePropertyChanged("userName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("remoteHostNames", Order=3)]
+        public string[] remoteHostNames {
+            get {
+                return this.remoteHostNamesField;
+            }
+            set {
+                this.remoteHostNamesField = value;
+                this.RaisePropertyChanged("remoteHostNames");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string securityType {
+            get {
+                return this.securityTypeField;
+            }
+            set {
+                this.securityTypeField = value;
+                this.RaisePropertyChanged("securityType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public bool protocolEndpoint {
+            get {
+                return this.protocolEndpointField;
+            }
+            set {
+                this.protocolEndpointField = value;
+                this.RaisePropertyChanged("protocolEndpoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool protocolEndpointSpecified {
+            get {
+                return this.protocolEndpointFieldSpecified;
+            }
+            set {
+                this.protocolEndpointFieldSpecified = value;
+                this.RaisePropertyChanged("protocolEndpointSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PMemDatastoreInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VvolDatastoreInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocalDatastoreInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NasDatastoreInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmfsDatastoreInfo))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DatastoreInfo : DynamicData {
+        
+        private string nameField;
+        
+        private string urlField;
+        
+        private long freeSpaceField;
+        
+        private long maxFileSizeField;
+        
+        private long maxVirtualDiskCapacityField;
+        
+        private bool maxVirtualDiskCapacityFieldSpecified;
+        
+        private long maxMemoryFileSizeField;
+        
+        private bool maxMemoryFileSizeFieldSpecified;
+        
+        private System.DateTime timestampField;
+        
+        private bool timestampFieldSpecified;
+        
+        private string containerIdField;
+        
+        private string aliasOfField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string url {
+            get {
+                return this.urlField;
+            }
+            set {
+                this.urlField = value;
+                this.RaisePropertyChanged("url");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public long freeSpace {
+            get {
+                return this.freeSpaceField;
+            }
+            set {
+                this.freeSpaceField = value;
+                this.RaisePropertyChanged("freeSpace");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public long maxFileSize {
+            get {
+                return this.maxFileSizeField;
+            }
+            set {
+                this.maxFileSizeField = value;
+                this.RaisePropertyChanged("maxFileSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public long maxVirtualDiskCapacity {
+            get {
+                return this.maxVirtualDiskCapacityField;
+            }
+            set {
+                this.maxVirtualDiskCapacityField = value;
+                this.RaisePropertyChanged("maxVirtualDiskCapacity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool maxVirtualDiskCapacitySpecified {
+            get {
+                return this.maxVirtualDiskCapacityFieldSpecified;
+            }
+            set {
+                this.maxVirtualDiskCapacityFieldSpecified = value;
+                this.RaisePropertyChanged("maxVirtualDiskCapacitySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public long maxMemoryFileSize {
+            get {
+                return this.maxMemoryFileSizeField;
+            }
+            set {
+                this.maxMemoryFileSizeField = value;
+                this.RaisePropertyChanged("maxMemoryFileSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool maxMemoryFileSizeSpecified {
+            get {
+                return this.maxMemoryFileSizeFieldSpecified;
+            }
+            set {
+                this.maxMemoryFileSizeFieldSpecified = value;
+                this.RaisePropertyChanged("maxMemoryFileSizeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public System.DateTime timestamp {
+            get {
+                return this.timestampField;
+            }
+            set {
+                this.timestampField = value;
+                this.RaisePropertyChanged("timestamp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool timestampSpecified {
+            get {
+                return this.timestampFieldSpecified;
+            }
+            set {
+                this.timestampFieldSpecified = value;
+                this.RaisePropertyChanged("timestampSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string containerId {
+            get {
+                return this.containerIdField;
+            }
+            set {
+                this.containerIdField = value;
+                this.RaisePropertyChanged("containerId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string aliasOf {
+            get {
+                return this.aliasOfField;
+            }
+            set {
+                this.aliasOfField = value;
+                this.RaisePropertyChanged("aliasOf");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class PMemDatastoreInfo : DatastoreInfo {
+        
+        private HostPMemVolume pmemField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public HostPMemVolume pmem {
+            get {
+                return this.pmemField;
+            }
+            set {
+                this.pmemField = value;
+                this.RaisePropertyChanged("pmem");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VvolDatastoreInfo : DatastoreInfo {
+        
+        private HostVvolVolume vvolDSField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public HostVvolVolume vvolDS {
+            get {
+                return this.vvolDSField;
+            }
+            set {
+                this.vvolDSField = value;
+                this.RaisePropertyChanged("vvolDS");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class LocalDatastoreInfo : DatastoreInfo {
+        
+        private string pathField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string path {
+            get {
+                return this.pathField;
+            }
+            set {
+                this.pathField = value;
+                this.RaisePropertyChanged("path");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NasDatastoreInfo : DatastoreInfo {
+        
+        private HostNasVolume nasField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public HostNasVolume nas {
+            get {
+                return this.nasField;
+            }
+            set {
+                this.nasField = value;
+                this.RaisePropertyChanged("nas");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmfsDatastoreInfo : DatastoreInfo {
+        
+        private long maxPhysicalRDMFileSizeField;
+        
+        private bool maxPhysicalRDMFileSizeFieldSpecified;
+        
+        private long maxVirtualRDMFileSizeField;
+        
+        private bool maxVirtualRDMFileSizeFieldSpecified;
+        
+        private HostVmfsVolume vmfsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long maxPhysicalRDMFileSize {
+            get {
+                return this.maxPhysicalRDMFileSizeField;
+            }
+            set {
+                this.maxPhysicalRDMFileSizeField = value;
+                this.RaisePropertyChanged("maxPhysicalRDMFileSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool maxPhysicalRDMFileSizeSpecified {
+            get {
+                return this.maxPhysicalRDMFileSizeFieldSpecified;
+            }
+            set {
+                this.maxPhysicalRDMFileSizeFieldSpecified = value;
+                this.RaisePropertyChanged("maxPhysicalRDMFileSizeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public long maxVirtualRDMFileSize {
+            get {
+                return this.maxVirtualRDMFileSizeField;
+            }
+            set {
+                this.maxVirtualRDMFileSizeField = value;
+                this.RaisePropertyChanged("maxVirtualRDMFileSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool maxVirtualRDMFileSizeSpecified {
+            get {
+                return this.maxVirtualRDMFileSizeFieldSpecified;
+            }
+            set {
+                this.maxVirtualRDMFileSizeFieldSpecified = value;
+                this.RaisePropertyChanged("maxVirtualRDMFileSizeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public HostVmfsVolume vmfs {
+            get {
+                return this.vmfsField;
+            }
+            set {
+                this.vmfsField = value;
+                this.RaisePropertyChanged("vmfs");
             }
         }
     }
@@ -10924,6 +22584,4460 @@ namespace SharpSphere.vSphere {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
     public partial class InvalidCollectorVersion : MethodFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmToolsUpgradeFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ToolsUpgradeCancelled))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmHostAffinityRuleViolation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigIncompatibleForRecordReplay))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigIncompatibleForFaultTolerance))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHardwareCompatibilityIssue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WakeOnLanNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHardwareVersionNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StorageVmotionIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCpusNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCoresPerSocketNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughCpus))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughLogicalCpus))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotSupportedByDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotRecommended))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeatureRequirementsNotMet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DrsVmotionIncompatibleFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IDEDiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskModeNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMINotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedBusControllerNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RemoteDeviceNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RawDiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhysCompatRDMNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonPersistentDisksNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MultiWriterNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileBackedPortNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DigestNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceControllerNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceBackingNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskBlocksNotFullyProvisioned))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnusedVirtualDiskBlocksNotScrubbed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DVPortNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceCpuIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible81EDX))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible1ECX))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuCompatibilityUnknown))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VFlashModuleNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VFlashCacheHotConfigNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppPropertyFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotUserConfigurableProperty))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoVcManagedIpConfigured))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoAvailableIp))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingNetworkIpConfig))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingIpPool))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPropertyValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnconfiguredPropertyValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPropertyType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidNetworkInType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppNotRunning))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedVmxLocation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnSupportedDatastoreForVFlash))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemoryFileFormatNotSupportedByDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SoftRuleVioCorrectionImpact))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SoftRuleVioCorrectionDisallowed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RuleViolation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMNotSupportedOnDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuarantineModeFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OvfConsumerValidationFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCpusIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoCompatibleSoftAffinityHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoCompatibleHardAffinityHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemoryHotPlugNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LargeRDMNotSupportedOnDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidVmConfig))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmWwnConflict))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedGuest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyDevices))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SwapPlacementOverrideNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceOperation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceBacking))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisallowedDiskModeChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceUnsupportedForVmVersion))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceUnsupportedForVmPlatform))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceHotPlugNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidFormat))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidSnapshotFormat))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDiskFormat))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GenericVmConfigFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceCannotEditMem))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EightHostLimitViolated))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeltaDiskFormatNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuHotPlugNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotUseNetwork))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotDisableSnapshot))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmComponent))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMPointsToInaccessibleDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessNetwork))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnVirtualIntranet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnConflictDVPort))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LegacyNetworkInterfaceInUse))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DestinationSwitchFull))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmConfig))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TaskInProgress))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppTaskInProgress))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManySnapshotLevels))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotNoChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotLocked))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotIncompatibleDeviceInVm))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotDisabled))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MultipleSnapshotsNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySnapshotOnIndependentDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FilesystemQuiesceFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationQuiesceFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SSPIChallenge))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmPowerOnDisabled))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuestionPending))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OvfConsumerPowerOnFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoActiveHostInCluster))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MksConnectionLimitReached))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidVmState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPowerState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidHostState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidHostConnectionState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDatastoreState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EncryptionKeyRequired))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotPowerOffVmInCluster))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidName))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidLogin))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PasswordExpired))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidClientCertificate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidLocale))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDatastorePath))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InaccessibleDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InaccessibleFTMetadataDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DatastoreNotWritableOnHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SwapDatastoreNotWritableOnHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestOperationsFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyGuestLogons))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperationNotSupportedByGuest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperationDisabledByGuest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidGuestLogin))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryValueFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryValueNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyParentVolatile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyInvalid))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyHasSubkeys))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyAlreadyExists))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestProcessNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestPermissionDenied))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestOperationsUnavailable))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestMultipleMappings))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestComponentsOutOfDate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestAuthenticationChallenge))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyNativeClonesOnFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyNativeCloneLevels))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyConcurrentNativeClones))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotAFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotADirectory))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoDiskSpace))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkCopyFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IncorrectFileType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileTooLarge))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileNotWritable))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileNameTooLong))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileLocked))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileAlreadyExists))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DirectoryNotEmpty))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotDeleteFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotCreateFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomizationFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingWindowsCustResources))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingLinuxCustResources))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VimFault : MethodFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ToolsUpgradeCancelled))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmToolsUpgradeFault : VimFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ToolsUpgradeCancelled : VmToolsUpgradeFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmHostAffinityRuleViolation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigIncompatibleForRecordReplay))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigIncompatibleForFaultTolerance))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHardwareCompatibilityIssue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WakeOnLanNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHardwareVersionNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StorageVmotionIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCpusNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCoresPerSocketNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughCpus))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughLogicalCpus))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotSupportedByDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotRecommended))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeatureRequirementsNotMet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DrsVmotionIncompatibleFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IDEDiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskModeNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMINotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedBusControllerNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RemoteDeviceNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RawDiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhysCompatRDMNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonPersistentDisksNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MultiWriterNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileBackedPortNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DigestNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceControllerNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceBackingNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskBlocksNotFullyProvisioned))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnusedVirtualDiskBlocksNotScrubbed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DVPortNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceCpuIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible81EDX))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible1ECX))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuCompatibilityUnknown))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VFlashModuleNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VFlashCacheHotConfigNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppPropertyFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotUserConfigurableProperty))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoVcManagedIpConfigured))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoAvailableIp))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingNetworkIpConfig))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingIpPool))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPropertyValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnconfiguredPropertyValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPropertyType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidNetworkInType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppNotRunning))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedVmxLocation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnSupportedDatastoreForVFlash))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemoryFileFormatNotSupportedByDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SoftRuleVioCorrectionImpact))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SoftRuleVioCorrectionDisallowed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RuleViolation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMNotSupportedOnDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuarantineModeFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OvfConsumerValidationFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCpusIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoCompatibleSoftAffinityHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoCompatibleHardAffinityHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemoryHotPlugNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LargeRDMNotSupportedOnDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidVmConfig))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmWwnConflict))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedGuest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyDevices))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SwapPlacementOverrideNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceOperation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceBacking))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisallowedDiskModeChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceUnsupportedForVmVersion))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceUnsupportedForVmPlatform))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceHotPlugNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidFormat))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidSnapshotFormat))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDiskFormat))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GenericVmConfigFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceCannotEditMem))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EightHostLimitViolated))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeltaDiskFormatNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuHotPlugNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotUseNetwork))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotDisableSnapshot))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmComponent))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMPointsToInaccessibleDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessNetwork))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnVirtualIntranet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnConflictDVPort))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LegacyNetworkInterfaceInUse))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DestinationSwitchFull))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmConfig))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmConfigFault : VimFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmHostAffinityRuleViolation : VmConfigFault {
+        
+        private string vmNameField;
+        
+        private string hostNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vmName {
+            get {
+                return this.vmNameField;
+            }
+            set {
+                this.vmNameField = value;
+                this.RaisePropertyChanged("vmName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string hostName {
+            get {
+                return this.hostNameField;
+            }
+            set {
+                this.hostNameField = value;
+                this.RaisePropertyChanged("hostName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmConfigIncompatibleForRecordReplay : VmConfigFault {
+        
+        private LocalizedMethodFault faultField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public LocalizedMethodFault fault {
+            get {
+                return this.faultField;
+            }
+            set {
+                this.faultField = value;
+                this.RaisePropertyChanged("fault");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmConfigIncompatibleForFaultTolerance : VmConfigFault {
+        
+        private LocalizedMethodFault faultField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public LocalizedMethodFault fault {
+            get {
+                return this.faultField;
+            }
+            set {
+                this.faultField = value;
+                this.RaisePropertyChanged("fault");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WakeOnLanNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualHardwareVersionNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StorageVmotionIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCpusNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NumVirtualCoresPerSocketNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughCpus))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughLogicalCpus))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotSupportedByDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySizeNotRecommended))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeatureRequirementsNotMet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DrsVmotionIncompatibleFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IDEDiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskModeNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMINotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedBusControllerNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RemoteDeviceNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RawDiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhysCompatRDMNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonPersistentDisksNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MultiWriterNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileBackedPortNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DigestNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceControllerNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceBackingNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskBlocksNotFullyProvisioned))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnusedVirtualDiskBlocksNotScrubbed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DVPortNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceCpuIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible81EDX))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible1ECX))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuCompatibilityUnknown))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualHardwareCompatibilityIssue : VmConfigFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class WakeOnLanNotSupported : VirtualHardwareCompatibilityIssue {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualHardwareVersionNotSupported : VirtualHardwareCompatibilityIssue {
+        
+        private string hostNameField;
+        
+        private ManagedObjectReference hostField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string hostName {
+            get {
+                return this.hostNameField;
+            }
+            set {
+                this.hostNameField = value;
+                this.RaisePropertyChanged("hostName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference host {
+            get {
+                return this.hostField;
+            }
+            set {
+                this.hostField = value;
+                this.RaisePropertyChanged("host");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class StorageVmotionIncompatible : VirtualHardwareCompatibilityIssue {
+        
+        private ManagedObjectReference datastoreField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NumVirtualCpusNotSupported : VirtualHardwareCompatibilityIssue {
+        
+        private int maxSupportedVcpusDestField;
+        
+        private int numCpuVmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int maxSupportedVcpusDest {
+            get {
+                return this.maxSupportedVcpusDestField;
+            }
+            set {
+                this.maxSupportedVcpusDestField = value;
+                this.RaisePropertyChanged("maxSupportedVcpusDest");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int numCpuVm {
+            get {
+                return this.numCpuVmField;
+            }
+            set {
+                this.numCpuVmField = value;
+                this.RaisePropertyChanged("numCpuVm");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NumVirtualCoresPerSocketNotSupported : VirtualHardwareCompatibilityIssue {
+        
+        private int maxSupportedCoresPerSocketDestField;
+        
+        private int numCoresPerSocketVmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int maxSupportedCoresPerSocketDest {
+            get {
+                return this.maxSupportedCoresPerSocketDestField;
+            }
+            set {
+                this.maxSupportedCoresPerSocketDestField = value;
+                this.RaisePropertyChanged("maxSupportedCoresPerSocketDest");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int numCoresPerSocketVm {
+            get {
+                return this.numCoresPerSocketVmField;
+            }
+            set {
+                this.numCoresPerSocketVmField = value;
+                this.RaisePropertyChanged("numCoresPerSocketVm");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughLogicalCpus))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NotEnoughCpus : VirtualHardwareCompatibilityIssue {
+        
+        private int numCpuDestField;
+        
+        private int numCpuVmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int numCpuDest {
+            get {
+                return this.numCpuDestField;
+            }
+            set {
+                this.numCpuDestField = value;
+                this.RaisePropertyChanged("numCpuDest");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int numCpuVm {
+            get {
+                return this.numCpuVmField;
+            }
+            set {
+                this.numCpuVmField = value;
+                this.RaisePropertyChanged("numCpuVm");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NotEnoughLogicalCpus : NotEnoughCpus {
+        
+        private ManagedObjectReference hostField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference host {
+            get {
+                return this.hostField;
+            }
+            set {
+                this.hostField = value;
+                this.RaisePropertyChanged("host");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MemorySizeNotSupportedByDatastore : VirtualHardwareCompatibilityIssue {
+        
+        private ManagedObjectReference datastoreField;
+        
+        private int memorySizeMBField;
+        
+        private int maxMemorySizeMBField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int memorySizeMB {
+            get {
+                return this.memorySizeMBField;
+            }
+            set {
+                this.memorySizeMBField = value;
+                this.RaisePropertyChanged("memorySizeMB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int maxMemorySizeMB {
+            get {
+                return this.maxMemorySizeMBField;
+            }
+            set {
+                this.maxMemorySizeMBField = value;
+                this.RaisePropertyChanged("maxMemorySizeMB");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MemorySizeNotSupported : VirtualHardwareCompatibilityIssue {
+        
+        private int memorySizeMBField;
+        
+        private int minMemorySizeMBField;
+        
+        private int maxMemorySizeMBField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int memorySizeMB {
+            get {
+                return this.memorySizeMBField;
+            }
+            set {
+                this.memorySizeMBField = value;
+                this.RaisePropertyChanged("memorySizeMB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int minMemorySizeMB {
+            get {
+                return this.minMemorySizeMBField;
+            }
+            set {
+                this.minMemorySizeMBField = value;
+                this.RaisePropertyChanged("minMemorySizeMB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int maxMemorySizeMB {
+            get {
+                return this.maxMemorySizeMBField;
+            }
+            set {
+                this.maxMemorySizeMBField = value;
+                this.RaisePropertyChanged("maxMemorySizeMB");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MemorySizeNotRecommended : VirtualHardwareCompatibilityIssue {
+        
+        private int memorySizeMBField;
+        
+        private int minMemorySizeMBField;
+        
+        private int maxMemorySizeMBField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int memorySizeMB {
+            get {
+                return this.memorySizeMBField;
+            }
+            set {
+                this.memorySizeMBField = value;
+                this.RaisePropertyChanged("memorySizeMB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int minMemorySizeMB {
+            get {
+                return this.minMemorySizeMBField;
+            }
+            set {
+                this.minMemorySizeMBField = value;
+                this.RaisePropertyChanged("minMemorySizeMB");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int maxMemorySizeMB {
+            get {
+                return this.maxMemorySizeMBField;
+            }
+            set {
+                this.maxMemorySizeMBField = value;
+                this.RaisePropertyChanged("maxMemorySizeMB");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FeatureRequirementsNotMet : VirtualHardwareCompatibilityIssue {
+        
+        private VirtualMachineFeatureRequirement[] featureRequirementField;
+        
+        private ManagedObjectReference vmField;
+        
+        private ManagedObjectReference hostField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("featureRequirement", Order=0)]
+        public VirtualMachineFeatureRequirement[] featureRequirement {
+            get {
+                return this.featureRequirementField;
+            }
+            set {
+                this.featureRequirementField = value;
+                this.RaisePropertyChanged("featureRequirement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference vm {
+            get {
+                return this.vmField;
+            }
+            set {
+                this.vmField = value;
+                this.RaisePropertyChanged("vm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public ManagedObjectReference host {
+            get {
+                return this.hostField;
+            }
+            set {
+                this.hostField = value;
+                this.RaisePropertyChanged("host");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DrsVmotionIncompatibleFault : VirtualHardwareCompatibilityIssue {
+        
+        private ManagedObjectReference hostField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference host {
+            get {
+                return this.hostField;
+            }
+            set {
+                this.hostField = value;
+                this.RaisePropertyChanged("host");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IDEDiskNotSupported))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DiskNotSupported : VirtualHardwareCompatibilityIssue {
+        
+        private int diskField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int disk {
+            get {
+                return this.diskField;
+            }
+            set {
+                this.diskField = value;
+                this.RaisePropertyChanged("disk");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class IDEDiskNotSupported : DiskNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualEthernetCardNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskModeNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMINotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SharedBusControllerNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RemoteDeviceNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RawDiskNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhysCompatRDMNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NonPersistentDisksNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MultiWriterNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileBackedPortNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DigestNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceControllerNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceBackingNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskBlocksNotFullyProvisioned))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnusedVirtualDiskBlocksNotScrubbed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DVPortNotSupported))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DeviceNotSupported : VirtualHardwareCompatibilityIssue {
+        
+        private string deviceField;
+        
+        private string reasonField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string device {
+            get {
+                return this.deviceField;
+            }
+            set {
+                this.deviceField = value;
+                this.RaisePropertyChanged("device");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string reason {
+            get {
+                return this.reasonField;
+            }
+            set {
+                this.reasonField = value;
+                this.RaisePropertyChanged("reason");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualEthernetCardNotSupported : DeviceNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskModeNotSupported : DeviceNotSupported {
+        
+        private string modeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string mode {
+            get {
+                return this.modeField;
+            }
+            set {
+                this.modeField = value;
+                this.RaisePropertyChanged("mode");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VMINotSupported : DeviceNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SharedBusControllerNotSupported : DeviceNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class RemoteDeviceNotSupported : DeviceNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class RawDiskNotSupported : DeviceNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PhysCompatRDMNotSupported))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class RDMNotSupported : DeviceNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class PhysCompatRDMNotSupported : RDMNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NonPersistentDisksNotSupported : DeviceNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MultiWriterNotSupported : DeviceNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileBackedPortNotSupported : DeviceNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DigestNotSupported : DeviceNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DeviceControllerNotSupported : DeviceNotSupported {
+        
+        private string controllerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string controller {
+            get {
+                return this.controllerField;
+            }
+            set {
+                this.controllerField = value;
+                this.RaisePropertyChanged("controller");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualDiskBlocksNotFullyProvisioned))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnusedVirtualDiskBlocksNotScrubbed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DVPortNotSupported))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DeviceBackingNotSupported : DeviceNotSupported {
+        
+        private string backingField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string backing {
+            get {
+                return this.backingField;
+            }
+            set {
+                this.backingField = value;
+                this.RaisePropertyChanged("backing");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VirtualDiskBlocksNotFullyProvisioned : DeviceBackingNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class UnusedVirtualDiskBlocksNotScrubbed : DeviceBackingNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DVPortNotSupported : DeviceBackingNotSupported {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FaultToleranceCpuIncompatible))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible81EDX))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuIncompatible1ECX))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpuCompatibilityUnknown))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CpuIncompatible : VirtualHardwareCompatibilityIssue {
+        
+        private int levelField;
+        
+        private string registerNameField;
+        
+        private string registerBitsField;
+        
+        private string desiredBitsField;
+        
+        private ManagedObjectReference hostField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int level {
+            get {
+                return this.levelField;
+            }
+            set {
+                this.levelField = value;
+                this.RaisePropertyChanged("level");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string registerName {
+            get {
+                return this.registerNameField;
+            }
+            set {
+                this.registerNameField = value;
+                this.RaisePropertyChanged("registerName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string registerBits {
+            get {
+                return this.registerBitsField;
+            }
+            set {
+                this.registerBitsField = value;
+                this.RaisePropertyChanged("registerBits");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string desiredBits {
+            get {
+                return this.desiredBitsField;
+            }
+            set {
+                this.desiredBitsField = value;
+                this.RaisePropertyChanged("desiredBits");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public ManagedObjectReference host {
+            get {
+                return this.hostField;
+            }
+            set {
+                this.hostField = value;
+                this.RaisePropertyChanged("host");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FaultToleranceCpuIncompatible : CpuIncompatible {
+        
+        private bool modelField;
+        
+        private bool familyField;
+        
+        private bool steppingField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool model {
+            get {
+                return this.modelField;
+            }
+            set {
+                this.modelField = value;
+                this.RaisePropertyChanged("model");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool family {
+            get {
+                return this.familyField;
+            }
+            set {
+                this.familyField = value;
+                this.RaisePropertyChanged("family");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool stepping {
+            get {
+                return this.steppingField;
+            }
+            set {
+                this.steppingField = value;
+                this.RaisePropertyChanged("stepping");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CpuIncompatible81EDX : CpuIncompatible {
+        
+        private bool nxField;
+        
+        private bool ffxsrField;
+        
+        private bool rdtscpField;
+        
+        private bool lmField;
+        
+        private bool otherField;
+        
+        private bool otherOnlyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool nx {
+            get {
+                return this.nxField;
+            }
+            set {
+                this.nxField = value;
+                this.RaisePropertyChanged("nx");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool ffxsr {
+            get {
+                return this.ffxsrField;
+            }
+            set {
+                this.ffxsrField = value;
+                this.RaisePropertyChanged("ffxsr");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool rdtscp {
+            get {
+                return this.rdtscpField;
+            }
+            set {
+                this.rdtscpField = value;
+                this.RaisePropertyChanged("rdtscp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool lm {
+            get {
+                return this.lmField;
+            }
+            set {
+                this.lmField = value;
+                this.RaisePropertyChanged("lm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool other {
+            get {
+                return this.otherField;
+            }
+            set {
+                this.otherField = value;
+                this.RaisePropertyChanged("other");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public bool otherOnly {
+            get {
+                return this.otherOnlyField;
+            }
+            set {
+                this.otherOnlyField = value;
+                this.RaisePropertyChanged("otherOnly");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CpuIncompatible1ECX : CpuIncompatible {
+        
+        private bool sse3Field;
+        
+        private bool pclmulqdqField;
+        
+        private bool pclmulqdqFieldSpecified;
+        
+        private bool ssse3Field;
+        
+        private bool sse41Field;
+        
+        private bool sse42Field;
+        
+        private bool aesField;
+        
+        private bool aesFieldSpecified;
+        
+        private bool otherField;
+        
+        private bool otherOnlyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool sse3 {
+            get {
+                return this.sse3Field;
+            }
+            set {
+                this.sse3Field = value;
+                this.RaisePropertyChanged("sse3");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool pclmulqdq {
+            get {
+                return this.pclmulqdqField;
+            }
+            set {
+                this.pclmulqdqField = value;
+                this.RaisePropertyChanged("pclmulqdq");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool pclmulqdqSpecified {
+            get {
+                return this.pclmulqdqFieldSpecified;
+            }
+            set {
+                this.pclmulqdqFieldSpecified = value;
+                this.RaisePropertyChanged("pclmulqdqSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool ssse3 {
+            get {
+                return this.ssse3Field;
+            }
+            set {
+                this.ssse3Field = value;
+                this.RaisePropertyChanged("ssse3");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool sse41 {
+            get {
+                return this.sse41Field;
+            }
+            set {
+                this.sse41Field = value;
+                this.RaisePropertyChanged("sse41");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool sse42 {
+            get {
+                return this.sse42Field;
+            }
+            set {
+                this.sse42Field = value;
+                this.RaisePropertyChanged("sse42");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public bool aes {
+            get {
+                return this.aesField;
+            }
+            set {
+                this.aesField = value;
+                this.RaisePropertyChanged("aes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool aesSpecified {
+            get {
+                return this.aesFieldSpecified;
+            }
+            set {
+                this.aesFieldSpecified = value;
+                this.RaisePropertyChanged("aesSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public bool other {
+            get {
+                return this.otherField;
+            }
+            set {
+                this.otherField = value;
+                this.RaisePropertyChanged("other");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public bool otherOnly {
+            get {
+                return this.otherOnlyField;
+            }
+            set {
+                this.otherOnlyField = value;
+                this.RaisePropertyChanged("otherOnly");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CpuCompatibilityUnknown : CpuIncompatible {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VFlashModuleNotSupported : VmConfigFault {
+        
+        private string vmNameField;
+        
+        private string moduleNameField;
+        
+        private string reasonField;
+        
+        private string hostNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vmName {
+            get {
+                return this.vmNameField;
+            }
+            set {
+                this.vmNameField = value;
+                this.RaisePropertyChanged("vmName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string moduleName {
+            get {
+                return this.moduleNameField;
+            }
+            set {
+                this.moduleNameField = value;
+                this.RaisePropertyChanged("moduleName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string reason {
+            get {
+                return this.reasonField;
+            }
+            set {
+                this.reasonField = value;
+                this.RaisePropertyChanged("reason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string hostName {
+            get {
+                return this.hostNameField;
+            }
+            set {
+                this.hostNameField = value;
+                this.RaisePropertyChanged("hostName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VFlashCacheHotConfigNotSupported : VmConfigFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotUserConfigurableProperty))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoVcManagedIpConfigured))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoAvailableIp))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingNetworkIpConfig))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingIpPool))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPropertyValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnconfiguredPropertyValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPropertyType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidNetworkInType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VAppPropertyFault : VmConfigFault {
+        
+        private string idField;
+        
+        private string categoryField;
+        
+        private string labelField;
+        
+        private string typeField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string category {
+            get {
+                return this.categoryField;
+            }
+            set {
+                this.categoryField = value;
+                this.RaisePropertyChanged("category");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string label {
+            get {
+                return this.labelField;
+            }
+            set {
+                this.labelField = value;
+                this.RaisePropertyChanged("label");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NotUserConfigurableProperty : VAppPropertyFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NoVcManagedIpConfigured : VAppPropertyFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NoAvailableIp : VAppPropertyFault {
+        
+        private ManagedObjectReference networkField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference network {
+            get {
+                return this.networkField;
+            }
+            set {
+                this.networkField = value;
+                this.RaisePropertyChanged("network");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MissingNetworkIpConfig : VAppPropertyFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MissingIpPool : VAppPropertyFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnconfiguredPropertyValue))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidPropertyValue : VAppPropertyFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class UnconfiguredPropertyValue : InvalidPropertyValue {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidPropertyType : VAppPropertyFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidNetworkInType : VAppPropertyFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VAppNotRunning : VmConfigFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class UnsupportedVmxLocation : VmConfigFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnSupportedDatastoreForVFlash))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemoryFileFormatNotSupportedByDatastore))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class UnsupportedDatastore : VmConfigFault {
+        
+        private ManagedObjectReference datastoreField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class UnSupportedDatastoreForVFlash : UnsupportedDatastore {
+        
+        private string datastoreNameField;
+        
+        private string typeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string datastoreName {
+            get {
+                return this.datastoreNameField;
+            }
+            set {
+                this.datastoreNameField = value;
+                this.RaisePropertyChanged("datastoreName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MemoryFileFormatNotSupportedByDatastore : UnsupportedDatastore {
+        
+        private string datastoreNameField;
+        
+        private string typeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string datastoreName {
+            get {
+                return this.datastoreNameField;
+            }
+            set {
+                this.datastoreNameField = value;
+                this.RaisePropertyChanged("datastoreName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SoftRuleVioCorrectionImpact : VmConfigFault {
+        
+        private string vmNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vmName {
+            get {
+                return this.vmNameField;
+            }
+            set {
+                this.vmNameField = value;
+                this.RaisePropertyChanged("vmName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SoftRuleVioCorrectionDisallowed : VmConfigFault {
+        
+        private string vmNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vmName {
+            get {
+                return this.vmNameField;
+            }
+            set {
+                this.vmNameField = value;
+                this.RaisePropertyChanged("vmName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class RuleViolation : VmConfigFault {
+        
+        private ManagedObjectReference hostField;
+        
+        private ClusterRuleInfo ruleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference host {
+            get {
+                return this.hostField;
+            }
+            set {
+                this.hostField = value;
+                this.RaisePropertyChanged("host");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ClusterRuleInfo rule {
+            get {
+                return this.ruleField;
+            }
+            set {
+                this.ruleField = value;
+                this.RaisePropertyChanged("rule");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class RDMNotSupportedOnDatastore : VmConfigFault {
+        
+        private string deviceField;
+        
+        private ManagedObjectReference datastoreField;
+        
+        private string datastoreNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string device {
+            get {
+                return this.deviceField;
+            }
+            set {
+                this.deviceField = value;
+                this.RaisePropertyChanged("device");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string datastoreName {
+            get {
+                return this.datastoreNameField;
+            }
+            set {
+                this.datastoreNameField = value;
+                this.RaisePropertyChanged("datastoreName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class QuarantineModeFault : VmConfigFault {
+        
+        private string vmNameField;
+        
+        private string faultTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vmName {
+            get {
+                return this.vmNameField;
+            }
+            set {
+                this.vmNameField = value;
+                this.RaisePropertyChanged("vmName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string faultType {
+            get {
+                return this.faultTypeField;
+            }
+            set {
+                this.faultTypeField = value;
+                this.RaisePropertyChanged("faultType");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class OvfConsumerValidationFault : VmConfigFault {
+        
+        private string extensionKeyField;
+        
+        private string extensionNameField;
+        
+        private string messageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string extensionKey {
+            get {
+                return this.extensionKeyField;
+            }
+            set {
+                this.extensionKeyField = value;
+                this.RaisePropertyChanged("extensionKey");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string extensionName {
+            get {
+                return this.extensionNameField;
+            }
+            set {
+                this.extensionNameField = value;
+                this.RaisePropertyChanged("extensionName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+                this.RaisePropertyChanged("message");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NumVirtualCpusIncompatible : VmConfigFault {
+        
+        private string reasonField;
+        
+        private int numCpuField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string reason {
+            get {
+                return this.reasonField;
+            }
+            set {
+                this.reasonField = value;
+                this.RaisePropertyChanged("reason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int numCpu {
+            get {
+                return this.numCpuField;
+            }
+            set {
+                this.numCpuField = value;
+                this.RaisePropertyChanged("numCpu");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NoCompatibleSoftAffinityHost : VmConfigFault {
+        
+        private string vmNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vmName {
+            get {
+                return this.vmNameField;
+            }
+            set {
+                this.vmNameField = value;
+                this.RaisePropertyChanged("vmName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NoCompatibleHardAffinityHost : VmConfigFault {
+        
+        private string vmNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vmName {
+            get {
+                return this.vmNameField;
+            }
+            set {
+                this.vmNameField = value;
+                this.RaisePropertyChanged("vmName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MemoryHotPlugNotSupported : VmConfigFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class LargeRDMNotSupportedOnDatastore : VmConfigFault {
+        
+        private string deviceField;
+        
+        private ManagedObjectReference datastoreField;
+        
+        private string datastoreNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string device {
+            get {
+                return this.deviceField;
+            }
+            set {
+                this.deviceField = value;
+                this.RaisePropertyChanged("device");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string datastoreName {
+            get {
+                return this.datastoreNameField;
+            }
+            set {
+                this.datastoreNameField = value;
+                this.RaisePropertyChanged("datastoreName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmWwnConflict))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedGuest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyDevices))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SwapPlacementOverrideNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceOperation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceBacking))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisallowedDiskModeChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceUnsupportedForVmVersion))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceUnsupportedForVmPlatform))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceHotPlugNotSupported))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidVmConfig : VmConfigFault {
+        
+        private string propertyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string property {
+            get {
+                return this.propertyField;
+            }
+            set {
+                this.propertyField = value;
+                this.RaisePropertyChanged("property");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmWwnConflict : InvalidVmConfig {
+        
+        private ManagedObjectReference vmField;
+        
+        private ManagedObjectReference hostField;
+        
+        private string nameField;
+        
+        private long wwnField;
+        
+        private bool wwnFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference vm {
+            get {
+                return this.vmField;
+            }
+            set {
+                this.vmField = value;
+                this.RaisePropertyChanged("vm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference host {
+            get {
+                return this.hostField;
+            }
+            set {
+                this.hostField = value;
+                this.RaisePropertyChanged("host");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public long wwn {
+            get {
+                return this.wwnField;
+            }
+            set {
+                this.wwnField = value;
+                this.RaisePropertyChanged("wwn");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool wwnSpecified {
+            get {
+                return this.wwnFieldSpecified;
+            }
+            set {
+                this.wwnFieldSpecified = value;
+                this.RaisePropertyChanged("wwnSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class UnsupportedGuest : InvalidVmConfig {
+        
+        private string unsupportedGuestOSField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string unsupportedGuestOS {
+            get {
+                return this.unsupportedGuestOSField;
+            }
+            set {
+                this.unsupportedGuestOSField = value;
+                this.RaisePropertyChanged("unsupportedGuestOS");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TooManyDevices : InvalidVmConfig {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SwapPlacementOverrideNotSupported : InvalidVmConfig {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceOperation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDeviceBacking))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidController))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisallowedDiskModeChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceUnsupportedForVmVersion))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceUnsupportedForVmPlatform))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceHotPlugNotSupported))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidDeviceSpec : InvalidVmConfig {
+        
+        private int deviceIndexField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int deviceIndex {
+            get {
+                return this.deviceIndexField;
+            }
+            set {
+                this.deviceIndexField = value;
+                this.RaisePropertyChanged("deviceIndex");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MissingController : InvalidDeviceSpec {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidDeviceOperation : InvalidDeviceSpec {
+        
+        private VirtualDeviceConfigSpecOperation badOpField;
+        
+        private bool badOpFieldSpecified;
+        
+        private VirtualDeviceConfigSpecFileOperation badFileOpField;
+        
+        private bool badFileOpFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VirtualDeviceConfigSpecOperation badOp {
+            get {
+                return this.badOpField;
+            }
+            set {
+                this.badOpField = value;
+                this.RaisePropertyChanged("badOp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool badOpSpecified {
+            get {
+                return this.badOpFieldSpecified;
+            }
+            set {
+                this.badOpFieldSpecified = value;
+                this.RaisePropertyChanged("badOpSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VirtualDeviceConfigSpecFileOperation badFileOp {
+            get {
+                return this.badFileOpField;
+            }
+            set {
+                this.badFileOpField = value;
+                this.RaisePropertyChanged("badFileOp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool badFileOpSpecified {
+            get {
+                return this.badFileOpFieldSpecified;
+            }
+            set {
+                this.badFileOpFieldSpecified = value;
+                this.RaisePropertyChanged("badFileOpSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public enum VirtualDeviceConfigSpecOperation {
+        
+        /// <remarks/>
+        add,
+        
+        /// <remarks/>
+        remove,
+        
+        /// <remarks/>
+        edit,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public enum VirtualDeviceConfigSpecFileOperation {
+        
+        /// <remarks/>
+        create,
+        
+        /// <remarks/>
+        destroy,
+        
+        /// <remarks/>
+        replace,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidDeviceBacking : InvalidDeviceSpec {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidController : InvalidDeviceSpec {
+        
+        private int controllerKeyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int controllerKey {
+            get {
+                return this.controllerKeyField;
+            }
+            set {
+                this.controllerKeyField = value;
+                this.RaisePropertyChanged("controllerKey");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DisallowedDiskModeChange : InvalidDeviceSpec {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DeviceUnsupportedForVmVersion : InvalidDeviceSpec {
+        
+        private string currentVersionField;
+        
+        private string expectedVersionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string currentVersion {
+            get {
+                return this.currentVersionField;
+            }
+            set {
+                this.currentVersionField = value;
+                this.RaisePropertyChanged("currentVersion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string expectedVersion {
+            get {
+                return this.expectedVersionField;
+            }
+            set {
+                this.expectedVersionField = value;
+                this.RaisePropertyChanged("expectedVersion");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DeviceUnsupportedForVmPlatform : InvalidDeviceSpec {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DeviceNotFound : InvalidDeviceSpec {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DeviceHotPlugNotSupported : InvalidDeviceSpec {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidSnapshotFormat))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDiskFormat))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidFormat : VmConfigFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidSnapshotFormat : InvalidFormat {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidDiskFormat : InvalidFormat {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GenericVmConfigFault : VmConfigFault {
+        
+        private string reasonField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string reason {
+            get {
+                return this.reasonField;
+            }
+            set {
+                this.reasonField = value;
+                this.RaisePropertyChanged("reason");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FaultToleranceCannotEditMem : VmConfigFault {
+        
+        private string vmNameField;
+        
+        private ManagedObjectReference vmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string vmName {
+            get {
+                return this.vmNameField;
+            }
+            set {
+                this.vmNameField = value;
+                this.RaisePropertyChanged("vmName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference vm {
+            get {
+                return this.vmField;
+            }
+            set {
+                this.vmField = value;
+                this.RaisePropertyChanged("vm");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class EightHostLimitViolated : VmConfigFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DeltaDiskFormatNotSupported : VmConfigFault {
+        
+        private ManagedObjectReference[] datastoreField;
+        
+        private string deltaDiskFormatField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("datastore", Order=0)]
+        public ManagedObjectReference[] datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string deltaDiskFormat {
+            get {
+                return this.deltaDiskFormatField;
+            }
+            set {
+                this.deltaDiskFormatField = value;
+                this.RaisePropertyChanged("deltaDiskFormat");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CpuHotPlugNotSupported : VmConfigFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotUseNetwork : VmConfigFault {
+        
+        private string deviceField;
+        
+        private string backingField;
+        
+        private bool connectedField;
+        
+        private string reasonField;
+        
+        private ManagedObjectReference networkField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string device {
+            get {
+                return this.deviceField;
+            }
+            set {
+                this.deviceField = value;
+                this.RaisePropertyChanged("device");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string backing {
+            get {
+                return this.backingField;
+            }
+            set {
+                this.backingField = value;
+                this.RaisePropertyChanged("backing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool connected {
+            get {
+                return this.connectedField;
+            }
+            set {
+                this.connectedField = value;
+                this.RaisePropertyChanged("connected");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string reason {
+            get {
+                return this.reasonField;
+            }
+            set {
+                this.reasonField = value;
+                this.RaisePropertyChanged("reason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public ManagedObjectReference network {
+            get {
+                return this.networkField;
+            }
+            set {
+                this.networkField = value;
+                this.RaisePropertyChanged("network");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotDisableSnapshot : VmConfigFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmDevice))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMPointsToInaccessibleDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessNetwork))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnVirtualIntranet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnConflictDVPort))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LegacyNetworkInterfaceInUse))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DestinationSwitchFull))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmConfig))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotAccessVmComponent : VmConfigFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessVmDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMPointsToInaccessibleDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessNetwork))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnVirtualIntranet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnConflictDVPort))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LegacyNetworkInterfaceInUse))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DestinationSwitchFull))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotAccessVmDevice : CannotAccessVmComponent {
+        
+        private string deviceField;
+        
+        private string backingField;
+        
+        private bool connectedField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string device {
+            get {
+                return this.deviceField;
+            }
+            set {
+                this.deviceField = value;
+                this.RaisePropertyChanged("device");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string backing {
+            get {
+                return this.backingField;
+            }
+            set {
+                this.backingField = value;
+                this.RaisePropertyChanged("backing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool connected {
+            get {
+                return this.connectedField;
+            }
+            set {
+                this.connectedField = value;
+                this.RaisePropertyChanged("connected");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RDMPointsToInaccessibleDisk))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotAccessVmDisk : CannotAccessVmDevice {
+        
+        private LocalizedMethodFault faultField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public LocalizedMethodFault fault {
+            get {
+                return this.faultField;
+            }
+            set {
+                this.faultField = value;
+                this.RaisePropertyChanged("fault");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class RDMPointsToInaccessibleDisk : CannotAccessVmDisk {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnVirtualIntranet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VMOnConflictDVPort))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LegacyNetworkInterfaceInUse))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DestinationSwitchFull))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotAccessNetwork : CannotAccessVmDevice {
+        
+        private ManagedObjectReference networkField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference network {
+            get {
+                return this.networkField;
+            }
+            set {
+                this.networkField = value;
+                this.RaisePropertyChanged("network");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VMOnVirtualIntranet : CannotAccessNetwork {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VMOnConflictDVPort : CannotAccessNetwork {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class LegacyNetworkInterfaceInUse : CannotAccessNetwork {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DestinationSwitchFull : CannotAccessNetwork {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotAccessVmConfig : CannotAccessVmComponent {
+        
+        private LocalizedMethodFault reasonField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public LocalizedMethodFault reason {
+            get {
+                return this.reasonField;
+            }
+            set {
+                this.reasonField = value;
+                this.RaisePropertyChanged("reason");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VAppTaskInProgress))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TaskInProgress : VimFault {
+        
+        private ManagedObjectReference taskField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference task {
+            get {
+                return this.taskField;
+            }
+            set {
+                this.taskField = value;
+                this.RaisePropertyChanged("task");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VAppTaskInProgress : TaskInProgress {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManySnapshotLevels))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotNoChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotLocked))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotIncompatibleDeviceInVm))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SnapshotDisabled))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MultipleSnapshotsNotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemorySnapshotOnIndependentDisk))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FilesystemQuiesceFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApplicationQuiesceFault))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SnapshotFault : VimFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TooManySnapshotLevels : SnapshotFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SnapshotNoChange : SnapshotFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SnapshotLocked : SnapshotFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SnapshotIncompatibleDeviceInVm : SnapshotFault {
+        
+        private LocalizedMethodFault faultField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public LocalizedMethodFault fault {
+            get {
+                return this.faultField;
+            }
+            set {
+                this.faultField = value;
+                this.RaisePropertyChanged("fault");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SnapshotDisabled : SnapshotFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MultipleSnapshotsNotSupported : SnapshotFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MemorySnapshotOnIndependentDisk : SnapshotFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FilesystemQuiesceFault : SnapshotFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class ApplicationQuiesceFault : SnapshotFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SSPIChallenge : VimFault {
+        
+        private string base64TokenField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string base64Token {
+            get {
+                return this.base64TokenField;
+            }
+            set {
+                this.base64TokenField = value;
+                this.RaisePropertyChanged("base64Token");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmPowerOnDisabled))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuestionPending))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OvfConsumerPowerOnFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoActiveHostInCluster))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MksConnectionLimitReached))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidVmState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidPowerState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidHostState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidHostConnectionState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDatastoreState))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EncryptionKeyRequired))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotPowerOffVmInCluster))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidState : VimFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class VmPowerOnDisabled : InvalidState {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class QuestionPending : InvalidState {
+        
+        private string textField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+                this.RaisePropertyChanged("text");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class OvfConsumerPowerOnFault : InvalidState {
+        
+        private string extensionKeyField;
+        
+        private string extensionNameField;
+        
+        private string descriptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string extensionKey {
+            get {
+                return this.extensionKeyField;
+            }
+            set {
+                this.extensionKeyField = value;
+                this.RaisePropertyChanged("extensionKey");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string extensionName {
+            get {
+                return this.extensionNameField;
+            }
+            set {
+                this.extensionNameField = value;
+                this.RaisePropertyChanged("extensionName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NoActiveHostInCluster : InvalidState {
+        
+        private ManagedObjectReference computeResourceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference computeResource {
+            get {
+                return this.computeResourceField;
+            }
+            set {
+                this.computeResourceField = value;
+                this.RaisePropertyChanged("computeResource");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MksConnectionLimitReached : InvalidState {
+        
+        private int connectionLimitField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int connectionLimit {
+            get {
+                return this.connectionLimitField;
+            }
+            set {
+                this.connectionLimitField = value;
+                this.RaisePropertyChanged("connectionLimit");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidVmState : InvalidState {
+        
+        private ManagedObjectReference vmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference vm {
+            get {
+                return this.vmField;
+            }
+            set {
+                this.vmField = value;
+                this.RaisePropertyChanged("vm");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidPowerState : InvalidState {
+        
+        private VirtualMachinePowerState requestedStateField;
+        
+        private bool requestedStateFieldSpecified;
+        
+        private VirtualMachinePowerState existingStateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VirtualMachinePowerState requestedState {
+            get {
+                return this.requestedStateField;
+            }
+            set {
+                this.requestedStateField = value;
+                this.RaisePropertyChanged("requestedState");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool requestedStateSpecified {
+            get {
+                return this.requestedStateFieldSpecified;
+            }
+            set {
+                this.requestedStateFieldSpecified = value;
+                this.RaisePropertyChanged("requestedStateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VirtualMachinePowerState existingState {
+            get {
+                return this.existingStateField;
+            }
+            set {
+                this.existingStateField = value;
+                this.RaisePropertyChanged("existingState");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidHostConnectionState))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidHostState : InvalidState {
+        
+        private ManagedObjectReference hostField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference host {
+            get {
+                return this.hostField;
+            }
+            set {
+                this.hostField = value;
+                this.RaisePropertyChanged("host");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidHostConnectionState : InvalidHostState {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidDatastoreState : InvalidState {
+        
+        private string datastoreNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string datastoreName {
+            get {
+                return this.datastoreNameField;
+            }
+            set {
+                this.datastoreNameField = value;
+                this.RaisePropertyChanged("datastoreName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class EncryptionKeyRequired : InvalidState {
+        
+        private CryptoKeyId[] requiredKeyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("requiredKey", Order=0)]
+        public CryptoKeyId[] requiredKey {
+            get {
+                return this.requiredKeyField;
+            }
+            set {
+                this.requiredKeyField = value;
+                this.RaisePropertyChanged("requiredKey");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotPowerOffVmInCluster : InvalidState {
+        
+        private string operationField;
+        
+        private ManagedObjectReference vmField;
+        
+        private string vmNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string operation {
+            get {
+                return this.operationField;
+            }
+            set {
+                this.operationField = value;
+                this.RaisePropertyChanged("operation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference vm {
+            get {
+                return this.vmField;
+            }
+            set {
+                this.vmField = value;
+                this.RaisePropertyChanged("vm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string vmName {
+            get {
+                return this.vmNameField;
+            }
+            set {
+                this.vmNameField = value;
+                this.RaisePropertyChanged("vmName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidName : VimFault {
+        
+        private string nameField;
+        
+        private ManagedObjectReference entityField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ManagedObjectReference entity {
+            get {
+                return this.entityField;
+            }
+            set {
+                this.entityField = value;
+                this.RaisePropertyChanged("entity");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PasswordExpired))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidClientCertificate))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidLogin : VimFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class PasswordExpired : InvalidLogin {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidClientCertificate : InvalidLogin {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidLocale : VimFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidDatastorePath))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InaccessibleDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InaccessibleFTMetadataDatastore))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DatastoreNotWritableOnHost))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SwapDatastoreNotWritableOnHost))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidDatastore : VimFault {
+        
+        private ManagedObjectReference datastoreField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidDatastorePath : InvalidDatastore {
+        
+        private string datastorePathField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string datastorePath {
+            get {
+                return this.datastorePathField;
+            }
+            set {
+                this.datastorePathField = value;
+                this.RaisePropertyChanged("datastorePath");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InaccessibleFTMetadataDatastore))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InaccessibleDatastore : InvalidDatastore {
+        
+        private string detailField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string detail {
+            get {
+                return this.detailField;
+            }
+            set {
+                this.detailField = value;
+                this.RaisePropertyChanged("detail");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InaccessibleFTMetadataDatastore : InaccessibleDatastore {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SwapDatastoreNotWritableOnHost))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DatastoreNotWritableOnHost : InvalidDatastore {
+        
+        private ManagedObjectReference hostField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ManagedObjectReference host {
+            get {
+                return this.hostField;
+            }
+            set {
+                this.hostField = value;
+                this.RaisePropertyChanged("host");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class SwapDatastoreNotWritableOnHost : DatastoreNotWritableOnHost {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyGuestLogons))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperationNotSupportedByGuest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OperationDisabledByGuest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidGuestLogin))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryValueFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryValueNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyParentVolatile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyInvalid))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyHasSubkeys))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyAlreadyExists))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestProcessNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestPermissionDenied))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestOperationsUnavailable))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestMultipleMappings))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestComponentsOutOfDate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestAuthenticationChallenge))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestOperationsFault : VimFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TooManyGuestLogons : GuestOperationsFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class OperationNotSupportedByGuest : GuestOperationsFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class OperationDisabledByGuest : GuestOperationsFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidGuestLogin : GuestOperationsFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryValueFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryValueNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyParentVolatile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyInvalid))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyHasSubkeys))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyAlreadyExists))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestRegistryFault : GuestOperationsFault {
+        
+        private long windowsSystemErrorCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long windowsSystemErrorCode {
+            get {
+                return this.windowsSystemErrorCodeField;
+            }
+            set {
+                this.windowsSystemErrorCodeField = value;
+                this.RaisePropertyChanged("windowsSystemErrorCode");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryValueNotFound))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestRegistryValueFault : GuestRegistryFault {
+        
+        private string keyNameField;
+        
+        private string valueNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string keyName {
+            get {
+                return this.keyNameField;
+            }
+            set {
+                this.keyNameField = value;
+                this.RaisePropertyChanged("keyName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string valueName {
+            get {
+                return this.valueNameField;
+            }
+            set {
+                this.valueNameField = value;
+                this.RaisePropertyChanged("valueName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestRegistryValueNotFound : GuestRegistryValueFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyParentVolatile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyInvalid))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyHasSubkeys))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestRegistryKeyAlreadyExists))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestRegistryKeyFault : GuestRegistryFault {
+        
+        private string keyNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string keyName {
+            get {
+                return this.keyNameField;
+            }
+            set {
+                this.keyNameField = value;
+                this.RaisePropertyChanged("keyName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestRegistryKeyParentVolatile : GuestRegistryKeyFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestRegistryKeyInvalid : GuestRegistryKeyFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestRegistryKeyHasSubkeys : GuestRegistryKeyFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestRegistryKeyAlreadyExists : GuestRegistryKeyFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestProcessNotFound : GuestOperationsFault {
+        
+        private long pidField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public long pid {
+            get {
+                return this.pidField;
+            }
+            set {
+                this.pidField = value;
+                this.RaisePropertyChanged("pid");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestPermissionDenied : GuestOperationsFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestOperationsUnavailable : GuestOperationsFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestMultipleMappings : GuestOperationsFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestComponentsOutOfDate : GuestOperationsFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class GuestAuthenticationChallenge : GuestOperationsFault {
+        
+        private GuestAuthentication serverChallengeField;
+        
+        private long sessionIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public GuestAuthentication serverChallenge {
+            get {
+                return this.serverChallengeField;
+            }
+            set {
+                this.serverChallengeField = value;
+                this.RaisePropertyChanged("serverChallenge");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public long sessionID {
+            get {
+                return this.sessionIDField;
+            }
+            set {
+                this.sessionIDField = value;
+                this.RaisePropertyChanged("sessionID");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyNativeClonesOnFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyNativeCloneLevels))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TooManyConcurrentNativeClones))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotAFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotADirectory))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NoDiskSpace))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkCopyFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IncorrectFileType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileTooLarge))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileNotWritable))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileNameTooLong))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileLocked))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileAlreadyExists))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DirectoryNotEmpty))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotDeleteFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotCreateFile))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CannotAccessFile))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileFault : VimFault {
+        
+        private string fileField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string file {
+            get {
+                return this.fileField;
+            }
+            set {
+                this.fileField = value;
+                this.RaisePropertyChanged("file");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TooManyNativeClonesOnFile : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TooManyNativeCloneLevels : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class TooManyConcurrentNativeClones : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NotAFile : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NotADirectory : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NoDiskSpace : FileFault {
+        
+        private string datastoreField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class NetworkCopyFault : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class IncorrectFileType : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileTooLarge : FileFault {
+        
+        private string datastoreField;
+        
+        private long fileSizeField;
+        
+        private long maxFileSizeField;
+        
+        private bool maxFileSizeFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string datastore {
+            get {
+                return this.datastoreField;
+            }
+            set {
+                this.datastoreField = value;
+                this.RaisePropertyChanged("datastore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public long fileSize {
+            get {
+                return this.fileSizeField;
+            }
+            set {
+                this.fileSizeField = value;
+                this.RaisePropertyChanged("fileSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public long maxFileSize {
+            get {
+                return this.maxFileSizeField;
+            }
+            set {
+                this.maxFileSizeField = value;
+                this.RaisePropertyChanged("maxFileSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool maxFileSizeSpecified {
+            get {
+                return this.maxFileSizeFieldSpecified;
+            }
+            set {
+                this.maxFileSizeFieldSpecified = value;
+                this.RaisePropertyChanged("maxFileSizeSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileNotWritable : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileNotFound : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileNameTooLong : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileLocked : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class FileAlreadyExists : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class DirectoryNotEmpty : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotDeleteFile : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotCreateFile : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CannotAccessFile : FileFault {
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingWindowsCustResources))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingLinuxCustResources))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class CustomizationFault : VimFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MissingWindowsCustResources : CustomizationFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class MissingLinuxCustResources : CustomizationFault {
     }
     
     /// <remarks/>
@@ -11203,6 +27317,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11264,6 +27384,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11325,6 +27451,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11387,6 +27519,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11448,6 +27586,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11508,6 +27652,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11571,6 +27721,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11611,6 +27767,423 @@ namespace SharpSphere.vSphere {
         System.Threading.Tasks.Task<SharpSphere.vSphere.UserSession> LoginAsync(SharpSphere.vSphere.ManagedObjectReference _this, string userName, string password, string locale);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidLocale), Action="urn:vim25/7.0.0.0", Name="InvalidLocaleFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidLogin), Action="urn:vim25/7.0.0.0", Name="InvalidLoginFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.SSPIChallenge), Action="urn:vim25/7.0.0.0", Name="SSPIChallengeFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreatePropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ContinueRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelWaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CheckForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListProcessesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StartProgramInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferToGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferFromGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByDnsNameRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindChildRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MethodFault[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ManagedObjectReference[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bool[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sbyte[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(short[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(int[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(long[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        SharpSphere.vSphere.UserSession LoginBySSPI(SharpSphere.vSphere.ManagedObjectReference _this, string base64Token, string locale);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        System.Threading.Tasks.Task<SharpSphere.vSphere.UserSession> LoginBySSPIAsync(SharpSphere.vSphere.ManagedObjectReference _this, string base64Token, string locale);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreatePropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ContinueRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelWaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CheckForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListProcessesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StartProgramInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferToGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferFromGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByDnsNameRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindChildRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MethodFault[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ManagedObjectReference[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bool[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sbyte[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(short[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(int[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(long[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        SharpSphere.vSphere.SessionManagerGenericServiceTicket AcquireGenericServiceTicket(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.SessionManagerServiceRequestSpec spec);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        System.Threading.Tasks.Task<SharpSphere.vSphere.SessionManagerGenericServiceTicket> AcquireGenericServiceTicketAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.SessionManagerServiceRequestSpec spec);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidName), Action="urn:vim25/7.0.0.0", Name="InvalidNameFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidState), Action="urn:vim25/7.0.0.0", Name="InvalidStateFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.SnapshotFault), Action="urn:vim25/7.0.0.0", Name="SnapshotFaultFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.TaskInProgress), Action="urn:vim25/7.0.0.0", Name="TaskInProgressFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.VmConfigFault), Action="urn:vim25/7.0.0.0", Name="VmConfigFaultFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreatePropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ContinueRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelWaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CheckForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListProcessesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StartProgramInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferToGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferFromGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByDnsNameRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindChildRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MethodFault[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ManagedObjectReference[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bool[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sbyte[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(short[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(int[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(long[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        SharpSphere.vSphere.ManagedObjectReference CreateSnapshot_Task(SharpSphere.vSphere.ManagedObjectReference _this, string name, string description, bool memory, bool quiesce);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> CreateSnapshot_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, string name, string description, bool memory, bool quiesce);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidDatastore), Action="urn:vim25/7.0.0.0", Name="InvalidDatastoreFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreatePropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ContinueRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelWaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CheckForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListProcessesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StartProgramInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferToGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferFromGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByDnsNameRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindChildRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MethodFault[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ManagedObjectReference[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bool[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sbyte[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(short[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(int[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(long[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        SharpSphere.vSphere.ManagedObjectReference SearchDatastore_Task(SharpSphere.vSphere.ManagedObjectReference _this, string datastorePath, SharpSphere.vSphere.HostDatastoreBrowserSearchSpec searchSpec);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> SearchDatastore_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, string datastorePath, SharpSphere.vSphere.HostDatastoreBrowserSearchSpec searchSpec);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.TaskInProgress), Action="urn:vim25/7.0.0.0", Name="TaskInProgressFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreatePropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ContinueRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelWaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CheckForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListProcessesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StartProgramInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferToGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferFromGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByDnsNameRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindChildRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MethodFault[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ManagedObjectReference[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bool[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sbyte[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(short[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(int[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(long[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        SharpSphere.vSphere.ManagedObjectReference RemoveSnapshot_Task(SharpSphere.vSphere.ManagedObjectReference _this, bool removeChildren, bool consolidate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> RemoveSnapshot_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, bool removeChildren, bool consolidate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.GuestOperationsFault), Action="urn:vim25/7.0.0.0", Name="GuestOperationsFaultFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidState), Action="urn:vim25/7.0.0.0", Name="InvalidStateFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.TaskInProgress), Action="urn:vim25/7.0.0.0", Name="TaskInProgressFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreatePropertyCollectorRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ContinueRetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesExRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CancelWaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WaitForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CheckForUpdatesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrievePropertiesRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateFilterRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListProcessesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(StartProgramInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferToGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(InitiateFileTransferFromGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByDnsNameRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindChildRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MethodFault[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ManagedObjectReference[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bool[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sbyte[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(short[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(int[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(long[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        SharpSphere.vSphere.GuestAuthentication AcquireCredentialsInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication requestedAuth, long sessionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
+        System.Threading.Tasks.Task<SharpSphere.vSphere.GuestAuthentication> AcquireCredentialsInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication requestedAuth, long sessionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.GuestOperationsFault), Action="urn:vim25/7.0.0.0", Name="GuestOperationsFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidState), Action="urn:vim25/7.0.0.0", Name="InvalidStateFault")]
@@ -11636,6 +28209,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11699,6 +28278,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11762,6 +28347,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11827,6 +28418,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11892,6 +28489,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -11957,6 +28560,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -12022,6 +28631,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -12084,6 +28699,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -12146,6 +28767,12 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ListFilesInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MoveFileInGuestRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeleteFileInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireCredentialsInGuestRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RemoveSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SearchDatastoreRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreateSnapshotRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AcquireGenericServiceTicketRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginBySSPIRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LoginRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RetrieveServiceContentRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindAllByIpRequestType))]
@@ -12533,6 +29160,54 @@ namespace SharpSphere.vSphere {
         
         public System.Threading.Tasks.Task<SharpSphere.vSphere.UserSession> LoginAsync(SharpSphere.vSphere.ManagedObjectReference _this, string userName, string password, string locale) {
             return base.Channel.LoginAsync(_this, userName, password, locale);
+        }
+        
+        public SharpSphere.vSphere.UserSession LoginBySSPI(SharpSphere.vSphere.ManagedObjectReference _this, string base64Token, string locale) {
+            return base.Channel.LoginBySSPI(_this, base64Token, locale);
+        }
+        
+        public System.Threading.Tasks.Task<SharpSphere.vSphere.UserSession> LoginBySSPIAsync(SharpSphere.vSphere.ManagedObjectReference _this, string base64Token, string locale) {
+            return base.Channel.LoginBySSPIAsync(_this, base64Token, locale);
+        }
+        
+        public SharpSphere.vSphere.SessionManagerGenericServiceTicket AcquireGenericServiceTicket(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.SessionManagerServiceRequestSpec spec) {
+            return base.Channel.AcquireGenericServiceTicket(_this, spec);
+        }
+        
+        public System.Threading.Tasks.Task<SharpSphere.vSphere.SessionManagerGenericServiceTicket> AcquireGenericServiceTicketAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.SessionManagerServiceRequestSpec spec) {
+            return base.Channel.AcquireGenericServiceTicketAsync(_this, spec);
+        }
+        
+        public SharpSphere.vSphere.ManagedObjectReference CreateSnapshot_Task(SharpSphere.vSphere.ManagedObjectReference _this, string name, string description, bool memory, bool quiesce) {
+            return base.Channel.CreateSnapshot_Task(_this, name, description, memory, quiesce);
+        }
+        
+        public System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> CreateSnapshot_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, string name, string description, bool memory, bool quiesce) {
+            return base.Channel.CreateSnapshot_TaskAsync(_this, name, description, memory, quiesce);
+        }
+        
+        public SharpSphere.vSphere.ManagedObjectReference SearchDatastore_Task(SharpSphere.vSphere.ManagedObjectReference _this, string datastorePath, SharpSphere.vSphere.HostDatastoreBrowserSearchSpec searchSpec) {
+            return base.Channel.SearchDatastore_Task(_this, datastorePath, searchSpec);
+        }
+        
+        public System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> SearchDatastore_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, string datastorePath, SharpSphere.vSphere.HostDatastoreBrowserSearchSpec searchSpec) {
+            return base.Channel.SearchDatastore_TaskAsync(_this, datastorePath, searchSpec);
+        }
+        
+        public SharpSphere.vSphere.ManagedObjectReference RemoveSnapshot_Task(SharpSphere.vSphere.ManagedObjectReference _this, bool removeChildren, bool consolidate) {
+            return base.Channel.RemoveSnapshot_Task(_this, removeChildren, consolidate);
+        }
+        
+        public System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> RemoveSnapshot_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, bool removeChildren, bool consolidate) {
+            return base.Channel.RemoveSnapshot_TaskAsync(_this, removeChildren, consolidate);
+        }
+        
+        public SharpSphere.vSphere.GuestAuthentication AcquireCredentialsInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication requestedAuth, long sessionID) {
+            return base.Channel.AcquireCredentialsInGuest(_this, vm, requestedAuth, sessionID);
+        }
+        
+        public System.Threading.Tasks.Task<SharpSphere.vSphere.GuestAuthentication> AcquireCredentialsInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication requestedAuth, long sessionID) {
+            return base.Channel.AcquireCredentialsInGuestAsync(_this, vm, requestedAuth, sessionID);
         }
         
         public void DeleteFileInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string filePath) {

