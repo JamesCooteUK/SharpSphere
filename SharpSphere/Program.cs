@@ -23,6 +23,7 @@ namespace SharpSphere
         private static NamePasswordAuthentication creds;
         private static System.ServiceModel.BasicHttpsBinding binding;
         private static UserSession userSession = null;
+        private static string datacenterName;
         static void Log(string a)
         {
             Console.WriteLine(a);
@@ -300,8 +301,10 @@ namespace SharpSphere
                 //Connect to target VM
                 var childEntities = GetProperty<ManagedObjectReference[]>(serviceContent.rootFolder, "childEntity");
                 var datacenters = childEntities.Where(e => e.type == "Datacenter");
+
                 foreach (var datacenter in datacenters)
                 {
+                    
                     var vmFolder = GetProperty<ManagedObjectReference>(datacenter, "vmFolder");
                     var datacenterVms = ScanForVms(vmFolder);
 
@@ -336,6 +339,7 @@ namespace SharpSphere
                     VirtualMachineConfigInfo config = GetProperty<VirtualMachineConfigInfo>(vm, "config");
                     if (config.name == name)
                     {
+                        datacenterName = GetProperty<string>(datacenter, "name");
                         return vm;
                     }
                 }
@@ -471,8 +475,8 @@ namespace SharpSphere
                 string host = options.url.Remove(options.url.Length - 4);
                 string dsName = FindTextBetween(results.folderPath, "[", "]");
                 string folderPath = results.folderPath.Remove(0, dsName.Length + 3);
-                string vmemURL = host + "/folder/" + folderPath + latestFile.path + "?dcPath=Datacenter&dsName=" + dsName;
-                string vmsnURL = host + "/folder/" + folderPath + latestFile.path.Replace(".vmem", ".vmsn") + "?dcPath=Datacenter&dsName=" + dsName;
+                string vmemURL = host + "/folder/" + folderPath + latestFile.path + "?dcPath=" + datacenterName + "&dsName=" + dsName;
+                string vmsnURL = host + "/folder/" + folderPath + latestFile.path.Replace(".vmem", ".vmsn") + "?dcPath=" + datacenterName + "&dsName=" + dsName;
                 string vmemFile = options.destination.Replace("\"", string.Empty) + @"\" + Path.GetRandomFileName();
                 string vmsnFile = options.destination.Replace("\"", string.Empty) + @"\" + Path.GetRandomFileName();
                 string zipFile = options.destination.Replace("\"", string.Empty) + @"\" + Path.GetRandomFileName();
@@ -480,7 +484,7 @@ namespace SharpSphere
                 //Make the web requests
                 using (var client = new System.Net.WebClient())
                 {
-                    client.Credentials = new System.Net.NetworkCredential("administrator@vsphere.local", "Password1!");
+                    client.Credentials = new System.Net.NetworkCredential(options.username, options.password);
                     client.Headers.Set(System.Net.HttpRequestHeader.ContentType, "application/octet-stream");
                     client.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
                     Log("[x] Downloading " + latestFile.path + " (" + latestFile.fileSize / 1048576 + @"MB) to " + vmemFile + "...");
