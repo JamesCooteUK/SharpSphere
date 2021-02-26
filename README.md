@@ -12,7 +12,7 @@ SharpSphere gives red teamers the ability to easily interact with the guest oper
 - **File Upload** - Allows arbitrary files to be uploaded to the guest OS
 - **File Download** - Allows arbitrary files to be downloaded from the guest OS
 - **List VMs** - Lists the VMs managed by vCenter that have VMware Tools running
-- **Dump Memory** - Dump and download VM's memory, then manually extract credentials from LSASS offline using WinDbg and Mimikatz
+- **Dump Memory** - Dump and download VM's memory, then manually extract credentials from LSASS offline using WinDbg and Mimikatz ([Guide](https://jamescoote.co.uk/Dumping-LSASS-with-SharpShere/))
 
 SharpSphere supports execution through Cobalt Strike's *execute-assembly*.
 
