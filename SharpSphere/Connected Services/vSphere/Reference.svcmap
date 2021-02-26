@@ -19,7 +19,7 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="\\VBOXSVR\Documents\SharpSphere\VMware-vSphere-SDK-7.0.0-16447947\SDK\vsphere-ws\wsdl\vim25-mini\vimService.wsdl" Protocol="file" SourceId="1" />
+    <MetadataSource Address="VMware-vSphere-SDK-7.0.0-16447947\SDK\vsphere-ws\wsdl\vim25-mini\vimService.wsdl" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="vim.wsdl" MetadataType="Wsdl" ID="2660a0da-23df-4cbd-8685-2abe9e034204" SourceId="1" SourceUrl="file://vboxsvr/Documents/SharpSphere/VMware-vSphere-SDK-7.0.0-16447947/SDK/vsphere-ws/wsdl/vim25-mini/vim.wsdl" />
