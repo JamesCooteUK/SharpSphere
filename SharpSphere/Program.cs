@@ -13,6 +13,7 @@ namespace SharpSphere
     using NSspi.Contexts;
     using NSspi.Credentials;
     using System.IO.Compression;
+    using System.Net;
 
     internal class Program
     {
@@ -51,6 +52,7 @@ namespace SharpSphere
 
                 };
                 binding.Security.Mode = System.ServiceModel.BasicHttpsSecurityMode.Transport;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 var endpoint = new System.ServiceModel.EndpointAddress(url);
                 vim = new VimPortTypeClient(binding, endpoint);
                 var moref = new ManagedObjectReference
@@ -251,7 +253,7 @@ namespace SharpSphere
         {
             GuestAuthentication guestAuth = new GuestAuthentication()
             {
-                interactiveSession = false,
+                interactiveSession = true,
             };
             ManagedObjectReference guestAuthManager = GetProperty<ManagedObjectReference>(serviceContent.guestOperationsManager, "authManager");
             try
@@ -280,7 +282,7 @@ namespace SharpSphere
                 {
                     username = options.guestusername,
                     password = options.guestpassword,
-                    interactiveSession = false,
+                    interactiveSession = true,
                 };
                 ExecuteCommand(creds, "/c " + options.command, @"C:\Windows\System32\cmd.exe", @"C:\Users\Public", options.output);
             }
@@ -627,7 +629,7 @@ namespace SharpSphere
                 {
                     username = options.guestusername,
                     password = options.guestpassword,
-                    interactiveSession = false,
+                    interactiveSession = true,
                 };
                 UploadFile(creds, options.source, options.destination);
             }
@@ -665,7 +667,7 @@ namespace SharpSphere
                 {
                     username = options.guestusername,
                     password = options.guestpassword,
-                    interactiveSession = false,
+                    interactiveSession = true,
                 };
                 DownloadFile(creds, options.source, options.destination);
             }
@@ -686,7 +688,7 @@ namespace SharpSphere
                 {
                     username = options.guestusername,
                     password = options.guestpassword,
-                    interactiveSession = false,
+                    interactiveSession = true,
                 };
 
                 if (!Directory.Exists(options.localdir))
