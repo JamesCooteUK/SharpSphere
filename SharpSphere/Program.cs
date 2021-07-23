@@ -51,6 +51,10 @@ namespace SharpSphere
 
                 };
                 binding.Security.Mode = System.ServiceModel.BasicHttpsSecurityMode.Transport;
+                
+                //Newer versions of vCenter require the TLS version to specified manually
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                
                 var endpoint = new System.ServiceModel.EndpointAddress(url);
                 vim = new VimPortTypeClient(binding, endpoint);
                 var moref = new ManagedObjectReference
