@@ -4,6 +4,10 @@ Credit [@jkcoote](https://twitter.com/jkcoote) & [@grzryc](https://github.com/gr
 
 Full walk-through and examples available [here](https://jamescoote.co.uk/introducing-sharpsphere/).
 
+## Version History
+- 1.0 - Initial Release
+- 2.0 - Added supported for pass-through authentication using SSPI. 
+
 ## Introduction
 SharpSphere gives red teamers the ability to easily interact with the guest operating systems of virtual machines managed by vCenter. It uses the vSphere Web Services API and exposes the following functions:
 
@@ -49,9 +53,10 @@ SharpSphere.exe list --help
 
   --url         Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk
 
-  --username    Required. vCenter username, i.e. administrator@vsphere.local
+  --username    vCenter username, i.e. administrator@vsphere.local. Defauls to executing user and pass-through
+                authentication if not supplied.
 
-  --password    Required. vCenter password
+  --password    vCenter password. Defaults to executing user and pass-through authentication if not supplied.
 ```
 
 ### Code execution:
@@ -60,20 +65,25 @@ SharpSphere.exe execute --help
 
   --url              Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk
 
-  --username         Required. vCenter username, i.e. administrator@vsphere.local
+  --username         vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through
+                     authentication if not supplied.
 
-  --password         Required. vCenter password
+  --password         vCenter password. Defaults to executing user and pass-through authentication if not supplied.
 
   --ip               Required. Target VM IP address
 
-  --guestusername    Required. Username used to authenticate to the guest OS
+  --guestusername    Username used to authenticate to the guest OS. Defaults to executing user and pass-through
+                     authentication if not supplied
 
-  --guestpassword    Required. Password used to authenticate to the guest OS
+  --guestpassword    Password used to authenticate to the guest OS. Defaults to executing user and pass-through
+                     authentication if not supplied
 
   --command          Required. Command to execute
 
-  --output           (Default: false) Flag to receive the output. Will create a temporary file in C:\Users\Public on the
-                     guest to save the output. This is then downloaded and printed to the console and the file deleted.
+  --output           (Default: false) Receive output from your command. Will create a temporary file in outputDir on the
+                     guest to save the output. This is then downloaded and printed to the console and the file deleted
+
+  --outputDir        (Default: C:\Windows\Temp) When --output is provided, this is where to store the temporary file.
 ```
 
 ### Command & Control:
@@ -82,23 +92,25 @@ SharpSphere.exe c2 --help
 
   --url              Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk
 
-  --username         Required. vCenter username, i.e. administrator@vsphere.local
+  --username         vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through
+                     authentication if not supplied.
 
-  --password         Required. vCenter password
+  --password         vCenter password. Defaults to executing user and pass-through authentication if not supplied.
 
   --ip               Required. Target VM IP address
 
-  --guestusername    Required. Username used to authenticate to the guest OS
+  --guestusername    Username used to authenticate to the guest OS. Defaults to executing user and pass-through
+                     authentication if not supplied
 
-  --guestpassword    Required. Password used to authenticate to the guest OS
+  --guestpassword    Password used to authenticate to the guest OS. Defaults to executing user and pass-through
+                     authentication if not supplied
 
-  --localdir         Required. Full path to the C3 directory on this machine
+  --command          Required. Command to execute
 
-  --guestdir         Required. Full path to the C3 directory on the guest OS
+  --output           (Default: false) Receive output from your command. Will create a temporary file in outputDir on the
+                     guest to save the output. This is then downloaded and printed to the console and the file deleted
 
-  --inputid          Required. Input ID configured for the C3 relay running on this machine
-
-  --outputid         Required. Output ID configured for the C3 relay running on this machine
+  --outputDir        (Default: C:\Windows\Temp) When --output is provided, this is where to store the temporary file.
 ```
 
 ### File Upload:
@@ -107,19 +119,25 @@ SharpSphere.exe upload --help
 
   --url              Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk
 
-  --username         Required. vCenter username, i.e. administrator@vsphere.local
+  --username         vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through
+                     authentication if not supplied.
 
-  --password         Required. vCenter password
+  --password         vCenter password. Defaults to executing user and pass-through authentication if not supplied.
 
   --ip               Required. Target VM IP address
 
-  --guestusername    Required. Username used to authenticate to the guest OS
+  --guestusername    Username used to authenticate to the guest OS. Defaults to executing user and pass-through
+                     authentication if not supplied
 
-  --guestpassword    Required. Password used to authenticate to the guest OS
+  --guestpassword    Password used to authenticate to the guest OS. Defaults to executing user and pass-through
+                     authentication if not supplied
 
-  --source           Required. Full path to local file to upload
+  --command          Required. Command to execute
 
-  --destination      Required. Full path to location where file should be uploaded
+  --output           (Default: false) Receive output from your command. Will create a temporary file in outputDir on the
+                     guest to save the output. This is then downloaded and printed to the console and the file deleted
+
+  --outputDir        (Default: C:\Windows\Temp) When --output is provided, this is where to store the temporary file.
 ```
 
 ### File Download:
@@ -128,15 +146,18 @@ SharpSphere.exe upload --help
 
   --url              Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk
 
-  --username         Required. vCenter username, i.e. administrator@vsphere.local
+  --username         vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through
+                     authentication if not supplied.
 
-  --password         Required. vCenter password
+  --password         vCenter password. Defaults to executing user and pass-through authentication if not supplied.
 
   --ip               Required. Target VM IP address
 
-  --guestusername    Required. Username used to authenticate to the guest OS
+  --guestusername    Username used to authenticate to the guest OS. Defaults to executing user and pass-through
+                     authentication if not supplied
 
-  --guestpassword    Required. Password used to authenticate to the guest OS
+  --guestpassword    Password used to authenticate to the guest OS. Defaults to executing user and pass-through
+                     authentication if not supplied
 
   --source           Required. Full path in the guest to the file to upload
 
@@ -148,9 +169,10 @@ SharpSphere.exe upload --help
 >SharpSphere.exe dump --help
   --url            Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk
 
-  --username       Required. vCenter username, i.e. administrator@vsphere.local
+  --username       vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through
+                   authentication if not supplied.
 
-  --password       Required. vCenter password
+  --password       vCenter password. Defaults to executing user and pass-through authentication if not supplied.
 
   --targetvm       Required. VM to snapshot
 
@@ -158,7 +180,6 @@ SharpSphere.exe upload --help
                    extract memory from last existing snapshot, or none if no snapshots are available.
 
   --destination    Required. Full path to the local directory where the file should be downloaded
-
 ```
 
 ### Future Features

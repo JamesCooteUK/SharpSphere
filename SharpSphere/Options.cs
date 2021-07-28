@@ -8,10 +8,10 @@ namespace SharpSphere
         [Option("url", Required = true, HelpText = "vCenter SDK URL, i.e. https://127.0.0.1/sdk")]
         public string url { get; set; }
 
-        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local")]
+        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local. Defauls to executing user and pass-through authentication if not supplied.")]
         public string username { get; set; }
 
-        [Option("password", Required = false, HelpText = "vCenter password")]
+        [Option("password", Required = false, HelpText = "vCenter password. Defaults to executing user and pass-through authentication if not supplied.")]
         public string password { get; set; }
     }
 
@@ -21,10 +21,10 @@ namespace SharpSphere
         [Option("url", Required = true, HelpText = "vCenter SDK URL, i.e. https://127.0.0.1/sdk")]
         public string url { get; set; }
 
-        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local")]
+        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through authentication if not supplied.")]
         public string username { get; set; }
 
-        [Option("password", Required = false, HelpText = "vCenter password")]
+        [Option("password", Required = false, HelpText = "vCenter password. Defaults to executing user and pass-through authentication if not supplied.")]
         public string password { get; set; }
 
         [Option("targetvm", Required = true, HelpText = "VM to snapshot")]
@@ -43,19 +43,19 @@ namespace SharpSphere
         [Option("url", Required = true, HelpText = "vCenter SDK URL, i.e. https://127.0.0.1/sdk")]
         public string url { get; set; }
 
-        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local")]
+        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through authentication if not supplied.")]
         public string username { get; set; }
 
-        [Option("password", Required = false, HelpText = "vCenter password")]
+        [Option("password", Required = false, HelpText = "vCenter password. Defaults to executing user and pass-through authentication if not supplied.")]
         public string password { get; set; }
 
         [Option("ip", Required = true, HelpText = "Target VM IP address")]
         public string ip { get; set; }
 
-        [Option("guestusername", Required = false, HelpText = "Username used to authenticate to the guest OS")]
+        [Option("guestusername", Required = false, HelpText = "Username used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied")]
         public string guestusername { get; set; }
 
-        [Option("guestpassword", Required = false, HelpText = "Password used to authenticate to the guest OS")]
+        [Option("guestpassword", Required = false, HelpText = "Password used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied")]
         public string guestpassword { get; set; }
 
         [Option("command", Required = true, HelpText = "Command to execute")]
@@ -64,7 +64,7 @@ namespace SharpSphere
         [Option("output", Default = false, Required = false, HelpText = @"Receive output from your command. Will create a temporary file in outputDir on the guest to save the output. This is then downloaded and printed to the console and the file deleted")]
         public bool output { get; set; }
 
-        [Option("outputDir", Default = "%APPDATA%", Required = false, HelpText = @"When --output is provided, this is where to store the temporary file. Defaults to %APPDATA%")]
+        [Option("outputDir", Default = @"C:\Windows\Temp", Required = false, HelpText = @"When --output is provided, this is where to store the temporary file.")]
         public string outputDir { get; set; }
     }
 
@@ -75,19 +75,19 @@ namespace SharpSphere
         [Option("url", Required = true, HelpText = "vCenter SDK URL, i.e. https://127.0.0.1/sdk")]
         public string url { get; set; }
 
-        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local")]
+        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through authentication if not supplied.")]
         public string username { get; set; }
 
-        [Option("password", Required = false, HelpText = "vCenter password")]
+        [Option("password", Required = false, HelpText = "vCenter password. Defaults to executing user and pass-through authentication if not supplied.")]
         public string password { get; set; }
 
         [Option("ip", Required = true, HelpText = "Target VM IP address")]
         public string ip { get; set; }
 
-        [Option("guestusername", Required = false, HelpText = "Username used to authenticate to the guest OS")]
+        [Option("guestusername", Required = false, HelpText = "Username used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied")]
         public string guestusername { get; set; }
 
-        [Option("guestpassword", Required = false, HelpText = "Password used to authenticate to the guest OS")]
+        [Option("guestpassword", Required = false, HelpText = "Password used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied")]
         public string guestpassword { get; set; }
 
         [Option("source", Required = true, HelpText = "Full path to local file to upload")]
@@ -103,19 +103,19 @@ namespace SharpSphere
         [Option("url", Required = true, HelpText = "vCenter SDK URL, i.e. https://127.0.0.1/sdk")]
         public string url { get; set; }
 
-        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local")]
+        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through authentication if not supplied.")]
         public string username { get; set; }
 
-        [Option("password", Required = false, HelpText = "vCenter password")]
+        [Option("password", Required = false, HelpText = "vCenter password. Defaults to executing user and pass-through authentication if not supplied.")]
         public string password { get; set; }
 
         [Option("ip", Required = true, HelpText = "Target VM IP address")]
         public string ip { get; set; }
 
-        [Option("guestusername", Required = false, HelpText = "Username used to authenticate to the guest OS")]
+        [Option("guestusername", Required = false, HelpText = "Username used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied")]
         public string guestusername { get; set; }
 
-        [Option("guestpassword", Required = false, HelpText = "Password used to authenticate to the guest OS")]
+        [Option("guestpassword", Required = false, HelpText = "Password used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied")]
         public string guestpassword { get; set; }
 
         [Option("source", Required = true, HelpText = "Full path in the guest to the file to upload")]
@@ -131,19 +131,19 @@ namespace SharpSphere
         [Option("url", Required = true, HelpText = "vCenter SDK URL, i.e. https://127.0.0.1/sdk")]
         public string url { get; set; }
 
-        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local")]
+        [Option("username", Required = false, HelpText = "vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through authentication if not supplied.")]
         public string username { get; set; }
 
-        [Option("password", Required = false, HelpText = "vCenter password")]
+        [Option("password", Required = false, HelpText = "vCenter password. Defaults to executing user and pass-through authentication if not supplied.")]
         public string password { get; set; }
 
         [Option("ip", Required = true, HelpText = "Target VM IP address")]
         public string ip { get; set; }
 
-        [Option("guestusername", Required = false, HelpText = "Username used to authenticate to the guest OS")]
+        [Option("guestusername", Required = false, HelpText = "Username used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied")]
         public string guestusername { get; set; }
 
-        [Option("guestpassword", Required = false, HelpText = "Password used to authenticate to the guest OS")]
+        [Option("guestpassword", Required = false, HelpText = "Password used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied")]
         public string guestpassword { get; set; }
 
         [Option("localdir", Required = true, HelpText = "Full path to the C3 directory on this machine")]
