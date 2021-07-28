@@ -23,8 +23,6 @@ SharpSphere supports execution through Cobalt Strike's *execute-assembly*.
 ## Compilation
 Compiled versions can be found [here](https://github.com/JamesCooteUK/SharpSphere/releases).
 
-If you compile yourself you'll need to use `ILMerge` to combine SharpSphere.exe and CommandLine.dll in the `Releases` folder.
-
 ## Usage
 Available modules:
 ```
