@@ -126,17 +126,24 @@
             </complexType>
          </element>
          <element name="FileFaultFault" type="vim25:FileFault"/>
+         <element name="GuestAuthenticationChallengeFault" type="vim25:GuestAuthenticationChallenge"/>
+         <element name="GuestComponentsOutOfDateFault" type="vim25:GuestComponentsOutOfDate"/>
          <element name="GuestOperationsFaultFault" type="vim25:GuestOperationsFault"/>
          <element name="InvalidDatastoreFault" type="vim25:InvalidDatastore"/>
+         <element name="InvalidGuestLoginFault" type="vim25:InvalidGuestLogin"/>
          <element name="InvalidLocaleFault" type="vim25:InvalidLocale"/>
          <element name="InvalidLoginFault" type="vim25:InvalidLogin"/>
          <element name="InvalidNameFault" type="vim25:InvalidName"/>
+         <element name="InvalidPowerStateFault" type="vim25:InvalidPowerState"/>
          <element name="InvalidStateFault" type="vim25:InvalidState"/>
          <element name="MissingLinuxCustResourcesFault" type="vim25:MissingLinuxCustResources"/>
          <element name="MissingWindowsCustResourcesFault" type="vim25:MissingWindowsCustResources"/>
+         <element name="OperationDisabledByGuestFault" type="vim25:OperationDisabledByGuest"/>
+         <element name="OperationNotSupportedByGuestFault" type="vim25:OperationNotSupportedByGuest"/>
          <element name="SSPIChallengeFault" type="vim25:SSPIChallenge"/>
          <element name="SnapshotFaultFault" type="vim25:SnapshotFault"/>
          <element name="TaskInProgressFault" type="vim25:TaskInProgress"/>
+         <element name="TooManyGuestLogonsFault" type="vim25:TooManyGuestLogons"/>
          <element name="VmConfigFaultFault" type="vim25:VmConfigFault"/>
          <element name="SearchDatastore_Task" type="vim25:SearchDatastoreRequestType"/>
          <element name="SearchDatastore_TaskResponse">

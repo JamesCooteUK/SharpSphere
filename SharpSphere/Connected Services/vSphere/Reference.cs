@@ -36,24 +36,6 @@ namespace SharpSphere.vSphere {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidProperty))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidCollectorVersion))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RuntimeFault))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnexpectedFault))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SystemError))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SecurityError))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequestCanceled))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotSupported))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotImplemented))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughLicenses))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManagedObjectNotFound))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidRequest))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MethodNotFound))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidArgument))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostCommunication))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostNotReachable))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostNotConnected))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VimFault))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmToolsUpgradeFault))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ToolsUpgradeCancelled))]
@@ -240,6 +222,24 @@ namespace SharpSphere.vSphere {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomizationFault))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingWindowsCustResources))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingLinuxCustResources))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RuntimeFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnexpectedFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SystemError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SecurityError))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequestCanceled))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotSupported))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotImplemented))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NotEnoughLicenses))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManagedObjectNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidRequest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MethodNotFound))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidArgument))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostCommunication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostNotReachable))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostNotConnected))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidProperty))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(InvalidCollectorVersion))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -323,8 +323,6 @@ namespace SharpSphere.vSphere {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveResult))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UpdateSet))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestProcessInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileTransferInformation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestListFileInfo))]
@@ -543,51 +541,6 @@ namespace SharpSphere.vSphere {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloatOption))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ChoiceOption))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BoolOption))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingObject))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertyChange))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ObjectUpdate))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertyFilterUpdate))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocalizedMethodFault))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingProperty))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ObjectContent))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocalizableMessage))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveOptions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WaitOptions))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SelectionSpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TraversalSpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ObjectSpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertySpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertyFilterSpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestProgramSpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestWindowsProgramSpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestFileAttributes))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestWindowsFileAttributes))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestPosixFileAttributes))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestAuthentication))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TicketedSessionAuthentication))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SSPIAuthentication))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SAMLTokenAuthentication))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NamePasswordAuthentication))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileQueryFlags))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileQueryFlags))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileQueryFilter))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileQueryFlags))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileQueryFilter))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileQuery))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmLogFileQuery))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmNvramFileQuery))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloppyImageFileQuery))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IsoImageFileQuery))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmSnapshotFileQuery))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FolderFileQuery))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileQuery))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileQuery))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateConfigFileQuery))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostDatastoreBrowserSearchSpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerServiceRequestSpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerHttpServiceRequestSpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerVmomiServiceRequestSpec))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeyAnyValue))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VirtualMachineFeatureRequirement))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostFeatureMask))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostFeatureCapability))]
@@ -624,58 +577,59 @@ namespace SharpSphere.vSphere {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NasDatastoreInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmfsDatastoreInfo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AboutInfo))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveResult))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UpdateSet))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocalizableMessage))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeyAnyValue))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingObject))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocalizedMethodFault))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MissingProperty))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertyChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ObjectUpdate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertyFilterUpdate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RetrieveOptions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WaitOptions))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestProgramSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestWindowsProgramSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestFileAttributes))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestWindowsFileAttributes))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestPosixFileAttributes))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GuestAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TicketedSessionAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SSPIAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SAMLTokenAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NamePasswordAuthentication))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileQueryFlags))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileQueryFlags))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileQueryFilter))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileQueryFlags))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileQueryFilter))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmLogFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmNvramFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FloppyImageFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IsoImageFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmSnapshotFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FolderFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmDiskFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VmConfigFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TemplateConfigFileQuery))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HostDatastoreBrowserSearchSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerServiceRequestSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerHttpServiceRequestSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SessionManagerVmomiServiceRequestSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ObjectContent))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SelectionSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TraversalSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ObjectSpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertySpec))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertyFilterSpec))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
     public partial class DynamicData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class DynamicProperty : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string nameField;
-        
-        private object valField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public object val {
-            get {
-                return this.valField;
-            }
-            set {
-                this.valField = value;
-                this.RaisePropertyChanged("val");
-            }
-        }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
@@ -4473,84 +4427,42 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class KeyAnyValue : DynamicData {
+    public partial class DynamicProperty : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string keyField;
+        private string nameField;
         
-        private object valueField;
+        private object valField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string key {
+        public string name {
             get {
-                return this.keyField;
+                return this.nameField;
             }
             set {
-                this.keyField = value;
-                this.RaisePropertyChanged("key");
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public object value {
+        public object val {
             get {
-                return this.valueField;
+                return this.valField;
             }
             set {
-                this.valueField = value;
-                this.RaisePropertyChanged("value");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class LocalizableMessage : DynamicData {
-        
-        private string keyField;
-        
-        private KeyAnyValue[] argField;
-        
-        private string messageField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("key");
+                this.valField = value;
+                this.RaisePropertyChanged("val");
             }
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("arg", Order=1)]
-        public KeyAnyValue[] arg {
-            get {
-                return this.argField;
-            }
-            set {
-                this.argField = value;
-                this.RaisePropertyChanged("arg");
-            }
-        }
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string message {
-            get {
-                return this.messageField;
-            }
-            set {
-                this.messageField = value;
-                this.RaisePropertyChanged("message");
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -4888,33 +4800,33 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class RetrieveResult : DynamicData {
+    public partial class KeyAnyValue : DynamicData {
         
-        private string tokenField;
+        private string keyField;
         
-        private ObjectContent[] objectsField;
+        private object valueField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string token {
+        public string key {
             get {
-                return this.tokenField;
+                return this.keyField;
             }
             set {
-                this.tokenField = value;
-                this.RaisePropertyChanged("token");
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("objects", Order=1)]
-        public ObjectContent[] objects {
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public object value {
             get {
-                return this.objectsField;
+                return this.valueField;
             }
             set {
-                this.objectsField = value;
-                this.RaisePropertyChanged("objects");
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
             }
         }
     }
@@ -4925,61 +4837,47 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class UpdateSet : DynamicData {
+    public partial class LocalizableMessage : DynamicData {
         
-        private string versionField;
+        private string keyField;
         
-        private PropertyFilterUpdate[] filterSetField;
+        private KeyAnyValue[] argField;
         
-        private bool truncatedField;
-        
-        private bool truncatedFieldSpecified;
+        private string messageField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string version {
+        public string key {
             get {
-                return this.versionField;
+                return this.keyField;
             }
             set {
-                this.versionField = value;
-                this.RaisePropertyChanged("version");
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("filterSet", Order=1)]
-        public PropertyFilterUpdate[] filterSet {
+        [System.Xml.Serialization.XmlElementAttribute("arg", Order=1)]
+        public KeyAnyValue[] arg {
             get {
-                return this.filterSetField;
+                return this.argField;
             }
             set {
-                this.filterSetField = value;
-                this.RaisePropertyChanged("filterSet");
+                this.argField = value;
+                this.RaisePropertyChanged("arg");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public bool truncated {
+        public string message {
             get {
-                return this.truncatedField;
+                return this.messageField;
             }
             set {
-                this.truncatedField = value;
-                this.RaisePropertyChanged("truncated");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool truncatedSpecified {
-            get {
-                return this.truncatedFieldSpecified;
-            }
-            set {
-                this.truncatedFieldSpecified = value;
-                this.RaisePropertyChanged("truncatedSpecified");
+                this.messageField = value;
+                this.RaisePropertyChanged("message");
             }
         }
     }
@@ -22560,19 +22458,33 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class InvalidProperty : MethodFault {
+    public partial class RetrieveResult : DynamicData {
         
-        private string nameField;
+        private string tokenField;
+        
+        private ObjectContent[] objectsField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string name {
+        public string token {
             get {
-                return this.nameField;
+                return this.tokenField;
             }
             set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
+                this.tokenField = value;
+                this.RaisePropertyChanged("token");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("objects", Order=1)]
+        public ObjectContent[] objects {
+            get {
+                return this.objectsField;
+            }
+            set {
+                this.objectsField = value;
+                this.RaisePropertyChanged("objects");
             }
         }
     }
@@ -22583,7 +22495,63 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
-    public partial class InvalidCollectorVersion : MethodFault {
+    public partial class UpdateSet : DynamicData {
+        
+        private string versionField;
+        
+        private PropertyFilterUpdate[] filterSetField;
+        
+        private bool truncatedField;
+        
+        private bool truncatedFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string version {
+            get {
+                return this.versionField;
+            }
+            set {
+                this.versionField = value;
+                this.RaisePropertyChanged("version");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("filterSet", Order=1)]
+        public PropertyFilterUpdate[] filterSet {
+            get {
+                return this.filterSetField;
+            }
+            set {
+                this.filterSetField = value;
+                this.RaisePropertyChanged("filterSet");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool truncated {
+            get {
+                return this.truncatedField;
+            }
+            set {
+                this.truncatedField = value;
+                this.RaisePropertyChanged("truncated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool truncatedSpecified {
+            get {
+                return this.truncatedFieldSpecified;
+            }
+            set {
+                this.truncatedFieldSpecified = value;
+                this.RaisePropertyChanged("truncatedSpecified");
+            }
+        }
     }
     
     /// <remarks/>
@@ -27046,6 +27014,38 @@ namespace SharpSphere.vSphere {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidProperty : MethodFault {
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
+    public partial class InvalidCollectorVersion : MethodFault {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:vim25")]
     public partial class UnexpectedFault : RuntimeFault {
         
         private string faultNameField;
@@ -27331,6 +27331,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -27345,24 +27355,10 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.ManagedObjectReference FindByIp(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference datacenter, string ip, bool vmSearch);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> FindByIpAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference datacenter, string ip, bool vmSearch);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyFilterRequestType))]
@@ -27398,6 +27394,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -27412,24 +27418,10 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.ManagedObjectReference FindByInventoryPath(SharpSphere.vSphere.ManagedObjectReference _this, string inventoryPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> FindByInventoryPathAsync(SharpSphere.vSphere.ManagedObjectReference _this, string inventoryPath);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyFilterRequestType))]
@@ -27465,6 +27457,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -27479,23 +27481,9 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.ManagedObjectReference FindChild(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference entity, string name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> FindChildAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference entity, string name);
-        
         // CODEGEN: Parameter 'returnval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
@@ -27533,6 +27521,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -27547,22 +27545,9 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.FindAllByDnsNameResponse FindAllByDnsName(SharpSphere.vSphere.FindAllByDnsNameRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.FindAllByDnsNameResponse> FindAllByDnsNameAsync(SharpSphere.vSphere.FindAllByDnsNameRequest request);
-        
         // CODEGEN: Parameter 'returnval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
@@ -27600,6 +27585,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -27614,23 +27609,10 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.FindAllByIpResponse FindAllByIp(SharpSphere.vSphere.FindAllByIpRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.FindAllByIpResponse> FindAllByIpAsync(SharpSphere.vSphere.FindAllByIpRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DestroyPropertyFilterRequestType))]
@@ -27666,6 +27648,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -27680,22 +27672,8 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.ServiceContent RetrieveServiceContent(SharpSphere.vSphere.ManagedObjectReference _this);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.ServiceContent> RetrieveServiceContentAsync(SharpSphere.vSphere.ManagedObjectReference _this);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidLocale), Action="urn:vim25/7.0.0.0", Name="InvalidLocaleFault")]
@@ -27735,6 +27713,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -27749,22 +27737,8 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.UserSession Login(SharpSphere.vSphere.ManagedObjectReference _this, string userName, string password, string locale);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.UserSession> LoginAsync(SharpSphere.vSphere.ManagedObjectReference _this, string userName, string password, string locale);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidLocale), Action="urn:vim25/7.0.0.0", Name="InvalidLocaleFault")]
@@ -27805,6 +27779,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -27819,22 +27803,8 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.UserSession LoginBySSPI(SharpSphere.vSphere.ManagedObjectReference _this, string base64Token, string locale);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.UserSession> LoginBySSPIAsync(SharpSphere.vSphere.ManagedObjectReference _this, string base64Token, string locale);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
@@ -27872,6 +27842,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -27886,22 +27866,8 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.SessionManagerGenericServiceTicket AcquireGenericServiceTicket(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.SessionManagerServiceRequestSpec spec);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.SessionManagerGenericServiceTicket> AcquireGenericServiceTicketAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.SessionManagerServiceRequestSpec spec);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
@@ -27945,6 +27911,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -27959,22 +27935,8 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.ManagedObjectReference CreateSnapshot_Task(SharpSphere.vSphere.ManagedObjectReference _this, string name, string description, bool memory, bool quiesce);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> CreateSnapshot_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, string name, string description, bool memory, bool quiesce);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
@@ -28014,6 +27976,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28028,24 +28000,10 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.ManagedObjectReference SearchDatastore_Task(SharpSphere.vSphere.ManagedObjectReference _this, string datastorePath, SharpSphere.vSphere.HostDatastoreBrowserSearchSpec searchSpec);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> SearchDatastore_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, string datastorePath, SharpSphere.vSphere.HostDatastoreBrowserSearchSpec searchSpec);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.TaskInProgress), Action="urn:vim25/7.0.0.0", Name="TaskInProgressFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.RuntimeFault), Action="urn:vim25/7.0.0.0", Name="RuntimeFaultFault")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -28082,6 +28040,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28096,24 +28064,10 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.ManagedObjectReference RemoveSnapshot_Task(SharpSphere.vSphere.ManagedObjectReference _this, bool removeChildren, bool consolidate);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> RemoveSnapshot_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, bool removeChildren, bool consolidate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.GuestOperationsFault), Action="urn:vim25/7.0.0.0", Name="GuestOperationsFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidState), Action="urn:vim25/7.0.0.0", Name="InvalidStateFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.TaskInProgress), Action="urn:vim25/7.0.0.0", Name="TaskInProgressFault")]
@@ -28152,6 +28106,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28166,22 +28130,8 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        SharpSphere.vSphere.GuestAuthentication AcquireCredentialsInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication requestedAuth, long sessionID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.GuestAuthentication> AcquireCredentialsInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication requestedAuth, long sessionID);
+        SharpSphere.vSphere.GuestAuthentication AcquireCredentialsInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication requestedAuth);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
@@ -28223,6 +28173,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28237,22 +28197,9 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         void DeleteFileInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string filePath);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        System.Threading.Tasks.Task DeleteFileInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string filePath);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.GuestOperationsFault), Action="urn:vim25/7.0.0.0", Name="GuestOperationsFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidState), Action="urn:vim25/7.0.0.0", Name="InvalidStateFault")]
@@ -28292,6 +28239,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28306,22 +28263,9 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         void MoveFileInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string srcFilePath, string dstFilePath, bool overwrite);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        System.Threading.Tasks.Task MoveFileInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string srcFilePath, string dstFilePath, bool overwrite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.GuestOperationsFault), Action="urn:vim25/7.0.0.0", Name="GuestOperationsFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidState), Action="urn:vim25/7.0.0.0", Name="InvalidStateFault")]
@@ -28361,6 +28305,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28375,24 +28329,10 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.GuestListFileInfo ListFilesInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string filePath, int index, int maxResults, string matchPattern);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.GuestListFileInfo> ListFilesInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string filePath, int index, int maxResults, string matchPattern);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.GuestOperationsFault), Action="urn:vim25/7.0.0.0", Name="GuestOperationsFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidState), Action="urn:vim25/7.0.0.0", Name="InvalidStateFault")]
@@ -28432,6 +28372,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28446,24 +28396,10 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.FileTransferInformation InitiateFileTransferFromGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string guestFilePath);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.FileTransferInformation> InitiateFileTransferFromGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string guestFilePath);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.GuestOperationsFault), Action="urn:vim25/7.0.0.0", Name="GuestOperationsFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidState), Action="urn:vim25/7.0.0.0", Name="InvalidStateFault")]
@@ -28503,6 +28439,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28517,24 +28463,10 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         string InitiateFileTransferToGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string guestFilePath, SharpSphere.vSphere.GuestFileAttributes fileAttributes, long fileSize, bool overwrite);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<string> InitiateFileTransferToGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string guestFilePath, SharpSphere.vSphere.GuestFileAttributes fileAttributes, long fileSize, bool overwrite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.FileFault), Action="urn:vim25/7.0.0.0", Name="FileFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.GuestOperationsFault), Action="urn:vim25/7.0.0.0", Name="GuestOperationsFaultFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(SharpSphere.vSphere.InvalidState), Action="urn:vim25/7.0.0.0", Name="InvalidStateFault")]
@@ -28574,6 +28506,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28588,22 +28530,8 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         long StartProgramInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, SharpSphere.vSphere.GuestProgramSpec spec);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
-        System.Threading.Tasks.Task<long> StartProgramInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, SharpSphere.vSphere.GuestProgramSpec spec);
         
         // CODEGEN: Parameter 'returnval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
@@ -28645,6 +28573,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28659,21 +28597,8 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.ListProcessesInGuestResponse ListProcessesInGuest(SharpSphere.vSphere.ListProcessesInGuestRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.ListProcessesInGuestResponse> ListProcessesInGuestAsync(SharpSphere.vSphere.ListProcessesInGuestRequest request);
         
         // CODEGEN: Parameter 'returnval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
@@ -28713,6 +28638,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28727,21 +28662,8 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.RetrievePropertiesResponse RetrieveProperties(SharpSphere.vSphere.RetrievePropertiesRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.RetrievePropertiesResponse> RetrievePropertiesAsync(SharpSphere.vSphere.RetrievePropertiesRequest request);
         
         // CODEGEN: Parameter 'specSet' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
@@ -28781,6 +28703,16 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByInventoryPathRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindByIpRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DynamicProperty[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(KeyAnyValue[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(LocalizableMessage[]))]
@@ -28795,21 +28727,8 @@ namespace SharpSphere.vSphere {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(double[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(byte[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertySpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SelectionSpec[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectContent[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyFilterUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ObjectUpdate[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PropertyChange[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingProperty[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MissingObject[]))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="returnval")]
         SharpSphere.vSphere.RetrievePropertiesExResponse RetrievePropertiesEx(SharpSphere.vSphere.RetrievePropertiesExRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:vim25/7.0.0.0", ReplyAction="*")]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.RetrievePropertiesExResponse> RetrievePropertiesExAsync(SharpSphere.vSphere.RetrievePropertiesExRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -29068,24 +28987,12 @@ namespace SharpSphere.vSphere {
             return base.Channel.FindByIp(_this, datacenter, ip, vmSearch);
         }
         
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> FindByIpAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference datacenter, string ip, bool vmSearch) {
-            return base.Channel.FindByIpAsync(_this, datacenter, ip, vmSearch);
-        }
-        
         public SharpSphere.vSphere.ManagedObjectReference FindByInventoryPath(SharpSphere.vSphere.ManagedObjectReference _this, string inventoryPath) {
             return base.Channel.FindByInventoryPath(_this, inventoryPath);
         }
         
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> FindByInventoryPathAsync(SharpSphere.vSphere.ManagedObjectReference _this, string inventoryPath) {
-            return base.Channel.FindByInventoryPathAsync(_this, inventoryPath);
-        }
-        
         public SharpSphere.vSphere.ManagedObjectReference FindChild(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference entity, string name) {
             return base.Channel.FindChild(_this, entity, name);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> FindChildAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference entity, string name) {
-            return base.Channel.FindChildAsync(_this, entity, name);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -29104,20 +29011,6 @@ namespace SharpSphere.vSphere {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.FindAllByDnsNameResponse> SharpSphere.vSphere.VimPortType.FindAllByDnsNameAsync(SharpSphere.vSphere.FindAllByDnsNameRequest request) {
-            return base.Channel.FindAllByDnsNameAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.FindAllByDnsNameResponse> FindAllByDnsNameAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference datacenter, string dnsName, bool vmSearch) {
-            SharpSphere.vSphere.FindAllByDnsNameRequest inValue = new SharpSphere.vSphere.FindAllByDnsNameRequest();
-            inValue._this = _this;
-            inValue.datacenter = datacenter;
-            inValue.dnsName = dnsName;
-            inValue.vmSearch = vmSearch;
-            return ((SharpSphere.vSphere.VimPortType)(this)).FindAllByDnsNameAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SharpSphere.vSphere.FindAllByIpResponse SharpSphere.vSphere.VimPortType.FindAllByIp(SharpSphere.vSphere.FindAllByIpRequest request) {
             return base.Channel.FindAllByIp(request);
         }
@@ -29132,130 +29025,60 @@ namespace SharpSphere.vSphere {
             return retVal.returnval;
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.FindAllByIpResponse> SharpSphere.vSphere.VimPortType.FindAllByIpAsync(SharpSphere.vSphere.FindAllByIpRequest request) {
-            return base.Channel.FindAllByIpAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.FindAllByIpResponse> FindAllByIpAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference datacenter, string ip, bool vmSearch) {
-            SharpSphere.vSphere.FindAllByIpRequest inValue = new SharpSphere.vSphere.FindAllByIpRequest();
-            inValue._this = _this;
-            inValue.datacenter = datacenter;
-            inValue.ip = ip;
-            inValue.vmSearch = vmSearch;
-            return ((SharpSphere.vSphere.VimPortType)(this)).FindAllByIpAsync(inValue);
-        }
-        
         public SharpSphere.vSphere.ServiceContent RetrieveServiceContent(SharpSphere.vSphere.ManagedObjectReference _this) {
             return base.Channel.RetrieveServiceContent(_this);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.ServiceContent> RetrieveServiceContentAsync(SharpSphere.vSphere.ManagedObjectReference _this) {
-            return base.Channel.RetrieveServiceContentAsync(_this);
         }
         
         public SharpSphere.vSphere.UserSession Login(SharpSphere.vSphere.ManagedObjectReference _this, string userName, string password, string locale) {
             return base.Channel.Login(_this, userName, password, locale);
         }
         
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.UserSession> LoginAsync(SharpSphere.vSphere.ManagedObjectReference _this, string userName, string password, string locale) {
-            return base.Channel.LoginAsync(_this, userName, password, locale);
-        }
-        
         public SharpSphere.vSphere.UserSession LoginBySSPI(SharpSphere.vSphere.ManagedObjectReference _this, string base64Token, string locale) {
             return base.Channel.LoginBySSPI(_this, base64Token, locale);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.UserSession> LoginBySSPIAsync(SharpSphere.vSphere.ManagedObjectReference _this, string base64Token, string locale) {
-            return base.Channel.LoginBySSPIAsync(_this, base64Token, locale);
         }
         
         public SharpSphere.vSphere.SessionManagerGenericServiceTicket AcquireGenericServiceTicket(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.SessionManagerServiceRequestSpec spec) {
             return base.Channel.AcquireGenericServiceTicket(_this, spec);
         }
         
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.SessionManagerGenericServiceTicket> AcquireGenericServiceTicketAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.SessionManagerServiceRequestSpec spec) {
-            return base.Channel.AcquireGenericServiceTicketAsync(_this, spec);
-        }
-        
         public SharpSphere.vSphere.ManagedObjectReference CreateSnapshot_Task(SharpSphere.vSphere.ManagedObjectReference _this, string name, string description, bool memory, bool quiesce) {
             return base.Channel.CreateSnapshot_Task(_this, name, description, memory, quiesce);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> CreateSnapshot_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, string name, string description, bool memory, bool quiesce) {
-            return base.Channel.CreateSnapshot_TaskAsync(_this, name, description, memory, quiesce);
         }
         
         public SharpSphere.vSphere.ManagedObjectReference SearchDatastore_Task(SharpSphere.vSphere.ManagedObjectReference _this, string datastorePath, SharpSphere.vSphere.HostDatastoreBrowserSearchSpec searchSpec) {
             return base.Channel.SearchDatastore_Task(_this, datastorePath, searchSpec);
         }
         
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> SearchDatastore_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, string datastorePath, SharpSphere.vSphere.HostDatastoreBrowserSearchSpec searchSpec) {
-            return base.Channel.SearchDatastore_TaskAsync(_this, datastorePath, searchSpec);
-        }
-        
         public SharpSphere.vSphere.ManagedObjectReference RemoveSnapshot_Task(SharpSphere.vSphere.ManagedObjectReference _this, bool removeChildren, bool consolidate) {
             return base.Channel.RemoveSnapshot_Task(_this, removeChildren, consolidate);
         }
         
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.ManagedObjectReference> RemoveSnapshot_TaskAsync(SharpSphere.vSphere.ManagedObjectReference _this, bool removeChildren, bool consolidate) {
-            return base.Channel.RemoveSnapshot_TaskAsync(_this, removeChildren, consolidate);
-        }
-        
-        public SharpSphere.vSphere.GuestAuthentication AcquireCredentialsInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication requestedAuth, long sessionID) {
-            return base.Channel.AcquireCredentialsInGuest(_this, vm, requestedAuth, sessionID);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.GuestAuthentication> AcquireCredentialsInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication requestedAuth, long sessionID) {
-            return base.Channel.AcquireCredentialsInGuestAsync(_this, vm, requestedAuth, sessionID);
+        public SharpSphere.vSphere.GuestAuthentication AcquireCredentialsInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication requestedAuth) {
+            return base.Channel.AcquireCredentialsInGuest(_this, vm, requestedAuth);
         }
         
         public void DeleteFileInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string filePath) {
             base.Channel.DeleteFileInGuest(_this, vm, auth, filePath);
         }
         
-        public System.Threading.Tasks.Task DeleteFileInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string filePath) {
-            return base.Channel.DeleteFileInGuestAsync(_this, vm, auth, filePath);
-        }
-        
         public void MoveFileInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string srcFilePath, string dstFilePath, bool overwrite) {
             base.Channel.MoveFileInGuest(_this, vm, auth, srcFilePath, dstFilePath, overwrite);
-        }
-        
-        public System.Threading.Tasks.Task MoveFileInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string srcFilePath, string dstFilePath, bool overwrite) {
-            return base.Channel.MoveFileInGuestAsync(_this, vm, auth, srcFilePath, dstFilePath, overwrite);
         }
         
         public SharpSphere.vSphere.GuestListFileInfo ListFilesInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string filePath, int index, int maxResults, string matchPattern) {
             return base.Channel.ListFilesInGuest(_this, vm, auth, filePath, index, maxResults, matchPattern);
         }
         
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.GuestListFileInfo> ListFilesInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string filePath, int index, int maxResults, string matchPattern) {
-            return base.Channel.ListFilesInGuestAsync(_this, vm, auth, filePath, index, maxResults, matchPattern);
-        }
-        
         public SharpSphere.vSphere.FileTransferInformation InitiateFileTransferFromGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string guestFilePath) {
             return base.Channel.InitiateFileTransferFromGuest(_this, vm, auth, guestFilePath);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.FileTransferInformation> InitiateFileTransferFromGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string guestFilePath) {
-            return base.Channel.InitiateFileTransferFromGuestAsync(_this, vm, auth, guestFilePath);
         }
         
         public string InitiateFileTransferToGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string guestFilePath, SharpSphere.vSphere.GuestFileAttributes fileAttributes, long fileSize, bool overwrite) {
             return base.Channel.InitiateFileTransferToGuest(_this, vm, auth, guestFilePath, fileAttributes, fileSize, overwrite);
         }
         
-        public System.Threading.Tasks.Task<string> InitiateFileTransferToGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, string guestFilePath, SharpSphere.vSphere.GuestFileAttributes fileAttributes, long fileSize, bool overwrite) {
-            return base.Channel.InitiateFileTransferToGuestAsync(_this, vm, auth, guestFilePath, fileAttributes, fileSize, overwrite);
-        }
-        
         public long StartProgramInGuest(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, SharpSphere.vSphere.GuestProgramSpec spec) {
             return base.Channel.StartProgramInGuest(_this, vm, auth, spec);
-        }
-        
-        public System.Threading.Tasks.Task<long> StartProgramInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, SharpSphere.vSphere.GuestProgramSpec spec) {
-            return base.Channel.StartProgramInGuestAsync(_this, vm, auth, spec);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -29274,20 +29097,6 @@ namespace SharpSphere.vSphere {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.ListProcessesInGuestResponse> SharpSphere.vSphere.VimPortType.ListProcessesInGuestAsync(SharpSphere.vSphere.ListProcessesInGuestRequest request) {
-            return base.Channel.ListProcessesInGuestAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.ListProcessesInGuestResponse> ListProcessesInGuestAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.ManagedObjectReference vm, SharpSphere.vSphere.GuestAuthentication auth, long[] pids) {
-            SharpSphere.vSphere.ListProcessesInGuestRequest inValue = new SharpSphere.vSphere.ListProcessesInGuestRequest();
-            inValue._this = _this;
-            inValue.vm = vm;
-            inValue.auth = auth;
-            inValue.pids = pids;
-            return ((SharpSphere.vSphere.VimPortType)(this)).ListProcessesInGuestAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SharpSphere.vSphere.RetrievePropertiesResponse SharpSphere.vSphere.VimPortType.RetrieveProperties(SharpSphere.vSphere.RetrievePropertiesRequest request) {
             return base.Channel.RetrieveProperties(request);
         }
@@ -29298,18 +29107,6 @@ namespace SharpSphere.vSphere {
             inValue.specSet = specSet;
             SharpSphere.vSphere.RetrievePropertiesResponse retVal = ((SharpSphere.vSphere.VimPortType)(this)).RetrieveProperties(inValue);
             return retVal.returnval;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.RetrievePropertiesResponse> SharpSphere.vSphere.VimPortType.RetrievePropertiesAsync(SharpSphere.vSphere.RetrievePropertiesRequest request) {
-            return base.Channel.RetrievePropertiesAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.RetrievePropertiesResponse> RetrievePropertiesAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.PropertyFilterSpec[] specSet) {
-            SharpSphere.vSphere.RetrievePropertiesRequest inValue = new SharpSphere.vSphere.RetrievePropertiesRequest();
-            inValue._this = _this;
-            inValue.specSet = specSet;
-            return ((SharpSphere.vSphere.VimPortType)(this)).RetrievePropertiesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -29324,19 +29121,6 @@ namespace SharpSphere.vSphere {
             inValue.options = options;
             SharpSphere.vSphere.RetrievePropertiesExResponse retVal = ((SharpSphere.vSphere.VimPortType)(this)).RetrievePropertiesEx(inValue);
             return retVal.returnval;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SharpSphere.vSphere.RetrievePropertiesExResponse> SharpSphere.vSphere.VimPortType.RetrievePropertiesExAsync(SharpSphere.vSphere.RetrievePropertiesExRequest request) {
-            return base.Channel.RetrievePropertiesExAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SharpSphere.vSphere.RetrievePropertiesExResponse> RetrievePropertiesExAsync(SharpSphere.vSphere.ManagedObjectReference _this, SharpSphere.vSphere.PropertyFilterSpec[] specSet, SharpSphere.vSphere.RetrieveOptions options) {
-            SharpSphere.vSphere.RetrievePropertiesExRequest inValue = new SharpSphere.vSphere.RetrievePropertiesExRequest();
-            inValue._this = _this;
-            inValue.specSet = specSet;
-            inValue.options = options;
-            return ((SharpSphere.vSphere.VimPortType)(this)).RetrievePropertiesExAsync(inValue);
         }
     }
 }

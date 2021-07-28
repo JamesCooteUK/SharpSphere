@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>CommandLineParser</id>
+    <version>2.8.0</version>
+    <title>Command Line Parser Library</title>
+    <authors>gsscoder,nemec,ericnewton76,moh-hassan</authors>
+    <owners>gsscoder,nemec,ericnewton76,moh-hassan</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">License.md</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>CommandLine20.png</icon>
+    <projectUrl>https://github.com/commandlineparser/commandline</projectUrl>
+    <description>Terse syntax C# command line parser for .NET.  For FSharp support see CommandLineParser.FSharp.  The Command Line Parser Library offers to CLR applications a clean and concise API for manipulating command line arguments and related tasks.</description>
+    <releaseNotes>https://github.com/commandlineparser/commandline/blob/master/CHANGELOG.md</releaseNotes>
+    <copyright>Copyright (c) 2005 - 2020 Giacomo Stelluti Scala &amp; Contributors</copyright>
+    <tags>command line commandline argument option parser parsing library syntax shell</tags>
+    <repository type="git" commit="24e2be23ce695d36316d921d2a52f9eb94cb0558" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.6.1" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

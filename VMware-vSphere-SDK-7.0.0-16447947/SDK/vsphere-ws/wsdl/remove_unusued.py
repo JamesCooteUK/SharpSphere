@@ -4,7 +4,7 @@ import os
 import shutil
 from lxml import etree
 
-allowedOps = {'RemoveSnapshot_Task', 'AcquireGenericServiceTicket', 'SearchDatastore_Task', 'CreateSnapshot_Task', 'AcquireCredentialsInGuest', 'LoginBySSPI', 'RetrieveServiceContent', 'Login', 'RetrievePropertiesEx', 'InitiateFileTransferToGuest', 'ListProcessesInGuest', 'InitiateFileTransferFromGuest', 'FindByIp', 'ListFilesInGuest', 'StartProgramInGuest', 'MoveFileInGuest', 'DeleteFileInGuest', 'FindByInventoryPath', 'FindChild', 'RetrieveProperties', 'FindAllByDnsName', 'FindAllByIp', }
+allowedOps = {'RemoveSnapshot_Task', 'AcquireGenericServiceTicket', 'SearchDatastore_Task', 'CreateSnapshot_Task', 'AcquireCredentialsInGuest', 'LoginBySSPI', 'RetrieveServiceContent',"GuestAuthenticationChallengeFault", "TicketedSessionAuthentication", "GuestComponentsOutOfDateFault", "GuestOperationsFaultFault","InvalidGuestLoginFault", "InvalidPowerStateFault", "InvalideStateFault", "OperationDisabledByGuestFault", "OperationNotSupportedByGuestFault", "TaskInProgressFault", "TooManyGuestLogonsFault", 'Login', 'RetrievePropertiesEx', 'InitiateFileTransferToGuest', 'ListProcessesInGuest', 'InitiateFileTransferFromGuest', 'FindByIp', 'ListFilesInGuest', 'StartProgramInGuest', 'MoveFileInGuest', 'DeleteFileInGuest', 'FindByInventoryPath', 'FindChild', 'RetrieveProperties', 'FindAllByDnsName', 'FindAllByIp', }
 
 # rule of thumb: add a `Type` only if you use `GetProperty<Type>`
 defaultKeepTypes =  { 'DatastoreInfo', 'VirtualMachineSnapshotInfo', 'DatastoreHostMount', 'SessionManagerServiceRequestSpec', 'SessionManagerGenericServiceTicket', 'VirtualMachineFileInfo', 'HostDatastoreBrowserSearchSpec', 'HostDatastoreBrowserSearchResults', 'VirtualMachineConfigInfoDatastoreUrlPair', 'VirtualMachineSnapshot', 'TaskInfo', 'GuestInfo', 'VirtualMachineConfigInfo', "ToolsUpgradeCancelled", 'VirtualMachineRuntimeInfo', 'VirtualMachinePowerState' }
@@ -17,7 +17,7 @@ defaultAllowedElements = {"versionURI", "MethodFaultFault", "RuntimeFaultFault",
     "ManagedObjectNotFoundFault", "MethodNotFoundFault", "NotEnoughLicensesFault", \
     "NotImplementedFault", "NotSupportedFault", "RequestCanceledFault", "SecurityErrorFault", \
     "SystemErrorFault", "UnexpectedFaultFault", "InvalidCollectorVersionFault", \
-    "InvalidPropertyFault","SSPIChallengeFault", "MissingWindowsCustResourcesFault", "MissingLinuxCustResourcesFault", "CustomizationLinuxIdentityFailed","ToolsUpgradeCancelled"}
+    "InvalidPropertyFault","SSPIChallengeFault", "MissingWindowsCustResourcesFault", "MissingLinuxCustResourcesFault", "CustomizationLinuxIdentityFailed","ToolsUpgradeCancelled", "GuestAuthenticationChallengeFault", "TicketedSessionAuthentication", "GuestComponentsOutOfDateFault", "GuestOperationsFaultFault","InvalidGuestLoginFault", "InvalidPowerStateFault", "InvalideStateFault", "OperationDisabledByGuestFault", "OperationNotSupportedByGuestFault", "TaskInProgressFault", "TooManyGuestLogonsFault"}
 
 def filterByAttrVal(element, attrName, xpath, allowed):
     for op in element.findall(xpath, element.nsmap):

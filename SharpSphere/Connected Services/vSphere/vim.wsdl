@@ -123,17 +123,24 @@
         </xsd:complexType>
       </xsd:element>
       <xsd:element name="FileFaultFault" type="vim25:FileFault" />
+      <xsd:element name="GuestAuthenticationChallengeFault" type="vim25:GuestAuthenticationChallenge" />
+      <xsd:element name="GuestComponentsOutOfDateFault" type="vim25:GuestComponentsOutOfDate" />
       <xsd:element name="GuestOperationsFaultFault" type="vim25:GuestOperationsFault" />
       <xsd:element name="InvalidDatastoreFault" type="vim25:InvalidDatastore" />
+      <xsd:element name="InvalidGuestLoginFault" type="vim25:InvalidGuestLogin" />
       <xsd:element name="InvalidLocaleFault" type="vim25:InvalidLocale" />
       <xsd:element name="InvalidLoginFault" type="vim25:InvalidLogin" />
       <xsd:element name="InvalidNameFault" type="vim25:InvalidName" />
+      <xsd:element name="InvalidPowerStateFault" type="vim25:InvalidPowerState" />
       <xsd:element name="InvalidStateFault" type="vim25:InvalidState" />
       <xsd:element name="MissingLinuxCustResourcesFault" type="vim25:MissingLinuxCustResources" />
       <xsd:element name="MissingWindowsCustResourcesFault" type="vim25:MissingWindowsCustResources" />
+      <xsd:element name="OperationDisabledByGuestFault" type="vim25:OperationDisabledByGuest" />
+      <xsd:element name="OperationNotSupportedByGuestFault" type="vim25:OperationNotSupportedByGuest" />
       <xsd:element name="SSPIChallengeFault" type="vim25:SSPIChallenge" />
       <xsd:element name="SnapshotFaultFault" type="vim25:SnapshotFault" />
       <xsd:element name="TaskInProgressFault" type="vim25:TaskInProgress" />
+      <xsd:element name="TooManyGuestLogonsFault" type="vim25:TooManyGuestLogons" />
       <xsd:element name="VmConfigFaultFault" type="vim25:VmConfigFault" />
       <xsd:element name="SearchDatastore_Task" type="vim25:SearchDatastoreRequestType" />
       <xsd:element name="SearchDatastore_TaskResponse">
