@@ -19,7 +19,7 @@ namespace SharpSphere
 
     internal class Program
     {
-        private static const int MAX_MESSAGE_SIZE = 2147483647;
+        private const int MAX_MESSAGE_SIZE = 2147483647;
         private static ManagedObjectReference guestFileManager;
         private static VimPortTypeClient vim;
         private static ManagedObjectReference vm;
@@ -54,7 +54,15 @@ namespace SharpSphere
                 binding = new System.ServiceModel.BasicHttpBinding
                 {
                     AllowCookies = true,
-
+                    MaxReceivedMessageSize = MAX_MESSAGE_SIZE,
+                    MaxBufferPoolSize = MAX_MESSAGE_SIZE,
+                    MaxBufferSize = MAX_MESSAGE_SIZE,
+                    ReaderQuotas = {
+                        MaxStringContentLength = MAX_MESSAGE_SIZE,
+                        MaxArrayLength = MAX_MESSAGE_SIZE,
+                        MaxDepth = MAX_MESSAGE_SIZE,
+                        MaxBytesPerRead = MAX_MESSAGE_SIZE
+                    }
                 };
                 binding.Security.Mode = System.ServiceModel.BasicHttpSecurityMode.Transport;
 
@@ -737,14 +745,6 @@ namespace SharpSphere
 
         public static void Main(string[] args)
         {
-            binding.MaxBufferPoolSize = MAX_MESSAGE_SIZE;
-            binding.MaxBufferSize = MAX_MESSAGE_SIZE;
-            binding.MaxReceivedMessageSize = MAX_MESSAGE_SIZE;
-            binding.ReaderQuotas.MaxStringContentLength = MAX_MESSAGE_SIZE;
-            binding.ReaderQuotas.MaxArrayLength = MAX_MESSAGE_SIZE;
-            binding.ReaderQuotas.MaxDepth = MAX_MESSAGE_SIZE;
-            binding.ReaderQuotas.MaxBytesPerRead = MAX_MESSAGE_SIZE;
-            
             Parser.Default.ParseArguments<DumpOptions, ListOptions, ExecuteOptions, C2Options, UploadOptions, DownloadOptions>(args).MapResult(
                 (DumpOptions options) => Dump(options),
                 (ListOptions options) => List(options),
