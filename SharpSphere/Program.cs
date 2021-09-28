@@ -19,6 +19,7 @@ namespace SharpSphere
 
     internal class Program
     {
+        private const int MAX_MESSAGE_SIZE = 2147483647;
         private static ManagedObjectReference guestFileManager;
         private static VimPortTypeClient vim;
         private static ManagedObjectReference vm;
@@ -53,7 +54,15 @@ namespace SharpSphere
                 binding = new System.ServiceModel.BasicHttpBinding
                 {
                     AllowCookies = true,
-
+                    MaxReceivedMessageSize = MAX_MESSAGE_SIZE,
+                    MaxBufferPoolSize = MAX_MESSAGE_SIZE,
+                    MaxBufferSize = MAX_MESSAGE_SIZE,
+                    ReaderQuotas = {
+                        MaxStringContentLength = MAX_MESSAGE_SIZE,
+                        MaxArrayLength = MAX_MESSAGE_SIZE,
+                        MaxDepth = MAX_MESSAGE_SIZE,
+                        MaxBytesPerRead = MAX_MESSAGE_SIZE
+                    }
                 };
                 binding.Security.Mode = System.ServiceModel.BasicHttpSecurityMode.Transport;
 
