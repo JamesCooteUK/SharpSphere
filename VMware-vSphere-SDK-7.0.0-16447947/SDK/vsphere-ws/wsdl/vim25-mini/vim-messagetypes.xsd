@@ -70,6 +70,18 @@
          <element name="spec" type="vim25:SessionManagerServiceRequestSpec"/>
       </sequence>
    </complexType>
+   <complexType name="RetrieveUserGroupsRequestType">
+      <sequence>
+         <element name="_this" type="vim25:ManagedObjectReference"/>
+         <element name="domain" type="xsd:string" minOccurs="0"/>
+         <element name="searchStr" type="xsd:string"/>
+         <element name="belongsToGroup" type="xsd:string" minOccurs="0"/>
+         <element name="belongsToUser" type="xsd:string" minOccurs="0"/>
+         <element name="exactMatch" type="xsd:boolean"/>
+         <element name="findUsers" type="xsd:boolean"/>
+         <element name="findGroups" type="xsd:boolean"/>
+      </sequence>
+   </complexType>
    <complexType name="CreateSnapshotRequestType">
       <sequence>
          <element name="_this" type="vim25:ManagedObjectReference"/>

@@ -183,6 +183,9 @@
     <None Include="Connected Services\vSphere\SharpSphere.vSphere.SessionManagerGenericServiceTicket.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\vSphere\SharpSphere.vSphere.UserSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\vSphere\SharpSphere.vSphere.UserSession.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

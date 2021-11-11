@@ -7,6 +7,7 @@ Full walk-through and examples available [here](https://jamescoote.co.uk/introdu
 ## Version History
 - 1.0 - Initial Release
 - 2.0 - Added supported for pass-through authentication using SSPI. 
+- 2.1 - Added support for Linux target VMs with --linux, and added a --verbose flag for listing vCenter users and groups
 
 ## Introduction
 SharpSphere gives red teamers the ability to easily interact with the guest operating systems of virtual machines managed by vCenter. It uses the vSphere Web Services API and exposes the following functions:
@@ -55,6 +56,12 @@ SharpSphere.exe list --help
                 authentication if not supplied.
 
   --password    vCenter password. Defaults to executing user and pass-through authentication if not supplied.
+
+  --verbose     (Default: false) Prints verbose output about vCenter, inc. groups and users
+
+  --help        Display this help screen.
+
+  --version     Display version information.
 ```
 
 ### Code execution:
@@ -63,25 +70,28 @@ SharpSphere.exe execute --help
 
   --url              Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk
 
-  --username         vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through
-                     authentication if not supplied.
+  --username         vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through authentication if not supplied.
 
   --password         vCenter password. Defaults to executing user and pass-through authentication if not supplied.
 
   --ip               Required. Target VM IP address
 
-  --guestusername    Username used to authenticate to the guest OS. Defaults to executing user and pass-through
-                     authentication if not supplied
+  --guestusername    Username used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied
 
-  --guestpassword    Password used to authenticate to the guest OS. Defaults to executing user and pass-through
-                     authentication if not supplied
+  --guestpassword    Password used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied
 
   --command          Required. Command to execute
 
-  --output           (Default: false) Receive output from your command. Will create a temporary file in outputDir on the
-                     guest to save the output. This is then downloaded and printed to the console and the file deleted
+  --output           (Default: false) Receive output from your command. Will create a temporary file in outputDir on the guest to save the output. This is then downloaded and printed to the console and the file
+                     deleted
 
-  --outputDir        (Default: C:\Windows\Temp) When --output is provided, this is where to store the temporary file.
+  --outputDir        When --output is provided, this is where to store the temporary file.
+
+  --linux            (Default: false) Set if target VM is Linux
+
+  --help             Display this help screen.
+
+  --version          Display version information.
 ```
 
 ### Command & Control:
@@ -117,25 +127,23 @@ SharpSphere.exe upload --help
 
   --url              Required. vCenter SDK URL, i.e. https://127.0.0.1/sdk
 
-  --username         vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through
-                     authentication if not supplied.
+  --username         vCenter username, i.e. administrator@vsphere.local. Defaults to executing user and pass-through authentication if not supplied.
 
   --password         vCenter password. Defaults to executing user and pass-through authentication if not supplied.
 
   --ip               Required. Target VM IP address
 
-  --guestusername    Username used to authenticate to the guest OS. Defaults to executing user and pass-through
-                     authentication if not supplied
+  --guestusername    Username used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied
 
-  --guestpassword    Password used to authenticate to the guest OS. Defaults to executing user and pass-through
-                     authentication if not supplied
+  --guestpassword    Password used to authenticate to the guest OS. Defaults to executing user and pass-through authentication if not supplied
 
-  --command          Required. Command to execute
+  --source           Required. Full path to local file to upload
 
-  --output           (Default: false) Receive output from your command. Will create a temporary file in outputDir on the
-                     guest to save the output. This is then downloaded and printed to the console and the file deleted
+  --destination      Required. Full path to location where file should be uploaded
 
-  --outputDir        (Default: C:\Windows\Temp) When --output is provided, this is where to store the temporary file.
+  --help             Display this help screen.
+
+  --version          Display version information.
 ```
 
 ### File Download:

@@ -152,6 +152,16 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="PosixUserSearchResult">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:UserSearchResult">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:int" />
+          <xsd:element minOccurs="0" name="shellAccess" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="ResourceAllocationInfo">
     <xsd:complexContent mixed="false">
       <xsd:extension base="vim25:DynamicData">
@@ -378,6 +388,17 @@
       <xsd:extension base="vim25:Description">
         <xsd:sequence>
           <xsd:element name="key" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UserSearchResult">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:DynamicData">
+        <xsd:sequence>
+          <xsd:element name="principal" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fullName" type="xsd:string" />
+          <xsd:element name="group" type="xsd:boolean" />
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -1570,6 +1591,13 @@
         <xsd:sequence>
           <xsd:element minOccurs="0" name="host" type="vim25:ManagedObjectReference" />
         </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NotFound">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="vim25:VimFault">
+        <xsd:sequence />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

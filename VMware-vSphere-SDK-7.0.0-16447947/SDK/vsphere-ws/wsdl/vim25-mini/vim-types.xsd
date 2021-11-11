@@ -155,6 +155,16 @@
          </extension>
       </complexContent>
    </complexType>
+   <complexType name="PosixUserSearchResult">
+      <complexContent>
+         <extension base="vim25:UserSearchResult">
+            <sequence>
+               <element name="id" type="xsd:int"/>
+               <element name="shellAccess" type="xsd:boolean" minOccurs="0"/>
+            </sequence>
+         </extension>
+      </complexContent>
+   </complexType>
    <complexType name="ResourceAllocationInfo">
       <complexContent>
          <extension base="vim25:DynamicData">
@@ -384,6 +394,17 @@
          <extension base="vim25:Description">
             <sequence>
                <element name="key" type="xsd:string"/>
+            </sequence>
+         </extension>
+      </complexContent>
+   </complexType>
+   <complexType name="UserSearchResult">
+      <complexContent>
+         <extension base="vim25:DynamicData">
+            <sequence>
+               <element name="principal" type="xsd:string"/>
+               <element name="fullName" type="xsd:string" minOccurs="0"/>
+               <element name="group" type="xsd:boolean"/>
             </sequence>
          </extension>
       </complexContent>
@@ -1641,6 +1662,14 @@
          <extension base="vim25:NotEnoughCpus">
             <sequence>
                <element name="host" type="vim25:ManagedObjectReference" minOccurs="0"/>
+            </sequence>
+         </extension>
+      </complexContent>
+   </complexType>
+   <complexType name="NotFound">
+      <complexContent>
+         <extension base="vim25:VimFault">
+            <sequence>
             </sequence>
          </extension>
       </complexContent>

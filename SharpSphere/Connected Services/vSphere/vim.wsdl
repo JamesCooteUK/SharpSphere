@@ -114,6 +114,14 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="RetrieveUserGroups" type="vim25:RetrieveUserGroupsRequestType" />
+      <xsd:element name="RetrieveUserGroupsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="returnval" type="vim25:UserSearchResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="CreateSnapshot_Task" type="vim25:CreateSnapshotRequestType" />
       <xsd:element name="CreateSnapshot_TaskResponse">
         <xsd:complexType>
@@ -135,6 +143,7 @@
       <xsd:element name="InvalidStateFault" type="vim25:InvalidState" />
       <xsd:element name="MissingLinuxCustResourcesFault" type="vim25:MissingLinuxCustResources" />
       <xsd:element name="MissingWindowsCustResourcesFault" type="vim25:MissingWindowsCustResources" />
+      <xsd:element name="NotFoundFault" type="vim25:NotFound" />
       <xsd:element name="OperationDisabledByGuestFault" type="vim25:OperationDisabledByGuest" />
       <xsd:element name="OperationNotSupportedByGuestFault" type="vim25:OperationNotSupportedByGuest" />
       <xsd:element name="SSPIChallengeFault" type="vim25:SSPIChallenge" />
@@ -270,6 +279,12 @@
   <message name="AcquireGenericServiceTicketResponseMsg">
     <part name="parameters" element="vim25:AcquireGenericServiceTicketResponse" />
   </message>
+  <message name="RetrieveUserGroupsRequestMsg">
+    <part name="parameters" element="vim25:RetrieveUserGroups" />
+  </message>
+  <message name="RetrieveUserGroupsResponseMsg">
+    <part name="parameters" element="vim25:RetrieveUserGroupsResponse" />
+  </message>
   <message name="CreateSnapshot_TaskRequestMsg">
     <part name="parameters" element="vim25:CreateSnapshot_Task" />
   </message>
@@ -296,6 +311,9 @@
   </message>
   <message name="InvalidStateFaultMsg">
     <part name="fault" element="vim25:InvalidStateFault" />
+  </message>
+  <message name="NotFoundFaultMsg">
+    <part name="fault" element="vim25:NotFoundFault" />
   </message>
   <message name="SSPIChallengeFaultMsg">
     <part name="fault" element="vim25:SSPIChallengeFault" />
@@ -436,6 +454,12 @@
     <operation name="AcquireGenericServiceTicket">
       <input message="vim25:AcquireGenericServiceTicketRequestMsg" />
       <output message="vim25:AcquireGenericServiceTicketResponseMsg" />
+      <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
+    </operation>
+    <operation name="RetrieveUserGroups">
+      <input message="vim25:RetrieveUserGroupsRequestMsg" />
+      <output message="vim25:RetrieveUserGroupsResponseMsg" />
+      <fault name="NotFoundFault" message="vim25:NotFoundFaultMsg" />
       <fault name="RuntimeFault" message="vim25:RuntimeFaultFaultMsg" />
     </operation>
     <operation name="CreateSnapshot_Task">
@@ -666,6 +690,21 @@
       <output>
         <soap:body use="literal" />
       </output>
+      <fault name="RuntimeFault">
+        <soap:fault use="literal" name="RuntimeFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="RetrieveUserGroups">
+      <soap:operation soapAction="urn:vim25/7.0.0.0" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="NotFoundFault">
+        <soap:fault use="literal" name="NotFoundFault" namespace="" />
+      </fault>
       <fault name="RuntimeFault">
         <soap:fault use="literal" name="RuntimeFault" namespace="" />
       </fault>

@@ -13,6 +13,9 @@ namespace SharpSphere
 
         [Option("password", Required = false, HelpText = "vCenter password. Defaults to executing user and pass-through authentication if not supplied.")]
         public string password { get; set; }
+
+        [Option("verbose", Default = false, Required = false, HelpText = "Prints verbose output about vCenter, inc. groups and users")]
+        public bool verbose { get; set; }
     }
 
     [Verb("dump", HelpText = "Snapshot and download memory dump file")]
@@ -64,8 +67,11 @@ namespace SharpSphere
         [Option("output", Default = false, Required = false, HelpText = @"Receive output from your command. Will create a temporary file in outputDir on the guest to save the output. This is then downloaded and printed to the console and the file deleted")]
         public bool output { get; set; }
 
-        [Option("outputDir", Default = @"C:\Windows\Temp", Required = false, HelpText = @"When --output is provided, this is where to store the temporary file.")]
+        [Option("outputDir", Required = false, HelpText = @"When --output is provided, this is where to store the temporary file.")]
         public string outputDir { get; set; }
+
+        [Option("linux", Default = false, Required = false, HelpText = @"Set if target VM is Linux")]
+        public bool linux { get; set; }
     }
 
 

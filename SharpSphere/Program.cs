@@ -102,7 +102,14 @@ namespace SharpSphere
 
                 //Retrieve target VM
                 if (ip != null)
+                {
                     vm = vim.FindByIp(serviceContent.searchIndex, null, ip, true);
+                    if (vm == null)
+                    {
+                        Error(new Exception("Cannot find target VM by IP"));
+                    }
+                }
+                    
 
             }
             catch (Exception fault) //Generic catch all
@@ -123,7 +130,7 @@ namespace SharpSphere
             return Convert.ToBase64String(ct);
         }
 
-        static void ExecuteCommand(GuestAuthentication creds, string arguments, string programPath, string workingDirectory, bool output)
+        static void ExecuteCommand(GuestAuthentication creds, string arguments, string programPath, string workingDirectory, bool output, bool linux)
         {
             try
             {
@@ -140,11 +147,17 @@ namespace SharpSphere
                 {
                     //Set file to receive output
                     var outfile = Path.GetRandomFileName();
-                    guestProgramSpec.arguments += @" > "+ workingDirectory + "\\" + outfile + @" 2>&1";
+                    string pathSymbol;
+                    if (linux)
+                        pathSymbol = "/";
+                    else
+                        pathSymbol = "\\";
+
+                    guestProgramSpec.arguments += @" > " + workingDirectory + pathSymbol + outfile + @" 2>&1";
 
                     //Start the program and receive the PID back
-                    Log("[x] Attempting to run cmd with the following arguments: " + guestProgramSpec.arguments);
-                    Log(@"[x] Temporarily saving out to " + workingDirectory + "\\" + outfile);
+                    Log("[x] Attempting to run " + programPath + " with the following arguments: " + guestProgramSpec.arguments);
+                    Log(@"[x] Temporarily saving out to " + workingDirectory + pathSymbol + outfile);
                     long pid = vim.StartProgramInGuest(processManager, vm, creds, guestProgramSpec);
 
                     //Display PID
@@ -164,7 +177,7 @@ namespace SharpSphere
                         {
                             Log("[x] Execution finished, attempting to retrieve the results");
                             //Get the results
-                            var fileTransferInformation = vim.InitiateFileTransferFromGuest(guestFileManager, vm, creds, workingDirectory + "\\" + outfile);
+                            var fileTransferInformation = vim.InitiateFileTransferFromGuest(guestFileManager, vm, creds, workingDirectory + pathSymbol + outfile);
                             using (var client = new System.Net.WebClient())
                             {
                                 client.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
@@ -174,7 +187,8 @@ namespace SharpSphere
                             }
 
                             //Delete the file
-                            vim.DeleteFileInGuest(guestFileManager, vm, creds, workingDirectory + "\\" + outfile);
+
+                            vim.DeleteFileInGuest(guestFileManager, vm, creds, workingDirectory + pathSymbol + outfile);
                             Log("[x] Output file deleted");
 
                             finished = true;
@@ -185,7 +199,7 @@ namespace SharpSphere
                 {
 
                     //Start the program and receive the PID back
-                    Log("[x] Attempting to execute with cmd /c the following command: " + guestProgramSpec.arguments);
+                    Log("[x] Attempting to execute the following command: " + guestProgramSpec.arguments);
                     long pid = vim.StartProgramInGuest(processManager, vm, creds, guestProgramSpec);
 
                     //Display PID
@@ -242,10 +256,18 @@ namespace SharpSphere
                     {
                         username = options.guestusername,
                         password = options.guestpassword,
-                        interactiveSession = true,
+                        interactiveSession = false,
                     };
                 }
-                ExecuteCommand(creds, "/c " + options.command, @"C:\Windows\System32\cmd.exe", options.outputDir, options.output);
+
+                if(options.linux)
+                {
+                    ExecuteCommand(creds, "-c " + options.command, @"/bin/sh", options.outputDir == null ? "/tmp" : options.outputDir, options.output, options.linux);
+                } else
+                {
+                    ExecuteCommand(creds, "/c " + options.command, @"C:\Windows\System32\cmd.exe", options.outputDir == null ? @"C:\Windows\Temp" : options.outputDir, options.output, options.linux);
+                }
+                
             }
             catch (Exception fault)
             {
@@ -280,12 +302,50 @@ namespace SharpSphere
 
                     }
                 }
+
+                //Print user and group info
+                if(options.verbose)
+                {
+                    PrintUsersAndGroups();
+                }
+                
+
             }
             catch (Exception fault)
             {
                 Error(fault);
             }
             return 0;
+        }
+
+        static void PrintUsersAndGroups()
+        {
+            UserSearchResult[] userSearchResults = vim.RetrieveUserGroups(serviceContent.userDirectory, null, "", null, null, false, true, true);
+            List<String> users = new List<string>();
+            List<String> groups = new List<string>();
+
+            foreach (var searchResult in userSearchResults)
+            {
+                if (searchResult.group)
+                {
+                    groups.Add("Group name: " + searchResult.principal);
+                }
+                else
+                {
+                    users.Add("User name: " + searchResult.fullName + " | Group principal: " + searchResult.principal);
+                }
+            }
+
+            Console.WriteLine("[x] Printing groups");
+            foreach (var group in groups)
+            {
+                Console.WriteLine(group);
+            }
+            Console.WriteLine("[x] Printing users");
+            foreach (var user in users)
+            {
+                Console.WriteLine(user);
+            }
         }
 
         static ManagedObjectReference GetTargetVM(string name)
@@ -594,7 +654,7 @@ namespace SharpSphere
                 {
                     username = options.guestusername,
                     password = options.guestpassword,
-                    interactiveSession = true,
+                    interactiveSession = false,
                 };
                 UploadFile(creds, options.source, options.destination);
             }
@@ -632,7 +692,7 @@ namespace SharpSphere
                 {
                     username = options.guestusername,
                     password = options.guestpassword,
-                    interactiveSession = true,
+                    interactiveSession = false,
                 };
                 DownloadFile(creds, options.source, options.destination);
             }
@@ -653,7 +713,7 @@ namespace SharpSphere
                 {
                     username = options.guestusername,
                     password = options.guestpassword,
-                    interactiveSession = true,
+                    interactiveSession = false,
                 };
 
                 if (!Directory.Exists(options.localdir))
